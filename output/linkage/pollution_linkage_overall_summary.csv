@@ -1,0 +1,3 @@
+unit,n_total,n_with_candidate_zip,n_missing_candidate_zip,n_link_any_pollutant,n_link_all_three,n_link_all_three_direct_zonal,n_link_all_three_with_any_fill,n_partial_pollutant_linkage,n_zip_not_in_pollution_zcta,pct_link_all_three,pct_link_any_pollutant
+waitlist_registration,1182482,1178841,3641,1153750,1103339,1100862,2477,50411,25091,0.9330704399728706,0.9757019557168735
+person,946815,944148,2667,925209,884190,882309,2164,41019,18939,0.9338571949113608,0.9771803361797183

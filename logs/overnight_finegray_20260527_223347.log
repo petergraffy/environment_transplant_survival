@@ -1,0 +1,13 @@
+2026-05-27 22:33:48 | Reading candidate ZIP supplement
+2026-05-27 22:33:51 | Building annual pollution table
+2026-05-27 22:35:01 | Reading candidate files
+2026-05-27 22:35:13 | Constructing baseline cohort
+2026-05-27 22:35:17 | Fitting cause-specific Cox models
+2026-05-27 22:35:35 | Fitting monitored organ-specific Fine-Gray models
+  |                                                                              |                                                                      |   0%2026-05-27 22:35:36 | Fine-Gray start: HL n=1085 deaths=184 max_n=2000000
+2026-05-27 22:35:36 | Fine-Gray done: HL elapsed_seconds=0.4
+  |                                                                              |=========                                                             |  12%2026-05-27 22:35:36 | Fine-Gray start: HR n=76043 deaths=5592 max_n=2000000
+2026-05-27 23:05:04 | Fine-Gray done: HR elapsed_seconds=1768.3
+  |                                                                              |==================                                                    |  25%2026-05-27 23:05:04 | Fine-Gray start: IN n=3545 deaths=360 max_n=2000000
+2026-05-27 23:05:06 | Fine-Gray done: IN elapsed_seconds=2
+  |                                                                              |==========================                                            |  38%2026-05-27 23:05:06 | Fine-Gray start: KI n=703920 deaths=75058 max_n=2000000
