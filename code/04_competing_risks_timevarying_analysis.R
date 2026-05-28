@@ -13,12 +13,18 @@ suppressPackageStartupMessages({
   library(tibble)
 })
 
-saf_dir <- "/Users/saborpete/Library/CloudStorage/Box-Box/SAF Q2 2025"
-pubsaf_dir <- file.path(saf_dir, "pubsaf2506")
-supp_dir <- file.path(saf_dir, "SupplementalData2506")
+saf_paths_source <- file.path("code", "saf_paths.R")
+if (!file.exists(saf_paths_source)) saf_paths_source <- "saf_paths.R"
+source(saf_paths_source)
+saf_paths <- get_saf_paths()
+assert_saf_files(saf_paths, include_stathist = TRUE)
+saf_dir <- saf_paths$saf_dir
+pubsaf_dir <- saf_paths$pubsaf_dir
+supp_dir <- saf_paths$supp_dir
 pollution_dir <- "output/zip_pollution"
 out_dir <- "output/competing_timevarying"
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
+message("Using SAF directory: ", saf_dir)
 
 analysis_start_year <- 2005L
 analysis_end_year <- 2023L
