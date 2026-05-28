@@ -52,6 +52,16 @@ pollutant_labels <- c(
   no2 = "NO2"
 )
 pollutant_order <- c("PM2.5", "Ozone", "NO2")
+organ_labels <- c(
+  HL = "Heart-lung",
+  HR = "Heart",
+  IN = "Intestine",
+  KI = "Kidney",
+  KP = "Kidney-pancreas",
+  LI = "Liver",
+  LU = "Lung",
+  PA = "Pancreas"
+)
 
 pollutant_units <- c(
   pm25_ug_m3 = "ug/m3",
@@ -355,6 +365,19 @@ extract_cif_curve <- function(data, exposure, quartile_var, label) {
     left_join(q_lookup, by = "quartile")
 }
 
+extract_cif_curve_by_organ <- function(data, exposure, quartile_var, label) {
+  bind_rows(lapply(sort(unique(as.character(data$WL_ORG))), function(org) {
+    organ_data <- data %>% filter(as.character(WL_ORG) == org)
+    if (nrow(organ_data) == 0L || length(unique(organ_data[[quartile_var]])) < 2L) return(NULL)
+
+    extract_cif_curve(organ_data, exposure, quartile_var, label) %>%
+      mutate(
+        WL_ORG = org,
+        organ = factor(recode(org, !!!organ_labels), levels = organ_labels)
+      )
+  }))
+}
+
 cif_curves <- bind_rows(
   extract_cif_curve(cohort, "pm25_ug_m3", "pm25_quartile", "PM2.5"),
   extract_cif_curve(cohort, "o3_ppb", "o3_quartile", "Ozone"),
@@ -379,6 +402,60 @@ p_cif_death <- cif_curves %>%
   theme_waitlist()
 
 ggsave(file.path(out_dir, "waitlist_death_cif_by_pollution_quartile.png"), p_cif_death, width = 12, height = 5, dpi = 300)
+
+organ_cif_curves <- bind_rows(
+  extract_cif_curve_by_organ(cohort, "pm25_ug_m3", "pm25_quartile", "PM2.5"),
+  extract_cif_curve_by_organ(cohort, "o3_ppb", "o3_quartile", "Ozone"),
+  extract_cif_curve_by_organ(cohort, "no2", "no2_quartile", "NO2")
+)
+write_csv(organ_cif_curves, file.path(out_dir, "organ_competing_cumulative_incidence_by_pollution_quartile.csv"))
+
+for (pollutant_name in pollutant_order) {
+  pollutant_slug <- recode(pollutant_name, `PM2.5` = "pm25", Ozone = "o3", NO2 = "no2")
+
+  p_organ_death <- organ_cif_curves %>%
+    filter(event == "Waitlist death", pollutant == pollutant_name) %>%
+    ggplot(aes(x = years_since_listing, y = cumulative_incidence, color = quartile_group)) +
+    geom_step(linewidth = 0.65) +
+    facet_wrap(~organ, ncol = 4) +
+    scale_y_continuous(labels = percent_format(accuracy = 1)) +
+    scale_x_continuous(breaks = 0:max_curve_years, limits = c(0, max_curve_years)) +
+    labs(
+      title = paste0("Waitlist death cumulative incidence by ", pollutant_name, " quartile"),
+      subtitle = "Organ-specific CIFs; transplant treated as a competing event",
+      x = "Years since waitlist listing/activation",
+      y = "Cumulative incidence",
+      color = "Exposure quartile"
+    ) +
+    theme_waitlist(base_size = 10)
+
+  ggsave(
+    file.path(out_dir, paste0("organ_waitlist_death_cif_by_", pollutant_slug, "_quartile.png")),
+    p_organ_death,
+    width = 12,
+    height = 7,
+    dpi = 300
+  )
+}
+
+p_organ_pm25_events <- organ_cif_curves %>%
+  filter(pollutant == "PM2.5") %>%
+  ggplot(aes(x = years_since_listing, y = cumulative_incidence, color = quartile_group)) +
+  geom_step(linewidth = 0.55) +
+  facet_grid(event ~ organ, scales = "free_y") +
+  scale_y_continuous(labels = percent_format(accuracy = 1)) +
+  scale_x_continuous(breaks = c(0, 2, 4), limits = c(0, max_curve_years)) +
+  labs(
+    title = "Organ-specific competing outcomes by PM2.5 quartile",
+    subtitle = "Cumulative incidence functions for waitlist death and transplant",
+    x = "Years since waitlist listing/activation",
+    y = "Cumulative incidence",
+    color = "Exposure quartile"
+  ) +
+  theme_waitlist(base_size = 9) +
+  theme(axis.text.x = element_text(size = 7))
+
+ggsave(file.path(out_dir, "organ_pm25_competing_outcomes_cif.png"), p_organ_pm25_events, width = 16, height = 7, dpi = 300)
 
 p_cif_events <- cif_curves %>%
   filter(pollutant == "PM2.5") %>%
