@@ -10,6 +10,10 @@ Daily wide files are split by calendar year:
 
 `data/processed/gridmet_zcta_daily/gridmet_zcta_daily_YYYY.csv.gz`
 
+Value-only yearly Parquet release assets are archived on GitHub Releases:
+
+`https://github.com/petergraffy/environment_transplant_survival/releases/tag/gridmet-zcta-daily-v1`
+
 Combined metadata:
 
 - `data/processed/gridmet_zcta_daily/gridmet_zcta_daily_manifest_all_years.csv`
