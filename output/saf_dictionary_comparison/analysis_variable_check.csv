@@ -1,0 +1,127 @@
+table,variable,release,section,present,storage_class,label,sas_format
+cand_kipa,CAN_ACTIVATE_DT,new_2603,pubsaf,TRUE,Date,Activation Date - date/time waiting time clock started,MMDDYY
+cand_kipa,CAN_ACTIVATE_DT,old_2506,pubsaf,TRUE,Date,Activation Date - date/time waiting time clock started,MMDDYY
+cand_kipa,CAN_AGE_AT_LISTING,new_2603,pubsaf,TRUE,numeric,Calculated Candidate Age at Listing,AGE9A
+cand_kipa,CAN_AGE_AT_LISTING,old_2506,pubsaf,TRUE,numeric,Calculated Candidate Age at Listing,AGE9A
+cand_kipa,CAN_BMI,new_2603,pubsaf,TRUE,numeric,BMI:,
+cand_kipa,CAN_BMI,old_2506,pubsaf,TRUE,numeric,BMI:,
+cand_kipa,CAN_DEATH_DT,new_2603,pubsaf,TRUE,Date,"If removed due to Death, date of death",MMDDYY
+cand_kipa,CAN_DEATH_DT,old_2506,pubsaf,TRUE,Date,"If removed due to Death, date of death",MMDDYY
+cand_kipa,CAN_ENDWLFU,new_2603,pubsaf,TRUE,Date,Candidate cohort censoring date,MMDDYY
+cand_kipa,CAN_ENDWLFU,old_2506,pubsaf,TRUE,Date,Candidate cohort censoring date,MMDDYY
+cand_kipa,CAN_ETHNICITY_SRTR,new_2603,pubsaf,TRUE,character,SRTR Patient Ethnicity,$ETHSR
+cand_kipa,CAN_ETHNICITY_SRTR,old_2506,pubsaf,TRUE,character,SRTR Patient Ethnicity,$ETHSR
+cand_kipa,CAN_GENDER,new_2603,pubsaf,TRUE,character,Patient/s Gender,$
+cand_kipa,CAN_GENDER,old_2506,pubsaf,TRUE,character,Patient/s Gender,$
+cand_kipa,CAN_LISTING_DT,new_2603,pubsaf,TRUE,Date,Listing Date - date/time candidate was physically added to the waiting list - this date/time does not change for transfers,MMDDYY
+cand_kipa,CAN_LISTING_DT,old_2506,pubsaf,TRUE,Date,Listing Date - date/time candidate was physically added to the waiting list - this date/time does not change for transfers,MMDDYY
+cand_kipa,CAN_RACE_SRTR,new_2603,pubsaf,TRUE,character,SRTR Patient Race,$RACEBSR
+cand_kipa,CAN_RACE_SRTR,old_2506,pubsaf,TRUE,character,SRTR Patient Race,$RACEBSR
+cand_kipa,CAN_REM_CD,new_2603,pubsaf,TRUE,numeric,Reason why candidate was removed (removal code),REMCD
+cand_kipa,CAN_REM_CD,old_2506,pubsaf,TRUE,numeric,Reason why candidate was removed (removal code),REMCD
+cand_kipa,CAN_REM_DT,new_2603,pubsaf,TRUE,Date,"rem_dt /remreg, censored by CAN_DEATH_DT, tx_dt",MMDDYY
+cand_kipa,CAN_REM_DT,old_2506,pubsaf,TRUE,Date,"rem_dt /remreg, censored by CAN_DEATH_DT, tx_dt",MMDDYY
+cand_kipa,CAN_SOURCE,new_2603,pubsaf,TRUE,character,"Source of Candidate Data: A =Active Waitlist,R= Removed from Waitlist,L=Live Don Organ Recipient never on waitlist",$
+cand_kipa,CAN_SOURCE,old_2506,pubsaf,TRUE,character,"Source of Candidate Data: A =Active Waitlist,R= Removed from Waitlist,L=Live Don Organ Recipient never on waitlist",$
+cand_kipa,PERS_ID,new_2603,pubsaf,TRUE,numeric,Unique Person ID for Recipient,
+cand_kipa,PERS_ID,old_2506,pubsaf,TRUE,numeric,Unique Person ID for Recipient,
+cand_kipa,PX_ID,new_2603,pubsaf,TRUE,numeric,Patient Identifier,
+cand_kipa,PX_ID,old_2506,pubsaf,TRUE,numeric,Patient Identifier,
+cand_kipa,WL_ORG,new_2603,pubsaf,TRUE,character,Organ of this waitlisted record,$WLORG
+cand_kipa,WL_ORG,old_2506,pubsaf,TRUE,character,Organ of this waitlisted record,$WLORG
+cand_liin,CAN_ACTIVATE_DT,new_2603,pubsaf,TRUE,Date,Activation Date - date/time waiting time clock started,MMDDYY
+cand_liin,CAN_ACTIVATE_DT,old_2506,pubsaf,TRUE,Date,Activation Date - date/time waiting time clock started,MMDDYY
+cand_liin,CAN_AGE_AT_LISTING,new_2603,pubsaf,TRUE,numeric,Calculated Candidate Age at Listing,AGE9A
+cand_liin,CAN_AGE_AT_LISTING,old_2506,pubsaf,TRUE,numeric,Calculated Candidate Age at Listing,AGE9A
+cand_liin,CAN_BMI,new_2603,pubsaf,TRUE,numeric,BMI:,
+cand_liin,CAN_BMI,old_2506,pubsaf,TRUE,numeric,BMI:,
+cand_liin,CAN_DEATH_DT,new_2603,pubsaf,TRUE,Date,"If removed due to Death, date of death",MMDDYY
+cand_liin,CAN_DEATH_DT,old_2506,pubsaf,TRUE,Date,"If removed due to Death, date of death",MMDDYY
+cand_liin,CAN_ENDWLFU,new_2603,pubsaf,TRUE,Date,Candidate cohort censoring date,MMDDYY
+cand_liin,CAN_ENDWLFU,old_2506,pubsaf,TRUE,Date,Candidate cohort censoring date,MMDDYY
+cand_liin,CAN_ETHNICITY_SRTR,new_2603,pubsaf,TRUE,character,SRTR Patient Ethnicity,$ETHSR
+cand_liin,CAN_ETHNICITY_SRTR,old_2506,pubsaf,TRUE,character,SRTR Patient Ethnicity,$ETHSR
+cand_liin,CAN_GENDER,new_2603,pubsaf,TRUE,character,Patient/s Gender,$
+cand_liin,CAN_GENDER,old_2506,pubsaf,TRUE,character,Patient/s Gender,$
+cand_liin,CAN_LISTING_DT,new_2603,pubsaf,TRUE,Date,Listing Date - date/time candidate was physically added to the waiting list - this date/time does not change for transfers,MMDDYY
+cand_liin,CAN_LISTING_DT,old_2506,pubsaf,TRUE,Date,Listing Date - date/time candidate was physically added to the waiting list - this date/time does not change for transfers,MMDDYY
+cand_liin,CAN_RACE_SRTR,new_2603,pubsaf,TRUE,character,SRTR Patient Race,$RACEBSR
+cand_liin,CAN_RACE_SRTR,old_2506,pubsaf,TRUE,character,SRTR Patient Race,$RACEBSR
+cand_liin,CAN_REM_CD,new_2603,pubsaf,TRUE,numeric,Reason why candidate was removed (removal code),REMCD
+cand_liin,CAN_REM_CD,old_2506,pubsaf,TRUE,numeric,Reason why candidate was removed (removal code),REMCD
+cand_liin,CAN_REM_DT,new_2603,pubsaf,TRUE,Date,"rem_dt /remreg, censored by CAN_DEATH_DT, tx_dt",MMDDYY
+cand_liin,CAN_REM_DT,old_2506,pubsaf,TRUE,Date,"rem_dt /remreg, censored by CAN_DEATH_DT, tx_dt",MMDDYY
+cand_liin,CAN_SOURCE,new_2603,pubsaf,TRUE,character,"Source of Candidate Data: A =Active Waitlist,R= Removed from Waitlist,L=Live Don Organ Recipient never on waitlist",$
+cand_liin,CAN_SOURCE,old_2506,pubsaf,TRUE,character,"Source of Candidate Data: A =Active Waitlist,R= Removed from Waitlist,L=Live Don Organ Recipient never on waitlist",$
+cand_liin,PERS_ID,new_2603,pubsaf,TRUE,numeric,Unique Person ID for Recipient,
+cand_liin,PERS_ID,old_2506,pubsaf,TRUE,numeric,Unique Person ID for Recipient,
+cand_liin,PX_ID,new_2603,pubsaf,TRUE,numeric,Patient Identifier,
+cand_liin,PX_ID,old_2506,pubsaf,TRUE,numeric,Patient Identifier,
+cand_liin,WL_ORG,new_2603,pubsaf,TRUE,character,Organ of this waitlisted record,$WLORG
+cand_liin,WL_ORG,old_2506,pubsaf,TRUE,character,Organ of this waitlisted record,$WLORG
+cand_thor,CAN_ACTIVATE_DT,new_2603,pubsaf,TRUE,Date,Activation Date - date/time waiting time clock started,MMDDYY
+cand_thor,CAN_ACTIVATE_DT,old_2506,pubsaf,TRUE,Date,Activation Date - date/time waiting time clock started,MMDDYY
+cand_thor,CAN_AGE_AT_LISTING,new_2603,pubsaf,TRUE,numeric,Calculated Candidate Age at Listing,AGE9A
+cand_thor,CAN_AGE_AT_LISTING,old_2506,pubsaf,TRUE,numeric,Calculated Candidate Age at Listing,AGE9A
+cand_thor,CAN_BMI,new_2603,pubsaf,TRUE,numeric,BMI:,
+cand_thor,CAN_BMI,old_2506,pubsaf,TRUE,numeric,BMI:,
+cand_thor,CAN_DEATH_DT,new_2603,pubsaf,TRUE,Date,"If removed due to Death, date of death",MMDDYY
+cand_thor,CAN_DEATH_DT,old_2506,pubsaf,TRUE,Date,"If removed due to Death, date of death",MMDDYY
+cand_thor,CAN_ENDWLFU,new_2603,pubsaf,TRUE,Date,Candidate cohort censoring date,MMDDYY
+cand_thor,CAN_ENDWLFU,old_2506,pubsaf,TRUE,Date,Candidate cohort censoring date,MMDDYY
+cand_thor,CAN_ETHNICITY_SRTR,new_2603,pubsaf,TRUE,character,SRTR Patient Ethnicity,$ETHSR
+cand_thor,CAN_ETHNICITY_SRTR,old_2506,pubsaf,TRUE,character,SRTR Patient Ethnicity,$ETHSR
+cand_thor,CAN_GENDER,new_2603,pubsaf,TRUE,character,Patient/s Gender,$
+cand_thor,CAN_GENDER,old_2506,pubsaf,TRUE,character,Patient/s Gender,$
+cand_thor,CAN_LISTING_DT,new_2603,pubsaf,TRUE,Date,Listing Date - date/time candidate was physically added to the waiting list - this date/time does not change for transfers,MMDDYY
+cand_thor,CAN_LISTING_DT,old_2506,pubsaf,TRUE,Date,Listing Date - date/time candidate was physically added to the waiting list - this date/time does not change for transfers,MMDDYY
+cand_thor,CAN_RACE_SRTR,new_2603,pubsaf,TRUE,character,SRTR Patient Race,$RACEBSR
+cand_thor,CAN_RACE_SRTR,old_2506,pubsaf,TRUE,character,SRTR Patient Race,$RACEBSR
+cand_thor,CAN_REM_CD,new_2603,pubsaf,TRUE,numeric,Reason why candidate was removed (removal code),REMCD
+cand_thor,CAN_REM_CD,old_2506,pubsaf,TRUE,numeric,Reason why candidate was removed (removal code),REMCD
+cand_thor,CAN_REM_DT,new_2603,pubsaf,TRUE,Date,"rem_dt /remreg, censored by CAN_DEATH_DT, tx_dt",MMDDYY
+cand_thor,CAN_REM_DT,old_2506,pubsaf,TRUE,Date,"rem_dt /remreg, censored by CAN_DEATH_DT, tx_dt",MMDDYY
+cand_thor,CAN_SOURCE,new_2603,pubsaf,TRUE,character,"Source of Candidate Data: A =Active Waitlist,R= Removed from Waitlist,L=Live Don Organ Recipient never on waitlist",$
+cand_thor,CAN_SOURCE,old_2506,pubsaf,TRUE,character,"Source of Candidate Data: A =Active Waitlist,R= Removed from Waitlist,L=Live Don Organ Recipient never on waitlist",$
+cand_thor,PERS_ID,new_2603,pubsaf,TRUE,numeric,Unique Person ID for Recipient,
+cand_thor,PERS_ID,old_2506,pubsaf,TRUE,numeric,Unique Person ID for Recipient,
+cand_thor,PX_ID,new_2603,pubsaf,TRUE,numeric,Patient Identifier,
+cand_thor,PX_ID,old_2506,pubsaf,TRUE,numeric,Patient Identifier,
+cand_thor,WL_ORG,new_2603,pubsaf,TRUE,character,Organ of this waitlisted record,$WLORG
+cand_thor,WL_ORG,old_2506,pubsaf,TRUE,character,Organ of this waitlisted record,$WLORG
+canzip,CAN_PERM_ZIP,new_2603,supplement,TRUE,character,Patient/s Permanent ZIP Code,$
+canzip,CAN_PERM_ZIP,old_2506,supplement,TRUE,character,Patient/s Permanent ZIP Code,$
+canzip,PERS_ID,new_2603,supplement,TRUE,numeric,Unique Person ID for Recipient,
+canzip,PERS_ID,old_2506,supplement,TRUE,numeric,Unique Person ID for Recipient,
+canzip,PX_ID,new_2603,supplement,TRUE,numeric,Patient Identifier,
+canzip,PX_ID,old_2506,supplement,TRUE,numeric,Patient Identifier,
+stathist_kipa,CANHX_BEGIN_DT,new_2603,pubsaf,TRUE,Date,Date WLR record was last changed,DATE
+stathist_kipa,CANHX_BEGIN_DT,old_2506,pubsaf,TRUE,Date,Date WLR record was last changed,DATE
+stathist_kipa,CANHX_END_DT,new_2603,pubsaf,TRUE,Date,WL Status Period End Date,DATE
+stathist_kipa,CANHX_END_DT,old_2506,pubsaf,TRUE,Date,WL Status Period End Date,DATE
+stathist_kipa,CANHX_STAT_CD,new_2603,pubsaf,TRUE,numeric,WL Status During Given Period,CANDSTAT
+stathist_kipa,CANHX_STAT_CD,old_2506,pubsaf,TRUE,numeric,WL Status During Given Period,CANDSTAT
+stathist_kipa,PX_ID,new_2603,pubsaf,TRUE,numeric,"Patient Identifier - from WL for A & R Cands,TCR for L Cands",
+stathist_kipa,PX_ID,old_2506,pubsaf,TRUE,numeric,"Patient Identifier - from WL for A & R Cands,TCR for L Cands",
+stathist_kipa,WL_ORG,new_2603,pubsaf,TRUE,character,Organ of this waitlisted record,$WLORG
+stathist_kipa,WL_ORG,old_2506,pubsaf,TRUE,character,Organ of this waitlisted record,$WLORG
+stathist_liin,CANHX_BEGIN_DT,new_2603,pubsaf,TRUE,Date,Date WLR record was last changed,DATE
+stathist_liin,CANHX_BEGIN_DT,old_2506,pubsaf,TRUE,Date,Date WLR record was last changed,DATE
+stathist_liin,CANHX_END_DT,new_2603,pubsaf,TRUE,Date,WL Status Period End Date,DATE
+stathist_liin,CANHX_END_DT,old_2506,pubsaf,TRUE,Date,WL Status Period End Date,DATE
+stathist_liin,CANHX_STAT_CD,new_2603,pubsaf,TRUE,numeric,WL Status During Given Period,CANDSTAT
+stathist_liin,CANHX_STAT_CD,old_2506,pubsaf,TRUE,numeric,WL Status During Given Period,CANDSTAT
+stathist_liin,PX_ID,new_2603,pubsaf,TRUE,numeric,"Patient Identifier - from WL for A & R Cands,TCR for L Cands",
+stathist_liin,PX_ID,old_2506,pubsaf,TRUE,numeric,"Patient Identifier - from WL for A & R Cands,TCR for L Cands",
+stathist_liin,WL_ORG,new_2603,pubsaf,TRUE,character,Organ of this waitlisted record,$WLORG
+stathist_liin,WL_ORG,old_2506,pubsaf,TRUE,character,Organ of this waitlisted record,$WLORG
+stathist_thor,CANHX_BEGIN_DT,new_2603,pubsaf,TRUE,Date,Date WLR record was last changed,DATE
+stathist_thor,CANHX_BEGIN_DT,old_2506,pubsaf,TRUE,Date,Date WLR record was last changed,DATE
+stathist_thor,CANHX_END_DT,new_2603,pubsaf,TRUE,Date,WL Status Period End Date,DATE
+stathist_thor,CANHX_END_DT,old_2506,pubsaf,TRUE,Date,WL Status Period End Date,DATE
+stathist_thor,CANHX_STAT_CD,new_2603,pubsaf,TRUE,numeric,WL Status During Given Period,CANDSTAT
+stathist_thor,CANHX_STAT_CD,old_2506,pubsaf,TRUE,numeric,WL Status During Given Period,CANDSTAT
+stathist_thor,PX_ID,new_2603,pubsaf,TRUE,numeric,Patient Identifier,
+stathist_thor,PX_ID,old_2506,pubsaf,TRUE,numeric,Patient Identifier,
+stathist_thor,WL_ORG,new_2603,pubsaf,TRUE,character,Organ of this waitlisted record,$WLORG
+stathist_thor,WL_ORG,old_2506,pubsaf,TRUE,character,Organ of this waitlisted record,$WLORG

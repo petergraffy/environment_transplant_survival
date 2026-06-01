@@ -1,0 +1,123 @@
+release,section,table,file_name,rel_path
+old_2506,pubsaf,cand_kipa,cand_kipa.sas7bdat,pubsaf2506/cand_kipa.sas7bdat
+old_2506,pubsaf,cand_liin,cand_liin.sas7bdat,pubsaf2506/cand_liin.sas7bdat
+old_2506,pubsaf,cand_thor,cand_thor.sas7bdat,pubsaf2506/cand_thor.sas7bdat
+old_2506,pubsaf,control,control.sas7bdat,pubsaf2506/control.sas7bdat
+old_2506,pubsaf,don_liv_fol,don_liv_fol.sas7bdat,pubsaf2506/don_liv_fol.sas7bdat
+old_2506,pubsaf,donor_deceased,donor_deceased.sas7bdat,pubsaf2506/donor_deceased.sas7bdat
+old_2506,pubsaf,donor_disposition,donor_disposition.sas7bdat,pubsaf2506/donor_disposition.sas7bdat
+old_2506,pubsaf,donor_live,donor_live.sas7bdat,pubsaf2506/donor_live.sas7bdat
+old_2506,pubsaf,fol_immuno,fol_immuno.sas7bdat,pubsaf2506/fol_immuno.sas7bdat
+old_2506,pubsaf,hist_opo_txc,hist_opo_txc.sas7bdat,pubsaf2506/hist_opo_txc.sas7bdat
+old_2506,pubsaf,immuno,immuno.sas7bdat,pubsaf2506/immuno.sas7bdat
+old_2506,pubsaf,institution,institution.sas7bdat,pubsaf2506/institution.sas7bdat
+old_2506,pubsaf,malig,malig.sas7bdat,pubsaf2506/malig.sas7bdat
+old_2506,pubsaf,mpexcept,mpexcept.sas7bdat,pubsaf2506/mpexcept.sas7bdat
+old_2506,pubsaf,mpexcept_orig_tumors,mpexcept_orig_tumors.sas7bdat,pubsaf2506/mpexcept_orig_tumors.sas7bdat
+old_2506,pubsaf,mpexcept_tumors,mpexcept_tumors.sas7bdat,pubsaf2506/mpexcept_tumors.sas7bdat
+old_2506,pubsaf,pra_hist,pra_hist.sas7bdat,pubsaf2506/pra_hist.sas7bdat
+old_2506,pubsaf,rec_histo,rec_histo.sas7bdat,pubsaf2506/rec_histo.sas7bdat
+old_2506,pubsaf,rec_histo_xmat,rec_histo_xmat.sas7bdat,pubsaf2506/rec_histo_xmat.sas7bdat
+old_2506,pubsaf,stathist_kipa,stathist_kipa.sas7bdat,pubsaf2506/stathist_kipa.sas7bdat
+old_2506,pubsaf,stathist_liin,stathist_liin.sas7bdat,pubsaf2506/stathist_liin.sas7bdat
+old_2506,pubsaf,stathist_thor,stathist_thor.sas7bdat,pubsaf2506/stathist_thor.sas7bdat
+old_2506,pubsaf,statjust_hr1a,statjust_hr1a.sas7bdat,pubsaf2506/statjust_hr1a.sas7bdat
+old_2506,pubsaf,statjust_hr1b,statjust_hr1b.sas7bdat,pubsaf2506/statjust_hr1b.sas7bdat
+old_2506,pubsaf,statjust_li1,statjust_li1.sas7bdat,pubsaf2506/statjust_li1.sas7bdat
+old_2506,pubsaf,statjust_li2a,statjust_li2a.sas7bdat,pubsaf2506/statjust_li2a.sas7bdat
+old_2506,pubsaf,statjust_li2b,statjust_li2b.sas7bdat,pubsaf2506/statjust_li2b.sas7bdat
+old_2506,pubsaf,treatment,treatment.sas7bdat,pubsaf2506/treatment.sas7bdat
+old_2506,pubsaf,tx_hl,tx_hl.sas7bdat,pubsaf2506/tx_hl.sas7bdat
+old_2506,pubsaf,tx_hr,tx_hr.sas7bdat,pubsaf2506/tx_hr.sas7bdat
+old_2506,pubsaf,tx_in,tx_in.sas7bdat,pubsaf2506/tx_in.sas7bdat
+old_2506,pubsaf,tx_ki,tx_ki.sas7bdat,pubsaf2506/tx_ki.sas7bdat
+old_2506,pubsaf,tx_kp,tx_kp.sas7bdat,pubsaf2506/tx_kp.sas7bdat
+old_2506,pubsaf,tx_li,tx_li.sas7bdat,pubsaf2506/tx_li.sas7bdat
+old_2506,pubsaf,tx_lu,tx_lu.sas7bdat,pubsaf2506/tx_lu.sas7bdat
+old_2506,pubsaf,tx_pa,tx_pa.sas7bdat,pubsaf2506/tx_pa.sas7bdat
+old_2506,pubsaf,txf_hl,txf_hl.sas7bdat,pubsaf2506/txf_hl.sas7bdat
+old_2506,pubsaf,txf_hr,txf_hr.sas7bdat,pubsaf2506/txf_hr.sas7bdat
+old_2506,pubsaf,txf_in,txf_in.sas7bdat,pubsaf2506/txf_in.sas7bdat
+old_2506,pubsaf,txf_ki,txf_ki.sas7bdat,pubsaf2506/txf_ki.sas7bdat
+old_2506,pubsaf,txf_kp,txf_kp.sas7bdat,pubsaf2506/txf_kp.sas7bdat
+old_2506,pubsaf,txf_li,txf_li.sas7bdat,pubsaf2506/txf_li.sas7bdat
+old_2506,pubsaf,txf_lu,txf_lu.sas7bdat,pubsaf2506/txf_lu.sas7bdat
+old_2506,pubsaf,txf_pa,txf_pa.sas7bdat,pubsaf2506/txf_pa.sas7bdat
+new_2603,pubsaf,cand_kipa,cand_kipa.sas7bdat,pubsaf2603/cand_kipa.sas7bdat
+new_2603,pubsaf,cand_liin,cand_liin.sas7bdat,pubsaf2603/cand_liin.sas7bdat
+new_2603,pubsaf,cand_thor,cand_thor.sas7bdat,pubsaf2603/cand_thor.sas7bdat
+new_2603,pubsaf,control,control.sas7bdat,pubsaf2603/control.sas7bdat
+new_2603,pubsaf,don_liv_fol,don_liv_fol.sas7bdat,pubsaf2603/don_liv_fol.sas7bdat
+new_2603,pubsaf,donor_deceased,donor_deceased.sas7bdat,pubsaf2603/donor_deceased.sas7bdat
+new_2603,pubsaf,donor_disposition,donor_disposition.sas7bdat,pubsaf2603/donor_disposition.sas7bdat
+new_2603,pubsaf,donor_live,donor_live.sas7bdat,pubsaf2603/donor_live.sas7bdat
+new_2603,pubsaf,fol_immuno,fol_immuno.sas7bdat,pubsaf2603/fol_immuno.sas7bdat
+new_2603,pubsaf,hist_opo_txc,hist_opo_txc.sas7bdat,pubsaf2603/hist_opo_txc.sas7bdat
+new_2603,pubsaf,immuno,immuno.sas7bdat,pubsaf2603/immuno.sas7bdat
+new_2603,pubsaf,institution,institution.sas7bdat,pubsaf2603/institution.sas7bdat
+new_2603,pubsaf,malig,malig.sas7bdat,pubsaf2603/malig.sas7bdat
+new_2603,pubsaf,mpexcept,mpexcept.sas7bdat,pubsaf2603/mpexcept.sas7bdat
+new_2603,pubsaf,mpexcept_orig_tumors,mpexcept_orig_tumors.sas7bdat,pubsaf2603/mpexcept_orig_tumors.sas7bdat
+new_2603,pubsaf,mpexcept_tumors,mpexcept_tumors.sas7bdat,pubsaf2603/mpexcept_tumors.sas7bdat
+new_2603,pubsaf,pra_hist,pra_hist.sas7bdat,pubsaf2603/pra_hist.sas7bdat
+new_2603,pubsaf,rec_histo,rec_histo.sas7bdat,pubsaf2603/rec_histo.sas7bdat
+new_2603,pubsaf,rec_histo_xmat,rec_histo_xmat.sas7bdat,pubsaf2603/rec_histo_xmat.sas7bdat
+new_2603,pubsaf,stathist_kipa,stathist_kipa.sas7bdat,pubsaf2603/stathist_kipa.sas7bdat
+new_2603,pubsaf,stathist_liin,stathist_liin.sas7bdat,pubsaf2603/stathist_liin.sas7bdat
+new_2603,pubsaf,stathist_thor,stathist_thor.sas7bdat,pubsaf2603/stathist_thor.sas7bdat
+new_2603,pubsaf,statjust_hr1a,statjust_hr1a.sas7bdat,pubsaf2603/statjust_hr1a.sas7bdat
+new_2603,pubsaf,statjust_hr1b,statjust_hr1b.sas7bdat,pubsaf2603/statjust_hr1b.sas7bdat
+new_2603,pubsaf,statjust_li1,statjust_li1.sas7bdat,pubsaf2603/statjust_li1.sas7bdat
+new_2603,pubsaf,statjust_li2a,statjust_li2a.sas7bdat,pubsaf2603/statjust_li2a.sas7bdat
+new_2603,pubsaf,statjust_li2b,statjust_li2b.sas7bdat,pubsaf2603/statjust_li2b.sas7bdat
+new_2603,pubsaf,treatment,treatment.sas7bdat,pubsaf2603/treatment.sas7bdat
+new_2603,pubsaf,tx_hl,tx_hl.sas7bdat,pubsaf2603/tx_hl.sas7bdat
+new_2603,pubsaf,tx_hr,tx_hr.sas7bdat,pubsaf2603/tx_hr.sas7bdat
+new_2603,pubsaf,tx_in,tx_in.sas7bdat,pubsaf2603/tx_in.sas7bdat
+new_2603,pubsaf,tx_ki,tx_ki.sas7bdat,pubsaf2603/tx_ki.sas7bdat
+new_2603,pubsaf,tx_kp,tx_kp.sas7bdat,pubsaf2603/tx_kp.sas7bdat
+new_2603,pubsaf,tx_li,tx_li.sas7bdat,pubsaf2603/tx_li.sas7bdat
+new_2603,pubsaf,tx_lu,tx_lu.sas7bdat,pubsaf2603/tx_lu.sas7bdat
+new_2603,pubsaf,tx_pa,tx_pa.sas7bdat,pubsaf2603/tx_pa.sas7bdat
+new_2603,pubsaf,txf_hl,txf_hl.sas7bdat,pubsaf2603/txf_hl.sas7bdat
+new_2603,pubsaf,txf_hr,txf_hr.sas7bdat,pubsaf2603/txf_hr.sas7bdat
+new_2603,pubsaf,txf_in,txf_in.sas7bdat,pubsaf2603/txf_in.sas7bdat
+new_2603,pubsaf,txf_ki,txf_ki.sas7bdat,pubsaf2603/txf_ki.sas7bdat
+new_2603,pubsaf,txf_li,txf_li.sas7bdat,pubsaf2603/txf_li.sas7bdat
+new_2603,pubsaf,txf_lu,txf_lu.sas7bdat,pubsaf2603/txf_lu.sas7bdat
+new_2603,pubsaf,txf_pa,txf_pa.sas7bdat,pubsaf2603/txf_pa.sas7bdat
+old_2506,supplement,ColumnDescriptions,ColumnDescriptions.sas7bdat,Supplement25061/ThoracicRegistration/ColumnDescriptions.sas7bdat
+old_2506,supplement,JustFormHR,JustFormHR.sas7bdat,Supplement25061/ThoracicRegistration/JustFormHR.sas7bdat
+old_2506,supplement,JustFormHRDataLink,JustFormHRDataLink.sas7bdat,Supplement25061/ThoracicRegistration/JustFormHRDataLink.sas7bdat
+old_2506,supplement,JustFormHRStat1,JustFormHRStat1.sas7bdat,Supplement25061/ThoracicRegistration/JustFormHRStat1.sas7bdat
+old_2506,supplement,JustFormHRStat2,JustFormHRStat2.sas7bdat,Supplement25061/ThoracicRegistration/JustFormHRStat2.sas7bdat
+old_2506,supplement,JustFormHRStat3,JustFormHRStat3.sas7bdat,Supplement25061/ThoracicRegistration/JustFormHRStat3.sas7bdat
+old_2506,supplement,JustFormHRStat4,JustFormHRStat4.sas7bdat,Supplement25061/ThoracicRegistration/JustFormHRStat4.sas7bdat
+old_2506,supplement,RiskStratDataHR,RiskStratDataHR.sas7bdat,Supplement25061/ThoracicRegistration/RiskStratDataHR.sas7bdat
+old_2506,supplement,StatusJustEpisode,StatusJustEpisode.sas7bdat,Supplement25061/ThoracicRegistration/StatusJustEpisode.sas7bdat
+old_2506,supplement,TableDescriptions,TableDescriptions.sas7bdat,Supplement25061/ThoracicRegistration/TableDescriptions.sas7bdat
+old_2506,supplement,ThorSupportDevice,ThorSupportDevice.sas7bdat,Supplement25061/ThoracicRegistration/ThorSupportDevice.sas7bdat
+old_2506,supplement,can_country,can_country2506.sas7bdat,SupplementalData2506/can_country2506.sas7bdat
+old_2506,supplement,canzip,canzip2506.sas7bdat,SupplementalData2506/canzip2506.sas7bdat
+old_2506,supplement,deceasedtodonhosp,deceasedtodonhosp2506.sas7bdat,Supplement25061/deceasedtodonhosp2506.sas7bdat
+old_2506,supplement,donorhospital,donorhospital2506.sas7bdat,Supplement25061/donorhospital2506.sas7bdat
+old_2506,supplement,donzip,donzip2506.sas7bdat,SupplementalData2506/donzip2506.sas7bdat
+old_2506,supplement,reczip,reczip2506.sas7bdat,SupplementalData2506/reczip2506.sas7bdat
+new_2603,supplement,ColumnDescriptions,ColumnDescriptions.sas7bdat,Supplement2603/Thoracic Registration/ColumnDescriptions.sas7bdat
+new_2603,supplement,JustFormHR,JustFormHR.sas7bdat,Supplement2603/Thoracic Registration/JustFormHR.sas7bdat
+new_2603,supplement,JustFormHRDataLink,JustFormHRDataLink.sas7bdat,Supplement2603/Thoracic Registration/JustFormHRDataLink.sas7bdat
+new_2603,supplement,JustFormHRStat1,JustFormHRStat1.sas7bdat,Supplement2603/Thoracic Registration/JustFormHRStat1.sas7bdat
+new_2603,supplement,JustFormHRStat2,JustFormHRStat2.sas7bdat,Supplement2603/Thoracic Registration/JustFormHRStat2.sas7bdat
+new_2603,supplement,JustFormHRStat3,JustFormHRStat3.sas7bdat,Supplement2603/Thoracic Registration/JustFormHRStat3.sas7bdat
+new_2603,supplement,JustFormHRStat4,JustFormHRStat4.sas7bdat,Supplement2603/Thoracic Registration/JustFormHRStat4.sas7bdat
+new_2603,supplement,RiskStratDataHR,RiskStratDataHR.sas7bdat,Supplement2603/Thoracic Registration/RiskStratDataHR.sas7bdat
+new_2603,supplement,StatusJustEpisode,StatusJustEpisode.sas7bdat,Supplement2603/Thoracic Registration/StatusJustEpisode.sas7bdat
+new_2603,supplement,TableDescriptions,TableDescriptions.sas7bdat,Supplement2603/Thoracic Registration/TableDescriptions.sas7bdat
+new_2603,supplement,ThorSupportDevice,ThorSupportDevice.sas7bdat,Supplement2603/Thoracic Registration/ThorSupportDevice.sas7bdat
+new_2603,supplement,can_country,can_country2603.sas7bdat,Supplement2603/can_country2603.sas7bdat
+new_2603,supplement,canzip,canzip2603.sas7bdat,Supplement2603/canzip2603.sas7bdat
+new_2603,supplement,deceasedtodonhosp,deceasedtodonhosp2603.sas7bdat,Supplement2603/deceasedtodonhosp2603.sas7bdat
+new_2603,supplement,donor_recovery_alt_room,donor_recovery_alt_room.sas7bdat,Supplement2603/donor_recovery_alt_room.sas7bdat
+new_2603,supplement,donorhospital,donorhospital2603.sas7bdat,Supplement2603/donorhospital2603.sas7bdat
+new_2603,supplement,donzip,donzip2603.sas7bdat,Supplement2603/donzip2603.sas7bdat
+new_2603,supplement,reczip,reczip2603.sas7bdat,Supplement2603/reczip2603.sas7bdat
