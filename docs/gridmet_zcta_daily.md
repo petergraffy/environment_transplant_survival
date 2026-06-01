@@ -47,3 +47,13 @@ Related air-pollution ZCTA release assets are archived at:
 Each source variable also has `_source`, `_fill_distance_m`, and `_fill_cell`
 audit columns. ZCTAs without a direct zonal grid value are filled from the
 nearest valid gridMET raster cell.
+
+## Citation
+
+Please cite the original gridMET data source when using these derived ZCTA
+aggregates:
+
+- Abatzoglou, J. T. (2013). Development of gridded surface meteorological data
+  for ecological applications and modelling. *International Journal of
+  Climatology*, 33(1), 121-131. https://doi.org/10.1002/joc.3413
+- gridMET data portal: https://www.northwestknowledge.net/metdata/data/
