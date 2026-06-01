@@ -23,3 +23,25 @@ All three Parquet files include `zip`, `pollutant`, `year`, `month`,
 
 PM2.5 and ozone currently cover 2005-2023 in the local source files; NO2 covers
 2005-2024.
+
+## Citations
+
+Please cite the original pollutant data sources when using these derived ZCTA
+aggregates:
+
+- PM2.5: Shen, S., Li, C., van Donkelaar, A., Jacobs, N., Wang, C., & Martin,
+  R. V. (2024). Enhancing global estimation of fine particulate matter
+  concentrations by including geophysical a priori information in deep
+  learning. *ACS ES&T Air*. https://doi.org/10.1021/acsestair.3c00054
+- PM2.5 data portal: WashU Atmospheric Composition Analysis Group SatPM2.5,
+  https://sites.wustl.edu/acag/surface-pm2-5/
+- Ozone: Liu, R., Chu, L., Deziel, N. C., & Chen, K. (2026). Four-decade
+  (1980-2023) surface ozone concentrations across the contiguous United States:
+  Fine-resolution estimates and health implications. *Environmental Science &
+  Technology*. https://doi.org/10.1021/acs.est.5c16412
+- Ozone data DOI: Yale Dataverse, https://doi.org/10.60600/YU/M1WT9R
+- NO2: Mohegh, A., & Anenberg, S. (2021). Global surface NO2 concentrations
+  1990-2020. Figshare. https://doi.org/10.6084/m9.figshare.12968114
+- NO2: Nawaz, M. O. (2025). Monthly and annual US TROPOMI surface NO2 estimates
+  (~1 km x 1 km), version 1.01. Zenodo.
+  https://doi.org/10.5281/zenodo.14646034
