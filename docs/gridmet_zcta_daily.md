@@ -23,6 +23,10 @@ Raw NetCDF downloads are cached in:
 
 `data/raw/gridmet/`
 
+Related air-pollution ZCTA release assets are archived at:
+
+`https://github.com/petergraffy/environment_transplant_survival/releases/tag/air-pollution-zcta-v1`
+
 ## Variables
 
 - `tmax_c`: daily maximum temperature, degrees C
