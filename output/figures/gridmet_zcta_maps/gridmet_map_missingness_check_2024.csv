@@ -1,0 +1,15 @@
+variable,map_polygons,missing_polygons
+tmax_c,33300,0
+tmin_c,33300,0
+tmean_c,33300,0
+temp_range_c,33300,0
+rmax_pct,33300,0
+rmin_pct,33300,0
+rhmean_pct,33300,0
+pr,33300,0
+sph,33300,0
+srad,33300,0
+vs,33300,0
+pet,33300,0
+etr,33300,0
+erc,33300,0
