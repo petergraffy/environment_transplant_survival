@@ -1,0 +1,7 @@
+pollutant,value_source,rows,zips,missing_values,max_fill_km
+pm25,zonal_mean,7361208,32286,0,
+pm25,nearest_raster_cell,231192,1014,0,0
+o3,zonal_mean,7362576,32292,0,
+o3,nearest_raster_cell,229824,1008,0,0
+no2,zonal_mean,648564,32688,0,
+no2,nearest_raster_cell,17436,1242,0,61.661664204181

@@ -2,3 +2,4 @@
 data/raw/gridmet/*.nc
 data/processed/gridmet_zcta_daily/gridmet_zcta_daily_20??.csv.gz
 data/release/gridmet_zcta_daily_parquet/*.parquet
+data/release/air_pollution_zcta_parquet/*.parquet
