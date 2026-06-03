@@ -1,0 +1,95 @@
+2026-05-28 20:40:56 | Reading candidate ZIP supplement
+2026-05-28 20:40:58 | Reading pollution exposure tables
+2026-05-28 20:41:18 | Reading community covariates
+2026-05-28 20:41:19 | Reading candidate SAF files
+2026-05-28 20:41:30 | Constructing heart/kidney/liver/lung cohort
+2026-05-28 20:41:58 | Skipping baseline organ models because RUN_BASELINE_MODELS=FALSE
+2026-05-28 20:41:58 | Constructing lagged annual waitlist exposure intervals
+
+Time-varying organ progress 1/4 | HR
+
+Time-varying model grid for HR 1/16 | single_pollutant_pm25_cumulative_linear
+2026-05-28 20:43:32 | Dropping low-information terms: ns(albumin, df = 3)
+2026-05-28 20:43:32 | START HR | single_pollutant_pm25_cumulative_linear | intervals=125985 | adverse=9705
+2026-05-28 20:44:08 | DONE  HR | single_pollutant_pm25_cumulative_linear | elapsed=36 sec
+
+Time-varying model grid for HR 2/16 | single_pollutant_pm25_cumulative_spline
+2026-05-28 20:44:08 | Dropping low-information terms: ns(albumin, df = 3)
+2026-05-28 20:44:08 | START HR | single_pollutant_pm25_cumulative_spline | intervals=125985 | adverse=9705
+2026-05-28 20:44:45 | DONE  HR | single_pollutant_pm25_cumulative_spline | elapsed=37.1 sec
+
+Time-varying model grid for HR 3/16 | single_pollutant_ozone_cumulative_linear
+2026-05-28 20:44:45 | Dropping low-information terms: ns(albumin, df = 3)
+2026-05-28 20:44:46 | START HR | single_pollutant_ozone_cumulative_linear | intervals=125985 | adverse=9705
+2026-05-28 20:45:21 | DONE  HR | single_pollutant_ozone_cumulative_linear | elapsed=35.8 sec
+
+Time-varying model grid for HR 4/16 | single_pollutant_ozone_cumulative_spline
+2026-05-28 20:45:21 | Dropping low-information terms: ns(albumin, df = 3)
+2026-05-28 20:45:21 | START HR | single_pollutant_ozone_cumulative_spline | intervals=125985 | adverse=9705
+2026-05-28 20:45:58 | DONE  HR | single_pollutant_ozone_cumulative_spline | elapsed=36.9 sec
+
+Time-varying model grid for HR 5/16 | single_pollutant_no2_cumulative_linear
+2026-05-28 20:45:58 | Dropping low-information terms: ns(albumin, df = 3)
+2026-05-28 20:45:58 | START HR | single_pollutant_no2_cumulative_linear | intervals=125985 | adverse=9705
+2026-05-28 20:46:33 | DONE  HR | single_pollutant_no2_cumulative_linear | elapsed=35.2 sec
+
+Time-varying model grid for HR 6/16 | single_pollutant_no2_cumulative_spline
+2026-05-28 20:46:33 | Dropping low-information terms: ns(albumin, df = 3)
+2026-05-28 20:46:33 | START HR | single_pollutant_no2_cumulative_spline | intervals=125985 | adverse=9705
+2026-05-28 20:47:09 | DONE  HR | single_pollutant_no2_cumulative_spline | elapsed=36 sec
+
+Time-varying model grid for HR 7/16 | combined_pollutants_cumulative_linear
+2026-05-28 20:47:09 | Dropping low-information terms: ns(albumin, df = 3)
+2026-05-28 20:47:10 | START HR | combined_pollutants_cumulative_linear | intervals=125985 | adverse=9705
+2026-05-28 20:47:47 | DONE  HR | combined_pollutants_cumulative_linear | elapsed=37.2 sec
+
+Time-varying model grid for HR 8/16 | combined_pollutants_cumulative_spline
+2026-05-28 20:47:47 | Dropping low-information terms: ns(albumin, df = 3)
+2026-05-28 20:47:47 | START HR | combined_pollutants_cumulative_spline | intervals=125985 | adverse=9705
+2026-05-28 20:48:26 | DONE  HR | combined_pollutants_cumulative_spline | elapsed=39.5 sec
+
+Time-varying model grid for HR 9/16 | single_pollutant_pm25_lagged_annual_linear
+2026-05-28 20:48:26 | Dropping low-information terms: ns(albumin, df = 3)
+2026-05-28 20:48:26 | START HR | single_pollutant_pm25_lagged_annual_linear | intervals=125985 | adverse=9705
+2026-05-28 20:49:02 | DONE  HR | single_pollutant_pm25_lagged_annual_linear | elapsed=36 sec
+
+Time-varying model grid for HR 10/16 | single_pollutant_pm25_lagged_annual_spline
+2026-05-28 20:49:02 | Dropping low-information terms: ns(albumin, df = 3)
+2026-05-28 20:49:02 | START HR | single_pollutant_pm25_lagged_annual_spline | intervals=125985 | adverse=9705
+2026-05-28 20:49:39 | DONE  HR | single_pollutant_pm25_lagged_annual_spline | elapsed=36.9 sec
+
+Time-varying model grid for HR 11/16 | single_pollutant_ozone_lagged_annual_linear
+2026-05-28 20:49:39 | Dropping low-information terms: ns(albumin, df = 3)
+2026-05-28 20:49:39 | START HR | single_pollutant_ozone_lagged_annual_linear | intervals=125985 | adverse=9705
+2026-05-28 20:50:15 | DONE  HR | single_pollutant_ozone_lagged_annual_linear | elapsed=36.3 sec
+
+Time-varying model grid for HR 12/16 | single_pollutant_ozone_lagged_annual_spline
+2026-05-28 20:50:15 | Dropping low-information terms: ns(albumin, df = 3)
+2026-05-28 20:50:15 | START HR | single_pollutant_ozone_lagged_annual_spline | intervals=125985 | adverse=9705
+2026-05-28 20:50:51 | DONE  HR | single_pollutant_ozone_lagged_annual_spline | elapsed=35.9 sec
+
+Time-varying model grid for HR 13/16 | single_pollutant_no2_lagged_annual_linear
+2026-05-28 20:50:51 | Dropping low-information terms: ns(albumin, df = 3)
+2026-05-28 20:50:51 | START HR | single_pollutant_no2_lagged_annual_linear | intervals=125985 | adverse=9705
+2026-05-28 20:51:27 | DONE  HR | single_pollutant_no2_lagged_annual_linear | elapsed=35.3 sec
+
+Time-varying model grid for HR 14/16 | single_pollutant_no2_lagged_annual_spline
+2026-05-28 20:51:27 | Dropping low-information terms: ns(albumin, df = 3)
+2026-05-28 20:51:27 | START HR | single_pollutant_no2_lagged_annual_spline | intervals=125985 | adverse=9705
+2026-05-28 20:52:03 | DONE  HR | single_pollutant_no2_lagged_annual_spline | elapsed=36.7 sec
+
+Time-varying model grid for HR 15/16 | combined_pollutants_lagged_annual_linear
+2026-05-28 20:52:03 | Dropping low-information terms: ns(albumin, df = 3)
+2026-05-28 20:52:03 | START HR | combined_pollutants_lagged_annual_linear | intervals=125985 | adverse=9705
+2026-05-28 20:52:40 | DONE  HR | combined_pollutants_lagged_annual_linear | elapsed=37 sec
+
+Time-varying model grid for HR 16/16 | combined_pollutants_lagged_annual_spline
+2026-05-28 20:52:40 | Dropping low-information terms: ns(albumin, df = 3)
+2026-05-28 20:52:40 | START HR | combined_pollutants_lagged_annual_spline | intervals=125985 | adverse=9705
+2026-05-28 20:53:19 | DONE  HR | combined_pollutants_lagged_annual_spline | elapsed=38.8 sec
+
+Time-varying organ progress 2/4 | KI
+
+Time-varying model grid for KI 1/16 | single_pollutant_pm25_cumulative_linear
+2026-05-28 20:53:21 | Dropping low-information terms: ns(gfr, df = 3), ns(creatinine, df = 3), alloc_pra, current_pra, peak_pra
+2026-05-28 20:53:22 | START KI | single_pollutant_pm25_cumulative_linear | intervals=2781314 | adverse=116044
