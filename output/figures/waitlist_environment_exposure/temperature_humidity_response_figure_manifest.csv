@@ -1,0 +1,5 @@
+exposure,figure_path
+Mean temperature,output/figures/waitlist_environment_exposure/exposure_response_mean_temperature.png
+Diurnal temperature range,output/figures/waitlist_environment_exposure/exposure_response_diurnal_temperature_range.png
+Mean relative humidity,output/figures/waitlist_environment_exposure/exposure_response_mean_relative_humidity.png
+All temperature/humidity,output/figures/waitlist_environment_exposure/temperature_humidity_exposure_response_all.png
