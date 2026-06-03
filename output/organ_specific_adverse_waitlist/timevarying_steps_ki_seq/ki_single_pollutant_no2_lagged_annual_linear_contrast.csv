@@ -1,0 +1,2 @@
+organ,pollutant,model,exposure_window,exposure_form,contrast,p25,p75,hazard_ratio,conf_low,conf_high,n_intervals,n_registrations,adverse_events,concordance,wald_chisq,df,p_value
+KI,NO2,single_pollutant_no2_lagged_annual_linear,lagged_annual,linear,p75_vs_p25,0.51655694237722,1.28970690929528,0.9638862428114611,0.905129805199651,1.0264568504362328,2781314,673351,116044,0.7443869936663533,17.44429607146294,1,2.9585067208762504e-5

@@ -1,0 +1,2 @@
+organ,model,exposure_window,exposure_form,pollutant,n_intervals,n_registrations,adverse_events,concordance,term,estimate,std.error,robust.se,statistic,p.value,conf.low,conf.high
+LI,single_pollutant_pm25_cumulative_linear,cumulative,linear,PM2.5,421374,216497,41324,0.7940927026320902,pm25_waitlist_cum_5ug,0.9780030537666141,0.020228183227016264,0.021809784632140967,-1.01983980431725,0.30780444198253865,0.9370778846741084,1.0207155550463827

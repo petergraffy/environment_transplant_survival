@@ -1,0 +1,2 @@
+organ,model,exposure_window,exposure_form,pollutant,n_intervals,n_registrations,adverse_events,concordance,term,estimate,std.error,robust.se,statistic,p.value,conf.low,conf.high
+HR,single_pollutant_ozone_cumulative_linear,cumulative,linear,Ozone,125985,72946,9705,0.7567520216246718,o3_waitlist_cum_10ppb,1.035914339356361,0.05316100760485169,0.05096331944479356,0.6923500428194257,0.488717530537642,0.9374406645899581,1.1447322044147874

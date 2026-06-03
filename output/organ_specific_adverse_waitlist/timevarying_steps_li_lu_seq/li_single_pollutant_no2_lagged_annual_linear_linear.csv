@@ -1,0 +1,2 @@
+organ,model,exposure_window,exposure_form,pollutant,n_intervals,n_registrations,adverse_events,concordance,term,estimate,std.error,robust.se,statistic,p.value,conf.low,conf.high
+LI,single_pollutant_no2_lagged_annual_linear,lagged_annual,linear,NO2,421374,216497,41324,0.794095717242904,no2_waitlist_10unit,0.9749762204727273,0.015580401855737658,0.016440550728798565,-1.541444563414933,0.12320862526097934,0.9440604443498006,1.0069044161065055

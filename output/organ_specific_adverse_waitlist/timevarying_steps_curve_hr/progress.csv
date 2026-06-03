@@ -1,0 +1,9 @@
+organ,model,exposure_window,exposure_form,status,error,started_at,finished_at,elapsed_seconds,n_intervals,n_registrations,adverse_events,concordance
+HR,single_pollutant_pm25_cumulative_spline,cumulative,spline,done,NA,2026-05-29 07:24:51.602604,2026-05-29 07:25:28.91354,37.30779218673706,125985,72946,9705,0.7568339332602196
+HR,single_pollutant_ozone_cumulative_spline,cumulative,spline,done,NA,2026-05-29 07:25:28.91749,2026-05-29 07:26:06.501452,37.57921004295349,125985,72946,9705,0.7570296110562506
+HR,single_pollutant_no2_cumulative_spline,cumulative,spline,done,NA,2026-05-29 07:26:06.505777,2026-05-29 07:26:44.026317,37.51582312583923,125985,72946,9705,0.7572116369130235
+HR,combined_pollutants_cumulative_spline,cumulative,spline,done,NA,2026-05-29 07:26:44.030973,2026-05-29 07:27:25.659306,41.62321209907532,125985,72946,9705,0.7571797823880883
+HR,single_pollutant_pm25_lagged_annual_spline,lagged_annual,spline,done,NA,2026-05-29 07:27:25.663403,2026-05-29 07:28:03.455373,37.791171073913574,125985,72946,9705,0.7568157306745423
+HR,single_pollutant_ozone_lagged_annual_spline,lagged_annual,spline,done,NA,2026-05-29 07:28:03.459236,2026-05-29 07:28:41.243749,37.77290320396423,125985,72946,9705,0.7569613513599607
+HR,single_pollutant_no2_lagged_annual_spline,lagged_annual,spline,done,NA,2026-05-29 07:28:41.248007,2026-05-29 07:29:17.942395,36.683037996292114,125985,72946,9705,0.7573299537199258
+HR,combined_pollutants_lagged_annual_spline,lagged_annual,spline,done,NA,2026-05-29 07:29:17.946834,2026-05-29 07:29:59.357388,41.40620684623718,125985,72946,9705,0.7571797823880883

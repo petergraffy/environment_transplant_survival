@@ -1,0 +1,289 @@
+center_code,total_candidates,dominant_organ,n_organs,center_type,optn_region,center_name,city,state,zip,country,lon,lat,location_source
+ALAM,172,Kidney,1,TX1,3,University of South Alabama Medical Center,Mobile,AL,36617,USA,-88.09638685513545,30.7176075,zip_zcta
+ALCH,429,Kidney,3,TX1,3,Children's of Alabama,Birmingham,AL,35233,USA,-86.81095225549339,33.5065115,zip_zcta
+ALUA,14541,Kidney,4,TX1,3,University of Alabama Hospital,Birmingham,AL,35233,USA,-86.81095225549339,33.5065115,zip_zcta
+ALVA,238,Kidney,1,TX1,3,Birmingham VA Medical Center,Birmingham,AL,35233,USA,-86.81095225549339,33.5065115,zip_zcta
+ARBH,763,Kidney,2,TX1,3,Baptist Medical Center,Little Rock,AR,72205,USA,-92.32887163611142,34.7455015,zip_zcta
+ARCH,432,Heart,3,TX1,3,Arkansas Children's Hospital,Little Rock,AR,72202,USA,-92.249355552521,34.734607,zip_zcta
+ARUA,3416,Kidney,3,TX1,3,UAMS Medical Center,Little Rock,AR,72205,USA,-92.32887163611142,34.7455015,zip_zcta
+AZCH,611,Kidney,3,TX1,5,Phoenix Children's Hospital,Phoenix,AZ,85016,USA,-112.03027223951318,33.510854,zip_zcta
+AZGS,5844,Kidney,3,TX1,5,Banner-University Medical Center Phoenix,Phoenix,AZ,85006,USA,-112.04767075512753,33.463873500000005,zip_zcta
+AZMC,12176,Kidney,4,TX1,5,Mayo Clinic Hospital Arizona,Phoenix,AZ,85054,USA,-111.9475777903024,33.671897,zip_zcta
+AZSJ,2086,Lung,4,TX1,5,St. Joseph's Hospital and Medical Center,Phoenix,AZ,85013,USA,-112.08230283277697,33.508385000000004,zip_zcta
+AZUA,3317,Kidney,4,TX1,5,Banner University Medical Center-Tucson,Tucson,AZ,85719,USA,-110.94891798676858,32.2479805,zip_zcta
+CACH,388,Kidney,3,TX1,5,Rady Children's Hospital and Health Center,San Diego,CA,92123,USA,-117.13224871300054,32.818476000000004,zip_zcta
+CACL,1274,Liver,4,TX1,5,Children's Hospital Los Angeles,Los Angeles,CA,90027,USA,-118.28852825734916,34.127871999999996,zip_zcta
+CACS,11984,Kidney,4,TX1,5,Cedars-Sinai Medical Center,Los Angeles,CA,90048,USA,-118.37258354588548,34.0708065,zip_zcta
+CAGH,3393,Kidney,2,TX1,5,Scripps Green Hospital,La Jolla,CA,92037,USA,-117.24196672721442,32.8659337966823,zip_zcta
+CAIM,3076,Kidney,2,TX1,5,University of California Irvine Medical Center,Orange,CA,92868,USA,-117.87729596838511,33.7883745,zip_zcta
+CAKP,399,Kidney,1,TX1,5,Kaiser Permanente-San Francisco Medical Center,San Francisco,CA,94115,USA,-122.43770991609274,37.7862485,zip_zcta
+CALA,1373,Kidney,1,TX1,5,Harbor UCLA Medical Center,Torrance,CA,90509,USA,-118.34,33.83,city_state
+CALB,73,Kidney,1,TX1,5,St Mary Medical Center,Long Beach,CA,90813,USA,-118.18722420457364,33.779176500000005,zip_zcta
+CALL,9368,Kidney,3,TX1,5,Loma Linda University Medical Center,Loma Linda,CA,92354,USA,-117.24604369317981,34.0534375,zip_zcta
+CAMB,343,Kidney,3,TX1,5,UCSF Medical Center at Mission Bay,San Francisco,CA,94158,USA,-122.39253268075281,37.773901499999994,zip_zcta
+CAMH,60,Kidney,1,TX1,5,Santa Rosa Memorial Hospital,Santa Rosa,CA,95402,USA,-122.7,38.45,city_state
+CAPC,1941,Kidney,4,TX1,5,Lucile Salter Packard Children's Hospital at Stanford,Palo Alto,CA,94304,USA,-122.15576197867043,37.3933595,zip_zcta
+CAPM,12121,Kidney,3,TX1,5,California Pacific Medical Center-Van Ness Campus,San Francisco,CA,94109,USA,-122.4220428908034,37.794585,zip_zcta
+CARC,892,Kidney,2,TX1,5,Riverside Community Hospital,Riverside,CA,92501,USA,-117.37242006275879,33.994343,zip_zcta
+CASB,69,Kidney,1,TX1,5,Arrowhead Regional Medical Center,Colton,CA,92324,USA,-117.26728451241942,34.0286985,zip_zcta
+CASD,6880,Kidney,4,TX1,5,University of California San Diego Medical Center,La Jolla,CA,92037,USA,-117.24196672721442,32.8659337966823,zip_zcta
+CASF,24731,Kidney,4,TX1,5,University of California San Francisco Medical Center,San Francisco,CA,94143,USA,-122.45,37.77,city_state
+CASG,805,Kidney,2,TX1,5,Sutter Medical Center Sacramento,Sacramento,CA,95816,USA,-121.46580783530226,38.574493,zip_zcta
+CASH,3128,Kidney,2,TX1,5,Sharp Memorial Hospital,San Diego,CA,92123,USA,-117.13224871300054,32.818476000000004,zip_zcta
+CASJ,1416,Kidney,1,TX1,5,Saint Joseph Hospital,Orange,CA,92868,USA,-117.87729596838511,33.7883745,zip_zcta
+CASM,9403,Kidney,2,TX1,5,University of California Davis Medical Center,Sacramento,CA,95817,USA,-121.45072054308133,38.5519995,zip_zcta
+CASU,11799,Kidney,4,TX1,5,Stanford Health Care,Stanford,CA,94305,USA,-122.1721084159768,37.4172885,zip_zcta
+CASV,1503,Kidney,3,TX1,5,St. Vincent Medical Center,Los Angeles,CA,90057,USA,-118.27523473658775,34.0623815,zip_zcta
+CAUC,21464,Kidney,4,TX1,5,University of California at Los Angeles Medical Center,Los Angeles,CA,90095,USA,-118.44376423203995,34.070403,zip_zcta
+CAUH,10292,Kidney,4,TX1,5,Keck Hospital of USC,Los Angeles,CA,90033,USA,-118.21318717965369,34.049943999999996,zip_zcta
+CAWM,102,Kidney,1,TX1,5,Western Medical Center,Santa Ana,CA,92705,USA,-117.7954989137695,33.763419999999996,zip_zcta
+COCH,954,Kidney,3,TX1,8,Children's Hospital Colorado,Aurora,CO,80045,USA,-104.8379779247519,39.7456035,zip_zcta
+COPM,2888,Kidney,2,TX1,8,AdventHealth Porter,Denver,CO,80210,USA,-104.9644722917617,39.676618500000004,zip_zcta
+COSL,2468,Kidney,2,TX1,8,Presbyterian/St Luke's Medical Center,Denver,CO,80218,USA,-104.9711885426719,39.7312595,zip_zcta
+COUC,9702,Kidney,4,TX1,8,University of Colorado Hospital/Health Science Center,Aurora,CO,80045,USA,-104.8379779247519,39.7456035,zip_zcta
+CTHH,3518,Kidney,3,TX1,1,Hartford Hospital,Hartford,CT,06102,USA,-72.68,41.77,city_state
+CTYN,6120,Kidney,3,TX1,1,Yale New Haven Hospital,New Haven,CT,06510,USA,-72.92381238263536,41.307567,zip_zcta
+DCCH,443,Kidney,2,TX1,2,Children's National Medical Center,Washington,DC,20010,USA,-77.03372789075587,38.9320695,zip_zcta
+DCGU,8363,Kidney,2,TX1,2,Medstar Georgetown Transplant Institute,Washington,DC,20007,USA,-77.06181481617337,38.910232,zip_zcta
+DCGW,1085,Kidney,2,TX1,2,George Washington University Hospital,Washington,DC,20037,USA,-77.05658763791283,38.890993,zip_zcta
+DCHU,80,Kidney,1,TX1,2,Howard University Hospital,Washington,DC,20060,USA,-77.02,38.91,city_state
+DCWH,2056,Kidney,2,TX1,2,Washington Hospital Center,Washington,DC,20010,USA,-77.03372789075587,38.9320695,zip_zcta
+DCWR,1114,Kidney,1,TX1,2,Walter Reed National Military Medical Center at Bethesda,Bethesda,MD,20889,USA,-77.09026314990737,39.002340000000004,zip_zcta
+DEAI,380,Liver,3,TX1,2,Nemours Children's Hospital Delaware,Wilmington,DE,19803,USA,-75.535903797468393,39.799921,zip_zcta
+DECC,1423,Kidney,1,TX1,2,Christiana Care Health Services,Newark,DE,19713,USA,-75.7058305254302,39.6742985,zip_zcta
+FLAC,179,Heart,2,TX1,3,Johns Hopkins All Children's Hospital,St. Petersburg,FL,33701,USA,-82.63445981260259,27.7721625554913,zip_zcta
+FLBC,611,Liver,2,TX1,3,Broward Health Medical Center,Fort Lauderdale,FL,33316,USA,-80.1235592165474,26.0985105,zip_zcta
+FLBF,5,Kidney,1,TX1,3,Bert Fish Medical Center,New Smyrna Beach,FL,32168,USA,-81.0577820249006,28.9703695,zip_zcta
+FLCC,4302,Kidney,3,TX1,3,Cleveland Clinic Florida Weston,Weston,FL,33331,USA,-80.36986245132981,26.059748499999998,zip_zcta
+FLFH,6351,Kidney,4,TX1,3,AdventHealth Orlando,Orlando,FL,32803,USA,-81.34850307069289,28.555873,zip_zcta
+FLFR,820,Kidney,1,TX1,3,Gulf Coast Medical Center,Ft Myers,FL,33912,USA,-81.83376661480017,26.5441565,zip_zcta
+FLHM,593,Kidney,1,TX1,3,Halifax Health,Daytona Beach,FL,32114,USA,-81.04669901581984,29.1911135,zip_zcta
+FLJD,118,Heart,1,TX1,3,Memorial Regional Hospital/Joe DiMaggio Children's Hospital,Hollywood,FL,33021,USA,-80.18773141581457,26.0206535,zip_zcta
+FLJM,14072,Kidney,4,TX1,3,Jackson Memorial Hospital University of Miami School of Medicine,Miami,FL,33136,USA,-80.20450081119941,25.7867225,zip_zcta
+FLJT,425,Kidney,1,TX1,3,Shands Jacksonville,Jacksonville,FL,32209,USA,-81.69283874120293,30.3611645,zip_zcta
+FLLM,1317,Kidney,3,TX1,3,Largo Medical Center,Largo,FL,33770,USA,-82.80949735107748,27.915886,zip_zcta
+FLMR,1319,Kidney,2,TX1,3,Memorial Regional Hospital,Hollywood,FL,33021,USA,-80.18773141581457,26.0206535,zip_zcta
+FLSH,622,Kidney,1,TX1,3,Ascension Sacred Heart Pensacola,Pensacola,FL,32504,USA,-87.19157803932131,30.4804405,zip_zcta
+FLSL,11331,Kidney,4,TX1,3,Mayo Clinic Hospital Florida,Jacksonville,FL,32224,USA,-81.47767791061372,30.2654735,zip_zcta
+FLTG,12536,Kidney,4,TX1,3,Tampa General Hospital,Tampa,FL,33606,USA,-82.47838236331356,27.93164018847485,zip_zcta
+FLUF,7924,Kidney,4,TX1,3,UF Health Shands Hospital,Gainesville,FL,32610,USA,-82.34335586005983,29.640699,zip_zcta
+GAEH,1333,Liver,3,TX1,3,Children’s Healthcare of Atlanta - Arthur M. Blank Hospital,Atlanta,GA,30329,USA,-84.32294021372988,33.827071000000004,zip_zcta
+GAEM,15090,Kidney,4,TX1,3,Emory University Hospital,Atlanta,GA,30322,USA,-84.32435191426282,33.796176,zip_zcta
+GAMC,4773,Kidney,2,TX1,3,"Wellstar MCG Health, affiliated with Medical College of Georgia",Augusta,GA,30912,USA,-81.98876497041985,33.470898500000004,zip_zcta
+GAPH,9997,Kidney,3,TX1,3,Piedmont Hospital,Atlanta,GA,30309,USA,-84.39011283349834,33.797893,zip_zcta
+GASJ,109,Heart,1,TX1,3,Saint Joseph's Hospital of Atlanta,Atlanta,GA,30342,USA,-84.37215344668725,33.881624,zip_zcta
+IAIM,1412,Kidney,1,TX1,8,Iowa Methodist Medical Center,Des Moines,IA,50309,USA,-93.62086621637116,41.5836865,zip_zcta
+IAIV,4104,Kidney,4,TX1,8,University of Iowa Hospitals and Clinics Transplant Programs,Iowa City,IA,52242,USA,-91.54473753744934,41.6620355,zip_zcta
+IAMH,555,Kidney,1,TX1,8,MercyOne Des Moines Transplant Center,Des Moines,IA,50314,USA,-93.62768444403602,41.60393,zip_zcta
+IAVA,948,Kidney,1,TX1,8,The Iowa City VA Health Care System,Iowa City,IA,52246,USA,-91.60399910262069,41.645953000000006,zip_zcta
+ILCH,1475,Kidney,3,TX1,7,Advocate Christ Medical Center,Oak Lawn,IL,60453,USA,-87.74415357782576,41.709002999999996,zip_zcta
+ILCM,1234,Kidney,3,TX1,7,Ann & Robert H. Lurie Children's Hospital of Chicago,Chicago,IL,60611,USA,-87.62184421291425,41.8953747518722,zip_zcta
+ILLU,6642,Kidney,4,TX1,7,Loyola University Medical Center,Maywood,IL,60153,USA,-87.84378726274807,41.8810675,zip_zcta
+ILMM,1060,Kidney,1,TX1,7,Springfield Memorial Hospital,Springfield,IL,62781,USA,-89.64,39.78,city_state
+ILNM,11723,Kidney,4,TX1,7,Northwestern Memorial Hospital,Chicago,IL,60611,USA,-87.62184421291425,41.8953747518722,zip_zcta
+ILPL,4741,Kidney,3,TX1,7,Rush University Medical Center,Chicago,IL,60612,USA,-87.68648205914079,41.880885,zip_zcta
+ILSF,1895,Kidney,2,TX1,7,OSF Saint Francis Medical Center,Peoria,IL,61637,USA,-89.61,40.74,city_state
+ILUC,5497,Kidney,4,TX1,7,University of Chicago Medical Center,Chicago,IL,60637,USA,-87.60027391069528,41.782363000000004,zip_zcta
+ILUI,5656,Kidney,2,TX1,7,University of Illinois Medical Center,Chicago,IL,60612,USA,-87.68648205914079,41.880885,zip_zcta
+ILVA,587,Kidney,1,TX1,7,Edward Hines Jr. Veterans Administration Medical Center,Hines,IL,60141,USA,-87.8381976110755,41.860814500000004,zip_zcta
+INIM,11405,Kidney,4,TX1,10,Indiana University Health,Indianapolis,IN,46202,USA,-86.17524662399525,39.780335,zip_zcta
+INLH,875,Kidney,2,TX1,10,Lutheran Hospital of Fort Wayne,Fort Wayne,IN,46804,USA,-85.23703860380802,41.0539375,zip_zcta
+INSV,2607,Kidney,2,TX1,10,Ascension St. Vincent Hospital,Indianapolis,IN,46260,USA,-86.17977040374686,39.8939315,zip_zcta
+KSFW,324,Kidney,2,TX1,8,"Via Christi Hospitals Wichita, Inc.",Wichita,KS,67214,USA,-97.31870194208574,37.707759,zip_zcta
+KSUK,5884,Kidney,3,TX1,8,University of Kansas Hospital,Kansas City,KS,66160,USA,-94.60956748537362,39.05636022641145,zip_zcta
+KYJH,3970,Kidney,4,TX1,11,Jewish Hospital,Louisville,KY,40202,USA,-85.74976488955842,38.252613499999995,zip_zcta
+KYKC,139,Heart,2,TX1,11,Norton Children's Hospital,Louisville,KY,40202,USA,-85.74976488955842,38.252613499999995,zip_zcta
+KYUK,6156,Kidney,4,TX1,11,University of Kentucky Medical Center,Lexington,KY,40536,USA,-84.50785551881332,38.029042,zip_zcta
+LACH,201,Kidney,2,TX1,3,Children's Hospital,New Orleans,LA,70118,USA,-90.12666882601852,29.944963,zip_zcta
+LAMC,162,Kidney,1,TX1,3,University Medical Center,Lafayette,LA,70506,USA,-92.08516401620872,30.191679,zip_zcta
+LAOF,10401,Kidney,4,TX1,3,Ochsner Foundation Hospital,New Orleans,LA,70121,USA,-90.15848044367557,29.957620499999997,zip_zcta
+LASB,1,Liver,1,TX1,3,Lindy Boggs Medical Center,New Orleans,LA,70119,USA,-90.09165069440479,29.9730635,zip_zcta
+LATU,4385,Kidney,3,TX1,3,Tulane Medical Center,Metairie,LA,70006,USA,-90.19147653482338,30.014565,zip_zcta
+LAWK,2140,Kidney,3,TX1,3,Willis-Knighton Medical Center,Shreveport,LA,71103,USA,-93.76822416577684,32.4918585,zip_zcta
+MABI,3462,Kidney,3,TX1,1,Beth Israel Deaconess Medical Center,Boston,MA,02215,USA,-71.09853393356835,42.3450585,zip_zcta
+MABS,1008,Kidney,1,TX1,1,Baystate Medical Center,Springfield,MA,01199,USA,-72.54,42.12,city_state
+MABU,1359,Kidney,1,TX1,1,Boston Medical Center,Boston,MA,02118,USA,-71.0711747446289,42.3367115,zip_zcta
+MACH,1217,Kidney,4,TX1,1,Boston Children's Hospital,Boston,MA,02115,USA,-71.08777902719528,42.341844,zip_zcta
+MAMG,8603,Kidney,4,TX1,1,Massachusetts General Hospital,Boston,MA,02114,USA,-71.06560941295137,42.362652,zip_zcta
+MANM,2279,Kidney,3,TX1,1,Tufts Medical Center,Boston,MA,02111,USA,-71.05988265669612,42.350496500000006,zip_zcta
+MAPB,3642,Kidney,3,TX1,1,Brigham and Women's Hospital,Boston,MA,02115,USA,-71.08777902719528,42.341844,zip_zcta
+MAUM,3781,Liver,2,TX1,1,UMass Memorial Medical Center,Worcester,MA,01655,USA,-71.81,42.27,city_state
+MDJH,11515,Kidney,4,TX1,2,Johns Hopkins Hospital,Baltimore,MD,21287,USA,-76.58810741850829,39.299172999999996,zip_zcta
+MDNI,45,Kidney,1,TX1,2,Warren Grant Magnuson Clinical Center/National Institutes of Health,Bethesda,MD,20892,USA,-77.10374323602271,39.000608,zip_zcta
+MDUM,11201,Kidney,4,TX1,2,University of Maryland Medical System,Baltimore,MD,21201,USA,-76.62384513023139,39.295390499999996,zip_zcta
+MEMC,1276,Kidney,1,TX1,1,Maine Medical Center,Portland,ME,04102,USA,-70.30849724941392,43.662769,zip_zcta
+MIBH,2997,Kidney,2,TX1,10,Corewell Health William Beaumont University Hospital,Royal Oak,MI,48073,USA,-83.16489525902179,42.5227595,zip_zcta
+MICH,306,Kidney,3,TX1,10,Children's Hospital of Michigan,Detroit,MI,48201,USA,-83.05953240479478,42.347187500000004,zip_zcta
+MIDV,89,Kidney,1,TX1,10,Corewell Health Helen DeVos Children's Hospital,Grand Rapids,MI,49503,USA,-85.66837024923885,42.95302,zip_zcta
+MIHF,7372,Kidney,4,TX1,10,Henry Ford Hospital,Detroit,MI,48202,USA,-83.07831957950376,42.375068999999996,zip_zcta
+MIHH,957,Kidney,1,TX1,10,Harper University Hospital Detroit Medical Center,Detroit,MI,48201,USA,-83.05953240479478,42.347187500000004,zip_zcta
+MIHM,83,Kidney,1,TX1,10,Hurley Medical Center,Flint,MI,48503,USA,-83.65756978427669,43.0119655,zip_zcta
+MISH,766,Lung,2,TX1,10,Corewell Health Grand Rapids Hospitals,Grand Rapids,MI,49503,USA,-85.66837024923885,42.95302,zip_zcta
+MISJ,1528,Kidney,1,TX1,10,Ascension St. John Hospital,Detroit,MI,48236,USA,-82.89856107135151,42.4224495,zip_zcta
+MISM,2578,Kidney,1,TX1,10,Mercy Health Saint Mary's,Grand Rapids,MI,49503,USA,-85.66837024923885,42.95302,zip_zcta
+MIUM,11031,Kidney,4,TX1,10,University of Michigan Medical Center,Ann Arbor,MI,48109,USA,-83.74537796271892,42.266654,zip_zcta
+MNAC,87,Kidney,3,TX1,7,Univ of MN Amplatz Children's Hosp,Minneapolis,MN,55454,USA,-93.24636642111932,44.9726845,zip_zcta
+MNAN,1304,Kidney,2,TX1,7,Abbott Northwestern Hospital,Minneapolis,MN,55407,USA,-93.25269969448757,44.9350385,zip_zcta
+MNCM,45,Heart,1,TX1,7,Children's Minnesota,Minneapolis,MN,55404,USA,-93.25630786483987,44.963558000000006,zip_zcta
+MNHC,1701,Kidney,1,TX1,7,Hennepin County Medical Center,Minneapolis,MN,55415,USA,-93.25816463824373,44.9742535,zip_zcta
+MNMC,10709,Kidney,4,TX1,7,Mayo Clinic Hospital Minnesota,Rochester,MN,55902,USA,-92.51361502100556,43.96266,zip_zcta
+MNUM,8660,Kidney,4,TX1,7,"University of Minnesota Medical Center, Fairview",Minneapolis,MN,55454,USA,-93.24636642111932,44.9726845,zip_zcta
+MOBH,11139,Kidney,4,TX1,8,Barnes-Jewish Hospital,St. Louis,MO,63110,USA,-90.26222164152821,38.6248335,zip_zcta
+MOCG,213,Kidney,3,TX1,8,Cardinal Glennon Children's Hospital,St. Louis,MO,63104,USA,-90.21223682791668,38.607637499999996,zip_zcta
+MOCH,1221,Heart,4,TX1,8,St. Louis Children's Hospital at Washington University Medical Center,St. Louis,MO,63110,USA,-90.26222164152821,38.6248335,zip_zcta
+MOCM,560,Kidney,3,TX1,8,Children's Mercy Hospital,Kansas City,MO,64108,USA,-94.58434238608109,39.08397150488625,zip_zcta
+MOLH,2988,Kidney,3,TX1,8,St Luke's Hospital of Kansas City,Kansas City,MO,64111,USA,-94.59414246581522,39.055869691576746,zip_zcta
+MORH,1780,Kidney,1,TX1,8,Research Medical Center,Kansas City,MO,64132,USA,-94.54361981752432,38.9842565,zip_zcta
+MOSL,2888,Kidney,3,TX1,8,SSM Health Saint Louis University Hospital,St. Louis,MO,63104,USA,-90.21223682791668,38.607637499999996,zip_zcta
+MOUM,738,Kidney,1,TX1,8,University of Missouri Hospital and Clinics,Columbia,MO,65201,USA,-92.23997759133144,38.885624,zip_zcta
+MSUM,4651,Kidney,3,TX1,3,University of Mississippi Medical Center,Jackson,MS,39216,USA,-90.16310118361032,32.336241,zip_zcta
+NCBG,5454,Kidney,2,TX1,11,Wake Forest Baptist Medical Center,Winston-Salem,NC,27157,USA,-80.26,36.1,city_state
+NCCM,7176,Kidney,3,TX1,11,Carolinas Medical Center,Charlotte,NC,28203,USA,-80.85848920250663,35.208923,zip_zcta
+NCDU,10730,Kidney,4,TX1,11,Duke University Hospital,Durham,NC,27710,USA,-78.91,35.98,city_state
+NCEC,2692,Kidney,1,TX1,11,ECU Health Medical Center,Greenville,NC,27834,USA,-77.43305481028347,35.6705985,zip_zcta
+NCMH,6186,Kidney,4,TX1,11,University of North Carolina Hospitals,Chapel Hill,NC,27514,USA,-79.0389833289087,35.96804,zip_zcta
+NDMC,536,Kidney,1,TX1,7,Sanford Bismarck Medical Center,Bismarck,ND,58501,USA,-100.71525562645063,46.81607150000001,zip_zcta
+NDSL,582,Kidney,1,TX1,7,Sanford Medical Center Fargo,Fargo,ND,58122,USA,-96.82,46.88,city_state
+NEBM,6,Heart,1,TX1,8,BryanLGH Medical Center East,Lincoln,NE,68506,USA,-96.63942660256518,40.782135499999995,zip_zcta
+NECH,51,Heart,1,TX1,8,Children’s Nebraska,Omaha,NE,68114,USA,-96.05007670749426,41.261468,zip_zcta
+NEUN,6888,Kidney,4,TX1,8,The Nebraska Medical Center,Omaha,NE,68105,USA,-95.96412560633843,41.240508000000005,zip_zcta
+NJBI,2323,Kidney,3,TX1,2,Newark Beth Israel Medical Center,Newark,NJ,07112,USA,-74.20899081928314,40.711193,zip_zcta
+NJHK,2992,Kidney,1,TX1,2,Hackensack University Medical Center,Hackensack,NJ,07601,USA,-74.04942997486546,40.885666,zip_zcta
+NJLL,2496,Kidney,2,TX1,2,Virtua Our Lady of Lourdes Hospital,Camden,NJ,08103,USA,-75.11136047926789,39.934133,zip_zcta
+NJRW,3334,Kidney,2,TX1,2,Robert Wood Johnson University Hospital,New Brunswick,NJ,08901,USA,-74.44490972645981,40.4839595,zip_zcta
+NJSB,9619,Kidney,1,TX1,2,Saint Barnabas Medical Center,Livingston,NJ,07039,USA,-74.32896672197094,40.786395,zip_zcta
+NJUH,1404,Liver,2,TX1,2,University Hospital,Newark,NJ,07103,USA,-74.19665425575899,40.738675,zip_zcta
+NMAQ,1281,Kidney,1,TX1,5,"University Hospital, University of New Mexico Health Sciences Center",Albuquerque,NM,87106,USA,-106.60988176128174,35.0267845,zip_zcta
+NMPH,1397,Kidney,1,TX1,5,Presbyterian Hospital,Albuquerque,NM,87106,USA,-106.60988176128174,35.0267845,zip_zcta
+NVHH,130,Kidney,1,TX1,5,Sunrise Hospital and Medical Center,Las Vegas,NV,89109,USA,-115.16996365092696,36.1182175,zip_zcta
+NVUM,2219,Kidney,1,TX1,5,University Medical Center of Southern Nevada,Las Vegas,NV,89102,USA,-115.19251305308946,36.142298999999994,zip_zcta
+NYAM,1701,Kidney,2,TX1,9,Albany Medical Center Hospital,Albany,NY,12208,USA,-73.80455464016589,42.653400000000005,zip_zcta
+NYBU,546,Kidney,1,TX1,9,Buffalo General Hospital/ Children's Hospital,Buffalo,NY,14203,USA,-78.87550551226634,42.8662645,zip_zcta
+NYCC,91,Kidney,1,TX1,9,Long Island Jewish Medical Center-Cohen Children's Medical Center,Queens,NY,11040,USA,-73.68057155031696,40.747297,zip_zcta
+NYCP,12878,Kidney,4,TX1,9,NY Presbyterian Hospital/Columbia Univ. Medical Center,New York,NY,10032,USA,-73.94180329161004,40.8402175,zip_zcta
+NYDS,1984,Kidney,1,TX1,9,"State University of New York, Downstate Medical Center",Brooklyn,NY,11203,USA,-73.93365335945718,40.649279,zip_zcta
+NYEC,2494,Kidney,1,TX1,9,Erie County Medical Center,Buffalo,NY,14215,USA,-78.80702169473241,42.937912499999996,zip_zcta
+NYFL,4963,Kidney,3,TX1,9,"Strong Memorial Hospital, University of Rochester Medical Center",Rochester,NY,14642,USA,-77.62538786818727,43.1223095,zip_zcta
+NYMA,7216,Kidney,4,TX1,9,Montefiore Medical Center,Bronx,NY,10467,USA,-73.87185587161667,40.8762625,zip_zcta
+NYMS,14430,Kidney,4,TX1,9,Mount Sinai Medical Center,New York,NY,10029,USA,-73.9489622139615,40.792026,zip_zcta
+NYNS,3060,Kidney,4,TX1,9,North Shore University Hospital/Northwell Health,Manhasset,NY,11030,USA,-73.68900955022906,40.7940845,zip_zcta
+NYNY,7963,Kidney,3,TX1,9,New York-Presbyterian Hospital/Weill Cornell Medical Center,New York,NY,10065,USA,-73.96191406280806,40.7643855,zip_zcta
+NYSB,2029,Kidney,1,TX1,9,University Hospital of State University of New York at Stony Brook,Stony Brook,NY,11794,USA,-73.12487208378705,40.9192575,zip_zcta
+NYSL,360,Kidney,1,TX1,9,St. Luke's Roosevelt Hospital Center,New York,NY,10025,USA,-73.9677942276555,40.7988205,zip_zcta
+NYUC,6317,Kidney,4,TX1,9,NYU Langone Health,New York,NY,10016,USA,-73.97827673489513,40.7453875,zip_zcta
+NYUM,2043,Kidney,1,TX1,9,State University of New York Upstate Medical University,Syracuse,NY,13210,USA,-76.12666527916284,43.030198999999996,zip_zcta
+NYVA,291,Kidney,1,TX1,9,James J. Peters VA Medical Center,Bronx,NY,10468,USA,-73.89746851399532,40.869777,zip_zcta
+NYWC,4370,Kidney,3,TX1,9,Westchester Medical Center,Valhalla,NY,10595,USA,-73.77416837508608,41.0915515,zip_zcta
+OHAC,207,Kidney,1,TX1,10,Akron City Hospital,Akron,OH,44309,USA,-81.52,41.08,city_state
+OHCC,13390,Kidney,4,TX1,10,The Cleveland Clinic Foundation,Cleveland,OH,44195,USA,-81.68,41.48,city_state
+OHCH,381,Heart,4,TX1,10,Nationwide Children's Hospital,Columbus,OH,43205,USA,-82.96301850776143,39.959103,zip_zcta
+OHCM,1207,Liver,4,TX1,11,Children's Hospital Medical Center,Cincinnati,OH,45229,USA,-84.48390204545848,39.155015500000005,zip_zcta
+OHCO,2473,Kidney,1,TX1,10,University of Toledo Medical Center,Toledo,OH,43614,USA,-83.63597280943443,41.602000000000004,zip_zcta
+OHMV,424,Kidney,1,TX1,10,Miami Valley Hospital,Dayton,OH,45409,USA,-84.19566087540628,39.7242425,zip_zcta
+OHOU,9033,Kidney,4,TX1,10,Ohio State University Medical Center,Columbus,OH,43210,USA,-83.01981288529794,40.004479,zip_zcta
+OHSE,2,Kidney,1,TX1,10,St. Elizabeth Health Center,Youngstown,OH,44501,USA,-80.65,41.1,city_state
+OHTC,1419,Kidney,2,TX1,11,The Christ Hospital,Cincinnati,OH,45219,USA,-84.51741054330066,39.125859500000004,zip_zcta
+OHUC,5220,Kidney,3,TX1,11,University of Cincinnati  Medical Center,Cincinnati,OH,45219,USA,-84.51741054330066,39.125859500000004,zip_zcta
+OHUH,4383,Kidney,4,TX1,10,University Hospitals of Cleveland,Cleveland,OH,44106,USA,-81.6044260738998,41.5066325,zip_zcta
+OKBC,5318,Kidney,4,TX1,4,Integris Baptist Medical Center,Oklahoma City,OK,73112,USA,-97.57438398604964,35.519427,zip_zcta
+OKMD,1451,Kidney,2,TX1,4,OU Medical Center,Oklahoma City,OK,73104,USA,-97.50373150130767,35.474509,zip_zcta
+OKSA,111,Kidney,1,TX1,4,St. Anthony Hospital,Oklahoma City,OK,73101,USA,-97.51,35.47,city_state
+OKSF,577,Kidney,2,TX1,4,Saint Francis Hospital,Tulsa,OK,74136,USA,-95.94248381071998,36.064264,zip_zcta
+OKSJ,1118,Kidney,1,TX1,4,St John Medical Center,Tulsa,OK,74104,USA,-95.95508230407061,36.1468665,zip_zcta
+ORGS,1986,Kidney,1,TX1,6,Legacy Good Samaritan Hospital and Medical Center,Portland,OR,97210,USA,-122.7265183843495,45.5512285,zip_zcta
+ORPM,17,Heart,1,TX1,6,Providence Portland Medical Center,Portland,OR,97213,USA,-122.59944309860866,45.5377745,zip_zcta
+ORSV,88,Heart,1,TX1,6,Providence St. Vincent Medical Center,Portland,OR,97225,USA,-122.76543651962342,45.4980415,zip_zcta
+ORUO,4426,Kidney,3,TX1,6,Oregon Health and Science University,Portland,OR,97239,USA,-122.69080215012937,45.488126,zip_zcta
+ORVA,2123,Kidney,2,TX1,6,VA Portland Health Care System,Portland,OR,97239,USA,-122.69080215012937,45.488126,zip_zcta
+PAAE,6034,Kidney,2,TX1,2,Albert Einstein Medical Center,Philadelphia,PA,19141,USA,-75.14518419094885,40.037889500000006,zip_zcta
+PAAG,3770,Kidney,4,TX1,2,Allegheny General Hospital,Pittsburgh,PA,15212,USA,-79.98858771901706,40.4702775,zip_zcta
+PACC,403,Kidney,1,TX1,2,Crozer-Chester Medical Center,Upland,PA,19013,USA,-75.37674079718047,39.8447058977125,zip_zcta
+PACH,1434,Liver,4,TX1,2,UPMC Children's Hospital of Pittsburgh,Pittsburgh,PA,15224,USA,-79.9439038920624,40.466536000000005,zip_zcta
+PACP,1273,Kidney,4,TX1,2,Children's Hospital of Philadelphia,Philadelphia,PA,19104,USA,-75.19674355565158,39.959216,zip_zcta
+PAGM,2428,Kidney,2,TX1,2,Geisinger Medical Center,Danville,PA,17822,USA,-76.60161826528528,40.9696725,zip_zcta
+PAHE,2661,Kidney,3,TX1,2,Penn State Milton S Hershey Medical Center,Hershey,PA,17033,USA,-76.64566965859322,40.267279,zip_zcta
+PAHH,2100,Kidney,1,TX1,2,Pinnacle Health System at Harrisburg Hospital,Harrisburg,PA,17101,USA,-76.89047548246167,40.2592465,zip_zcta
+PAHM,2227,Kidney,3,TX1,2,Hahnemann University Hospital,Philadelphia,PA,19102,USA,-75.16601976737388,39.952819500000004,zip_zcta
+PALH,859,Kidney,2,TX1,2,The Lankenau Hospital,Wynnewood,PA,19096,USA,-75.27517135999123,40.0000835,zip_zcta
+PALV,2504,Kidney,1,TX1,2,Lehigh Valley Hospital,Allentown,PA,18103,USA,-75.48421981819945,40.57306,zip_zcta
+PAPH,296,Kidney,1,TX1,2,UPMC Hamot,Erie,PA,16550,USA,-80.0849486732896,42.133774,zip_zcta
+PAPT,11727,Kidney,4,TX1,2,University of Pittsburgh Medical Center,Pittsburgh,PA,15213,USA,-79.96501608916371,40.4441505,zip_zcta
+PARH,171,Kidney,2,TX1,2,Reading Hospital,Reading,PA,19611,USA,-75.94562682035709,40.326248500000005,zip_zcta
+PASC,47,Kidney,2,TX1,2,St. Christopher's Hospital for Children,Philadelphia,PA,19134,USA,-75.10547439099217,39.988038,zip_zcta
+PATJ,5889,Kidney,3,TX1,2,Thomas Jefferson University Hospital,Philadelphia,PA,19107,USA,-75.15902539313919,39.9519545,zip_zcta
+PATU,4543,Kidney,4,TX1,2,Temple University Hospital,Philadelphia,PA,19140,USA,-75.14564752347584,40.012474,zip_zcta
+PAUP,14353,Kidney,4,TX1,2,Hospital of the University of Pennsylvania,Philadelphia,PA,19104,USA,-75.19674355565158,39.959216,zip_zcta
+PAVA,4224,Kidney,2,TX1,2,VA Pittsburgh Healthcare System,Pittsburgh,PA,15240,USA,-79.98,40.44,city_state
+PAWV,420,Kidney,1,TX1,2,Geisinger Wyoming Valley Medical Ctr,Wilkes-Barre,PA,18711,USA,-75.88,41.25,city_state
+RIRH,1613,Kidney,1,TX1,1,Rhode Island Hospital,Providence,RI,02903,USA,-71.40663168549263,41.817834500000004,zip_zcta
+SCCH,101,Heart,2,TX1,11,MUSC Children's Hospital,Charleston,SC,29425,USA,-79.94851105912966,32.78509699999999,zip_zcta
+SCLA,462,Kidney,1,TX1,11,MUSC Lancaster,Lancaster,SC,29720,USA,-80.6967053383978,34.761838,zip_zcta
+SCMU,10309,Kidney,4,TX1,11,Medical University of South Carolina,Charleston,SC,29425,USA,-79.94851105912966,32.78509699999999,zip_zcta
+SCPG,793,Kidney,1,TX1,11,Prisma Health Greenville Memorial Hospital,Greenville,SC,29605,USA,-82.38281862445581,34.7783525,zip_zcta
+SDMK,1636,Kidney,2,TX1,7,Avera McKennan Hospital,Sioux Falls,SD,57105,USA,-96.73593084578923,43.5199115,zip_zcta
+SDSV,632,Kidney,1,TX1,7,Sanford Health/USD Medical Center,Sioux Falls,SD,57117,USA,-96.7549750018755,43.531234999999995,zip_zcta
+TNBM,434,Heart,2,TX1,11,Baptist Memorial Hospital,Memphis,TN,38120,USA,-89.84292544107436,35.1267905,zip_zcta
+TNEM,1198,Kidney,1,TX1,11,Erlanger Medical Center,Chattanooga,TN,37403,USA,-85.29242038228361,35.046769999999995,zip_zcta
+TNJC,233,Kidney,1,TX1,11,Johnson City Medical Center Hospital,Johnson City,TN,37604,USA,-82.39324849333181,36.309807500000005,zip_zcta
+TNLB,277,Kidney,3,TX1,11,Le Bonheur Children's Medical Center,Memphis,TN,38103,USA,-90.05896397493495,35.155825500000006,zip_zcta
+TNMH,7382,Kidney,2,TX1,11,Methodist University Hospital,Memphis,TN,38104,USA,-90.00707174239378,35.136016,zip_zcta
+TNPV,903,Kidney,1,TX1,11,Centennial Medical Center,Nashville,TN,37203,USA,-86.79402309213816,36.1529135,zip_zcta
+TNST,2200,Kidney,2,TX1,11,Saint Thomas Hospital,Nashville,TN,37205,USA,-86.87974789467407,36.107419500000006,zip_zcta
+TNUK,1716,Kidney,1,TX1,11,University of Tennessee Medical Center at Knoxville,Knoxville,TN,37920,USA,-83.87061709320778,35.904062499999995,zip_zcta
+TNVA,713,Kidney,1,TX1,11,Tennessee Valley Healthcare System,Nashville,TN,37212,USA,-86.80409079997261,36.133881,zip_zcta
+TNVU,13315,Kidney,4,TX1,11,Vanderbilt University Medical Center,Nashville,TN,37232,USA,-86.80253848840525,36.1417685,zip_zcta
+TXAS,9543,Kidney,2,TX1,4,Baylor  Scott and White All Saints Medical Center-Fort Worth,Fort Worth,TX,76104,USA,-97.30856285021187,32.7221565,zip_zcta
+TXBC,7311,Kidney,3,TX1,4,"University Hospital, University of Texas Health Science Center",San Antonio,TX,78229,USA,-98.56968184987991,29.5070305,zip_zcta
+TXCF,178,Kidney,1,TX1,4,Cook Children's Medical Center,Fort Worth,TX,76104,USA,-97.30856285021187,32.7221565,zip_zcta
+TXCM,1244,Heart,3,TX1,4,Children's Medical Center of Dallas,Dallas,TX,75235,USA,-96.85141742913063,32.8345535,zip_zcta
+TXCT,333,Heart,1,TX1,4,Seton Medical Center Austin,Austin,TX,78705,USA,-97.73739969611879,30.296722,zip_zcta
+TXDC,177,Kidney,1,TX1,4,Driscoll Children's Hospital,Corpus Christi,TX,78411,USA,-97.38451863747423,27.733046,zip_zcta
+TXDL,59,Heart,2,TX1,4,Dell Children's Medical Center,Austin,TX,78723,USA,-97.68549699595633,30.303888999999998,zip_zcta
+TXDM,1609,Kidney,1,TX1,4,North Austin Medical Center,Austin,TX,78758,USA,-97.71325451491614,30.3836895,zip_zcta
+TXDR,657,Kidney,1,TX1,4,Doctor's Hospital at Renaissance,Edinburg,TX,78539,USA,-98.17902619072349,26.281087499999998,zip_zcta
+TXDS,246,Kidney,1,TX1,4,Dell Seton Medical Center at The University of Texas at Austin,Austin,TX,78701,USA,-97.74322197939881,30.267149,zip_zcta
+TXFW,1100,Kidney,1,TX1,4,Texas Health Harris Methodist Fort Worth Hospital,Fort Worth,TX,76104,USA,-97.30856285021187,32.7221565,zip_zcta
+TXHD,2964,Kidney,3,TX1,4,Medical City Dallas Hospital,Dallas,TX,75230,USA,-96.79077721861698,32.9029515,zip_zcta
+TXHH,4169,Kidney,4,TX1,4,"Memorial Hermann Hospital, University of Texas at Houston",Houston,TX,77030,USA,-95.40466829175892,29.7092595,zip_zcta
+TXHI,9238,Kidney,4,TX1,4,CHI St. Luke's Health Baylor College of Medicine Medical Center,Houston,TX,77030,USA,-95.40466829175892,29.7092595,zip_zcta
+TXHS,14714,Kidney,4,TX1,4,Methodist Specialty and Transplant Hospital,San Antonio,TX,78229,USA,-98.56968184987991,29.5070305,zip_zcta
+TXJS,3285,Kidney,4,TX1,4,University of Texas Medical Branch at Galveston,Galveston,TX,77555,USA,-94.77628825617782,29.310850000000002,zip_zcta
+TXLG,454,Kidney,1,TX1,4,University Medical Center,Lubbock,TX,79408,USA,-101.88,33.58,city_state
+TXLM,171,Kidney,1,TX1,4,Covenant Medical Center,Lubbock,TX,79410,USA,-101.8909979101395,33.570188,zip_zcta
+TXLP,996,Kidney,1,TX1,4,Las Palmas Medical Center,El Paso,TX,79902,USA,-106.49875140522683,31.784119,zip_zcta
+TXMA,540,Kidney,1,TX1,4,McAllen Medical Center,McAllen,TX,78503,USA,-98.24827839114067,26.161291499999997,zip_zcta
+TXMC,5260,Kidney,2,TX1,4,Methodist Dallas Medical Center,Dallas,TX,75203,USA,-96.80259448526522,32.7430655,zip_zcta
+TXMH,14173,Kidney,4,TX1,4,Houston Methodist Hospital,Houston,TX,77030,USA,-95.40466829175892,29.7092595,zip_zcta
+TXPL,1679,Kidney,2,TX1,4,Medical City Fort Worth,Fort Worth,TX,76104,USA,-97.30856285021187,32.7221565,zip_zcta
+TXPM,872,Kidney,1,TX1,4,Parkland Health and Hospital System,Dallas,TX,75235,USA,-96.85141742913063,32.8345535,zip_zcta
+TXRM,1846,Kidney,3,TX1,4,Christus Santa Rosa Hospital Medical Center,San Antonio,TX,78229,USA,-98.56968184987991,29.5070305,zip_zcta
+TXSM,80,Kidney,1,TX1,4,Sierra Medical Center,El Paso,TX,79902,USA,-106.49875140522683,31.784119,zip_zcta
+TXSP,7327,Kidney,4,TX1,4,UT Southwestern Medical Center/William P. Clements Jr. University Hospital,Dallas,TX,75390,USA,-96.8425483005814,32.813931,zip_zcta
+TXSW,2237,Kidney,3,TX1,4,Scott and White Memorial Hospital,Temple,TX,76508,USA,-97.36,31.1,city_state
+TXTC,2100,Liver,4,TX1,4,Texas Children's Hospital,Houston,TX,77030,USA,-95.40466829175892,29.7092595,zip_zcta
+TXTX,12601,Kidney,4,TX1,4,Baylor University Medical Center,Dallas,TX,75246,USA,-96.77204495645054,32.793327500000004,zip_zcta
+TXTY,792,Kidney,1,TX1,4,East Texas Medical Center,Tyler,TX,75701,USA,-95.28945288317789,32.3218955,zip_zcta
+TXUC,166,Kidney,2,TX1,4,University Children's Health,San Antonio,TX,78229,USA,-98.56968184987991,29.5070305,zip_zcta
+TXVA,1733,Kidney,3,TX1,4,Michael E. DeBakey VA Medical Center,Houston,TX,77030,USA,-95.40466829175892,29.7092595,zip_zcta
+UTLD,4425,Kidney,3,TX1,5,Intermountain Medical Center,Murray,UT,84107,USA,-111.88362413035068,40.6582315,zip_zcta
+UTMC,4509,Kidney,4,TX1,5,University of Utah Medical Center,Salt Lake City,UT,84132,USA,-111.93,40.78,city_state
+UTPC,761,Liver,3,TX1,5,Primary Children's Hospital,Salt Lake City,UT,84113,USA,-111.83313168796657,40.7622825,zip_zcta
+VACH,93,Kidney,1,TX1,11,Children's Hospital of the King's Daughters,Norfolk,VA,23507,USA,-76.30517559749623,36.8647935,zip_zcta
+VAFH,4730,Kidney,4,TX1,2,Inova Fairfax Hospital,Falls Church,VA,22042,USA,-77.19515386457081,38.864097,zip_zcta
+VAHD,1293,Kidney,2,TX1,11,Henrico Doctors' Hospital,Richmond,VA,23229,USA,-77.56416246173715,37.5937835,zip_zcta
+VAMC,8839,Kidney,4,TX1,11,"VCU Health System Authority, VCUMC",Richmond,VA,23298,USA,-77.42919511186565,37.542406,zip_zcta
+VAMV,195,Heart,1,TX1,11,Hunter Holmes McGuire Veterans Administration Medical Center,Richmond,VA,23249,USA,-77.47,37.53,city_state
+VANG,3396,Kidney,2,TX1,11,Sentara Norfolk General Hospital,Norfolk,VA,23507,USA,-76.30517559749623,36.8647935,zip_zcta
+VAUV,7244,Kidney,4,TX1,11,University of Virginia Health Sciences Center,Charlottesville,VA,22908,USA,-78.4960951729191,38.0311475,zip_zcta
+VTMC,668,Kidney,1,TX1,9,The University of Vermont Medical Center,Burlington,VT,05401,USA,-73.22822099199264,44.477070499999996,zip_zcta
+WACH,1109,Kidney,3,TX1,6,Seattle Children's Hospital,Seattle,WA,98105,USA,-122.26905122552034,47.660442,zip_zcta
+WASH,1712,Kidney,2,TX1,6,Providence Sacred Heart Medical Center & Children's Hospital,Spokane,WA,99204,USA,-117.42805440537849,47.646578000000005,zip_zcta
+WASM,3596,Kidney,2,TX1,6,Swedish Medical Center,Seattle,WA,98122,USA,-122.29236075257889,47.6106745,zip_zcta
+WAUW,8621,Kidney,4,TX1,6,University of Washington Medical Center,Seattle,WA,98195,USA,-122.30751994360485,47.654223,zip_zcta
+WAVM,2400,Kidney,1,TX1,6,Virginia Mason Medical Center,Seattle,WA,98111,USA,-122.35,47.62,city_state
+WICH,600,Heart,4,TX1,7,Children's Hospital of Wisconsin,Milwaukee,WI,53226,USA,-88.04158747095855,43.0511505,zip_zcta
+WISE,5379,Kidney,4,TX1,7,Froedtert Memorial Lutheran Hospital,Milwaukee,WI,53226,USA,-88.04158747095855,43.0511505,zip_zcta
+WISL,3477,Kidney,4,TX1,7,Aurora St. Luke's Medical Center,Milwaukee,WI,53215,USA,-87.94229136121083,43.005360499999995,zip_zcta
+WIUW,11031,Kidney,4,TX1,7,University of Wisconsin Hospital and Clinics,Madison,WI,53792,USA,-89.43044716299265,43.077614,zip_zcta
+WVCA,1489,Kidney,1,TX1,2,Charleston Area Medical Center,Charleston,WV,25325,USA,-81.63,38.35,city_state
+WVWU,287,Kidney,2,TX1,2,West Virginia University Hospitals Inc.,Morgantown,WV,26505,USA,-79.93617188931887,39.644053,zip_zcta

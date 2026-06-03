@@ -1,0 +1,2 @@
+organ,pollutant,model,exposure_window,exposure_form,contrast,p25,p75,hazard_ratio,conf_low,conf_high,n_intervals,n_registrations,adverse_events,concordance,wald_chisq,df,p_value
+LU,NO2,single_pollutant_no2_cumulative_spline,cumulative,spline,p75_vs_p25,0.48000669988331846,1.15475099314138,0.9678635915764483,0.6559643763772678,1.4280652511539726,60514,41045,4635,0.797417559052074,4.3261176704888,3,0.22833454332435113

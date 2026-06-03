@@ -1,0 +1,5 @@
+WL_ORG,organ_score_name,n,people,centers,optn_regions,adverse_events,transplants,median_followup_days
+HR,US-CRS proxy,73497,68782,167,11,10029,52845,93
+KI,Dialysis + age,677201,551424,281,11,127834,384442,1034
+LI,MELD,217244,195993,160,11,42684,137125,134
+LU,LAS/CAS component proxy,46614,43473,83,11,5708,37634,58

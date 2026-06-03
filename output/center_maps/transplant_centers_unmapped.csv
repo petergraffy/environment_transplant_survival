@@ -1,0 +1,7 @@
+center_code,total_candidates,dominant_organ,n_organs,center_type,optn_region,center_name,city,state,zip,country,lon,lat,location_source
+HIQM,1842,Kidney,2,TX1,6,The Queen's Medical Center,Honolulu,HI,96813,USA,-157.8439859610437,21.316147364813542,zip_zcta
+HISF,359,Kidney,3,TX1,6,Hawaii Medical Center East,Honolulu,HI,96820,USA,-157.92075543946598,21.33642036705537,zip_zcta
+MALC,3425,Liver,2,TX1,1,Lahey Clinic Medical Center,Burlington,MA,01805,USA,NA,NA,NA
+NHDH,1054,Kidney,1,TX1,1,Mary Hitchcock Memorial Hospital,Lebanon,NH,03756,USA,NA,NA,NA
+PRCC,128,Heart,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+PRSJ,3445,Kidney,2,TX1,3,Auxilio Mutuo Hospital,Hato Rey,PR,00919,USA,NA,NA,NA

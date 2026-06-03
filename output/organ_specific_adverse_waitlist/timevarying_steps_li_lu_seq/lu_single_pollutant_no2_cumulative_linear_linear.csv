@@ -1,0 +1,2 @@
+organ,model,exposure_window,exposure_form,pollutant,n_intervals,n_registrations,adverse_events,concordance,term,estimate,std.error,robust.se,statistic,p.value,conf.low,conf.high
+LU,single_pollutant_no2_cumulative_linear,cumulative,linear,NO2,60514,41045,4635,0.7973943634746975,no2_waitlist_cum_10unit,0.9145416625634203,0.04874580484144153,0.048076122250164575,-1.8581418437401254,0.06314887404576253,0.8323021670337198,1.0049072148221134

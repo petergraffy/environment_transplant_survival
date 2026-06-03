@@ -1,0 +1,5 @@
+WL_ORG,score_name,n,people,adverse_events,deaths,deteriorations,complete_score,complete_prior_pollution,complete_current_pollution
+HR,US-CRS proxy,74906,70070,10202,5345,4857,74900,73630,73630
+KI,Dialysis + age,693752,563989,131269,72864,58405,693752,678254,678254
+LI,MELD,222408,200480,43698,22429,21269,222390,217649,217649
+LU,LAS/CAS component proxy,47285,44070,5793,3229,2564,47285,46695,46695

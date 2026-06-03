@@ -1,0 +1,5 @@
+WL_ORG,n,people,adverse_events,favorable_exits,transplants,improved_delist,other_exits,censored_at_environment_end,median_followup_days
+HR,74906,70070,9974,55946,52659,3287,5619,3367,90
+KI,693752,563989,120198,357606,354574,NA,84952,130892,955
+LI,222408,200480,42572,149315,136799,12516,20403,10118,126
+LU,47285,44070,5712,38198,37533,NA,2457,916,57

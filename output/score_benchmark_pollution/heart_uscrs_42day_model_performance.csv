@@ -1,0 +1,9 @@
+organ,score_name,endpoint,model,n,adverse_events,concordance,loglik,aic
+HR,US-CRS proxy,42_day_adverse_waitlist,score_only,74900,3220,0.6196699511104544,-35092.41873637865,70186.8374727573
+HR,US-CRS proxy,42_day_adverse_waitlist,score_prior_pollution,73624,3164,0.6272071311029377,-34389.83282995114,68787.66565990228
+HR,US-CRS proxy,42_day_adverse_waitlist,score_year_prior_pollution,73624,3164,0.6186069097236,-25240.153054849045,50488.30610969809
+HR,US-CRS proxy,42_day_adverse_waitlist,score_year_community_prior_pollution,73497,3160,0.620578087208991,-25183.050848089573,50416.10169617915
+HR,US-CRS proxy,42_day_adverse_waitlist,score_year_center_prior_pollution,73624,3164,0.6464611193019667,-10258.447249192199,20524.894498384398
+HR,US-CRS proxy,42_day_adverse_waitlist,score_center_year_community,73892,3180,0.6479106028213516,-10281.361327566983,20606.722655133966
+HR,US-CRS proxy,42_day_adverse_waitlist,score_center_year_community_prior_pollution,73497,3160,0.6481688021995123,-10227.611672775933,20505.223345551865
+HR,US-CRS proxy,42_day_adverse_waitlist,score_center_year_community_prior_current_pollution,73497,3160,0.6479353633864191,-10223.21875618983,20502.43751237966

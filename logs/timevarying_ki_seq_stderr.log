@@ -1,0 +1,91 @@
+2026-05-28 22:13:18 | Reading candidate ZIP supplement
+2026-05-28 22:13:20 | Reading pollution exposure tables
+2026-05-28 22:13:40 | Reading community covariates
+2026-05-28 22:13:41 | Reading candidate SAF files
+2026-05-28 22:13:52 | Constructing heart/kidney/liver/lung cohort
+2026-05-28 22:14:10 | Skipping baseline organ models because RUN_BASELINE_MODELS=FALSE
+2026-05-28 22:14:10 | Constructing lagged annual waitlist exposure intervals
+
+Time-varying organ progress 1/1 | KI
+
+Time-varying model grid for KI 1/16 | single_pollutant_pm25_cumulative_linear
+2026-05-28 22:15:18 | Dropping low-information terms: ns(gfr, df = 3), ns(creatinine, df = 3), alloc_pra, current_pra, peak_pra
+2026-05-28 22:15:20 | START KI | single_pollutant_pm25_cumulative_linear | intervals=2781314 | adverse=116044
+2026-05-28 22:36:48 | DONE  KI | single_pollutant_pm25_cumulative_linear | elapsed=1290.7 sec
+
+Time-varying model grid for KI 2/16 | single_pollutant_pm25_cumulative_spline
+2026-05-28 22:36:49 | Dropping low-information terms: ns(gfr, df = 3), ns(creatinine, df = 3), alloc_pra, current_pra, peak_pra
+2026-05-28 22:36:50 | START KI | single_pollutant_pm25_cumulative_spline | intervals=2781314 | adverse=116044
+2026-05-28 22:58:34 | DONE  KI | single_pollutant_pm25_cumulative_spline | elapsed=1305.9 sec
+
+Time-varying model grid for KI 3/16 | single_pollutant_ozone_cumulative_linear
+2026-05-28 22:58:35 | Dropping low-information terms: ns(gfr, df = 3), ns(creatinine, df = 3), alloc_pra, current_pra, peak_pra
+2026-05-28 22:58:36 | START KI | single_pollutant_ozone_cumulative_linear | intervals=2781314 | adverse=116044
+2026-05-28 23:19:52 | DONE  KI | single_pollutant_ozone_cumulative_linear | elapsed=1278.2 sec
+
+Time-varying model grid for KI 4/16 | single_pollutant_ozone_cumulative_spline
+2026-05-28 23:19:53 | Dropping low-information terms: ns(gfr, df = 3), ns(creatinine, df = 3), alloc_pra, current_pra, peak_pra
+2026-05-28 23:19:55 | START KI | single_pollutant_ozone_cumulative_spline | intervals=2781314 | adverse=116044
+2026-05-28 23:41:37 | DONE  KI | single_pollutant_ozone_cumulative_spline | elapsed=1304.9 sec
+
+Time-varying model grid for KI 5/16 | single_pollutant_no2_cumulative_linear
+2026-05-28 23:41:39 | Dropping low-information terms: ns(gfr, df = 3), ns(creatinine, df = 3), alloc_pra, current_pra, peak_pra
+2026-05-28 23:41:40 | START KI | single_pollutant_no2_cumulative_linear | intervals=2781314 | adverse=116044
+2026-05-29 00:03:09 | DONE  KI | single_pollutant_no2_cumulative_linear | elapsed=1291.8 sec
+
+Time-varying model grid for KI 6/16 | single_pollutant_no2_cumulative_spline
+2026-05-29 00:03:10 | Dropping low-information terms: ns(gfr, df = 3), ns(creatinine, df = 3), alloc_pra, current_pra, peak_pra
+2026-05-29 00:03:12 | START KI | single_pollutant_no2_cumulative_spline | intervals=2781314 | adverse=116044
+2026-05-29 00:24:53 | DONE  KI | single_pollutant_no2_cumulative_spline | elapsed=1303.7 sec
+
+Time-varying model grid for KI 7/16 | combined_pollutants_cumulative_linear
+2026-05-29 00:24:54 | Dropping low-information terms: ns(gfr, df = 3), ns(creatinine, df = 3), alloc_pra, current_pra, peak_pra
+2026-05-29 00:24:55 | START KI | combined_pollutants_cumulative_linear | intervals=2781314 | adverse=116044
+2026-05-29 00:46:56 | DONE  KI | combined_pollutants_cumulative_linear | elapsed=1323 sec
+
+Time-varying model grid for KI 8/16 | combined_pollutants_cumulative_spline
+2026-05-29 00:46:57 | Dropping low-information terms: ns(gfr, df = 3), ns(creatinine, df = 3), alloc_pra, current_pra, peak_pra
+2026-05-29 00:46:58 | START KI | combined_pollutants_cumulative_spline | intervals=2781314 | adverse=116044
+2026-05-29 01:10:15 | DONE  KI | combined_pollutants_cumulative_spline | elapsed=1399.6 sec
+
+Time-varying model grid for KI 9/16 | single_pollutant_pm25_lagged_annual_linear
+2026-05-29 01:10:17 | Dropping low-information terms: ns(gfr, df = 3), ns(creatinine, df = 3), alloc_pra, current_pra, peak_pra
+2026-05-29 01:10:18 | START KI | single_pollutant_pm25_lagged_annual_linear | intervals=2781314 | adverse=116044
+2026-05-29 01:31:42 | DONE  KI | single_pollutant_pm25_lagged_annual_linear | elapsed=1286.6 sec
+
+Time-varying model grid for KI 10/16 | single_pollutant_pm25_lagged_annual_spline
+2026-05-29 01:31:43 | Dropping low-information terms: ns(gfr, df = 3), ns(creatinine, df = 3), alloc_pra, current_pra, peak_pra
+2026-05-29 01:31:45 | START KI | single_pollutant_pm25_lagged_annual_spline | intervals=2781314 | adverse=116044
+2026-05-29 01:53:36 | DONE  KI | single_pollutant_pm25_lagged_annual_spline | elapsed=1313.8 sec
+
+Time-varying model grid for KI 11/16 | single_pollutant_ozone_lagged_annual_linear
+2026-05-29 01:53:37 | Dropping low-information terms: ns(gfr, df = 3), ns(creatinine, df = 3), alloc_pra, current_pra, peak_pra
+2026-05-29 01:53:38 | START KI | single_pollutant_ozone_lagged_annual_linear | intervals=2781314 | adverse=116044
+2026-05-29 02:15:11 | DONE  KI | single_pollutant_ozone_lagged_annual_linear | elapsed=1294.6 sec
+
+Time-varying model grid for KI 12/16 | single_pollutant_ozone_lagged_annual_spline
+2026-05-29 02:15:12 | Dropping low-information terms: ns(gfr, df = 3), ns(creatinine, df = 3), alloc_pra, current_pra, peak_pra
+2026-05-29 02:15:13 | START KI | single_pollutant_ozone_lagged_annual_spline | intervals=2781314 | adverse=116044
+2026-05-29 02:37:00 | DONE  KI | single_pollutant_ozone_lagged_annual_spline | elapsed=1309.7 sec
+
+Time-varying model grid for KI 13/16 | single_pollutant_no2_lagged_annual_linear
+2026-05-29 02:37:02 | Dropping low-information terms: ns(gfr, df = 3), ns(creatinine, df = 3), alloc_pra, current_pra, peak_pra
+2026-05-29 02:37:03 | START KI | single_pollutant_no2_lagged_annual_linear | intervals=2781314 | adverse=116044
+2026-05-29 02:58:30 | DONE  KI | single_pollutant_no2_lagged_annual_linear | elapsed=1289.4 sec
+
+Time-varying model grid for KI 14/16 | single_pollutant_no2_lagged_annual_spline
+2026-05-29 02:58:31 | Dropping low-information terms: ns(gfr, df = 3), ns(creatinine, df = 3), alloc_pra, current_pra, peak_pra
+2026-05-29 02:58:32 | START KI | single_pollutant_no2_lagged_annual_spline | intervals=2781314 | adverse=116044
+2026-05-29 03:20:20 | DONE  KI | single_pollutant_no2_lagged_annual_spline | elapsed=1309.9 sec
+
+Time-varying model grid for KI 15/16 | combined_pollutants_lagged_annual_linear
+2026-05-29 03:20:21 | Dropping low-information terms: ns(gfr, df = 3), ns(creatinine, df = 3), alloc_pra, current_pra, peak_pra
+2026-05-29 03:20:22 | START KI | combined_pollutants_lagged_annual_linear | intervals=2781314 | adverse=116044
+2026-05-29 03:42:28 | DONE  KI | combined_pollutants_lagged_annual_linear | elapsed=1328.3 sec
+
+Time-varying model grid for KI 16/16 | combined_pollutants_lagged_annual_spline
+2026-05-29 03:42:29 | Dropping low-information terms: ns(gfr, df = 3), ns(creatinine, df = 3), alloc_pra, current_pra, peak_pra
+2026-05-29 03:42:30 | START KI | combined_pollutants_lagged_annual_spline | intervals=2781314 | adverse=116044
+2026-05-29 04:05:54 | DONE  KI | combined_pollutants_lagged_annual_spline | elapsed=1406.2 sec
+There were 16 warnings (use warnings() to see them)
+2026-05-29 04:05:54 | Wrote revised organ-specific adverse waitlist outputs to output/organ_specific_adverse_waitlist

@@ -1,0 +1,2 @@
+organ,pollutant,model,exposure_window,exposure_form,contrast,p25,p75,hazard_ratio,conf_low,conf_high,n_intervals,n_registrations,adverse_events,concordance,wald_chisq,df,p_value
+HR,Ozone,single_pollutant_ozone_lagged_annual_linear,lagged_annual,linear,p75_vs_p25,3.631734973390638,3.9946492637599933,1.0106355606187811,0.8155297544547359,1.2524181132669239,125985,72946,9705,0.7567747748567684,0.34846642386494014,1,0.5549825366902605

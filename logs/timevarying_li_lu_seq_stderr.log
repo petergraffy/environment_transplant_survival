@@ -1,0 +1,173 @@
+2026-05-28 20:55:12 | Reading candidate ZIP supplement
+2026-05-28 20:55:14 | Reading pollution exposure tables
+2026-05-28 20:55:35 | Reading community covariates
+2026-05-28 20:55:35 | Reading candidate SAF files
+2026-05-28 20:55:45 | Constructing heart/kidney/liver/lung cohort
+2026-05-28 20:55:53 | Skipping baseline organ models because RUN_BASELINE_MODELS=FALSE
+2026-05-28 20:55:53 | Constructing lagged annual waitlist exposure intervals
+
+Time-varying organ progress 1/2 | LI
+
+Time-varying model grid for LI 1/16 | single_pollutant_pm25_cumulative_linear
+2026-05-28 20:56:14 | Dropping low-information terms: ns(bilirubin, df = 3), ns(creatinine, df = 3), ns(albumin, df = 3)
+2026-05-28 20:56:14 | START LI | single_pollutant_pm25_cumulative_linear | intervals=421374 | adverse=41324
+2026-05-28 21:00:40 | DONE  LI | single_pollutant_pm25_cumulative_linear | elapsed=266.2 sec
+
+Time-varying model grid for LI 2/16 | single_pollutant_pm25_cumulative_spline
+2026-05-28 21:00:40 | Dropping low-information terms: ns(bilirubin, df = 3), ns(creatinine, df = 3), ns(albumin, df = 3)
+2026-05-28 21:00:40 | START LI | single_pollutant_pm25_cumulative_spline | intervals=421374 | adverse=41324
+2026-05-28 21:05:10 | DONE  LI | single_pollutant_pm25_cumulative_spline | elapsed=269.8 sec
+
+Time-varying model grid for LI 3/16 | single_pollutant_ozone_cumulative_linear
+2026-05-28 21:05:10 | Dropping low-information terms: ns(bilirubin, df = 3), ns(creatinine, df = 3), ns(albumin, df = 3)
+2026-05-28 21:05:10 | START LI | single_pollutant_ozone_cumulative_linear | intervals=421374 | adverse=41324
+2026-05-28 21:09:35 | DONE  LI | single_pollutant_ozone_cumulative_linear | elapsed=265.5 sec
+
+Time-varying model grid for LI 4/16 | single_pollutant_ozone_cumulative_spline
+2026-05-28 21:09:35 | Dropping low-information terms: ns(bilirubin, df = 3), ns(creatinine, df = 3), ns(albumin, df = 3)
+2026-05-28 21:09:36 | START LI | single_pollutant_ozone_cumulative_spline | intervals=421374 | adverse=41324
+2026-05-28 21:14:07 | DONE  LI | single_pollutant_ozone_cumulative_spline | elapsed=272 sec
+
+Time-varying model grid for LI 5/16 | single_pollutant_no2_cumulative_linear
+2026-05-28 21:14:07 | Dropping low-information terms: ns(bilirubin, df = 3), ns(creatinine, df = 3), ns(albumin, df = 3)
+2026-05-28 21:14:08 | START LI | single_pollutant_no2_cumulative_linear | intervals=421374 | adverse=41324
+2026-05-28 21:18:34 | DONE  LI | single_pollutant_no2_cumulative_linear | elapsed=266.9 sec
+
+Time-varying model grid for LI 6/16 | single_pollutant_no2_cumulative_spline
+2026-05-28 21:18:34 | Dropping low-information terms: ns(bilirubin, df = 3), ns(creatinine, df = 3), ns(albumin, df = 3)
+2026-05-28 21:18:35 | START LI | single_pollutant_no2_cumulative_spline | intervals=421374 | adverse=41324
+2026-05-28 21:23:03 | DONE  LI | single_pollutant_no2_cumulative_spline | elapsed=268.7 sec
+
+Time-varying model grid for LI 7/16 | combined_pollutants_cumulative_linear
+2026-05-28 21:23:03 | Dropping low-information terms: ns(bilirubin, df = 3), ns(creatinine, df = 3), ns(albumin, df = 3)
+2026-05-28 21:23:03 | START LI | combined_pollutants_cumulative_linear | intervals=421374 | adverse=41324
+2026-05-28 21:27:35 | DONE  LI | combined_pollutants_cumulative_linear | elapsed=271.7 sec
+
+Time-varying model grid for LI 8/16 | combined_pollutants_cumulative_spline
+2026-05-28 21:27:35 | Dropping low-information terms: ns(bilirubin, df = 3), ns(creatinine, df = 3), ns(albumin, df = 3)
+2026-05-28 21:27:35 | START LI | combined_pollutants_cumulative_spline | intervals=421374 | adverse=41324
+2026-05-28 21:32:20 | DONE  LI | combined_pollutants_cumulative_spline | elapsed=285.1 sec
+
+Time-varying model grid for LI 9/16 | single_pollutant_pm25_lagged_annual_linear
+2026-05-28 21:32:20 | Dropping low-information terms: ns(bilirubin, df = 3), ns(creatinine, df = 3), ns(albumin, df = 3)
+2026-05-28 21:32:20 | START LI | single_pollutant_pm25_lagged_annual_linear | intervals=421374 | adverse=41324
+2026-05-28 21:36:45 | DONE  LI | single_pollutant_pm25_lagged_annual_linear | elapsed=265.1 sec
+
+Time-varying model grid for LI 10/16 | single_pollutant_pm25_lagged_annual_spline
+2026-05-28 21:36:45 | Dropping low-information terms: ns(bilirubin, df = 3), ns(creatinine, df = 3), ns(albumin, df = 3)
+2026-05-28 21:36:45 | START LI | single_pollutant_pm25_lagged_annual_spline | intervals=421374 | adverse=41324
+2026-05-28 21:41:15 | DONE  LI | single_pollutant_pm25_lagged_annual_spline | elapsed=270.2 sec
+
+Time-varying model grid for LI 11/16 | single_pollutant_ozone_lagged_annual_linear
+2026-05-28 21:41:15 | Dropping low-information terms: ns(bilirubin, df = 3), ns(creatinine, df = 3), ns(albumin, df = 3)
+2026-05-28 21:41:16 | START LI | single_pollutant_ozone_lagged_annual_linear | intervals=421374 | adverse=41324
+2026-05-28 21:45:42 | DONE  LI | single_pollutant_ozone_lagged_annual_linear | elapsed=266.7 sec
+
+Time-varying model grid for LI 12/16 | single_pollutant_ozone_lagged_annual_spline
+2026-05-28 21:45:42 | Dropping low-information terms: ns(bilirubin, df = 3), ns(creatinine, df = 3), ns(albumin, df = 3)
+2026-05-28 21:45:42 | START LI | single_pollutant_ozone_lagged_annual_spline | intervals=421374 | adverse=41324
+2026-05-28 21:50:13 | DONE  LI | single_pollutant_ozone_lagged_annual_spline | elapsed=271 sec
+
+Time-varying model grid for LI 13/16 | single_pollutant_no2_lagged_annual_linear
+2026-05-28 21:50:13 | Dropping low-information terms: ns(bilirubin, df = 3), ns(creatinine, df = 3), ns(albumin, df = 3)
+2026-05-28 21:50:13 | START LI | single_pollutant_no2_lagged_annual_linear | intervals=421374 | adverse=41324
+2026-05-28 21:54:39 | DONE  LI | single_pollutant_no2_lagged_annual_linear | elapsed=266 sec
+
+Time-varying model grid for LI 14/16 | single_pollutant_no2_lagged_annual_spline
+2026-05-28 21:54:39 | Dropping low-information terms: ns(bilirubin, df = 3), ns(creatinine, df = 3), ns(albumin, df = 3)
+2026-05-28 21:54:39 | START LI | single_pollutant_no2_lagged_annual_spline | intervals=421374 | adverse=41324
+2026-05-28 21:59:07 | DONE  LI | single_pollutant_no2_lagged_annual_spline | elapsed=268.3 sec
+
+Time-varying model grid for LI 15/16 | combined_pollutants_lagged_annual_linear
+2026-05-28 21:59:07 | Dropping low-information terms: ns(bilirubin, df = 3), ns(creatinine, df = 3), ns(albumin, df = 3)
+2026-05-28 21:59:08 | START LI | combined_pollutants_lagged_annual_linear | intervals=421374 | adverse=41324
+2026-05-28 22:03:42 | DONE  LI | combined_pollutants_lagged_annual_linear | elapsed=274.5 sec
+
+Time-varying model grid for LI 16/16 | combined_pollutants_lagged_annual_spline
+2026-05-28 22:03:42 | Dropping low-information terms: ns(bilirubin, df = 3), ns(creatinine, df = 3), ns(albumin, df = 3)
+2026-05-28 22:03:42 | START LI | combined_pollutants_lagged_annual_spline | intervals=421374 | adverse=41324
+2026-05-28 22:08:26 | DONE  LI | combined_pollutants_lagged_annual_spline | elapsed=284 sec
+
+Time-varying organ progress 2/2 | LU
+
+Time-varying model grid for LU 1/16 | single_pollutant_pm25_cumulative_linear
+2026-05-28 22:08:26 | Dropping low-information terms: icu, ns(fvc, df = 3), ns(fev1, df = 3), ns(pco2, df = 3), ns(rest_o2, df = 3), ns(six_min_walk, df = 3)
+2026-05-28 22:08:26 | START LU | single_pollutant_pm25_cumulative_linear | intervals=60514 | adverse=4635
+2026-05-28 22:08:40 | DONE  LU | single_pollutant_pm25_cumulative_linear | elapsed=14.1 sec
+
+Time-varying model grid for LU 2/16 | single_pollutant_pm25_cumulative_spline
+2026-05-28 22:08:40 | Dropping low-information terms: icu, ns(fvc, df = 3), ns(fev1, df = 3), ns(pco2, df = 3), ns(rest_o2, df = 3), ns(six_min_walk, df = 3)
+2026-05-28 22:08:40 | START LU | single_pollutant_pm25_cumulative_spline | intervals=60514 | adverse=4635
+2026-05-28 22:08:54 | DONE  LU | single_pollutant_pm25_cumulative_spline | elapsed=14.3 sec
+
+Time-varying model grid for LU 3/16 | single_pollutant_ozone_cumulative_linear
+2026-05-28 22:08:54 | Dropping low-information terms: icu, ns(fvc, df = 3), ns(fev1, df = 3), ns(pco2, df = 3), ns(rest_o2, df = 3), ns(six_min_walk, df = 3)
+2026-05-28 22:08:54 | START LU | single_pollutant_ozone_cumulative_linear | intervals=60514 | adverse=4635
+2026-05-28 22:09:08 | DONE  LU | single_pollutant_ozone_cumulative_linear | elapsed=13.6 sec
+
+Time-varying model grid for LU 4/16 | single_pollutant_ozone_cumulative_spline
+2026-05-28 22:09:08 | Dropping low-information terms: icu, ns(fvc, df = 3), ns(fev1, df = 3), ns(pco2, df = 3), ns(rest_o2, df = 3), ns(six_min_walk, df = 3)
+2026-05-28 22:09:08 | START LU | single_pollutant_ozone_cumulative_spline | intervals=60514 | adverse=4635
+2026-05-28 22:09:22 | DONE  LU | single_pollutant_ozone_cumulative_spline | elapsed=14.6 sec
+
+Time-varying model grid for LU 5/16 | single_pollutant_no2_cumulative_linear
+2026-05-28 22:09:22 | Dropping low-information terms: icu, ns(fvc, df = 3), ns(fev1, df = 3), ns(pco2, df = 3), ns(rest_o2, df = 3), ns(six_min_walk, df = 3)
+2026-05-28 22:09:22 | START LU | single_pollutant_no2_cumulative_linear | intervals=60514 | adverse=4635
+2026-05-28 22:09:36 | DONE  LU | single_pollutant_no2_cumulative_linear | elapsed=13.6 sec
+
+Time-varying model grid for LU 6/16 | single_pollutant_no2_cumulative_spline
+2026-05-28 22:09:36 | Dropping low-information terms: icu, ns(fvc, df = 3), ns(fev1, df = 3), ns(pco2, df = 3), ns(rest_o2, df = 3), ns(six_min_walk, df = 3)
+2026-05-28 22:09:36 | START LU | single_pollutant_no2_cumulative_spline | intervals=60514 | adverse=4635
+2026-05-28 22:09:50 | DONE  LU | single_pollutant_no2_cumulative_spline | elapsed=14.1 sec
+
+Time-varying model grid for LU 7/16 | combined_pollutants_cumulative_linear
+2026-05-28 22:09:50 | Dropping low-information terms: icu, ns(fvc, df = 3), ns(fev1, df = 3), ns(pco2, df = 3), ns(rest_o2, df = 3), ns(six_min_walk, df = 3)
+2026-05-28 22:09:50 | START LU | combined_pollutants_cumulative_linear | intervals=60514 | adverse=4635
+2026-05-28 22:10:05 | DONE  LU | combined_pollutants_cumulative_linear | elapsed=14.5 sec
+
+Time-varying model grid for LU 8/16 | combined_pollutants_cumulative_spline
+2026-05-28 22:10:05 | Dropping low-information terms: icu, ns(fvc, df = 3), ns(fev1, df = 3), ns(pco2, df = 3), ns(rest_o2, df = 3), ns(six_min_walk, df = 3)
+2026-05-28 22:10:05 | START LU | combined_pollutants_cumulative_spline | intervals=60514 | adverse=4635
+2026-05-28 22:10:20 | DONE  LU | combined_pollutants_cumulative_spline | elapsed=15.4 sec
+
+Time-varying model grid for LU 9/16 | single_pollutant_pm25_lagged_annual_linear
+2026-05-28 22:10:20 | Dropping low-information terms: icu, ns(fvc, df = 3), ns(fev1, df = 3), ns(pco2, df = 3), ns(rest_o2, df = 3), ns(six_min_walk, df = 3)
+2026-05-28 22:10:20 | START LU | single_pollutant_pm25_lagged_annual_linear | intervals=60514 | adverse=4635
+2026-05-28 22:10:34 | DONE  LU | single_pollutant_pm25_lagged_annual_linear | elapsed=13.8 sec
+
+Time-varying model grid for LU 10/16 | single_pollutant_pm25_lagged_annual_spline
+2026-05-28 22:10:34 | Dropping low-information terms: icu, ns(fvc, df = 3), ns(fev1, df = 3), ns(pco2, df = 3), ns(rest_o2, df = 3), ns(six_min_walk, df = 3)
+2026-05-28 22:10:34 | START LU | single_pollutant_pm25_lagged_annual_spline | intervals=60514 | adverse=4635
+2026-05-28 22:10:48 | DONE  LU | single_pollutant_pm25_lagged_annual_spline | elapsed=14.2 sec
+
+Time-varying model grid for LU 11/16 | single_pollutant_ozone_lagged_annual_linear
+2026-05-28 22:10:48 | Dropping low-information terms: icu, ns(fvc, df = 3), ns(fev1, df = 3), ns(pco2, df = 3), ns(rest_o2, df = 3), ns(six_min_walk, df = 3)
+2026-05-28 22:10:48 | START LU | single_pollutant_ozone_lagged_annual_linear | intervals=60514 | adverse=4635
+2026-05-28 22:11:02 | DONE  LU | single_pollutant_ozone_lagged_annual_linear | elapsed=14.2 sec
+
+Time-varying model grid for LU 12/16 | single_pollutant_ozone_lagged_annual_spline
+2026-05-28 22:11:02 | Dropping low-information terms: icu, ns(fvc, df = 3), ns(fev1, df = 3), ns(pco2, df = 3), ns(rest_o2, df = 3), ns(six_min_walk, df = 3)
+2026-05-28 22:11:02 | START LU | single_pollutant_ozone_lagged_annual_spline | intervals=60514 | adverse=4635
+2026-05-28 22:11:16 | DONE  LU | single_pollutant_ozone_lagged_annual_spline | elapsed=14.1 sec
+
+Time-varying model grid for LU 13/16 | single_pollutant_no2_lagged_annual_linear
+2026-05-28 22:11:16 | Dropping low-information terms: icu, ns(fvc, df = 3), ns(fev1, df = 3), ns(pco2, df = 3), ns(rest_o2, df = 3), ns(six_min_walk, df = 3)
+2026-05-28 22:11:16 | START LU | single_pollutant_no2_lagged_annual_linear | intervals=60514 | adverse=4635
+2026-05-28 22:11:30 | DONE  LU | single_pollutant_no2_lagged_annual_linear | elapsed=14.1 sec
+
+Time-varying model grid for LU 14/16 | single_pollutant_no2_lagged_annual_spline
+2026-05-28 22:11:30 | Dropping low-information terms: icu, ns(fvc, df = 3), ns(fev1, df = 3), ns(pco2, df = 3), ns(rest_o2, df = 3), ns(six_min_walk, df = 3)
+2026-05-28 22:11:30 | START LU | single_pollutant_no2_lagged_annual_spline | intervals=60514 | adverse=4635
+2026-05-28 22:11:44 | DONE  LU | single_pollutant_no2_lagged_annual_spline | elapsed=13.9 sec
+
+Time-varying model grid for LU 15/16 | combined_pollutants_lagged_annual_linear
+2026-05-28 22:11:44 | Dropping low-information terms: icu, ns(fvc, df = 3), ns(fev1, df = 3), ns(pco2, df = 3), ns(rest_o2, df = 3), ns(six_min_walk, df = 3)
+2026-05-28 22:11:44 | START LU | combined_pollutants_lagged_annual_linear | intervals=60514 | adverse=4635
+2026-05-28 22:11:59 | DONE  LU | combined_pollutants_lagged_annual_linear | elapsed=14.6 sec
+
+Time-varying model grid for LU 16/16 | combined_pollutants_lagged_annual_spline
+2026-05-28 22:11:59 | Dropping low-information terms: icu, ns(fvc, df = 3), ns(fev1, df = 3), ns(pco2, df = 3), ns(rest_o2, df = 3), ns(six_min_walk, df = 3)
+2026-05-28 22:11:59 | START LU | combined_pollutants_lagged_annual_spline | intervals=60514 | adverse=4635
+2026-05-28 22:12:14 | DONE  LU | combined_pollutants_lagged_annual_spline | elapsed=15.2 sec
+There were 32 warnings (use warnings() to see them)
+2026-05-28 22:12:14 | Wrote revised organ-specific adverse waitlist outputs to output/organ_specific_adverse_waitlist
