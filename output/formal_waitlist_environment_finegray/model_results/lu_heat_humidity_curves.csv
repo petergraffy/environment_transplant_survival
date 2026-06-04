@@ -1,0 +1,583 @@
+organ,organ_label,model,focal_term,exposure,exposure_label,curve_group,curve_exposure_value,source_n,n,sampled,finegray_max_n,time_days,cif
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,1,0.0016514263348539338
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,2,0.0033031627675479402
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,3,0.005798604640193106
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,4,0.007491089801845097
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,5,0.008340513450253884
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,6,0.011734030488955827
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,8,0.013437648150204318
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,9,0.015142589151000196
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,10,0.016000843246829044
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,11,0.018591285532249202
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,12,0.020340874679620313
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,13,0.021215865444811466
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,14,0.022090586485241315
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,18,0.022967971911034613
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,19,0.024724680188894177
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,22,0.0256048785759021
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,23,0.026485656119225487
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,24,0.02736693408183466
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,25,0.02912797870808348
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,26,0.030009148126183494
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,28,0.03267113128395571
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,32,0.03356570321030106
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,34,0.03446122134613727
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,35,0.03535979241862586
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,36,0.03626139881622814
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,38,0.03716505247955637
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,46,0.03806903240543258
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,48,0.038972862223906835
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,49,0.03987754695212087
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,57,0.04168979669521822
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,61,0.04350823664130832
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,64,0.044420756155067576
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,67,0.04533418181245785
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,68,0.04624848924971825
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,69,0.04716376324785554
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,70,0.048080786113897434
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,74,0.048998144601399174
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,75,0.04991665383169808
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,76,0.05083512558374159
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,77,0.05175300220469625
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,79,0.052671709200009076
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,83,0.05359284425883715
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,84,0.054513745808593916
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,85,0.05543421022006212
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,86,0.056355324091148074
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,90,0.058197483119124094
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,93,0.05911833191861082
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,102,0.0600406656101784
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,103,0.06096508815752488
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,105,0.0628172502362816
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,116,0.06374594549609036
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,130,0.06467427418944616
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,134,0.06560201954187661
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,136,0.06652984337551926
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,145,0.06745921993865533
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,148,0.07024589680625237
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,150,0.0711801898827793
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,152,0.0721174134571938
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,167,0.07305522166143419
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,190,0.07399955363465138
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,192,0.07494421526861106
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,203,0.07589296576314264
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,245,0.07684785138627404
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,247,0.07780256129942731
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,255,0.07875722697461418
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,261,0.07971183003592308
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,265,0.08066864065837542
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,267,0.08162669328517824
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,274,0.08258562850111961
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,277,0.08354474153870017
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,307,0.08450402181169225
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,309,0.08546356288938273
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,313,0.08642392662707077
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,330,0.08738394617370326
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,363,0.08834374174198412
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,380,0.0893072193571488
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,383,0.09027121824952933
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,402,0.09123678093458731
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,403,0.09220266362650098
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,410,0.09316844296004745
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,421,0.0941337215535255
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,424,0.09510161965655461
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,438,0.09607770805774452
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,449,0.09705353459864863
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,506,0.09802885889849489
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,599,0.09900511556019753
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,729,0.09998263384907102
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,813,0.10096030734691508
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,836,0.10194021332293202
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,872,0.10291984123005704
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,917,0.10389982512164708
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,1014,0.10487987878423
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,1072,0.10586113427254185
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,1138,0.10684213863870262
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,1499,0.10782560525663987
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,1862,0.10881037494591228
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q1 reference,2.919913815789478,46695,998,TRUE,1000,2934,0.10979558449261495
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,1,0.0014776765560730043
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,2,0.002955888039975485
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,3,0.005189657979430828
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,4,0.006705005127766506
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,5,0.00746562935142181
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,6,0.010505070568345931
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,8,0.012031348766843086
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,9,0.013559090402637142
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,10,0.014328249057683817
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,11,0.016650205918350536
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,12,0.018218824589806504
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,13,0.019003420441304764
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,14,0.01978784825222779
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,18,0.020574739635494943
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,19,0.022150483701744994
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,22,0.022940122354807135
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,23,0.02373035575857063
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,24,0.024521113483729096
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,25,0.02610149894640401
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,26,0.026892385667535268
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,28,0.029282087619728836
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,32,0.030085313528717017
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,34,0.03088946743939114
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,35,0.03169644174929365
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,36,0.032506221527556445
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,38,0.03331792010268353
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,46,0.03412999199805955
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,48,0.03494200938328118
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,49,0.03575487536194333
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,57,0.03738343795134014
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,61,0.039017889276861784
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,64,0.039838203887869295
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,67,0.04065941568769893
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,68,0.04148150310239418
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,69,0.04230454270102535
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,70,0.043129238414372106
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,74,0.04395431965739394
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,75,0.04478051985120979
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,76,0.045606770431916854
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,77,0.04643256974201593
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,79,0.04725920040903775
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,83,0.048088100535276346
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,84,0.04891687545038992
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,85,0.04974534189474489
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,86,0.05057447798467274
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,90,0.052232944046576746
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,93,0.053062097376261885
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,102,0.053892673390595225
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,103,0.05472521656004303
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,105,0.056393549969759094
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,116,0.05723020207121465
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,130,0.058066611269238955
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,134,0.058902582215211274
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,136,0.059738711287081414
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,145,0.060576327363427884
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,148,0.0630883935058486
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,150,0.06393079480419184
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,152,0.06477592801721854
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,167,0.06562167838373667
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,190,0.06647340316793748
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,192,0.06732551679031018
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,203,0.06818141091091301
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,245,0.06904293312582777
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,247,0.06990439061756581
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,255,0.07076590209137157
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,261,0.07162745105619384
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,265,0.07249108681711625
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,267,0.07335593846391453
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,274,0.0742216819710585
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,277,0.07508768132990407
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,307,0.07595392714370186
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,309,0.07682050408156527
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,313,0.07768791983708889
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,330,0.07855512067486903
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,363,0.07942221521129034
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,380,0.08029273284359861
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,383,0.08116381851160537
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,402,0.08203641467898126
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,403,0.08290939771412409
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,410,0.08378238511925873
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,421,0.08465501771632833
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,424,0.08553011671617705
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,438,0.08641272056770855
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,449,0.08729518795218827
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,506,0.08817730148843961
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,599,0.08906035886234387
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,729,0.08994465836561227
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,813,0.09082919943184908
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,836,0.09171586194413717
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,872,0.09260237467452881
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,917,0.0934893115437474
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,1014,0.09437641370335914
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,1072,0.0952647061630928
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,1138,0.0961528738988745
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,1499,0.09704337397879859
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,1862,0.09793515751771675
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q2 reference,4.184380902409401,46695,998,TRUE,1000,2934,0.0988274432117412
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,1,0.0013405126650888333
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,2,0.0026816949822980884
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,3,0.0047087465691090236
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,4,0.006084100555718841
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,5,0.006774529057294032
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,6,0.009533960393405927
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,8,0.010919926353479936
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,9,0.01230742039795596
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,10,0.013006045357295326
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,11,0.015115380561410152
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,12,0.016540622572049246
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,13,0.01725358324462911
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,14,0.017966444169866258
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,18,0.018681597146012696
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,19,0.020113846087234766
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,22,0.020831656915908825
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,23,0.02155006234310408
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,24,0.0222689985035861
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,25,0.023706005731192192
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,26,0.024425221676114606
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,28,0.026598697050462028
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,32,0.02732935649344359
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,34,0.028060916403039093
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,35,0.028795098788552798
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,36,0.02953189071172968
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,38,0.030270485972579753
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,46,0.031009478579886673
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,48,0.03174847929111946
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,49,0.03248831014056952
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,57,0.0339707225024668
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,61,0.03545872937339023
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,64,0.03620563357075046
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,67,0.03695341403908292
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,68,0.03770205138156102
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,69,0.038451615580814114
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,70,0.03920274806604629
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,74,0.03995429186855859
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,75,0.04070691526305448
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,76,0.04145964503128108
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,77,0.04221202416701142
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,79,0.042965221361028316
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,83,0.043720547361481565
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,84,0.04447582034634967
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,85,0.04523087331902309
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,86,0.04598659781959957
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,90,0.047498407546760046
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,93,0.048254331871143696
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,102,0.04901161487401273
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,103,0.04977075341699899
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,105,0.051292178269073174
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,116,0.05205525128196631
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,130,0.05281816562962427
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,134,0.05358074311277883
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,136,0.0543435277802673
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,145,0.055107732190019854
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,148,0.057400011681759566
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,150,0.058168837037915866
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,152,0.058940220284450784
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,167,0.059712231651446346
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,190,0.060489762140399916
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,192,0.061267713536900525
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,203,0.062049182864886254
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,245,0.06283585822829552
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,247,0.06362254210820006
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,255,0.06440934297354206
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,261,0.06519624584275552
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,265,0.06598512278544577
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,267,0.0667751787402664
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,274,0.06756611802466428
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,277,0.06835735979068536
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,307,0.06914889558294912
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,309,0.06994080290767712
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,313,0.07073354592305581
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,330,0.07152616175168802
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,363,0.07231874970095964
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,380,0.07311453636845566
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,383,0.07391091234360325
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,402,0.0747087395822128
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,403,0.0755069910342997
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,410,0.07630531706649357
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,421,0.07710338925003501
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,424,0.0779037880733221
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,438,0.07871112318586782
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,449,0.07951840590292958
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,506,0.0803254373799498
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,599,0.08113340499833377
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,729,0.0819425820319748
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,813,0.08275205317501866
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,836,0.08356353913824288
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,872,0.08437496158529789
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,917,0.08518684593687786
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,1014,0.08599895540058411
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,1072,0.08681222858367565
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,1138,0.08762546173297658
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,1499,0.08844090497083856
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,1862,0.08925759835351488
+LU,Lung,heat_humidity,tmax_5c,Tmax per 5 C,Tmax,Q4 reference,5.292369747899166,46695,998,TRUE,1000,2934,0.09007482667057842
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,1,0.0014836734349821246
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,2,0.0029678750466841652
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,3,0.005210679888581926
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,4,0.006732144502429982
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,5,0.007495835818115526
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,6,0.010547509337522354
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,8,0.012079915727200352
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,9,0.013613781801605773
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,10,0.014386020223449814
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,11,0.016717259513259197
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,12,0.01829213636277882
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,13,0.01907985861334971
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,14,0.0198674095958723
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,18,0.020657431387650083
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,19,0.022239436321793815
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,22,0.023032208534923715
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,23,0.02382557525389495
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,24,0.024619465762507065
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,25,0.02620610448152416
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,26,0.027000116652002748
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,28,0.029399246366195064
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,32,0.03020563574849011
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,34,0.031012954070497534
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,35,0.03182310115521647
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,36,0.03263606198213853
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,38,0.03345094637020263
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,46,0.03426620276292025
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,48,0.0350814016482075
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,49,0.03589744966161523
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,57,0.03753237899277906
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,61,0.03917320878705488
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,64,0.03999672041657387
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,67,0.040821129869430206
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,68,0.0416464154759435
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,69,0.04247265409102652
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,70,0.043300552365343914
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,74,0.04412883476652929
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,75,0.04495823755080097
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,76,0.04578768800350985
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,77,0.04661668252396689
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,79,0.0474465086979583
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,83,0.04827861016806667
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,84,0.04911058300140869
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,85,0.049942243230981176
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,86,0.05077457273932573
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,90,0.05243941752426895
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,93,0.053271755473914606
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,102,0.05410551860492041
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,103,0.05494125345622114
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,105,0.05661597367775606
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,116,0.05745582417371664
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,130,0.05829542781200603
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,134,0.05913458849894415
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,136,0.059973904886871154
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,145,0.06081471090840429
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,148,0.06333632563874414
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,150,0.06418192283543012
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,152,0.065030259205476
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,167,0.06587921195121416
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,190,0.06673415858239595
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,192,0.06758949235249379
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,203,0.06844861771247901
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,245,0.06931338917782937
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,247,0.07017809242609674
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,255,0.0710428466068398
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,261,0.07190763516341359
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,265,0.07277451509161137
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,267,0.07364261218789203
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,274,0.07451160119570799
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,277,0.07538084371251819
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,307,0.07625033030042838
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,309,0.07712014593891625
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,313,0.07799080020919225
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,330,0.07886123543501644
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,363,0.07973156063661102
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,380,0.08060531833897644
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,383,0.08147964282916376
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,402,0.08235548005983273
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,403,0.08323170221169107
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,410,0.08410792536226097
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,421,0.084983789001012
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,424,0.08586212476916344
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,438,0.08674798968985875
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,449,0.08763371416431787
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,506,0.08851908000858599
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,599,0.08940538968620337
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,729,0.09029294257117149
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,813,0.09118073440377161
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,836,0.09207065195835906
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,872,0.09296041565387103
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,917,0.09385060151060531
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,1014,0.0947409497249595
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,1072,0.09563248904576938
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,1138,0.0965238996324651
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,1499,0.09741764750755488
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,1862,0.09831267993514803
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q1 reference,8.151510929802955,46695,998,TRUE,1000,2934,0.09920821275064451
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,1,0.0014776765560730043
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,2,0.002955888039975485
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,3,0.005189657979430828
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,4,0.006705005127766506
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,5,0.00746562935142181
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,6,0.010505070568345931
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,8,0.012031348766843086
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,9,0.013559090402637142
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,10,0.014328249057683817
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,11,0.016650205918350536
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,12,0.018218824589806504
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,13,0.019003420441304764
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,14,0.01978784825222779
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,18,0.020574739635494943
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,19,0.022150483701744994
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,22,0.022940122354807135
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,23,0.02373035575857063
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,24,0.024521113483729096
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,25,0.02610149894640401
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,26,0.026892385667535268
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,28,0.029282087619728836
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,32,0.030085313528717017
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,34,0.03088946743939114
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,35,0.03169644174929365
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,36,0.032506221527556445
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,38,0.03331792010268353
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,46,0.03412999199805955
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,48,0.03494200938328118
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,49,0.03575487536194333
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,57,0.03738343795134014
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,61,0.039017889276861784
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,64,0.039838203887869295
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,67,0.04065941568769893
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,68,0.04148150310239418
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,69,0.04230454270102535
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,70,0.043129238414372106
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,74,0.04395431965739394
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,75,0.04478051985120979
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,76,0.045606770431916854
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,77,0.04643256974201593
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,79,0.04725920040903775
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,83,0.048088100535276346
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,84,0.04891687545038992
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,85,0.04974534189474489
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,86,0.05057447798467274
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,90,0.052232944046576746
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,93,0.053062097376261885
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,102,0.053892673390595225
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,103,0.05472521656004303
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,105,0.056393549969759094
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,116,0.05723020207121465
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,130,0.058066611269238955
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,134,0.058902582215211274
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,136,0.059738711287081414
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,145,0.060576327363427884
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,148,0.0630883935058486
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,150,0.06393079480419184
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,152,0.06477592801721854
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,167,0.06562167838373667
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,190,0.06647340316793748
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,192,0.06732551679031018
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,203,0.06818141091091301
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,245,0.06904293312582777
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,247,0.06990439061756581
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,255,0.07076590209137157
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,261,0.07162745105619384
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,265,0.07249108681711625
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,267,0.07335593846391453
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,274,0.0742216819710585
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,277,0.07508768132990407
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,307,0.07595392714370186
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,309,0.07682050408156527
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,313,0.07768791983708889
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,330,0.07855512067486903
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,363,0.07942221521129034
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,380,0.08029273284359861
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,383,0.08116381851160537
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,402,0.08203641467898126
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,403,0.08290939771412409
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,410,0.08378238511925873
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,421,0.08465501771632833
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,424,0.08553011671617705
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,438,0.08641272056770855
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,449,0.08729518795218827
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,506,0.08817730148843961
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,599,0.08906035886234387
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,729,0.08994465836561227
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,813,0.09082919943184908
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,836,0.09171586194413717
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,872,0.09260237467452881
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,917,0.0934893115437474
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,1014,0.09437641370335914
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,1072,0.0952647061630928
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,1138,0.0961528738988745
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,1499,0.09704337397879859
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,1862,0.09793515751771675
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q2 reference,8.702207149009482,46695,998,TRUE,1000,2934,0.0988274432117412
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,1,0.0014732204486741507
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,2,0.002946980795023979
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,3,0.0051740370003773295
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,4,0.006684838268152804
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,5,0.00744318332115923
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,6,0.010473534531771689
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,8,0.011995258704937117
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,9,0.013518449053623649
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,10,0.014285319005835961
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,11,0.016600377629466867
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,12,0.0181643454697904
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,13,0.01894661788471752
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,14,0.019728724644221374
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,18,0.020513289584332628
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,19,0.022084380685865268
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,22,0.02287169051289839
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,23,0.023659595258961885
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,24,0.024448024707937943
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,25,0.02602376272639295
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,26,0.026812326580959
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,28,0.029195021638630525
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,32,0.029995896365051622
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,34,0.03079769838175339
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,35,0.0316023145673362
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,36,0.03240973005740577
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,38,0.03321906078879455
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,46,0.034028765803669314
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,48,0.03483841852152847
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,49,0.03564891942079984
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,57,0.03727274982115669
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,61,0.038902460182175025
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,64,0.03972039850278386
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,67,0.040539233525585194
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,68,0.04135894374772375
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,69,0.042179605525755615
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,70,0.04300192076870468
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,74,0.04382462256883224
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,75,0.044648442239866526
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,76,0.04547231430317045
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,77,0.046295738545660714
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,79,0.04711999390928101
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,83,0.047946514377998795
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,84,0.04877291216654456
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,85,0.049599004541110325
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,86,0.05042576681844069
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,90,0.05207949124003153
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,93,0.052906277250945766
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,102,0.05373448407498238
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,103,0.05456465464488536
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,105,0.056228240245075334
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,116,0.05706251470961088
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,130,0.05789654919435572
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,134,0.05873014890457806
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,136,0.0595639085274664
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,145,0.060399153184382715
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,148,0.06290412076825125
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,150,0.06374414615722912
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,152,0.0645868980483032
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,167,0.06543026765473925
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,190,0.066279597189283
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,192,0.06712931680864243
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,203,0.06798280866341178
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,245,0.06884191520516836
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,247,0.06970095960423928
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,255,0.07056006023553862
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,261,0.07141920065677942
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,265,0.07228042445515981
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,267,0.07314286316886076
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,274,0.07400619368752803
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,277,0.07486978178231518
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,307,0.07573361808704815
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,309,0.07659778704006781
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,313,0.07746279493148511
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,330,0.0783275909559229
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,363,0.07919228342951745
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,380,0.08006039198867065
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,383,0.08092906949366663
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,402,0.08179925581394298
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,403,0.08266983043153764
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,410,0.083540411907989
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,421,0.08441064205600735
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,424,0.08528333433084079
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,438,0.08616351337006034
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,449,0.08704355888271564
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,506,0.08792325408456592
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,599,0.08880389310892745
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,729,0.08968577344267292
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,813,0.09056789726566405
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,836,0.091452139336616
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,872,0.0923362346388743
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,917,0.09322075553190357
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,1014,0.09410544387752318
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,1072,0.09499132190496407
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,1138,0.09587707817176361
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,1499,0.09676516308720917
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,1862,0.09765453062957252
+LU,Lung,heat_humidity,rmax_10pct,Maximum relative humidity per 10 pct,Maximum relative humidity,Q4 reference,9.112861804861803,46695,998,TRUE,1000,2934,0.09854440162224298

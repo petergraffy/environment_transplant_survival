@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,n,adverse_events,competing_transplant_or_improvement,other_exits,hazard_ratio,conf_low,conf_high,p_value,concordance,variance_estimator,center_adjustment
+LI,Liver,pm25,death_or_deterioration_delist_cause_specific,pm25_waitlist_5ug,PM2.5 per 5 ug/m3,217632,41645,146047,19971,1.1635288062158784,1.1289978743924427,1.1991158828555624,6.632487233916857e-23,0.7642395809832963,robust_patient_clustered,listing_center_fixed_effect_dummies

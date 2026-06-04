@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,source_n,source_adverse_events,n,adverse_events,sampled,finegray_max_n,subdistribution_hazard_ratio,conf_low,conf_high,p_value,elapsed_seconds,center_adjustment,variance_estimator,error
+HR,Heart,pm25,death_or_deterioration_delist_subdistribution,pm25_5ug,PM2.5 per 5 ug/m3,73624,9823,999,133,TRUE,1000,1.0415748442638053,0.7255070418344772,1.4953378722003952,0.8252632393024526,0.41000000000000014,top_20_listing_center_fixed_effect_dummies_plus_other,cmprsk_crr_model_based,NA

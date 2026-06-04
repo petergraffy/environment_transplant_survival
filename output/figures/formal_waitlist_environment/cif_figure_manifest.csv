@@ -1,0 +1,3 @@
+figure,path
+adverse_cif_by_exposure_quartile,output/figures/formal_waitlist_environment/adverse_cif_by_exposure_quartile.png
+transplant_improvement_cif_by_exposure_quartile,output/figures/formal_waitlist_environment/transplant_improvement_cif_by_exposure_quartile.png

@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,source_n,source_adverse_events,n,adverse_events,sampled,finegray_max_n,subdistribution_hazard_ratio,conf_low,conf_high,p_value,elapsed_seconds,center_adjustment,variance_estimator,error
+LI,Liver,no2,death_or_deterioration_delist_subdistribution,no2_10unit,NO2 per 10 units,217632,41645,998,191,TRUE,1000,0.923765567903038,0.6640337707933871,1.2850894969146658,0.6377856623052194,0.35999999999999943,top_20_listing_center_fixed_effect_dummies_plus_other,cmprsk_crr_model_based,NA

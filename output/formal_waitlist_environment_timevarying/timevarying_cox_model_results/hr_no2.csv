@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,intervals,waitlist_rows,people,adverse_events,hazard_ratio,conf_low,conf_high,p_value,concordance,variance_estimator,center_adjustment
+HR,Heart,no2,time_varying_death_or_deterioration_delist_cause_specific,no2_interval_10unit,Interval NO2 per 10 units,214424,73501,68817,9823,1.0748219649222297,1.0225758613556613,1.1297374600137162,0.004538845246846692,0.6303701519638825,robust_patient_clustered,stratified_listing_center_baseline_hazard

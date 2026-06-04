@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,source_n,source_adverse_events,n,adverse_events,sampled,finegray_max_n,subdistribution_hazard_ratio,conf_low,conf_high,p_value,elapsed_seconds,center_adjustment,variance_estimator,error
+KI,Kidney,no2,death_or_deterioration_delist_subdistribution,no2_10unit,NO2 per 10 units,678254,117219,998,172,TRUE,1000,1.0392331149207645,0.7614237139211217,1.4184027203279304,0.8083988387157693,0.6600000000000001,top_20_listing_center_fixed_effect_dummies_plus_other,cmprsk_crr_model_based,NA

@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,intervals,waitlist_rows,people,adverse_events,hazard_ratio,conf_low,conf_high,p_value,concordance,variance_estimator,center_adjustment
+KI,Kidney,pm25,time_varying_death_or_deterioration_delist_cause_specific,pm25_interval_5ug,Interval PM2.5 per 5 ug/m3,1274251,641658,526349,117219,1.1853365817115245,1.1599686393844924,1.211259308431908,1.5392841976427763e-53,0.6390000995193583,robust_patient_clustered,stratified_listing_center_baseline_hazard

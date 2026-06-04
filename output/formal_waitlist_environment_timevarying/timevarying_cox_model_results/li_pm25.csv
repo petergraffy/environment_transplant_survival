@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,intervals,waitlist_rows,people,adverse_events,hazard_ratio,conf_low,conf_high,p_value,concordance,variance_estimator,center_adjustment
+LI,Liver,pm25,time_varying_death_or_deterioration_delist_cause_specific,pm25_interval_5ug,Interval PM2.5 per 5 ug/m3,2573955,217574,196271,41656,1.019894080270811,0.9956160364500184,1.0447641428922105,0.1090372191993757,0.8433151373329162,robust_patient_clustered,stratified_listing_center_baseline_hazard

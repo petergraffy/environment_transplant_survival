@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,n,adverse_events,competing_transplant_or_improvement,other_exits,hazard_ratio,conf_low,conf_high,p_value,concordance,variance_estimator,center_adjustment
+LI,Liver,no2,death_or_deterioration_delist_cause_specific,no2_waitlist_10unit,NO2 per 10 units,217632,41645,146047,19971,1.1345247086579915,1.1063729298568916,1.163392812513943,7.19976453227161e-23,0.7644525378214355,robust_patient_clustered,listing_center_fixed_effect_dummies

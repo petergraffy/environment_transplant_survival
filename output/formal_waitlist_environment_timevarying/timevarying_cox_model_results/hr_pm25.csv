@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,intervals,waitlist_rows,people,adverse_events,hazard_ratio,conf_low,conf_high,p_value,concordance,variance_estimator,center_adjustment
+HR,Heart,pm25,time_varying_death_or_deterioration_delist_cause_specific,pm25_interval_5ug,Interval PM2.5 per 5 ug/m3,214424,73501,68817,9823,1.0070728485970017,0.9441104288948193,1.074234211742055,0.8305727285331931,0.6305890990618847,robust_patient_clustered,stratified_listing_center_baseline_hazard

@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,source_n,source_adverse_events,n,adverse_events,sampled,finegray_max_n,subdistribution_hazard_ratio,conf_low,conf_high,p_value,elapsed_seconds,center_adjustment,variance_estimator,error
+LU,Lung,no2,death_or_deterioration_delist_subdistribution,no2_10unit,NO2 per 10 units,46695,5638,998,120,TRUE,1000,0.8077650626823655,0.5296362801137183,1.2319480764235993,0.32151592534755663,0.35999999999999943,top_20_listing_center_fixed_effect_dummies_plus_other,cmprsk_crr_model_based,NA

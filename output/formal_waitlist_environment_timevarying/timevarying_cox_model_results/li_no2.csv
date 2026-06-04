@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,intervals,waitlist_rows,people,adverse_events,hazard_ratio,conf_low,conf_high,p_value,concordance,variance_estimator,center_adjustment
+LI,Liver,no2,time_varying_death_or_deterioration_delist_cause_specific,no2_interval_10unit,Interval NO2 per 10 units,2573955,217574,196271,41656,0.956971330561602,0.927825944487919,0.9870322477588008,0.005318290017696041,0.843314396220179,robust_patient_clustered,stratified_listing_center_baseline_hazard

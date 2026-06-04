@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,n,adverse_events,competing_transplant_or_improvement,other_exits,hazard_ratio,conf_low,conf_high,p_value,concordance,variance_estimator,center_adjustment
+HR,Heart,pm25,death_or_deterioration_delist_cause_specific,pm25_waitlist_5ug,PM2.5 per 5 ug/m3,73624,9823,54940,5526,1.209149186767338,1.1314837753915126,1.2921455770359798,2.0590206693253183e-8,0.6603108005925841,robust_patient_clustered,listing_center_fixed_effect_dummies

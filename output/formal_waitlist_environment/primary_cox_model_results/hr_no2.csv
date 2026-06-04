@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,n,adverse_events,competing_transplant_or_improvement,other_exits,hazard_ratio,conf_low,conf_high,p_value,concordance,variance_estimator,center_adjustment
+HR,Heart,no2,death_or_deterioration_delist_cause_specific,no2_waitlist_10unit,NO2 per 10 units,73624,9823,54940,5526,1.1892680452882332,1.1309004703865033,1.2506480637153818,1.4682829129404493e-11,0.6601349187900912,robust_patient_clustered,listing_center_fixed_effect_dummies

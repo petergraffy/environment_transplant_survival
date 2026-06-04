@@ -1,0 +1,3 @@
+organ,organ_label,model,endpoint,term,exposure,n,adverse_events,competing_transplant_or_improvement,other_exits,hazard_ratio,conf_low,conf_high,p_value,concordance,variance_estimator,center_adjustment
+LU,Lung,heat_humidity,death_or_deterioration_delist_cause_specific,tmax_waitlist_5c,Tmax per 5 C,46695,5638,37727,2413,0.9756385036289285,0.9440335420250454,1.008301556448342,0.14212896145463175,0.6947476160285811,robust_patient_clustered,listing_center_fixed_effect_dummies
+LU,Lung,heat_humidity,death_or_deterioration_delist_cause_specific,rmax_waitlist_10pct,Maximum relative humidity per 10 pct,46695,5638,37727,2413,0.9752309472297687,0.9325686814899103,1.0198448857570408,0.271788908001259,0.6947476160285811,robust_patient_clustered,listing_center_fixed_effect_dummies

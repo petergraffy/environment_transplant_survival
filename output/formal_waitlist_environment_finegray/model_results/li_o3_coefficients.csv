@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,source_n,source_adverse_events,n,adverse_events,sampled,finegray_max_n,subdistribution_hazard_ratio,conf_low,conf_high,p_value,elapsed_seconds,center_adjustment,variance_estimator,error
+LI,Liver,o3,death_or_deterioration_delist_subdistribution,o3_10ppb,Ozone per 10 ppb,217632,41645,998,191,TRUE,1000,0.9666510807628622,0.7789392330341096,1.1995984697038513,0.7581526914792046,0.5700000000000003,top_20_listing_center_fixed_effect_dummies_plus_other,cmprsk_crr_model_based,NA

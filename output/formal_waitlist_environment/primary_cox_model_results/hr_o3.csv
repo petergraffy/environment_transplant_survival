@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,n,adverse_events,competing_transplant_or_improvement,other_exits,hazard_ratio,conf_low,conf_high,p_value,concordance,variance_estimator,center_adjustment
+HR,Heart,o3,death_or_deterioration_delist_cause_specific,o3_waitlist_10ppb,Ozone per 10 ppb,73624,9823,54940,5526,1.020989192231379,0.9617654777804542,1.0838597919515267,0.49568050838848243,0.6595557789971559,robust_patient_clustered,listing_center_fixed_effect_dummies

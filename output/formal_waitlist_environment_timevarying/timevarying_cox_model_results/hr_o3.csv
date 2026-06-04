@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,intervals,waitlist_rows,people,adverse_events,hazard_ratio,conf_low,conf_high,p_value,concordance,variance_estimator,center_adjustment
+HR,Heart,o3,time_varying_death_or_deterioration_delist_cause_specific,o3_interval_10ppb,Interval ozone per 10 ppb,214424,73501,68817,9823,0.9970360858137639,0.9536126941913976,1.0424367906068492,0.8960516414854222,0.6305715832940445,robust_patient_clustered,stratified_listing_center_baseline_hazard

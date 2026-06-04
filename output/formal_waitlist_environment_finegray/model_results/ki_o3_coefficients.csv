@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,source_n,source_adverse_events,n,adverse_events,sampled,finegray_max_n,subdistribution_hazard_ratio,conf_low,conf_high,p_value,elapsed_seconds,center_adjustment,variance_estimator,error
+KI,Kidney,o3,death_or_deterioration_delist_subdistribution,o3_10ppb,Ozone per 10 ppb,678254,117219,998,172,TRUE,1000,0.7775429573055764,0.5456676704416993,1.1079510170835671,0.16373360756865576,0.7100000000000009,top_20_listing_center_fixed_effect_dummies_plus_other,cmprsk_crr_model_based,NA

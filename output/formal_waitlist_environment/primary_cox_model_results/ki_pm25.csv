@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,n,adverse_events,competing_transplant_or_improvement,other_exits,hazard_ratio,conf_low,conf_high,p_value,concordance,variance_estimator,center_adjustment
+KI,Kidney,pm25,death_or_deterioration_delist_cause_specific,pm25_waitlist_5ug,PM2.5 per 5 ug/m3,678254,117219,349988,82632,1.7386530462105834,1.6934331395626263,1.7850804643389042,0,0.6713546230511511,robust_patient_clustered,listing_center_fixed_effect_dummies

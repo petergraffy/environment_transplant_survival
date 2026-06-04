@@ -1,0 +1,2 @@
+organ,organ_label,model,endpoint,term,exposure,n,adverse_events,competing_transplant_or_improvement,other_exits,hazard_ratio,conf_low,conf_high,p_value,concordance,variance_estimator,center_adjustment
+LI,Liver,o3,death_or_deterioration_delist_cause_specific,o3_waitlist_10ppb,Ozone per 10 ppb,217632,41645,146047,19971,1.0084577971399693,0.9820688898952055,1.0355557935664983,0.5335876948511222,0.7639767703738676,robust_patient_clustered,listing_center_fixed_effect_dummies
