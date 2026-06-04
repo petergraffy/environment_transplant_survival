@@ -21,6 +21,9 @@ formal_dataset_path <- file.path("output", "formal_waitlist_environment", "forma
 out_dir <- file.path("output", "figures", "formal_waitlist_environment_timevarying")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
+max_km_years <- 5
+max_km_days <- max_km_years * 365.25
+
 organ_levels <- c("Heart", "Kidney", "Liver", "Lung")
 exposure_levels <- c(
   "Interval Tmax per 5 C",
@@ -130,7 +133,7 @@ km_curves <- bind_rows(lapply(seq_len(nrow(km_specs)), function(i) {
 write_csv(km_curves, file.path("output", "formal_waitlist_environment_timevarying", "km_by_exposure_quartile_curves.csv"))
 
 km_plot_dat <- km_curves %>%
-  filter(time_days <= 3650) %>%
+  filter(time_days <= max_km_days) %>%
   mutate(
     years = time_days / 365.25,
     organ_label = factor(organ_label, levels = organ_levels),
@@ -145,7 +148,10 @@ km_surv <- ggplot(km_plot_dat, aes(x = years, y = survival, color = quartile)) +
   scale_color_brewer(palette = "Dark2", na.translate = FALSE) +
   labs(
     title = "Kaplan-Meier Adverse-Event-Free Survival by Exposure Quartile",
-    subtitle = "Death/deterioration delisting is the event; transplant, improvement, other removals, and administrative end are censored",
+    subtitle = paste0(
+      "Restricted to ", max_km_years,
+      " years; death/deterioration delisting is the event; transplant, improvement, other removals, and administrative end are censored"
+    ),
     x = "Years from waitlist start",
     y = "Adverse-event-free survival",
     color = "Quartile"
@@ -161,7 +167,7 @@ km_adv <- ggplot(km_plot_dat, aes(x = years, y = cumulative_adverse, color = qua
   scale_color_brewer(palette = "Dark2", na.translate = FALSE) +
   labs(
     title = "Kaplan-Meier Cumulative Adverse Event by Exposure Quartile",
-    subtitle = "1 - KM survival; competing exits are treated as censoring",
+    subtitle = paste0("Restricted to ", max_km_years, " years; 1 - KM survival; competing exits are treated as censoring"),
     x = "Years from waitlist start",
     y = "1 - KM survival",
     color = "Quartile"
