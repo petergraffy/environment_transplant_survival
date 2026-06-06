@@ -53,11 +53,11 @@ Final filled air-pollution exposure surfaces aggregated to 2020 ZCTA5 polygons.
 Assets:
 - `air_pollution_zcta_pm25_monthly_2005_2023.parquet`: monthly PM2.5, `pm25_ug_m3`.
 - `air_pollution_zcta_o3_monthly_2005_2023.parquet`: monthly ozone, `o3_ppb`.
-- `air_pollution_zcta_no2_annual_2005_2024.parquet`: annual NO2, `no2`.
+- `air_pollution_zcta_no2_annual_2005_2025.parquet`: annual NO2, `no2`.
 - `air_pollution_zcta_parquet_manifest.csv`: row counts, completeness, sizes, and SHA-256 checksums.
 - `fill_summary.csv` and `fill_audit_summary.csv`: nearest-fill audit metadata.
 
-PM2.5 and ozone currently cover 2005-2023 in the local source files; NO2 covers 2005-2024.
+PM2.5 and ozone currently cover 2005-2023 in the local source files; NO2 covers 2005-2025.
 "@
     draft = $false
     prerelease = $false
@@ -67,8 +67,20 @@ PM2.5 and ozone currently cover 2005-2023 in the local source files; NO2 covers 
 
 $uploadRoot = $release.upload_url.Split("{")[0]
 $existingAssets = Invoke-GitHubJson -Method GET -Uri $release.assets_url -Headers $headers
+$staleAssetNames = @(
+  "air_pollution_zcta_no2_annual_2005_2024.parquet"
+)
+foreach ($staleName in $staleAssetNames) {
+  $stale = $existingAssets | Where-Object { $_.name -eq $staleName } | Select-Object -First 1
+  if ($stale) {
+    Write-Host "Deleting stale asset $staleName"
+    Invoke-GitHubJson -Method DELETE -Uri "$apiRoot/releases/assets/$($stale.id)" -Headers $headers | Out-Null
+  }
+}
+$existingAssets = Invoke-GitHubJson -Method GET -Uri $release.assets_url -Headers $headers
 $assetFiles = Get-ChildItem -LiteralPath $AssetDir -File |
   Where-Object { $_.Name -match "\.(parquet|csv|md)$" } |
+  Where-Object { $staleAssetNames -notcontains $_.Name } |
   Sort-Object Name
 
 foreach ($file in $assetFiles) {

@@ -21,7 +21,7 @@ assets <- tibble::tribble(
   ~pollutant, ~source_file, ~value_col, ~output_file,
   "pm25", "all_pm25_zip_filled.csv.gz", "pm25_ug_m3", "air_pollution_zcta_pm25_monthly_2005_2023.parquet",
   "o3", "all_o3_zip_filled.csv.gz", "o3_ppb", "air_pollution_zcta_o3_monthly_2005_2023.parquet",
-  "no2", "all_no2_zip_filled.csv.gz", "no2", "air_pollution_zcta_no2_annual_2005_2024.parquet"
+  "no2", "all_no2_zip_filled.csv.gz", "no2", "air_pollution_zcta_no2_annual_2005_2025.parquet"
 )
 
 log_msg <- function(...) {
@@ -103,13 +103,13 @@ readme <- c(
   "",
   "- `air_pollution_zcta_pm25_monthly_2005_2023.parquet`: monthly PM2.5, `pm25_ug_m3`.",
   "- `air_pollution_zcta_o3_monthly_2005_2023.parquet`: monthly ozone, `o3_ppb`.",
-  "- `air_pollution_zcta_no2_annual_2005_2024.parquet`: annual NO2, `no2`.",
+  "- `air_pollution_zcta_no2_annual_2005_2025.parquet`: annual NO2, `no2`.",
   "- `air_pollution_zcta_parquet_manifest.csv`: sizes, row counts, completeness, and SHA-256 checksums.",
   "- `fill_summary.csv`: nearest-fill audit by source file.",
   "- `fill_audit_summary.csv`: additional fill audit summary when available.",
   "",
   "Columns include `zip`, `pollutant`, `year`, `month`, `temporal_resolution`, the pollutant value column, `value_source`, and `fill_distance_km`.",
-  "PM2.5 and ozone currently cover 2005-2023 in the local source files; NO2 covers 2005-2024."
+  "PM2.5 and ozone currently cover 2005-2023 in the local source files; NO2 covers 2005-2025."
 )
 writeLines(readme, file.path(release_dir, "README.md"), useBytes = TRUE)
 
