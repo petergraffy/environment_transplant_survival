@@ -11,7 +11,7 @@ assets:
   ZCTA, value column `pm25_ug_m3`.
 - `air_pollution_zcta_o3_monthly_2005_2023.parquet`: monthly ozone by 2020
   ZCTA, value column `o3_ppb`.
-- `air_pollution_zcta_no2_annual_2005_2024.parquet`: annual NO2 by 2020
+- `air_pollution_zcta_no2_annual_2005_2025.parquet`: annual NO2 by 2020
   ZCTA, value column `no2`.
 - `air_pollution_zcta_parquet_manifest.csv`: row counts, coverage,
   completeness, sizes, and SHA-256 checksums.
@@ -22,7 +22,7 @@ All three Parquet files include `zip`, `pollutant`, `year`, `month`,
 `fill_distance_km`.
 
 PM2.5 and ozone currently cover 2005-2023 in the local source files; NO2 covers
-2005-2024.
+2005-2025.
 
 ## Citations
 

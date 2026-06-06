@@ -352,7 +352,7 @@ pm25 <- read_parquet(file.path(pollution_dir, "air_pollution_zcta_pm25_monthly_2
 o3 <- read_parquet(file.path(pollution_dir, "air_pollution_zcta_o3_monthly_2005_2023.parquet")) %>%
   transmute(zip = clean_zip(zip), year, month, o3_ppb) %>%
   as.data.table()
-no2 <- read_parquet(file.path(pollution_dir, "air_pollution_zcta_no2_annual_2005_2024.parquet")) %>%
+no2 <- read_parquet(file.path(pollution_dir, "air_pollution_zcta_no2_annual_2005_2025.parquet")) %>%
   transmute(zip = clean_zip(zip), year, no2) %>%
   as.data.table()
 

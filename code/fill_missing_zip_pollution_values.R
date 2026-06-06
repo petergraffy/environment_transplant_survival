@@ -32,7 +32,8 @@ read_gz <- function(path) {
 }
 
 fill_one <- function(dt) {
-  value_col <- setdiff(names(dt), c("zip", "pollutant", "year", "month", "temporal_resolution"))
+  audit_cols <- c("value_source", "fill_distance_m", "fill_cell", "fill_distance_km")
+  value_col <- setdiff(names(dt), c("zip", "pollutant", "year", "month", "temporal_resolution", audit_cols))
   if (length(value_col) != 1L) {
     stop("Expected one value column; found: ", paste(value_col, collapse = ", "))
   }

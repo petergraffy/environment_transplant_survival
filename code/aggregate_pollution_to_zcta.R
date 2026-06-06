@@ -15,7 +15,22 @@ library(terra)
 terraOptions(progress = 1, memfrac = 0.75)
 sf_use_s2(FALSE)
 
-years <- 2005:2024
+parse_years <- function(value, default = 2005:2024) {
+  if (!nzchar(value)) return(default)
+  pieces <- strsplit(value, ",")[[1]]
+  out <- integer()
+  for (piece in trimws(pieces)) {
+    bounds <- as.integer(strsplit(piece, ":", fixed = TRUE)[[1]])
+    if (length(bounds) == 2L) {
+      out <- c(out, seq(bounds[1], bounds[2]))
+    } else {
+      out <- c(out, bounds[1])
+    }
+  }
+  unique(out)
+}
+
+years <- parse_years(Sys.getenv("POLLUTION_YEARS"), 2005:2024)
 box_dir <- "C:/Users/Peter Graffy/Box"
 out_dir <- "output/zip_pollution"
 cache_dir <- "data/cache"
@@ -210,6 +225,9 @@ o3_files <- function() {
 no2_files <- function() {
   root <- file.path(box_dir, "NO2", "Anenberg et al 2022 Global NO2")
   files <- list.files(root, pattern = "\\.nc$", full.names = TRUE)
+  extra_files <- strsplit(Sys.getenv("POLLUTION_NO2_EXTRA_FILES", ""), ";", fixed = TRUE)[[1]]
+  extra_files <- extra_files[nzchar(extra_files)]
+  if (length(extra_files)) files <- c(files, extra_files)
   dt <- data.table(path = normalizePath(files, winslash = "/", mustWork = TRUE))
   dt[grepl("^[0-9]{4}_final_1km\\.nc$", basename(path)), year := as.integer(substr(basename(path), 1, 4))]
   dt[grepl("annual_mean_.*_([0-9]{4})\\.v", basename(path)), year := as.integer(sub(".*_([0-9]{4})\\.v.*$", "\\1", basename(path)))]

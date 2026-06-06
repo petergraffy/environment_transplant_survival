@@ -90,7 +90,7 @@ Final filled air-pollution exposure surfaces aggregated to 2020 ZCTA5 polygons.
 Assets:
 - air_pollution_zcta_pm25_monthly_2005_2023.parquet: monthly PM2.5, pm25_ug_m3.
 - air_pollution_zcta_o3_monthly_2005_2023.parquet: monthly ozone, o3_ppb.
-- air_pollution_zcta_no2_annual_2005_2024.parquet: annual NO2, no2.
+- air_pollution_zcta_no2_annual_2005_2025.parquet: annual NO2, no2.
 - air_pollution_zcta_parquet_manifest.csv: row counts, coverage, completeness, sizes, and SHA-256 checksums.
 - fill_summary.csv and fill_audit_summary.csv: nearest-fill audit metadata.
 - README.md with schema and citation notes.
@@ -103,7 +103,7 @@ Source citations:
 - NO2: Mohegh, A., & Anenberg, S. (2021). Global surface NO2 concentrations 1990-2020. Figshare. https://doi.org/10.6084/m9.figshare.12968114
 - NO2: Nawaz, M. O. (2025). Monthly and annual US TROPOMI surface NO2 estimates (~1 km x 1 km), version 1.01. Zenodo. https://doi.org/10.5281/zenodo.14646034
 
-PM2.5 and ozone currently cover 2005-2023 in the local source files; NO2 covers 2005-2024.
+PM2.5 and ozone currently cover 2005-2023 in the local source files; NO2 covers 2005-2025.
 '@
 
 $updates = @(
