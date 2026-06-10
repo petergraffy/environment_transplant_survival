@@ -1,0 +1,2 @@
+year,month,rows,zips,dates,missing_values,zonal_mean_values,nearest_fill_values,mean,p01,p50,p99,output
+2018,12,1032300,33300,31,0,1000680,31620,27.8184122647768,10.9724973857252,27.8666670819124,42.9884300229855,C:/Users/Peter Graffy/Documents/GitHub/environment_transplant_survival/data/processed/o3_zcta_daily/o3_zcta_daily_2018_12.csv.gz
