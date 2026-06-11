@@ -1,0 +1,2 @@
+year,month,rows,zips,missing_values,zonal_mean_values,nearest_fill_values,mean,p01,p50,p99,output
+2023,10,33300,33300,0,32281,1019,3.2851331574861,1.12496534273855,2.50934734751308,12.777111490423,C:/Users/Peter Graffy/Documents/GitHub/environment_transplant_survival/data/processed/no2_zcta_monthly/no2_zcta_monthly_2023_10.csv.gz

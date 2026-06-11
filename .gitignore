@@ -11,6 +11,7 @@ data/raw/lghap_aod_daily/*.nc
 data/raw/lghap_aod_daily/LGHAP_Global_AOD/
 data/processed/gridmet_zcta_daily/gridmet_zcta_daily_20??.csv.gz
 data/processed/o3_zcta_daily/o3_zcta_daily_*.csv.gz
+data/processed/no2_zcta_monthly/no2_zcta_monthly_*.csv.gz
 data/processed/lghap_pm25_zcta_daily/lghap_pm25_zcta_daily_*.csv.gz
 data/processed/lghap_aod_zcta_daily/lghap_aod_zcta_daily_*.csv.gz
 data/processed/lghap_pm25_zcta_daily_derived/lghap_pm25_zcta_daily_derived_from_aod_*.csv.gz
@@ -19,3 +20,4 @@ data/release/gridmet_zcta_daily_parquet/*.parquet
 data/release/air_pollution_zcta_parquet/*.parquet
 data/release/lghap_pm25_zcta_daily_parquet/*.parquet
 data/release/o3_zcta_daily_parquet/*.parquet
+data/release/no2_zcta_monthly_parquet/*.parquet
