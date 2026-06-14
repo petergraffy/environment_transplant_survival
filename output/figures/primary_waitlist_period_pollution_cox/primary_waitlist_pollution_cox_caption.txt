@@ -1,0 +1,8 @@
+Figure caption:
+Cause-specific Cox models for death or deterioration delisting. Models adjust for age, sex, race, listing year, baseline organ score, and stratified baseline hazard by listing center. PM2.5 and ozone follow-up are censored at 2023-12-31; NO2 follow-up is censored at 2025-12-31.
+
+Primary exposure definition:
+Observed waitlist-period average pollution at candidate ZCTA. PM2.5 and ozone are evaluated through 2023; NO2 through 2025.
+
+Model:
+Surv(followup_days_pollutant, adverse_event) ~ waitlist_period_pollution + age + sex + race + listing_year + organ_score + strata(listing_center).
