@@ -47,10 +47,15 @@ theme_primary <- function(base_size = 10.5) {
 }
 
 pollutant_levels <- c("pm25", "o3", "no2")
-pollutant_labels <- c(
-  pm25 = "PM₂.₅ per 5 µg/m³",
-  o3 = "O₃ per 10 ppb",
-  no2 = "NO₂ per 10 ppb"
+pollutant_labels_text <- c(
+  pm25 = "PM2.5 per 5 ug/m3",
+  o3 = "O3 per 10 ppb",
+  no2 = "NO2 per 10 ppb"
+)
+pollutant_labels_plotmath <- c(
+  pm25 = 'PM[2.5]~"per 5 ug/m"^3',
+  o3 = 'O[3]~"per 10 ppb"',
+  no2 = 'NO[2]~"per 10 ppb"'
 )
 organ_levels <- c("HR", "KI", "LI", "LU")
 organ_labels <- c(HR = "Heart", KI = "Kidney", LI = "Liver", LU = "Lung")
@@ -73,7 +78,7 @@ format_p <- function(p) {
 results <- read_csv(in_path, show_col_types = FALSE) %>%
   mutate(
     organ = factor(organ, levels = organ_levels, labels = organ_labels[organ_levels]),
-    pollutant = factor(exposure, levels = pollutant_levels, labels = pollutant_labels[pollutant_levels]),
+    pollutant = factor(exposure, levels = pollutant_levels),
     pollutant_key = factor(exposure, levels = pollutant_levels),
     organ_key = factor(as.character(recode(as.character(organ), !!!setNames(organ_levels, organ_labels[organ_levels]))), levels = organ_levels),
     hr_ci = format_ci(hazard_ratio, conf_low, conf_high),
@@ -93,7 +98,7 @@ short_caption <- "Adjusted cause-specific Cox models; points are HRs and bars ar
 single_axis_dat <- results %>%
   mutate(
     organ = factor(organ, levels = rev(organ_labels[organ_levels])),
-    pollutant = factor(pollutant, levels = pollutant_labels[pollutant_levels]),
+    pollutant = factor(pollutant, levels = pollutant_levels),
     pollutant_key = factor(as.character(pollutant_key), levels = pollutant_levels)
   )
 
@@ -111,7 +116,7 @@ p_single_axis <- ggplot(
   ) +
   geom_point(size = 2.7, stroke = 0.8, position = position_dodge(width = 0.58)) +
   scale_color_manual(values = organ_colors) +
-  scale_shape_manual(values = pollutant_shapes, breaks = pollutant_levels, labels = pollutant_labels) +
+  scale_shape_manual(values = pollutant_shapes, breaks = pollutant_levels, labels = parse(text = pollutant_labels_plotmath[pollutant_levels])) +
   scale_x_log10(
     breaks = c(0.8, 1.0, 1.25, 1.5, 2.0),
     labels = label_number(accuracy = 0.01),
@@ -137,7 +142,7 @@ p_single_axis <- ggplot(
 
 forest_by_organ <- results %>%
   mutate(
-    pollutant = factor(pollutant, levels = rev(pollutant_labels[pollutant_levels])),
+    pollutant = factor(pollutant, levels = rev(pollutant_levels)),
     label_x = conf_high * 1.035
   )
 
@@ -153,7 +158,8 @@ p_by_organ <- ggplot(forest_by_organ, aes(x = hazard_ratio, y = pollutant, color
     show.legend = FALSE
   ) +
   facet_wrap(~organ, ncol = 2) +
-  scale_color_manual(values = pollutant_colors, breaks = pollutant_levels, labels = pollutant_labels) +
+  scale_color_manual(values = pollutant_colors, breaks = pollutant_levels, labels = parse(text = pollutant_labels_plotmath[pollutant_levels])) +
+  scale_y_discrete(labels = function(x) parse(text = pollutant_labels_plotmath[x])) +
   scale_x_log10(
     breaks = c(0.8, 1.0, 1.25, 1.5, 2.0),
     labels = label_number(accuracy = 0.01),
@@ -192,8 +198,12 @@ p_by_pollutant <- ggplot(forest_by_pollutant, aes(x = hazard_ratio, y = organ, c
     size = 3.0,
     show.legend = FALSE
   ) +
-  facet_wrap(~pollutant, ncol = 1) +
-  scale_color_manual(values = pollutant_colors, breaks = pollutant_levels, labels = pollutant_labels) +
+  facet_wrap(
+    ~pollutant,
+    ncol = 1,
+    labeller = labeller(pollutant = as_labeller(pollutant_labels_plotmath, label_parsed))
+  ) +
+  scale_color_manual(values = pollutant_colors, breaks = pollutant_levels, labels = parse(text = pollutant_labels_plotmath[pollutant_levels])) +
   scale_x_log10(
     breaks = c(0.8, 1.0, 1.25, 1.5, 2.0),
     labels = label_number(accuracy = 0.01),
@@ -213,7 +223,7 @@ p_by_pollutant <- ggplot(forest_by_pollutant, aes(x = hazard_ratio, y = organ, c
 heatmap_dat <- results %>%
   mutate(
     organ = factor(organ, levels = rev(organ_labels[organ_levels])),
-    pollutant = factor(pollutant, levels = pollutant_labels[pollutant_levels]),
+    pollutant = factor(pollutant, levels = pollutant_levels),
     heat_label = sprintf("%.2f", hazard_ratio)
   )
 
@@ -237,6 +247,7 @@ p_heatmap <- ggplot(heatmap_dat, aes(x = pollutant, y = organ, fill = hazard_rat
     y = NULL,
     caption = short_caption
   ) +
+  scale_x_discrete(labels = function(x) parse(text = pollutant_labels_plotmath[x])) +
   theme_primary(base_size = 10.5) +
   theme(
     panel.grid = element_blank(),
@@ -262,7 +273,7 @@ paths <- c(
 plot_table <- results %>%
   transmute(
     organ = as.character(organ),
-    pollutant = as.character(pollutant),
+    pollutant = pollutant_labels_text[as.character(pollutant)],
     followup_window = time_label,
     n,
     people,
