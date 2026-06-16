@@ -1,0 +1,3 @@
+figure_path,description
+output/figures/pollution_attributable_relative_hazard_maps/figure_pollution_attributable_relative_hazard_maps.png,Model-implied pollutant-attributable relative hazard by ZCTA versus national median pollutant concentration.
+output/figures/pollution_attributable_relative_hazard_maps/figure_pollution_attributable_relative_hazard_maps.pdf,Model-implied pollutant-attributable relative hazard by ZCTA versus national median pollutant concentration.

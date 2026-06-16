@@ -71,9 +71,9 @@ no2 <- read_parquet(file.path(pollution_dir, "air_pollution_zcta_no2_annual_2005
   filter(years == 20L)
 
 map_specs <- list(
-  pm25 = list(data = pm25, title = "A. Mean PM₂.₅ concentration, 2006-2023", legend = "µg/m³", palette = "magma", direction = -1),
-  o3 = list(data = o3, title = "B. Mean O₃ concentration, 2006-2023", legend = "ppb", palette = "viridis", direction = 1),
-  no2 = list(data = no2, title = "C. Mean NO₂ concentration, 2006-2025", legend = "ppb", palette = "inferno", direction = -1)
+  pm25 = list(data = pm25, title = quote(A.~Mean~PM[2.5]~concentration*","~2006-2023), legend = "ug/m3", palette = "magma", direction = -1),
+  o3 = list(data = o3, title = quote(B.~Mean~O[3]~concentration*","~2006-2023), legend = "ppb", palette = "viridis", direction = -1),
+  no2 = list(data = no2, title = quote(C.~Mean~NO[2]~concentration*","~2006-2025), legend = "ppb", palette = "inferno", direction = -1)
 )
 
 summary <- bind_rows(lapply(names(map_specs), function(nm) {

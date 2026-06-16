@@ -1,0 +1,11 @@
+horizon_years,figure_path,description
+1,output/figures/primary_pollution_quartile_km_curves/supplemental_pollution_quartile_km_curves_1yr.png,1-year cause-specific Kaplan-Meier survival curves by waitlist-period pollutant quartile.
+1,output/figures/primary_pollution_quartile_km_curves/supplemental_pollution_quartile_km_curves_1yr.pdf,1-year cause-specific Kaplan-Meier survival curves by waitlist-period pollutant quartile.
+3,output/figures/primary_pollution_quartile_km_curves/supplemental_pollution_quartile_km_curves_3yr.png,3-year cause-specific Kaplan-Meier survival curves by waitlist-period pollutant quartile.
+3,output/figures/primary_pollution_quartile_km_curves/supplemental_pollution_quartile_km_curves_3yr.pdf,3-year cause-specific Kaplan-Meier survival curves by waitlist-period pollutant quartile.
+5,output/figures/primary_pollution_quartile_km_curves/supplemental_pollution_quartile_km_curves_5yr.png,5-year cause-specific Kaplan-Meier survival curves by waitlist-period pollutant quartile.
+5,output/figures/primary_pollution_quartile_km_curves/supplemental_pollution_quartile_km_curves_5yr.pdf,5-year cause-specific Kaplan-Meier survival curves by waitlist-period pollutant quartile.
+10,output/figures/primary_pollution_quartile_km_curves/supplemental_pollution_quartile_km_curves_10yr.png,10-year cause-specific Kaplan-Meier survival curves by waitlist-period pollutant quartile.
+10,output/figures/primary_pollution_quartile_km_curves/supplemental_pollution_quartile_km_curves_10yr.pdf,10-year cause-specific Kaplan-Meier survival curves by waitlist-period pollutant quartile.
+10,output/figures/primary_pollution_quartile_km_curves/supplemental_pollution_quartile_km_curves.png,10-year cause-specific Kaplan-Meier survival curves by waitlist-period pollutant quartile.
+10,output/figures/primary_pollution_quartile_km_curves/supplemental_pollution_quartile_km_curves.pdf,10-year cause-specific Kaplan-Meier survival curves by waitlist-period pollutant quartile.

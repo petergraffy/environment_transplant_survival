@@ -1,0 +1,4 @@
+Figure note:
+Curves show unadjusted Kaplan-Meier survival estimates through 10 years for remaining free of death or delisting due to deterioration, stratified by pollutant-specific waitlist-period exposure quartile.
+Transplant, delisting due to improvement, other exits, administrative end of follow-up, and pollutant data end are treated as censoring events to match the cause-specific Cox model.
+These are cause-specific Kaplan-Meier curves, not competing-risk cumulative incidence functions.

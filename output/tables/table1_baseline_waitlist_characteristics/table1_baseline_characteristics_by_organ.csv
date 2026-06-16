@@ -1,0 +1,20 @@
+section,characteristic,Heart,Kidney,Liver,Lung
+Cohort,"Waitlist listings, n","86,669","761,297","253,293","54,816"
+Cohort,"Unique candidates, n","81,032","617,512","228,856","51,230"
+Cohort,"Listing centers, n",171,282,163,84
+Baseline characteristics,"Age at listing, median (IQR), years",53.0 (36.0 to 62.0),54.0 (43.0 to 62.0),56.0 (47.0 to 62.0),60.0 (50.0 to 66.0)
+Baseline characteristics,"Listing year, median (IQR)",2017 (2012 to 2022),2015 (2011 to 2020),2016 (2011 to 2021),2017 (2012 to 2022)
+Organ-specific baseline severity,"Heart US-CRS proxy, median (IQR)",-10.6 (-11.0 to -10.3),,,
+Organ-specific baseline severity,"Kidney dialysis-age score, median (IQR)",,6.0 (4.9 to 6.9),,
+Organ-specific baseline severity,"Liver MELD/PELD score, median (IQR)",,,16 (11 to 24),
+Organ-specific baseline severity,"Lung LAS/CAS component proxy, median (IQR)",,,,-0.0 (-0.4 to 0.1)
+"Sex, n (%)",Female,"24,847 (28.7%)","292,367 (38.4%)","96,260 (38.0%)","23,563 (43.0%)"
+"Sex, n (%)",Male,"61,822 (71.3%)","468,930 (61.6%)","157,033 (62.0%)","31,253 (57.0%)"
+"Sex, n (%)",Unknown,0 (0.0%),0 (0.0%),0 (0.0%),0 (0.0%)
+"Race, n (%)",White,"61,384 (70.8%)","467,668 (61.4%)","215,177 (85.0%)","47,116 (86.0%)"
+"Race, n (%)",Black,"20,606 (23.8%)","221,524 (29.1%)","21,545 (8.5%)","5,476 (10.0%)"
+"Race, n (%)",Asian,"2,890 (3.3%)","54,611 (7.2%)","11,094 (4.4%)","1,495 (2.7%)"
+"Race, n (%)",Other/Unknown,"1,789 (2.1%)","17,494 (2.3%)","5,477 (2.2%)",729 (1.3%)
+Waitlist-period pollution exposure,"PM2.5, median (IQR); range, ug/m3",8.2 (7.1 to 9.5); 3.1 to 22.4,8.3 (7.2 to 9.5); 2.7 to 26.7,8.2 (7.1 to 9.6); 2.3 to 34.8,8.1 (7.0 to 9.5); 3.0 to 41.5
+Waitlist-period pollution exposure,"O3, median (IQR); range, ppb",38.2 (36.6 to 40.2); 25.3 to 56.9,38.2 (36.5 to 40.1); 24.8 to 57.9,38.3 (36.6 to 40.6); 23.7 to 57.4,38.2 (36.7 to 40.3); 25.0 to 57.4
+Waitlist-period pollution exposure,"NO2, median (IQR); range, ppb",6.5 (3.8 to 10.5); 0.2 to 46.6,7.0 (4.1 to 11.3); 0.2 to 46.6,6.6 (3.8 to 11.0); 0.2 to 47.4,6.4 (3.8 to 10.1); 0.2 to 47.4

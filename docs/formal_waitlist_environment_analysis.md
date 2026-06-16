@@ -4,6 +4,105 @@
 
 Estimate whether environmental exposures accrued during the waitlist period are associated with adverse waitlist outcomes among heart, kidney, liver, and lung candidates.
 
+## Primary Waitlist-Period Air-Pollution Models
+
+The primary air-pollution analysis is implemented in:
+
+- `code/50_primary_waitlist_period_pollution_cox.R`
+
+Outputs are written to:
+
+- `output/primary_waitlist_period_pollution_cox/primary_waitlist_period_pollution_analysis_dataset.csv.gz`
+- `output/primary_waitlist_period_pollution_cox/primary_waitlist_period_pollution_cox_results.csv`
+- `output/primary_waitlist_period_pollution_cox/primary_waitlist_period_pollution_cohort_summary.csv`
+- `output/primary_waitlist_period_pollution_cox/model_results/*.csv`
+
+This analysis asks whether higher average air-pollution exposure experienced during the observed waitlist period is associated with adverse waitlist outcomes.
+
+### Exposure Window
+
+The exposure is a year/day-weighted mean over the candidate's observed waitlist period:
+
+- `PM2.5`: annualized from monthly ZCTA PM2.5 and followed through 2023
+- `O3`: annualized from monthly ZCTA ozone and followed through 2023
+- `NO2`: annual ZCTA NO2 and followed through 2025
+
+Candidates still on the waitlist after the pollutant-specific exposure-data end year are censored at the end of that exposure period for that pollutant model.
+
+### Primary Model Form
+
+```r
+Surv(followup_days_pollutant, pollutant_specific_adverse_event) ~
+  waitlist_period_pollution +
+  age + sex + race + listing_year + organ_score +
+  strata(listing_center)
+```
+
+This is a cause-specific Cox model with model-based standard errors. The adverse event is death or delisting due to deterioration; transplant, improvement delisting, other removal, and administrative end of exposure follow-up are treated as censoring events.
+
+## Baseline Annual Air-Pollution Study
+
+The baseline listing-year air-pollution models are implemented in:
+
+- `code/49_baseline_air_pollution_waitlist_cox.R`
+
+Outputs are written to:
+
+- `output/baseline_air_pollution_waitlist_cox/baseline_air_pollution_waitlist_analysis_dataset.csv.gz`
+- `output/baseline_air_pollution_waitlist_cox/baseline_air_pollution_cox_results.csv`
+- `output/baseline_air_pollution_waitlist_cox/baseline_air_pollution_cohort_summary.csv`
+- `output/baseline_air_pollution_waitlist_cox/model_results/*.csv`
+
+### Cohort
+
+- SAF release: Q1 2026 SRTR SAF, resolved from `C:/Users/Peter Graffy/Box/Q1 2026 SAF` or `SAF_Q1_2026_DIR`
+- Organs: heart (`HR`), kidney (`KI`), liver (`LI`), lung (`LU`)
+- Listing years: 2006-2023 by default, matching the period with full PM2.5 and O3 exposure data
+- Candidate sources: active/relisted candidates (`CAN_SOURCE %in% c("A", "R")`)
+- Follow-up: activation/listing date to death, waitlist removal, last follow-up, or administrative censoring at 2023-12-31
+
+### Outcome
+
+The endpoint is death or delisting due to deterioration:
+
+- adverse event: `CAN_REM_CD %in% c(8, 13)`
+- successful transplant and delisting due to improvement are censored in the cause-specific Cox model
+- other non-adverse removals and administrative end of follow-up are also treated as censoring events
+
+### Exposures
+
+Exposures are annual ZCTA values at baseline, defined by the candidate residential ZCTA and listing year.
+
+- `NO2`: annual ZCTA NO2 for the listing year
+- `PM2.5`: annual mean of monthly ZCTA PM2.5 for the listing year
+- `O3`: annual mean of monthly ZCTA ozone for the listing year
+
+The script now fits two exposure windows:
+
+- `listing_year`: the listing-year value only
+- `listing_prior_mean`: the mean of the listing-year and prior-year ZCTA values
+
+No PM2.5 or O3 values are carried forward beyond 2023 in this baseline analysis.
+
+Models are fit independently for each exposure and organ.
+
+Scaling:
+
+- `no2_10unit`: per 10-unit increment
+- `pm25_5ug`: per 5 ug/m3
+- `o3_10ppb`: per 10 ppb
+
+### Model Form
+
+```r
+Surv(followup_days, adverse_event) ~
+  exposure +
+  age + sex + race + listing_year + organ_score +
+  strata(listing_center)
+```
+
+This is a cause-specific Cox model with listing-center stratified baseline hazards and model-based standard errors.
+
 ## Primary Static Exposure Models
 
 The completed primary static-exposure models are implemented in:

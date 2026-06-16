@@ -1,0 +1,4 @@
+Figure note:
+Curves show nonparametric Aalen-Johansen cumulative incidence estimates for death or delisting due to deterioration, stratified by pollutant-specific waitlist-period exposure quartile.
+Transplant and delisting due to improvement are treated as competing events.
+Other waitlist exits, administrative end of follow-up, and pollutant data end are treated as censoring events.
