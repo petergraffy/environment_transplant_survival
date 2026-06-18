@@ -64,21 +64,16 @@ flag_yes <- function(x) {
   as.integer(y %in% c("1", "Y", "YES", "TRUE", "T"))
 }
 
-flag_lvad_type <- function(x) {
-  # CANHX_LVAD_TYPE is an LVAD device-type field, so any nonmissing device code
-  # is evidence of an LVAD. Preserve missingness for candidate-file fallback.
-  y <- suppressWarnings(as.integer(as.character(x)))
-  if_else(is.na(y), NA_integer_, 1L)
-}
+durable_vad_brand_codes <- c(
+  202L, 205L, 206L, 207L, 208L, 209L, 210L, 212L, 213L, 214L,
+  223L, 224L, 233L, 236L, 239L, 240L, 312L, 313L, 314L, 315L,
+  316L, 319L, 322L, 327L, 330L, 333L, 334L
+)
 
-flag_vad_tah <- function(x) {
-  # In CAN_VAD_TAH, 20 is the common no-device code and 999 is unknown/other.
-  y <- suppressWarnings(as.integer(as.character(x)))
-  case_when(
-    is.na(y) ~ NA_integer_,
-    y %in% c(20L, 999L) ~ 0L,
-    TRUE ~ 1L
-  )
+flag_durable_vad_brand <- function(...) {
+  vals <- list(...)
+  Reduce(`|`, lapply(vals, function(x) suppressWarnings(as.integer(as.character(x))) %in% durable_vad_brand_codes)) %>%
+    as.integer()
 }
 
 pollutant_title <- function(pollutant_value) {
@@ -314,22 +309,12 @@ analysis_dat <- read_csv(in_path, show_col_types = FALSE) %>%
   )
 
 log_msg("Reading heart LVAD and kidney dialysis variables from Q1 2026 SAF")
-heart_statjust <- read_sas(
-  file.path(pubsaf_dir, "statjust_hr1a.sas7bdat"),
-  col_select = any_of(c("PX_ID", "WL_ORG", "CANHX_CHG_DT", "CANHX_LVAD_TYPE"))
-) %>%
-  filter(WL_ORG == "HR") %>%
-  arrange(PX_ID, CANHX_CHG_DT) %>%
-  group_by(PX_ID) %>%
-  slice_head(n = 1) %>%
-  ungroup() %>%
-  transmute(PX_ID, statjust_durable_lvad = flag_lvad_type(CANHX_LVAD_TYPE))
-
 heart_candidate <- read_sas(
   file.path(pubsaf_dir, "cand_thor.sas7bdat"),
-  col_select = any_of(c("PX_ID", "CAN_VAD_TAH"))
+  col_select = any_of(c("PX_ID", "WL_ORG", "CAN_VAD1", "CAN_VAD2"))
 ) %>%
-  transmute(PX_ID, candidate_vad_tah = flag_vad_tah(CAN_VAD_TAH))
+  filter(WL_ORG == "HR") %>%
+  transmute(PX_ID, durable_lvad = flag_durable_vad_brand(CAN_VAD1, CAN_VAD2))
 
 kidney_candidate <- read_sas(
   file.path(pubsaf_dir, "cand_kipa.sas7bdat"),
@@ -343,10 +328,9 @@ kidney_candidate <- read_sas(
 
 heart_dat <- analysis_dat %>%
   filter(WL_ORG == "HR") %>%
-  left_join(heart_statjust, by = "PX_ID") %>%
   left_join(heart_candidate, by = "PX_ID") %>%
   mutate(
-    durable_lvad = coalesce(statjust_durable_lvad, candidate_vad_tah, 0L),
+    durable_lvad = coalesce(durable_lvad, 0L),
     subgroup = factor(
       if_else(durable_lvad == 1L, "Durable LVAD", "No durable LVAD"),
       levels = c("No durable LVAD", "Durable LVAD")
@@ -414,7 +398,7 @@ writeLines(
     "Curves show nonparametric Aalen-Johansen cumulative incidence estimates for death or delisting due to deterioration, stratified by pollutant-specific waitlist-period exposure quartile.",
     "Transplant and delisting due to improvement are treated as competing events.",
     "Other waitlist exits, administrative end of follow-up, and pollutant data end are treated as censoring events.",
-    "Heart strata are based on durable LVAD status at listing using first available heart status-justification LVAD type with candidate-file fallback.",
+    "Heart strata are based on durable LVAD brand codes in CAND_THOR CAN_VAD1 or CAN_VAD2.",
     "Kidney strata are based on dialysis status and dialysis duration at listing."
   ),
   file.path(fig_dir, "organ_subgroup_aalen_johansen_cif_note.txt")
