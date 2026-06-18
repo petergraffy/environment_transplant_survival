@@ -32,7 +32,7 @@ out_dir <- file.path("output", "primary_waitlist_period_pollution_cox")
 model_result_dir <- file.path(out_dir, "model_results")
 dir.create(model_result_dir, recursive = TRUE, showWarnings = FALSE)
 
-analysis_start_year <- as.integer(Sys.getenv("ENV_ANALYSIS_START_YEAR", "2006"))
+analysis_start_year <- as.integer(Sys.getenv("ENV_ANALYSIS_START_YEAR", "2005"))
 pollution_end_year <- c(pm25 = 2023L, o3 = 2023L, no2 = 2025L)
 target_organs <- c("HR", "KI", "LI", "LU")
 organ_labels <- c(HR = "Heart", KI = "Kidney", LI = "Liver", LU = "Lung")
@@ -57,18 +57,16 @@ flag_yes <- function(x) {
   as.integer(y %in% c("1", "Y", "YES", "TRUE", "T"))
 }
 
-flag_lvad_type <- function(x) {
-  y <- suppressWarnings(as.integer(as.character(x)))
-  if_else(is.na(y), NA_integer_, 1L)
-}
+durable_vad_brand_codes <- c(
+  202L, 205L, 206L, 207L, 208L, 209L, 210L, 212L, 213L, 214L,
+  223L, 224L, 233L, 236L, 239L, 240L, 312L, 313L, 314L, 315L,
+  316L, 319L, 322L, 327L, 330L, 333L, 334L
+)
 
-flag_vad_tah <- function(x) {
-  y <- suppressWarnings(as.integer(as.character(x)))
-  case_when(
-    is.na(y) ~ NA_integer_,
-    y %in% c(20L, 999L) ~ 0L,
-    TRUE ~ 1L
-  )
+flag_durable_vad_brand <- function(...) {
+  vals <- list(...)
+  Reduce(`|`, lapply(vals, function(x) suppressWarnings(as.integer(as.character(x))) %in% durable_vad_brand_codes)) %>%
+    as.integer()
 }
 
 safe_log1p <- function(x) {
@@ -124,12 +122,12 @@ candidate_cols <- c(
   "PERS_ID", "PX_ID", "WL_ORG", "CAN_LISTING_DT", "CAN_ACTIVATE_DT", "CAN_SOURCE",
   "CAN_REM_DT", "CAN_REM_CD", "CAN_DEATH_DT", "CAN_ENDWLFU", "CAN_AGE_AT_LISTING",
   "CAN_GENDER", "CAN_RACE_SRTR", "CAN_LISTING_CTR_CD", "CAN_ON_DIAL",
-  "CAN_DIAL", "CAN_DIAL_DT", "CAN_MOST_RECENT_CREAT", "CAN_INIT_SRTR_LAB_MELD",
+  "CAN_DIAL", "CAN_DIAL_DT", "CAN_DIAB", "CAN_DIAB_TY", "CAN_MOST_RECENT_CREAT", "CAN_INIT_SRTR_LAB_MELD",
   "CAN_LAST_SRTR_LAB_MELD", "CAN_TOT_BILI", "CAN_TOT_ALBUMIN",
   "CAN_LAST_SERUM_SODIUM", "CAN_FVC", "CAN_FEV1", "CAN_PCO2", "CAN_AT_REST_O2",
   "CAN_SIX_MIN_WALK", "CAN_PULM_ART_MEAN", "CAN_CARDIAC_OUTPUT",
-  "CAN_VENTILATOR", "CAN_ON_VENTILATOR", "CAN_ECMO", "CAN_VAD_TAH",
-  "CAN_CORTICOST_DEPND"
+  "CAN_VENTILATOR", "CAN_ON_VENTILATOR", "CAN_ECMO", "CAN_VAD1",
+  "CAN_VAD2", "CAN_CORTICOST_DEPND"
 )
 
 log_msg("Reading Q1 2026 SAF candidate and ZIP inputs from ", saf_paths$saf_dir)
@@ -147,7 +145,7 @@ candidate_data <- candidate_files %>%
 heart_baseline <- read_sas(
   file.path(pubsaf_dir, "statjust_hr1a.sas7bdat"),
   col_select = any_of(c(
-    "PX_ID", "WL_ORG", "CANHX_CHG_DT", "CANHX_LVAD_TYPE", "CANHX_RVAD_TYPE",
+    "PX_ID", "WL_ORG", "CANHX_CHG_DT", "CANHX_RVAD_TYPE",
     "CANHX_ECMO", "CANHX_LAB_SERUM_CREAT", "CANHX_LAB_BILI",
     "CANHX_LAB_ALBUMIN", "CANHX_LAB_SODIUM", "CANHX_LAB_BNP"
   ))
@@ -160,7 +158,6 @@ heart_baseline <- read_sas(
   transmute(
     PX_ID,
     hr_short_mcs = as.integer(flag_yes(CANHX_ECMO) == 1L | flag_yes(CANHX_RVAD_TYPE) == 1L),
-    hr_durable_lvad = flag_lvad_type(CANHX_LVAD_TYPE),
     hr_creatinine = CANHX_LAB_SERUM_CREAT,
     hr_bilirubin = CANHX_LAB_BILI,
     hr_albumin = CANHX_LAB_ALBUMIN,
@@ -199,16 +196,32 @@ cohort <- candidate_data %>%
     listing_center = as_factor_missing(CAN_LISTING_CTR_CD),
     listing_year = factor(index_year),
     kidney_on_dialysis = flag_yes(coalesce(as.character(CAN_ON_DIAL), as.character(CAN_DIAL))),
-    dialysis_years = as.numeric(index_date - CAN_DIAL_DT) / 365.25,
-    dialysis_years = if_else(is.na(dialysis_years) | dialysis_years < 0, 0, dialysis_years),
-    kidney_dialysis_age_score = age / 10 + 0.8 * kidney_on_dialysis + 0.3 * log1p(dialysis_years),
+    kidney_diabetes = as.integer(
+      CAN_DIAB %in% c(2, 3, 4) |
+        CAN_DIAB_TY %in% c(2, 3, 4, 5)
+    ),
+    dialysis_years_raw = as.numeric(index_date - CAN_DIAL_DT) / 365.25,
+    dialysis_years_raw = if_else(is.na(dialysis_years_raw) | dialysis_years_raw < 0, NA_real_, dialysis_years_raw),
+    kidney_no_dialysis_time = as.integer(kidney_on_dialysis != 1L | is.na(dialysis_years_raw) | dialysis_years_raw == 0),
+    kidney_dialysis_years = if_else(kidney_no_dialysis_time == 1L, 0, dialysis_years_raw),
+    dialysis_years = kidney_dialysis_years,
     liver_meld = coalesce(CAN_INIT_SRTR_LAB_MELD, CAN_LAST_SRTR_LAB_MELD),
     hr_creatinine_for_score = coalesce(hr_creatinine, CAN_MOST_RECENT_CREAT),
     hr_albumin = coalesce(hr_albumin, CAN_TOT_ALBUMIN),
     hr_bilirubin = coalesce(hr_bilirubin, CAN_TOT_BILI),
     hr_sodium = coalesce(hr_sodium, CAN_LAST_SERUM_SODIUM),
     hr_short_mcs = coalesce(hr_short_mcs, flag_yes(CAN_ECMO), 0L),
-    hr_durable_lvad = coalesce(hr_durable_lvad, flag_vad_tah(CAN_VAD_TAH), 0L)
+    hr_durable_lvad = if_else(WL_ORG == "HR", flag_durable_vad_brand(CAN_VAD1, CAN_VAD2), 0L),
+    lung_fev1_score_input = as.numeric(coalesce(CAN_FEV1, 0)),
+    lung_fvc_score_input = as.numeric(coalesce(CAN_FVC, 0)),
+    lung_pco2_score_input = as.numeric(coalesce(CAN_PCO2, 0)),
+    lung_resting_o2_score_input = as.numeric(coalesce(CAN_AT_REST_O2, 0)),
+    lung_six_min_walk_score_input = as.numeric(coalesce(CAN_SIX_MIN_WALK, 0)),
+    lung_pulm_art_mean_score_input = as.numeric(coalesce(CAN_PULM_ART_MEAN, 0)),
+    lung_cardiac_output_score_input = as.numeric(coalesce(CAN_CARDIAC_OUTPUT, 0)),
+    lung_ventilator_score_input = flag_yes(coalesce(as.character(CAN_VENTILATOR), as.character(CAN_ON_VENTILATOR))),
+    lung_ecmo_score_input = flag_yes(CAN_ECMO),
+    lung_corticosteroid_score_input = flag_yes(CAN_CORTICOST_DEPND)
   ) %>%
   group_by(WL_ORG) %>%
   mutate(
@@ -229,26 +242,26 @@ cohort <- candidate_data %>%
       1.092 * hr_short_mcs +
       0.433 * safe_log1p(hr_bnp_imputed),
     lung_las_cas_component_score = rowSums(cbind(
-      as.numeric(coalesce(CAN_FEV1, 0)) * -0.01,
-      as.numeric(coalesce(CAN_FVC, 0)) * -0.005,
-      as.numeric(coalesce(CAN_PCO2, 0)) * 0.02,
-      as.numeric(coalesce(CAN_AT_REST_O2, 0)) * 0.01,
-      as.numeric(coalesce(CAN_SIX_MIN_WALK, 0)) * -0.002,
-      as.numeric(coalesce(CAN_PULM_ART_MEAN, 0)) * 0.01,
-      as.numeric(coalesce(CAN_CARDIAC_OUTPUT, 0)) * -0.05,
-      flag_yes(coalesce(as.character(CAN_VENTILATOR), as.character(CAN_ON_VENTILATOR))) * 1.0,
-      flag_yes(CAN_ECMO) * 1.5,
-      flag_yes(CAN_CORTICOST_DEPND) * 0.3
+      lung_fev1_score_input * -0.01,
+      lung_fvc_score_input * -0.005,
+      lung_pco2_score_input * 0.02,
+      lung_resting_o2_score_input * 0.01,
+      lung_six_min_walk_score_input * -0.002,
+      lung_pulm_art_mean_score_input * 0.01,
+      lung_cardiac_output_score_input * -0.05,
+      lung_ventilator_score_input * 1.0,
+      lung_ecmo_score_input * 1.5,
+      lung_corticosteroid_score_input * 0.3
     ), na.rm = TRUE),
     organ_score = case_when(
       WL_ORG == "HR" ~ us_crs_proxy,
-      WL_ORG == "KI" ~ kidney_dialysis_age_score,
+      WL_ORG == "KI" ~ NA_real_,
       WL_ORG == "LI" ~ liver_meld,
       WL_ORG == "LU" ~ lung_las_cas_component_score
     ),
     organ_score_name = case_when(
       WL_ORG == "HR" ~ "US-CRS proxy baseline",
-      WL_ORG == "KI" ~ "Dialysis + age baseline",
+      WL_ORG == "KI" ~ "Age + dialysis + diabetes baseline covariates",
       WL_ORG == "LI" ~ "Initial MELD, last if initial missing",
       WL_ORG == "LU" ~ "LAS/CAS component proxy baseline"
     )
@@ -325,6 +338,13 @@ write_csv(
       waitlist_row_id, PERS_ID, PX_ID, WL_ORG, candidate_zip, index_date, observed_end_date,
       event_type, adverse_event, transplant_or_improvement, other_exit,
       age, sex, race, listing_year, organ_score, organ_score_name, listing_center,
+      hr_albumin_imputed, hr_bilirubin_imputed, hr_egfr, hr_sodium_imputed,
+      hr_durable_lvad, hr_short_mcs, hr_bnp_imputed,
+      kidney_on_dialysis, kidney_no_dialysis_time, kidney_dialysis_years, kidney_diabetes, dialysis_years, liver_meld,
+      lung_fev1_score_input, lung_fvc_score_input, lung_pco2_score_input,
+      lung_resting_o2_score_input, lung_six_min_walk_score_input,
+      lung_pulm_art_mean_score_input, lung_cardiac_output_score_input,
+      lung_ventilator_score_input, lung_ecmo_score_input, lung_corticosteroid_score_input,
       followup_days_pm25, event_pm25, pm25_waitlist_ug_m3, pm25_days,
       followup_days_o3, event_o3, o3_waitlist_ppb, o3_days,
       followup_days_no2, event_no2, no2_waitlist, no2_days
@@ -339,7 +359,16 @@ exposure_specs <- list(
 )
 
 fit_waitlist_cox <- function(dat, org, exposure_name, spec) {
-  vars_needed <- c(spec$followup, spec$event, "age", "sex", "race", "listing_year", "organ_score", "listing_center", spec$term)
+  adjustment_terms <- c("age", "sex", "race", "listing_year", "strata(listing_center)")
+  adjustment_vars <- c("age", "sex", "race", "listing_year", "listing_center")
+  if (org == "KI") {
+    adjustment_terms <- c("age", "sex", "race", "listing_year", "kidney_no_dialysis_time", "kidney_dialysis_years", "kidney_diabetes", "strata(listing_center)")
+    adjustment_vars <- c("age", "sex", "race", "listing_year", "kidney_no_dialysis_time", "kidney_dialysis_years", "kidney_diabetes", "listing_center")
+  } else {
+    adjustment_terms <- c("age", "sex", "race", "listing_year", "organ_score", "strata(listing_center)")
+    adjustment_vars <- c("age", "sex", "race", "listing_year", "organ_score", "listing_center")
+  }
+  vars_needed <- c(spec$followup, spec$event, adjustment_vars, spec$term)
   model_dat <- dat %>%
     filter(
       index_year <= spec$end_year,
@@ -356,7 +385,7 @@ fit_waitlist_cox <- function(dat, org, exposure_name, spec) {
   log_msg("Waitlist-period pollution Cox ", org, " | ", exposure_name, " n=", nrow(model_dat), " adverse=", sum(model_dat$.event))
   form <- as.formula(paste(
     "Surv(.followup_days, .event) ~",
-    paste(c(spec$term, "age", "sex", "race", "listing_year", "organ_score", "strata(listing_center)"), collapse = " + ")
+    paste(c(spec$term, adjustment_terms), collapse = " + ")
   ))
   fit <- coxph(form, data = model_dat, ties = "efron", x = FALSE, y = FALSE)
 
@@ -379,7 +408,11 @@ fit_waitlist_cox <- function(dat, org, exposure_name, spec) {
       conf_high = conf.high,
       p_value = p.value,
       concordance = unname(summary(fit)$concordance[1]),
-      adjustment_set = "age + sex + race + listing_year + baseline_organ_score + strata(listing_center)",
+      adjustment_set = if_else(
+        org == "KI",
+        "age + sex + race + listing_year + no_dialysis_time + dialysis_duration_years + diabetes + strata(listing_center)",
+        "age + sex + race + listing_year + baseline_organ_score + strata(listing_center)"
+      ),
       variance_estimator = "model_based",
       center_adjustment = "stratified_baseline_hazard_by_listing_center"
     )

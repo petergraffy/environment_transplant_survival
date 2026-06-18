@@ -1,5 +1,6 @@
 Table 1 caption:
 Baseline characteristics of waitlist listings included in the primary waitlist-period pollution analysis cohort, stratified by listed organ.
 Values are median (IQR) for continuous variables and n (%) for categorical variables unless otherwise indicated.
-Organ-specific severity scores are shown only for the organ to which each score applies. Liver MELD/PELD is displayed after subtracting the SRTR 6200 offset from the stored MELD/PELD field.
+Organ-specific severity scores and score components are shown only for the organ to which each score applies. Heart score components use median-imputed laboratory values where needed; lung score components reflect the values used in the proxy score, with missing numeric components set to 0. Liver MELD/PELD is displayed after subtracting the SRTR 6200 offset from the stored MELD/PELD field.
+Waitlist outcomes are mutually exclusive final observed outcomes in the primary cohort before pollutant-specific exposure censoring.
 Pollution exposures are day-weighted waitlist-period means; exposure rows include median (IQR) and range.
