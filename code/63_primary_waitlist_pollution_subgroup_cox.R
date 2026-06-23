@@ -69,6 +69,24 @@ subgroup_specs <- list(
   )
 )
 
+organ_adjust_terms <- function(org, subgroup_spec) {
+  terms <- subgroup_spec$adjust
+  if (org == "KI") {
+    terms <- c(
+      terms[terms != "organ_score"],
+      "kidney_no_dialysis_time",
+      "kidney_dialysis_years",
+      "kidney_diabetes"
+    )
+  }
+  unique(terms)
+}
+
+adjust_vars_from_terms <- function(terms) {
+  vars <- terms[!grepl("^strata\\(", terms)]
+  gsub("^strata\\((.*)\\)$", "\\1", vars)
+}
+
 log_msg <- function(...) {
   message(format(Sys.time(), "%Y-%m-%d %H:%M:%S"), " | ", paste0(..., collapse = ""))
   flush.console()
@@ -89,6 +107,8 @@ format_race_group <- function(x) {
 }
 
 fit_one_subgroup <- function(dat, org, exposure_name, exposure_spec, subgroup_var, subgroup_level, subgroup_spec) {
+  adjustment_terms <- organ_adjust_terms(org, subgroup_spec)
+  adjustment_vars <- adjust_vars_from_terms(adjustment_terms)
   result_path <- file.path(
     model_dir,
     paste0(tolower(org), "_", exposure_name, "_", subgroup_var, "_", make.names(subgroup_level), ".csv")
@@ -101,7 +121,7 @@ fit_one_subgroup <- function(dat, org, exposure_name, exposure_spec, subgroup_va
     "listing_center",
     "PERS_ID",
     "listing_year",
-    "organ_score"
+    adjustment_vars
   )
   if ("age" %in% subgroup_spec$adjust) vars_needed <- c(vars_needed, "age")
   if ("sex" %in% subgroup_spec$adjust) vars_needed <- c(vars_needed, "sex")
@@ -143,7 +163,7 @@ fit_one_subgroup <- function(dat, org, exposure_name, exposure_spec, subgroup_va
       conf_high = NA_real_,
       p_value = NA_real_,
       concordance = NA_real_,
-      adjustment_set = paste(subgroup_spec$adjust, collapse = " + "),
+      adjustment_set = paste(adjustment_terms, collapse = " + "),
       variance_estimator = "model_based",
       center_adjustment = "stratified_baseline_hazard_by_listing_center",
       error = "Insufficient sample/events/centers"
@@ -154,7 +174,7 @@ fit_one_subgroup <- function(dat, org, exposure_name, exposure_spec, subgroup_va
 
   form <- as.formula(paste(
     "Surv(.followup_days, .event) ~",
-    paste(c(exposure_spec$term, subgroup_spec$adjust), collapse = " + ")
+    paste(c(exposure_spec$term, adjustment_terms), collapse = " + ")
   ))
 
   fit_error <- NULL
@@ -185,7 +205,7 @@ fit_one_subgroup <- function(dat, org, exposure_name, exposure_spec, subgroup_va
       conf_high = NA_real_,
       p_value = NA_real_,
       concordance = NA_real_,
-      adjustment_set = paste(subgroup_spec$adjust, collapse = " + "),
+      adjustment_set = paste(adjustment_terms, collapse = " + "),
       variance_estimator = "model_based",
       center_adjustment = "stratified_baseline_hazard_by_listing_center",
       error = safe_error(fit_error)
@@ -211,7 +231,7 @@ fit_one_subgroup <- function(dat, org, exposure_name, exposure_spec, subgroup_va
         conf_high = conf.high,
         p_value = p.value,
         concordance = unname(summary(fit)$concordance[1]),
-        adjustment_set = paste(subgroup_spec$adjust, collapse = " + "),
+        adjustment_set = paste(adjustment_terms, collapse = " + "),
         variance_estimator = "model_based",
         center_adjustment = "stratified_baseline_hazard_by_listing_center",
         error = NA_character_
@@ -223,6 +243,8 @@ fit_one_subgroup <- function(dat, org, exposure_name, exposure_spec, subgroup_va
 }
 
 fit_interaction <- function(dat, org, exposure_name, exposure_spec, subgroup_var, subgroup_spec) {
+  adjustment_terms <- organ_adjust_terms(org, subgroup_spec)
+  adjustment_vars <- adjust_vars_from_terms(adjustment_terms)
   vars_needed <- c(
     exposure_spec$followup,
     exposure_spec$event,
@@ -231,7 +253,7 @@ fit_interaction <- function(dat, org, exposure_name, exposure_spec, subgroup_var
     "listing_center",
     "PERS_ID",
     "listing_year",
-    "organ_score"
+    adjustment_vars
   )
   if ("age" %in% subgroup_spec$adjust) vars_needed <- c(vars_needed, "age")
   if ("sex" %in% subgroup_spec$adjust) vars_needed <- c(vars_needed, "sex")
@@ -274,11 +296,11 @@ fit_interaction <- function(dat, org, exposure_name, exposure_spec, subgroup_var
 
   base_form <- as.formula(paste(
     "Surv(.followup_days, .event) ~",
-    paste(c(exposure_spec$term, subgroup_var, subgroup_spec$adjust), collapse = " + ")
+    paste(c(exposure_spec$term, subgroup_var, adjustment_terms), collapse = " + ")
   ))
   int_form <- as.formula(paste(
     "Surv(.followup_days, .event) ~",
-    paste(c(paste0(exposure_spec$term, " * ", subgroup_var), subgroup_spec$adjust), collapse = " + ")
+    paste(c(paste0(exposure_spec$term, " * ", subgroup_var), adjustment_terms), collapse = " + ")
   ))
 
   fit_error <- NULL

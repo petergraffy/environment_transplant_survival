@@ -37,7 +37,7 @@ Models compared:
 
 Script:
 
-- `code/08_score_benchmark_pollution_models.R`
+- `code/exploratory/08_score_benchmark_pollution_models.R`
 
 Outputs:
 
@@ -57,7 +57,7 @@ Current caveats:
   follow-up outputs.
 - The current-year pollution terms are annual index-year exposures, not the full
   lagged cumulative waitlist exposure intervals from
-  `code/07_organ_specific_adverse_waitlist_models.R`.
+  `code/exploratory/07_organ_specific_adverse_waitlist_models.R`.
 - Heart and lung benchmarks need score-specific refinement before manuscript
   use: BNP vs NT-proBNP handling for heart if a type field is found, and direct
   LAS/CAS recovery or a validated proxy for lung.

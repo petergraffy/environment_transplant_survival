@@ -77,13 +77,7 @@ flag_durable_vad_brand <- function(...) {
 }
 
 pollutant_title <- function(pollutant_value) {
-  switch(
-    as.character(pollutant_value),
-    "PM[2.5]" = bquote(PM[2.5]),
-    "O[3]" = bquote(O[3]),
-    "NO[2]" = bquote(NO[2]),
-    as.character(pollutant_value)
-  )
+  as.character(pollutant_value)
 }
 
 make_pollutant_dat <- function(dat, spec) {
@@ -244,8 +238,8 @@ make_outputs <- function(plot_dat, stem, title, width, height) {
   plot_for_horizon <- function(horizon) {
     breaks <- switch(
       as.character(horizon),
-      `1` = c(0, 0.25, 0.5, 0.75, 1),
-      `3` = seq(0, 3, 0.5),
+      `1` = c(0, 0.5, 1),
+      `3` = seq(0, 3, 1),
       `5` = seq(0, 5, 1),
       `10` = seq(0, 10, 2),
       pretty(c(0, horizon), n = 5)
@@ -255,7 +249,7 @@ make_outputs <- function(plot_dat, stem, title, width, height) {
       geom_step(linewidth = 0.85) +
       facet_grid(
         pollutant_label ~ subgroup,
-        labeller = labeller(pollutant_label = as_labeller(setNames(lapply(levels(curve_dat$pollutant_label), pollutant_title), levels(curve_dat$pollutant_label))))
+        labeller = labeller(pollutant_label = label_parsed)
       ) +
       scale_color_manual(values = quartile_colors) +
       scale_x_continuous(
@@ -272,6 +266,7 @@ make_outputs <- function(plot_dat, stem, title, width, height) {
       ) +
       theme_cif() +
       theme(
+        axis.text.x = element_text(size = 13, margin = margin(t = 3)),
         plot.title = element_text(face = "bold", size = 23, hjust = 0, margin = margin(b = 8)),
         legend.position = "bottom"
       )
@@ -308,23 +303,13 @@ analysis_dat <- read_csv(in_path, show_col_types = FALSE) %>%
     observed_end_date = as.Date(observed_end_date)
   )
 
-log_msg("Reading heart LVAD and kidney dialysis variables from Q1 2026 SAF")
+log_msg("Reading heart LVAD variables from Q1 2026 SAF")
 heart_candidate <- read_sas(
   file.path(pubsaf_dir, "cand_thor.sas7bdat"),
   col_select = any_of(c("PX_ID", "WL_ORG", "CAN_VAD1", "CAN_VAD2"))
 ) %>%
   filter(WL_ORG == "HR") %>%
   transmute(PX_ID, durable_lvad = flag_durable_vad_brand(CAN_VAD1, CAN_VAD2))
-
-kidney_candidate <- read_sas(
-  file.path(pubsaf_dir, "cand_kipa.sas7bdat"),
-  col_select = any_of(c("PX_ID", "CAN_ON_DIAL", "CAN_DIAL", "CAN_DIAL_DT"))
-) %>%
-  transmute(
-    PX_ID,
-    kidney_on_dialysis = flag_yes(coalesce(as.character(CAN_ON_DIAL), as.character(CAN_DIAL))),
-    CAN_DIAL_DT = as.Date(CAN_DIAL_DT)
-  )
 
 heart_dat <- analysis_dat %>%
   filter(WL_ORG == "HR") %>%
@@ -339,26 +324,24 @@ heart_dat <- analysis_dat %>%
 
 kidney_dat <- analysis_dat %>%
   filter(WL_ORG == "KI") %>%
-  left_join(kidney_candidate, by = "PX_ID") %>%
   mutate(
-    dialysis_years = as.numeric(index_date - CAN_DIAL_DT) / 365.25,
-    dialysis_years = if_else(is.na(dialysis_years) | dialysis_years < 0, NA_real_, dialysis_years),
+    dialysis_years = kidney_dialysis_years,
     subgroup = case_when(
-      kidney_on_dialysis != 1L ~ "Not on dialysis",
+      kidney_no_dialysis_time == 1L ~ "Not on dialysis",
       is.na(dialysis_years) ~ "Dialysis, unknown duration",
-      dialysis_years < 1 ~ "Dialysis <1 y",
-      dialysis_years < 3 ~ "Dialysis 1 to <3 y",
-      dialysis_years < 5 ~ "Dialysis 3 to <5 y",
-      TRUE ~ "Dialysis >=5 y"
+      dialysis_years < 1 ~ "Dialysis <1 year",
+      dialysis_years < 3 ~ "Dialysis 1 to <3 years",
+      dialysis_years < 5 ~ "Dialysis 3 to <5 years",
+      TRUE ~ "Dialysis \u22655 years"
     ),
     subgroup = factor(
       subgroup,
       levels = c(
         "Not on dialysis",
-        "Dialysis <1 y",
-        "Dialysis 1 to <3 y",
-        "Dialysis 3 to <5 y",
-        "Dialysis >=5 y",
+        "Dialysis <1 year",
+        "Dialysis 1 to <3 years",
+        "Dialysis 3 to <5 years",
+        "Dialysis \u22655 years",
         "Dialysis, unknown duration"
       )
     )

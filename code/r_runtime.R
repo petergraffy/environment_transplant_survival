@@ -19,6 +19,10 @@ ensure_user_library <- function() {
   }
 
   user_lib <- paste0(gsub("\\\\", "/", local_appdata), "/R/win-library/", R.version$major, ".", r_minor)
+  userprofile <- Sys.getenv("USERPROFILE", unset = NA_character_)
+  if (!is.na(userprofile) && nzchar(userprofile)) {
+    candidate_libs <- c(candidate_libs, paste0(gsub("\\\\", "/", userprofile), "/AppData/Local/R/win-library/", R.version$major, ".", r_minor))
+  }
   candidate_libs <- c(candidate_libs, user_lib)
   candidate_libs <- unique(candidate_libs[dir.exists(candidate_libs)])
   .libPaths(c(candidate_libs, .libPaths()))

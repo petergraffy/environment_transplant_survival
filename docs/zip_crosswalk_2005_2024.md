@@ -56,13 +56,13 @@ The script also accepts `.xls`, `.csv`, or `.txt` with the same stem.
 Run:
 
 ```sh
-Rscript code/01_build_zip_crosswalk_2005_2024.R
+Rscript code/exploratory/01_build_zip_crosswalk_2005_2024.R
 ```
 
 The script has an optional download mode:
 
 ```sh
-Rscript code/01_build_zip_crosswalk_2005_2024.R --download
+Rscript code/exploratory/01_build_zip_crosswalk_2005_2024.R --download
 ```
 
 HUD may block command-line downloads with a web challenge. If so, download the files manually through HUD USER and rerun without `--download`.

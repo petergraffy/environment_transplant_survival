@@ -45,35 +45,35 @@ zcta <- st_transform(zcta, 5070)
 log_msg("Reading primary pollution release tables")
 pm25 <- read_parquet(file.path(pollution_dir, "air_pollution_zcta_pm25_monthly_2005_2023.parquet")) %>%
   transmute(zip = clean_zip(zip), year = as.integer(year), value = pm25_ug_m3) %>%
-  filter(year >= 2006, year <= 2023) %>%
+  filter(year >= 2005, year <= 2023) %>%
   group_by(zip, year) %>%
   summarise(n_months = sum(!is.na(value)), annual_mean = mean(value, na.rm = TRUE), .groups = "drop") %>%
   filter(n_months == 12L, is.finite(annual_mean)) %>%
   group_by(zip) %>%
   summarise(value = mean(annual_mean, na.rm = TRUE), years = n(), .groups = "drop") %>%
-  filter(years == 18L)
+  filter(years == 19L)
 
 o3 <- read_parquet(file.path(pollution_dir, "air_pollution_zcta_o3_monthly_2005_2023.parquet")) %>%
   transmute(zip = clean_zip(zip), year = as.integer(year), value = o3_ppb) %>%
-  filter(year >= 2006, year <= 2023) %>%
+  filter(year >= 2005, year <= 2023) %>%
   group_by(zip, year) %>%
   summarise(n_months = sum(!is.na(value)), annual_mean = mean(value, na.rm = TRUE), .groups = "drop") %>%
   filter(n_months == 12L, is.finite(annual_mean)) %>%
   group_by(zip) %>%
   summarise(value = mean(annual_mean, na.rm = TRUE), years = n(), .groups = "drop") %>%
-  filter(years == 18L)
+  filter(years == 19L)
 
 no2 <- read_parquet(file.path(pollution_dir, "air_pollution_zcta_no2_annual_2005_2025.parquet")) %>%
   transmute(zip = clean_zip(zip), year = as.integer(year), value = no2) %>%
-  filter(year >= 2006, year <= 2025, is.finite(value)) %>%
+  filter(year >= 2005, year <= 2025, is.finite(value)) %>%
   group_by(zip) %>%
   summarise(value = mean(value, na.rm = TRUE), years = n(), .groups = "drop") %>%
-  filter(years == 20L)
+  filter(years == 21L)
 
 map_specs <- list(
-  pm25 = list(data = pm25, title = quote(A.~Mean~PM[2.5]~concentration*","~2006-2023), legend = "ug/m3", palette = "magma", direction = -1),
-  o3 = list(data = o3, title = quote(B.~Mean~O[3]~concentration*","~2006-2023), legend = "ppb", palette = "viridis", direction = -1),
-  no2 = list(data = no2, title = quote(C.~Mean~NO[2]~concentration*","~2006-2025), legend = "ppb", palette = "inferno", direction = -1)
+  pm25 = list(data = pm25, title = quote(A.~Mean~PM[2.5]~concentration*","~2005-2025), legend = "ug/m3", palette = "magma", direction = -1),
+  o3 = list(data = o3, title = quote(B.~Mean~O[3]~concentration*","~2005-2025), legend = "ppb", palette = "viridis", direction = -1),
+  no2 = list(data = no2, title = quote(C.~Mean~NO[2]~concentration*","~2005-2025), legend = "ppb", palette = "inferno", direction = -1)
 )
 
 summary <- bind_rows(lapply(names(map_specs), function(nm) {
@@ -81,7 +81,7 @@ summary <- bind_rows(lapply(names(map_specs), function(nm) {
   tibble(
     pollutant = nm,
     mapped_zctas = nrow(dat),
-    years_required = if_else(nm == "no2", 20L, 18L),
+    years_required = if_else(nm == "no2", 21L, 19L),
     min = min(dat$value, na.rm = TRUE),
     p01 = as.numeric(quantile(dat$value, 0.01, na.rm = TRUE)),
     median = median(dat$value, na.rm = TRUE),
@@ -109,6 +109,14 @@ theme_map <- function() {
 plot_map <- function(spec) {
   map_data <- merge(zcta, spec$data %>% select(zip, value), by = "zip", all.x = TRUE)
   limits <- as.numeric(quantile(map_data$value, c(0.01, 0.99), na.rm = TRUE))
+  legend_breaks <- pretty(limits, n = 5)
+  min_gap <- diff(limits) * 0.08
+  legend_breaks <- legend_breaks[
+    legend_breaks > limits[1] + min_gap &
+      legend_breaks < limits[2] - min_gap
+  ]
+  legend_breaks <- sort(unique(c(limits, legend_breaks)))
+  legend_labels <- sprintf("%.1f", legend_breaks)
   ggplot(map_data) +
     geom_sf(aes(fill = pmin(pmax(value, limits[1]), limits[2])), color = NA) +
     scale_fill_viridis_c(
@@ -116,6 +124,8 @@ plot_map <- function(spec) {
       direction = spec$direction,
       name = spec$legend,
       limits = limits,
+      breaks = legend_breaks,
+      labels = legend_labels,
       na.value = "grey92",
       guide = guide_colorbar(
         direction = "horizontal",
