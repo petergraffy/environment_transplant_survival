@@ -1,0 +1,37 @@
+organ,organ_label,exposure,subgroup,subgroup_label,modeled_levels,skipped_levels,min_events,max_events
+HR,Heart,no2,age_group,Age group,4,0,1244,4208
+HR,Heart,no2,race_group,Race,4,0,191,7852
+HR,Heart,no2,sex,Sex,2,0,3018,8046
+HR,Heart,o3,age_group,Age group,4,0,1156,3896
+HR,Heart,o3,race_group,Race,4,0,150,7315
+HR,Heart,o3,sex,Sex,2,0,2776,7407
+HR,Heart,pm25,age_group,Age group,4,0,1156,3896
+HR,Heart,pm25,race_group,Race,4,0,150,7315
+HR,Heart,pm25,sex,Sex,2,0,2776,7407
+KI,Kidney,no2,age_group,Age group,4,0,463,61820
+KI,Kidney,no2,race_group,Race,4,0,2727,80294
+KI,Kidney,no2,sex,Sex,2,0,48642,82902
+KI,Kidney,o3,age_group,Age group,4,0,394,54444
+KI,Kidney,o3,race_group,Race,4,0,2308,71383
+KI,Kidney,o3,sex,Sex,2,0,43297,73179
+KI,Kidney,pm25,age_group,Age group,4,0,394,54444
+KI,Kidney,pm25,race_group,Race,4,0,2308,71383
+KI,Kidney,pm25,sex,Sex,2,0,43297,73179
+LI,Liver,no2,age_group,Age group,4,0,1088,22523
+LI,Liver,no2,race_group,Race,4,0,779,39565
+LI,Liver,no2,sex,Sex,2,0,18328,27791
+LI,Liver,o3,age_group,Age group,4,0,1031,21214
+LI,Liver,o3,race_group,Race,4,0,639,36625
+LI,Liver,o3,sex,Sex,2,0,16850,25799
+LI,Liver,pm25,age_group,Age group,4,0,1031,21214
+LI,Liver,pm25,race_group,Race,4,0,639,36625
+LI,Liver,pm25,sex,Sex,2,0,16850,25799
+LU,Lung,no2,age_group,Age group,4,0,264,2726
+LU,Lung,no2,race_group,Race,4,0,62,5120
+LU,Lung,no2,sex,Sex,2,0,2927,3213
+LU,Lung,o3,age_group,Age group,4,0,260,2505
+LU,Lung,o3,race_group,Race,4,0,55,4850
+LU,Lung,o3,sex,Sex,2,0,2751,3048
+LU,Lung,pm25,age_group,Age group,4,0,260,2505
+LU,Lung,pm25,race_group,Race,4,0,55,4850
+LU,Lung,pm25,sex,Sex,2,0,2751,3048

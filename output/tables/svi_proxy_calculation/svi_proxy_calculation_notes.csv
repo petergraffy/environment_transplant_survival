@@ -1,0 +1,5 @@
+Note
+ACS variables were obtained from 5-year American Community Survey ZCTA-level tables for community years 2012 through 2023.
+"For analysis years 2005 through 2011, 2012 ACS covariates were carried backward. For analysis years 2024 and 2025, 2023 ACS covariates were carried forward."
+Missing component values were median-imputed within analysis year before percentile ranks were calculated.
+This variable is an ACS-derived ZCTA social vulnerability proxy and is not the official CDC/ATSDR Social Vulnerability Index.

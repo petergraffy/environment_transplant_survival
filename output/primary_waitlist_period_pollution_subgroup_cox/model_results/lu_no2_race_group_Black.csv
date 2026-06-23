@@ -1,0 +1,2 @@
+organ,organ_label,exposure,exposure_label,subgroup,subgroup_label,subgroup_level,exposure_data_end_year,n,people,centers,adverse_events,hazard_ratio,conf_low,conf_high,p_value,concordance,adjustment_set,variance_estimator,center_adjustment,error
+LU,Lung,no2,NO2 waitlist-period mean per 10 ppb,race_group,Race,Black,2025,5462,5219,83,734,1.2633505237448248,1.0510872557127533,1.5184795907015558,0.012743193287849446,0.710299774100983,age + sex + listing_year + organ_score + strata(listing_center),model_based,stratified_baseline_hazard_by_listing_center,NA

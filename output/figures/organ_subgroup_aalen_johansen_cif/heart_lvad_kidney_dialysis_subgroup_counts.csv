@@ -1,9 +1,8 @@
 organ,subgroup,n
-Heart,No durable LVAD,71478
-Heart,Durable LVAD,15191
-Kidney,Not on dialysis,194450
-Kidney,Dialysis <1 y,411880
-Kidney,Dialysis 1 to <3 y,49152
-Kidney,Dialysis 3 to <5 y,15274
-Kidney,Dialysis >=5 y,13413
-Kidney,"Dialysis, unknown duration",77128
+Heart,No durable LVAD,72421
+Heart,Durable LVAD,14533
+Kidney,Not on dialysis,538557
+Kidney,Dialysis <1 year,60942
+Kidney,Dialysis 1 to <3 years,45495
+Kidney,Dialysis 3 to <5 years,12655
+Kidney,Dialysis ≥5 years,12007

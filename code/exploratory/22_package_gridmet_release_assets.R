@@ -91,7 +91,7 @@ readme <- c(
   paste0("- `", value_cols, "`"),
   "",
   "Audit/fill summaries are in `gridmet_zcta_daily_qc_all_years.csv` and the committed documentation.",
-  "The original local processing outputs include source/fill columns and can be regenerated with `code/20_aggregate_gridmet_to_zcta.R`."
+  "The original local processing outputs include source/fill columns and can be regenerated with `code/exploratory/20_aggregate_gridmet_to_zcta.R`."
 )
 writeLines(readme, file.path(release_dir, "README.md"), useBytes = TRUE)
 

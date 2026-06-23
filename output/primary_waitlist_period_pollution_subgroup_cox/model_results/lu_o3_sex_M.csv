@@ -1,0 +1,2 @@
+organ,organ_label,exposure,exposure_label,subgroup,subgroup_label,subgroup_level,exposure_data_end_year,n,people,centers,adverse_events,hazard_ratio,conf_low,conf_high,p_value,concordance,adjustment_set,variance_estimator,center_adjustment,error
+LU,Lung,o3,Ozone waitlist-period mean per 10 ppb,sex,Sex,M,2023,26681,25490,82,2751,0.9706552090291141,0.8482170294830133,1.110767058508133,0.6650576989781231,0.7011838057672846,age + race_group + listing_year + organ_score + strata(listing_center),model_based,stratified_baseline_hazard_by_listing_center,NA

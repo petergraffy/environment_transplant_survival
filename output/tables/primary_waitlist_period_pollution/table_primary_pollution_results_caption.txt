@@ -1,0 +1,4 @@
+Table caption:
+Primary cause-specific Cox models estimate the association between observed waitlist-period pollutant exposure and death or delisting due to deterioration.
+Models are fit separately by organ and pollutant and adjusted for age, sex, race, listing year, baseline organ score, and listing-center strata.
+Interaction p-values are likelihood-ratio tests comparing models with and without exposure-by-subgroup interaction terms.

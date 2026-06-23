@@ -1,0 +1,2 @@
+organ,organ_label,exposure,exposure_label,subgroup,subgroup_label,subgroup_level,exposure_data_end_year,n,people,centers,adverse_events,hazard_ratio,conf_low,conf_high,p_value,concordance,adjustment_set,variance_estimator,center_adjustment,error
+LI,Liver,no2,NO2 waitlist-period mean per 10 ppb,race_group,Race,Other/Unknown,2025,5055,4879,149,779,1.0783757497585853,0.8890946082556421,1.3079533346276047,0.44353090416747043,0.746670374833905,age + sex + listing_year + organ_score + strata(listing_center),model_based,stratified_baseline_hazard_by_listing_center,NA

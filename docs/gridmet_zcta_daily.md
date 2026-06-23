@@ -1,6 +1,6 @@
 # gridMET Daily ZCTA Weather Exposures
 
-`code/20_aggregate_gridmet_to_zcta.R` downloads daily gridMET NetCDF files from
+`code/exploratory/20_aggregate_gridmet_to_zcta.R` downloads daily gridMET NetCDF files from
 `https://www.northwestknowledge.net/metdata/data/` and aggregates them to 2020
 ZCTA5 polygons.
 

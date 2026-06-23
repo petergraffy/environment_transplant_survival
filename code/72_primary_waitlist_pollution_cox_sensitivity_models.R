@@ -209,6 +209,76 @@ fit_sensitivity_cox <- function(dat, org, exposure_name, spec, sensitivity_name,
     )
 }
 
+fit_multipollutant_cox <- function(dat, org, exposure_names, specs, sensitivity_name, sensitivity_label,
+                                   include_score = TRUE, include_center = TRUE, include_svi = FALSE,
+                                   include_kidney_clinical = TRUE) {
+  adj <- primary_terms(
+    org,
+    include_score = include_score,
+    include_center = include_center,
+    include_svi = include_svi,
+    include_kidney_clinical = include_kidney_clinical
+  )
+  exposure_terms <- vapply(specs, `[[`, character(1), "term")
+  names(exposure_terms) <- exposure_names
+  exposure_lookup <- tibble(
+    exposure = exposure_names,
+    term = unname(exposure_terms),
+    exposure_label = vapply(specs, `[[`, character(1), "label")
+  )
+
+  vars_needed <- c("followup_days_pm25", "event_pm25", adj$vars, unname(exposure_terms))
+
+  model_dat <- dat %>%
+    filter(
+      index_year <= 2023L,
+      complete.cases(across(all_of(vars_needed))),
+      followup_days_pm25 > 0
+    ) %>%
+    mutate(.followup_days = pmax(followup_days_pm25, 0.5), .event = event_pm25) %>%
+    droplevels()
+
+  if (nrow(model_dat) == 0L || sum(model_dat$.event) < 50L) return(tibble())
+  if (include_center && n_distinct(model_dat$listing_center) < 2L) return(tibble())
+
+  form <- as.formula(paste(
+    "Surv(.followup_days, .event) ~",
+    paste(c(unname(exposure_terms), adj$terms), collapse = " + ")
+  ))
+  log_msg(
+    sensitivity_name, " ", org, " | ",
+    paste(exposure_names, collapse = "+"), " n=", nrow(model_dat),
+    " adverse=", sum(model_dat$.event)
+  )
+  fit <- coxph(form, data = model_dat, ties = "efron", x = FALSE, y = FALSE)
+
+  tidy(fit, exponentiate = TRUE, conf.int = TRUE) %>%
+    inner_join(exposure_lookup, by = "term") %>%
+    transmute(
+      sensitivity = sensitivity_name,
+      sensitivity_label = sensitivity_label,
+      organ = org,
+      organ_label = recode(org, !!!organ_labels),
+      exposure = exposure,
+      exposure_label = exposure_label,
+      exposure_window = "observed_waitlist_period_mean_multipollutant",
+      exposure_data_end_year = 2023L,
+      endpoint = "death_or_deterioration_delist_cause_specific",
+      n = nrow(model_dat),
+      people = n_distinct(model_dat$PERS_ID),
+      centers = n_distinct(model_dat$listing_center),
+      adverse_events = sum(model_dat$.event),
+      hazard_ratio = estimate,
+      conf_low = conf.low,
+      conf_high = conf.high,
+      p_value = p.value,
+      concordance = unname(summary(fit)$concordance[1]),
+      adjustment_set = format_adjustment(org, include_score, include_center, include_svi, include_kidney_clinical),
+      variance_estimator = "model_based",
+      center_adjustment = if_else(include_center, "stratified_baseline_hazard_by_listing_center", "none")
+    )
+}
+
 log_msg("Reading primary analysis dataset")
 analysis_dat <- read_csv(analysis_path, show_col_types = FALSE) %>%
   mutate(
@@ -267,6 +337,12 @@ sensitivity_definitions <- tribble(
   "prior_1y_no_score_no_center", "One-year prior exposure model without organ score, kidney clinical covariates, or listing-center strata", "prior", FALSE, FALSE, FALSE, FALSE
 )
 
+multipollutant_definitions <- tribble(
+  ~sensitivity, ~sensitivity_label, ~exposure_names, ~include_score, ~include_center, ~include_svi, ~include_kidney_clinical,
+  "multipollutant_pm25_no2", "Multipollutant waitlist-period model with PM2.5 and NO2", list(c("pm25", "no2")), TRUE, TRUE, FALSE, TRUE,
+  "multipollutant_pm25_no2_o3", "Multipollutant waitlist-period model with PM2.5, NO2, and O3", list(c("pm25", "no2", "o3")), TRUE, TRUE, FALSE, TRUE
+)
+
 log_msg("Fitting sensitivity Cox models")
 all_results <- list()
 for (i in seq_len(nrow(sensitivity_definitions))) {
@@ -293,6 +369,35 @@ for (i in seq_len(nrow(sensitivity_definitions))) {
       rm(result)
       invisible(gc())
     }
+  }
+}
+
+for (i in seq_len(nrow(multipollutant_definitions))) {
+  def <- multipollutant_definitions[i, ]
+  for (org in names(organ_labels)) {
+    org_dat <- analysis_dat %>% filter(WL_ORG == org)
+    exposure_names <- unlist(def$exposure_names)
+    specs <- waitlist_exposure_specs[exposure_names]
+    result <- fit_multipollutant_cox(
+      org_dat,
+      org,
+      exposure_names,
+      specs,
+      def$sensitivity,
+      def$sensitivity_label,
+      include_score = def$include_score,
+      include_center = def$include_center,
+      include_svi = def$include_svi,
+      include_kidney_clinical = def$include_kidney_clinical
+    )
+    result_path <- file.path(
+      model_result_dir,
+      paste0(def$sensitivity, "_", tolower(org), ".csv")
+    )
+    write_csv(result, result_path)
+    all_results[[length(all_results) + 1L]] <- result
+    rm(result)
+    invisible(gc())
   }
 }
 

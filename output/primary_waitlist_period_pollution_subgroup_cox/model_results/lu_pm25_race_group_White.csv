@@ -1,0 +1,2 @@
+organ,organ_label,exposure,exposure_label,subgroup,subgroup_label,subgroup_level,exposure_data_end_year,n,people,centers,adverse_events,hazard_ratio,conf_low,conf_high,p_value,concordance,adjustment_set,variance_estimator,center_adjustment,error
+LU,Lung,pm25,PM2.5 waitlist-period mean per 5 ug/m3,race_group,Race,White,2023,40865,38939,83,4850,1.294490029895053,1.179241081233,1.4210024261922756,5.78101786095999e-8,0.6850645744052666,age + sex + listing_year + organ_score + strata(listing_center),model_based,stratified_baseline_hazard_by_listing_center,NA

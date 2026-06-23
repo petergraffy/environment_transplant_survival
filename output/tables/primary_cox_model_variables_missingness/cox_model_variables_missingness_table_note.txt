@@ -1,0 +1,2 @@
+Supplemental table note:
+This table describes variables included in the primary cause-specific Cox models. Each pollutant was modeled in a separate organ-specific Cox model. PM2.5 and O3 were modeled using day-weighted waitlist-period exposure through 2023; NO2 was modeled using day-weighted waitlist-period exposure through 2025. Missingness is shown before model-specific complete-case exclusion or imputation/derived-variable handling, except for constructed binary indicators where missing/no qualifying feature was coded as 0.

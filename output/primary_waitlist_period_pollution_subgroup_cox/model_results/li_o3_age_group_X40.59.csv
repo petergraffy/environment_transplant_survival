@@ -1,0 +1,2 @@
+organ,organ_label,exposure,exposure_label,subgroup,subgroup_label,subgroup_level,exposure_data_end_year,n,people,centers,adverse_events,hazard_ratio,conf_low,conf_high,p_value,concordance,adjustment_set,variance_estimator,center_adjustment,error
+LI,Liver,o3,Ozone waitlist-period mean per 10 ppb,age_group,Age group,40-59,2023,108486,103356,130,21214,1.0797550937945517,1.0323048595738589,1.1293863937214816,8.181293802029593e-4,0.7443180043940139,sex + race_group + listing_year + organ_score + strata(listing_center),model_based,stratified_baseline_hazard_by_listing_center,NA

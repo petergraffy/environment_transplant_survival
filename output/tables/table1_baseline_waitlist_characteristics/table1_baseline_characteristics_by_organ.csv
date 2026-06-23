@@ -1,44 +1,44 @@
 section,characteristic,Heart,Kidney,Liver,Lung
-Cohort,"Waitlist listings, n","89,482","792,988","264,156","56,383"
+Cohort,"Person waitlist episodes, n","86,954","669,656","252,012","55,185"
 Cohort,"Unique candidates, n","83,594","640,983","237,986","52,606"
 Cohort,"Listing centers, n",171,285,163,84
-Baseline characteristics,"Age at listing, median (IQR), years",53.0 (36.0 to 61.0),54.0 (42.0 to 62.0),56.0 (46.0 to 62.0),60.0 (50.0 to 65.0)
-Baseline characteristics,"Listing year, median (IQR)",2017 (2011 to 2022),2015 (2010 to 2020),2016 (2010 to 2021),2017 (2011 to 2021)
-Organ-specific baseline severity,"Heart US-CRS proxy, median (IQR)",-10.7 (-11.0 to -10.3),,,
+Baseline characteristics,"Age at listing, median (IQR), years",53.0 (36.0 to 61.0),54.0 (43.0 to 63.0),56.0 (46.0 to 62.0),60.0 (50.0 to 65.0)
+Baseline characteristics,"Listing year, median (IQR)",2017 (2011 to 2022),2015 (2010 to 2020),2016 (2010 to 2021),2017 (2011 to 2022)
+Organ-specific baseline severity,"Heart US-CRS proxy, median (IQR)",-10.7 (-11.2 to -10.1),,,
 Organ-specific baseline severity,"Liver MELD/PELD score, median (IQR)",,,16 (11 to 24),
 Organ-specific baseline severity,"Lung LAS/CAS component proxy, median (IQR)",,,,-0.0 (-0.5 to 0.1)
-Organ-score components,"Heart albumin score input, median (IQR), g/dL",3.7 (3.7 to 3.7),,,
-Organ-score components,"Heart bilirubin score input, median (IQR), mg/dL",0.8 (0.8 to 0.8),,,
-Organ-score components,"Heart eGFR score input, median (IQR), mL/min/1.73 m2",73.2 (52.6 to 101.0),,,
-Organ-score components,"Heart sodium score input, median (IQR), mEq/L",136.0 (136.0 to 136.0),,,
-Organ-score components,"Heart durable LVAD score input, n (%)","15,357 (17.2%)",,,
-Organ-score components,"Heart short-term MCS score input, n (%)","2,167 (2.4%)",,,
-Organ-score components,"Heart BNP score input, median (IQR), pg/mL",693 (693 to 693),,,
-Organ-score components,"Kidney no dialysis time covariate, n (%)",,"636,236 (80.2%)",,
-Organ-score components,"Kidney dialysis duration covariate among candidates with positive time, median (IQR), years",,1.2 (0.6 to 2.6),,
-Organ-score components,"Kidney diabetes covariate, n (%)",,"334,287 (42.2%)",,
+Organ-score components,"Heart albumin observed score input, median (IQR), g/dL",3.8 (3.3 to 4.2),,,
+Organ-score components,"Heart bilirubin observed score input, median (IQR), mg/dL",0.7 (0.5 to 1.2),,,
+Organ-score components,"Heart eGFR score input, median (IQR), mL/min/1.73 m2",73.0 (52.5 to 101.2),,,
+Organ-score components,"Heart sodium observed score input, median (IQR), mEq/L",137.0 (134.0 to 139.0),,,
+Organ-score components,"Heart durable LVAD score input, n (%)","14,533 (16.7%)",,,
+Organ-score components,"Heart short-term MCS score input, n (%)","2,117 (2.4%)",,,
+Organ-score components,"Heart BNP observed score input, median (IQR), pg/mL",1048 (352 to 2880),,,
+Organ-score components,"Kidney no dialysis time covariate, n (%)",,"538,557 (80.4%)",,
+Organ-score components,"Kidney dialysis duration covariate among candidates with positive time, median (IQR), years",,1.1 (0.5 to 2.3),,
+Organ-score components,"Kidney diabetes covariate, n (%)",,"289,297 (43.2%)",,
 Organ-score components,"Liver MELD/PELD score input, median (IQR)",,,16 (11 to 24),
-Organ-score components,"Lung FEV1 score input, median (IQR)",,,,0.0 (0.0 to 21.0)
-Organ-score components,"Lung FVC score input, median (IQR)",,,,0.0 (0.0 to 37.0)
-Organ-score components,"Lung PCO2 score input, median (IQR), mm Hg",,,,0.0 (0.0 to 36.0)
-Organ-score components,"Lung resting oxygen score input, median (IQR)",,,,0.0 (0.0 to 2.0)
-Organ-score components,"Lung 6-minute walk score input, median (IQR), ft",,,,0 (0 to 492)
-Organ-score components,"Lung pulmonary artery mean pressure score input, median (IQR), mm Hg",,,,24.0 (19.0 to 31.0)
-Organ-score components,"Lung cardiac output score input, median (IQR), L/min",,,,5.0 (4.0 to 6.0)
-Organ-score components,"Lung ventilator score input, n (%)",,,,"2,294 (4.1%)"
-Organ-score components,"Lung ECMO score input, n (%)",,,,"1,880 (3.3%)"
-Organ-score components,"Lung corticosteroid dependence score input, n (%)",,,,"7,293 (12.9%)"
-"Sex, n (%)",Female,"25,623 (28.6%)","305,140 (38.5%)","100,076 (37.9%)","24,345 (43.2%)"
-"Sex, n (%)",Male,"63,859 (71.4%)","487,848 (61.5%)","164,080 (62.1%)","32,038 (56.8%)"
+Organ-score components,"Lung FEV1 observed score input, median (IQR)",,,,33.0 (21.0 to 51.0)
+Organ-score components,"Lung FVC observed score input, median (IQR)",,,,47.0 (37.0 to 60.0)
+Organ-score components,"Lung PCO2 observed score input, median (IQR), mm Hg",,,,43.0 (38.0 to 51.0)
+Organ-score components,"Lung resting oxygen observed score input, median (IQR)",,,,3.0 (2.0 to 5.0)
+Organ-score components,"Lung 6-minute walk observed score input, median (IQR), ft",,,,800 (430 to 1108)
+Organ-score components,"Lung pulmonary artery mean pressure observed score input, median (IQR), mm Hg",,,,25.0 (20.0 to 32.0)
+Organ-score components,"Lung cardiac output observed score input, median (IQR), L/min",,,,5.2 (4.3 to 6.1)
+Organ-score components,"Lung ventilator score input, n (%)",,,,"2,247 (4.1%)"
+Organ-score components,"Lung ECMO score input, n (%)",,,,"1,848 (3.3%)"
+Organ-score components,"Lung corticosteroid dependence score input, n (%)",,,,"7,119 (12.9%)"
+"Sex, n (%)",Female,"25,002 (28.8%)","258,832 (38.7%)","95,716 (38.0%)","23,630 (42.8%)"
+"Sex, n (%)",Male,"61,952 (71.2%)","410,824 (61.3%)","156,296 (62.0%)","31,555 (57.2%)"
 "Sex, n (%)",Unknown,0 (0.0%),0 (0.0%),0 (0.0%),0 (0.0%)
-"Race, n (%)",White,"63,553 (71.0%)","487,533 (61.5%)","224,481 (85.0%)","48,501 (86.0%)"
-"Race, n (%)",Black,"21,145 (23.6%)","230,820 (29.1%)","22,526 (8.5%)","5,606 (9.9%)"
-"Race, n (%)",Asian,"2,960 (3.3%)","56,545 (7.1%)","11,550 (4.4%)","1,526 (2.7%)"
-"Race, n (%)",Other/Unknown,"1,824 (2.0%)","18,090 (2.3%)","5,599 (2.1%)",750 (1.3%)
-"Waitlist outcome, n (%)",Transplant or delisting due to improvement,"67,777 (75.7%)","441,680 (55.7%)","183,104 (69.3%)","46,289 (82.1%)"
-"Waitlist outcome, n (%)",Death or delisting due to deterioration,"11,345 (12.7%)","143,713 (18.1%)","48,570 (18.4%)","6,291 (11.2%)"
-"Waitlist outcome, n (%)",Other waitlist exit,"6,636 (7.4%)","102,915 (13.0%)","23,919 (9.1%)","2,894 (5.1%)"
-"Waitlist outcome, n (%)",Administrative censoring,"3,724 (4.2%)","104,680 (13.2%)","8,563 (3.2%)",909 (1.6%)
-Waitlist-period pollution exposure,"PM2.5, median (IQR); range, ug/m3",8.2 (7.1 to 9.6); 3.1 to 22.4,8.4 (7.3 to 9.6); 2.7 to 26.7,8.3 (7.1 to 9.8); 2.3 to 34.8,8.1 (7.0 to 9.6); 3.0 to 41.5
-Waitlist-period pollution exposure,"O3, median (IQR); range, ppb",38.2 (36.6 to 40.3); 24.2 to 56.9,38.2 (36.5 to 40.2); 23.0 to 57.9,38.3 (36.6 to 40.7); 22.9 to 57.4,38.3 (36.7 to 40.4); 23.7 to 57.4
-Waitlist-period pollution exposure,"NO2, median (IQR); range, ppb",6.6 (3.9 to 10.8); 0.2 to 51.1,7.2 (4.2 to 11.7); 0.2 to 50.7,6.8 (3.9 to 11.3); 0.2 to 51.1,6.5 (3.8 to 10.3); 0.2 to 50.7
+"Race, n (%)",White,"61,659 (70.9%)","416,557 (62.2%)","213,839 (84.9%)","47,432 (86.0%)"
+"Race, n (%)",Black,"20,601 (23.7%)","190,858 (28.5%)","21,717 (8.6%)","5,527 (10.0%)"
+"Race, n (%)",Asian,"2,908 (3.3%)","46,428 (6.9%)","11,042 (4.4%)","1,487 (2.7%)"
+"Race, n (%)",Other/Unknown,"1,786 (2.1%)","15,813 (2.4%)","5,414 (2.1%)",739 (1.3%)
+"Waitlist outcome, n (%)",Transplant or delisting due to improvement,"67,049 (77.1%)","381,276 (56.9%)","176,382 (70.0%)","45,633 (82.7%)"
+"Waitlist outcome, n (%)",Death or delisting due to deterioration,"11,276 (13.0%)","134,979 (20.2%)","47,355 (18.8%)","6,233 (11.3%)"
+"Waitlist outcome, n (%)",Other waitlist exit,"5,051 (5.8%)","63,505 (9.5%)","19,968 (7.9%)","2,417 (4.4%)"
+"Waitlist outcome, n (%)",Administrative censoring,"3,578 (4.1%)","89,896 (13.4%)","8,307 (3.3%)",902 (1.6%)
+Waitlist-period pollution exposure,"PM2.5, median (IQR); range, ug/m3",8.2 (7.1 to 9.6); 3.1 to 22.4,8.4 (7.3 to 9.7); 2.8 to 25.2,8.3 (7.1 to 9.8); 2.3 to 34.8,8.1 (7.0 to 9.6); 3.0 to 41.5
+Waitlist-period pollution exposure,"O3, median (IQR); range, ppb",38.2 (36.6 to 40.4); 24.2 to 56.9,38.2 (36.5 to 40.2); 23.0 to 57.9,38.3 (36.5 to 40.6); 22.9 to 57.4,38.3 (36.7 to 40.4); 23.7 to 57.4
+Waitlist-period pollution exposure,"NO2, median (IQR); range, ppb",6.6 (3.8 to 10.7); 0.2 to 51.1,7.2 (4.2 to 11.7); 0.2 to 50.7,6.8 (3.9 to 11.3); 0.2 to 51.1,6.4 (3.8 to 10.3); 0.2 to 50.7

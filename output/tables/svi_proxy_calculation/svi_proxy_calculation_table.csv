@@ -1,0 +1,8 @@
+Component,ACS_variable_or_source,Calculation,Rank_direction,Use_in_proxy
+Poverty,B17001_002E / B17001_001E,Persons below poverty level divided by poverty-status denominator,Higher percentage = higher vulnerability rank,Percent rank within analysis year
+Unemployment,B23025_005E / B23025_003E,Unemployed civilians divided by civilian labor force,Higher percentage = higher vulnerability rank,Percent rank within analysis year
+No vehicle access,B08201_002E / B08201_001E,Households with no vehicle available divided by total households in vehicle table,Higher percentage = higher vulnerability rank,Percent rank within analysis year
+Non-White race,1 - (B02001_002E / B02001_001E),One minus White alone population divided by total race denominator,Higher percentage = higher vulnerability rank,Percent rank within analysis year
+Low income,B19013_001E,Median household income,Lower income = higher vulnerability rank,Percent rank of negative median household income within analysis year
+Low educational attainment,(B15003_022E + B15003_023E + B15003_024E + B15003_025E) / B15003_001E,"Bachelor's, master's, professional, or doctorate degree count divided by population aged 25 years or older",Lower percentage with bachelor's degree or higher = higher vulnerability rank,Percent rank of negative bachelor's-or-higher percentage within analysis year
+Overall ZCTA SVI proxy,Six ranked components above,"Mean of poverty, unemployment, no vehicle, non-White, low-income, and low-education ranks",Higher value = greater relative social vulnerability,Continuous covariate added to sensitivity Cox models

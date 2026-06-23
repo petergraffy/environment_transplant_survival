@@ -1,0 +1,13 @@
+cohort,variable,n,missing,pct_missing
+analytic heart candidates: cand_thor variables,CAN_ACPT_HIST_CIGARETTE,86954,86954,100
+analytic heart candidates: cand_thor variables,CAN_CIGARETTE_GT10,86954,86935,99.97814936633162
+analytic heart candidates: cand_thor variables,CAN_HIST_CIGARETTE,86954,3852,4.42992846792557
+analytic heart candidates: cand_thor variables,CAN_PACK_YEARS,86954,73194,84.17554109069162
+analytic heart candidates: cand_thor variables,CAN_OTHER_TOBACCO_USE,86954,57202,65.78420774202452
+analytic lung candidates: cand_thor variables,CAN_ACPT_HIST_CIGARETTE,55185,9278,16.812539639394764
+analytic lung candidates: cand_thor variables,CAN_CIGARETTE_GT10,55185,55163,99.96013409440971
+analytic lung candidates: cand_thor variables,CAN_HIST_CIGARETTE,55185,2661,4.821962489807013
+analytic lung candidates: cand_thor variables,CAN_PACK_YEARS,55185,43234,78.34375283138534
+analytic lung candidates: cand_thor variables,CAN_OTHER_TOBACCO_USE,55185,36435,66.02337591736885
+analytic heart candidates: statjust_hr1a variables,CANHX_CIG_ABUSE,86954,86768,99.78609379672011
+analytic heart candidates: statjust_hr1a variables,CANHX_CIG_ABUSE_CESSATION,86954,86811,99.83554523081169

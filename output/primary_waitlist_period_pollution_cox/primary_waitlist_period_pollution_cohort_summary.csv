@@ -1,0 +1,13 @@
+WL_ORG,organ_score_name,exposure,exposure_data_end_year,n,people,centers,adverse_events,median_followup_days,mean_exposure
+HR,US-CRS proxy baseline,pm25,2023,74063,71315,167,10186,91,1.7141628597786356
+KI,Age + dialysis + diabetes baseline covariates,pm25,2023,606508,582160,283,116476,950,1.7378782800707508
+LI,"Initial MELD, last if initial missing",pm25,2023,216585,204868,160,42649,131,1.733884366979567
+LU,LAS/CAS component proxy baseline,pm25,2023,47065,44860,83,5799,59,1.6957223309405167
+HR,US-CRS proxy baseline,o3,2023,74063,71315,167,10186,91,3.875358274465033
+KI,Age + dialysis + diabetes baseline covariates,o3,2023,606508,582160,283,116476,950,3.8668610607665914
+LI,"Initial MELD, last if initial missing",o3,2023,216585,204868,160,42649,131,3.886538622195151
+LU,LAS/CAS component proxy baseline,o3,2023,47065,44860,83,5799,59,3.889940576430393
+HR,US-CRS proxy baseline,no2,2025,85415,82153,169,11067,83,0.8038221200617232
+KI,Age + dialysis + diabetes baseline covariates,no2,2025,653933,626197,283,131544,985,0.8644545509119556
+LI,"Initial MELD, last if initial missing",no2,2025,246235,232777,163,46119,119,0.8382833056243744
+LU,LAS/CAS component proxy baseline,no2,2025,54481,51971,84,6140,53,0.767822290375251
