@@ -1,6 +1,6 @@
 # Daily Ozone ZCTA Aggregates
 
-`code/52_aggregate_daily_o3_to_zcta.R` aggregates downloaded daily CONUS ozone
+`code/pollution_aggregation/52_aggregate_daily_o3_to_zcta.R` aggregates downloaded daily CONUS ozone
 NetCDF archives to 2020 ZCTA5 polygons.
 
 The inspected 2024 archive at `C:/Users/Peter Graffy/Downloads/2024.zip`
@@ -38,12 +38,12 @@ The output includes monthly QC files and an all-month yearly QC summary.
 
 ## Release Packaging
 
-`code/54_package_daily_o3_release_assets.R` converts monthly CSV outputs to
+`code/pollution_aggregation/54_package_daily_o3_release_assets.R` converts monthly CSV outputs to
 yearly Parquet files in `data/release/o3_zcta_daily_parquet`. The release
 assets include yearly Parquet files, a manifest with SHA-256 checksums, all-year
 QC, and a README.
 
-`code/55_upload_daily_o3_release_assets.ps1` creates or updates the GitHub
+`code/pollution_aggregation/55_upload_daily_o3_release_assets.ps1` creates or updates the GitHub
 release tagged `o3-zcta-daily-v1`.
 
 ## Citation

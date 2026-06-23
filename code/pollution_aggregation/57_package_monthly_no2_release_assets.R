@@ -136,7 +136,7 @@ readme <- c(
   "Related publication DOI listed by Zenodo: https://doi.org/10.1021/acsestair.4c00153.",
   "Also cite this repository/release for the ZCTA aggregation workflow.",
   "",
-  "The reproducible aggregation script is `code/56_aggregate_monthly_no2_to_zcta.R` and this packaging script is `code/57_package_monthly_no2_release_assets.R`."
+  "The reproducible aggregation script is `code/pollution_aggregation/56_aggregate_monthly_no2_to_zcta.R` and this packaging script is `code/pollution_aggregation/57_package_monthly_no2_release_assets.R`."
 )
 writeLines(readme, file.path(release_dir, "README.md"), useBytes = TRUE)
 

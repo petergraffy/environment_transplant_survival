@@ -1,6 +1,6 @@
 # Monthly NO2 ZCTA Aggregates
 
-`code/56_aggregate_monthly_no2_to_zcta.R` aggregates monthly TROPOMI/LUR
+`code/pollution_aggregation/56_aggregate_monthly_no2_to_zcta.R` aggregates monthly TROPOMI/LUR
 CONUS surface NO2 NetCDF4 files to 2020 ZCTA5 polygons.
 
 The local archive used for the 2019-2025 run was:
@@ -41,12 +41,12 @@ The output includes monthly QC files and an all-month QC summary.
 
 ## Release Packaging
 
-`code/57_package_monthly_no2_release_assets.R` converts monthly CSV outputs to
+`code/pollution_aggregation/57_package_monthly_no2_release_assets.R` converts monthly CSV outputs to
 yearly Parquet files in `data/release/no2_zcta_monthly_parquet`. The release
 assets include yearly Parquet files, a manifest with SHA-256 checksums, all-year
 QC, and a README.
 
-`code/58_upload_monthly_no2_release_assets.ps1` creates or updates the GitHub
+`code/pollution_aggregation/58_upload_monthly_no2_release_assets.ps1` creates or updates the GitHub
 release tagged `no2-zcta-monthly-v1`.
 
 ## Citation
