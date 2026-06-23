@@ -28,4 +28,4 @@ Citation:
 
 Please cite the source ozone estimates using the Science article DOI supplied with these data: https://www.science.org/doi/10.1126/science.aed3197.
 
-Also cite this repository/release for the ZCTA aggregation workflow. The reproducible aggregation script is `code/52_aggregate_daily_o3_to_zcta.R`, the QA mapping script is `code/53_map_daily_o3_zcta_examples.R`, and this packaging script is `code/54_package_daily_o3_release_assets.R`.
+Also cite this repository/release for the ZCTA aggregation workflow. The reproducible aggregation script is `code/pollution_aggregation/52_aggregate_daily_o3_to_zcta.R`, the QA mapping script is `code/pollution_aggregation/53_map_daily_o3_zcta_examples.R`, and this packaging script is `code/pollution_aggregation/54_package_daily_o3_release_assets.R`.
