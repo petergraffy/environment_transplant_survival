@@ -9,6 +9,13 @@ data/raw/lghap_pm25_daily/*.nc
 data/raw/lghap_aod_daily/*.zip
 data/raw/lghap_aod_daily/*.nc
 data/raw/lghap_aod_daily/LGHAP_Global_AOD/
+data/cache/cb_2020_us_tract_500k.zip
+data/cache/cb_2020_us_tract_500k/
+data/cache/tract_lookup_lghap_pm25_*.csv
+data/cache/tract_points_lghap_pm25_*.csv
+data/cache/tract_zone_raster_lghap_pm25_*.tif
+data/processed/lghap_pm25_tract_daily*/
+data/release/lghap_pm25_tract_daily*_csv/
 data/processed/gridmet_zcta_daily/gridmet_zcta_daily_20??.csv.gz
 data/processed/o3_zcta_daily/o3_zcta_daily_*.csv.gz
 data/processed/no2_zcta_monthly/no2_zcta_monthly_*.csv.gz
@@ -19,5 +26,6 @@ data/processed/lghap_pm25_zcta_daily_derived/*.rds
 data/release/gridmet_zcta_daily_parquet/*.parquet
 data/release/air_pollution_zcta_parquet/*.parquet
 data/release/lghap_pm25_zcta_daily_parquet/*.parquet
+data/release/lghap_pm25_tract_daily*_parquet/*.parquet
 data/release/o3_zcta_daily_parquet/*.parquet
 data/release/no2_zcta_monthly_parquet/*.parquet
