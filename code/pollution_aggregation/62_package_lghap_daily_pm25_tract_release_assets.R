@@ -94,8 +94,8 @@ convert_year <- function(year) {
     dat$month <- as.integer(dat$month)
     log_msg("Writing CSV.gz for ", year)
     con <- gzfile(dest, open = "wt")
-    on.exit(close(con), add = TRUE)
     write.csv(dat, con, row.names = FALSE, na = "")
+    close(con)
   } else {
     log_msg("Using existing CSV.gz for ", year)
     dat <- read_year(year)
