@@ -12,13 +12,14 @@ Organ benchmark definitions:
 
 - Heart: US-CRS proxy from heart status-justification variables. Inputs include
   short-term MCS, durable LVAD, bilirubin, race-neutral CKD-EPI 2021 eGFR,
-  albumin, sodium, and BNP. The current implementation uses the US-CRS log-odds
-  formula:
-  `-0.656*albumin + 0.617*log(bilirubin+1) - 0.012*eGFR - 0.077*sodium -
-  0.377*LVAD + 1.092*short_term_MCS + 0.433*log(BNP+1)`. The SAF field found so
-  far is `CANHX_LAB_BNP`, without a BNP vs NT-proBNP type indicator, so this
-  implementation currently treats it as regular BNP. Missing numeric components
-  are median-imputed among heart candidates.
+  albumin, sodium, and BNP. The current implementation uses the corrected
+  US-CRS formula:
+  `1.02*short_MCS + 0.55*log(bilirubin+1) - 0.01*eGFR +
+  0.40*log(BNP+1)*BNP_indicator + 0.20*log(BNP+1)*NT_proBNP_indicator -
+  0.63*albumin - 0.07*sodium - 1.12*durable_LVAD`. BNP type is taken from
+  `RiskStratDataHR` when available; statjust-only BNP values without type are
+  coded as unknown type and assigned the BNP coefficient. Missing numeric
+  components are median-imputed among heart candidates.
 - Liver: initial SRTR lab MELD, falling back to last SRTR lab MELD.
 - Lung: LAS/CAS component proxy from available thoracic candidate physiology and
   support variables because no direct LAS/CAS field was found in the SAF headers
@@ -59,5 +60,4 @@ Current caveats:
   lagged cumulative waitlist exposure intervals from
   `code/exploratory/07_organ_specific_adverse_waitlist_models.R`.
 - Heart and lung benchmarks need score-specific refinement before manuscript
-  use: BNP vs NT-proBNP handling for heart if a type field is found, and direct
-  LAS/CAS recovery or a validated proxy for lung.
+  use: direct LAS/CAS recovery or a validated proxy for lung.

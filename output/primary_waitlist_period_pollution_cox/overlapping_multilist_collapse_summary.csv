@@ -1,5 +1,5 @@
 organ_label,WL_ORG,registration_rows_before_collapse,person_waitlist_episodes_after_collapse,collapsed_episode_count,collapsed_registration_rows,removed_duplicate_registration_rows,multicenter_collapsed_episode_count,multicenter_collapsed_registration_rows
-Heart,HR,89482,86954,2376,4904,2528,2087,4320
-Kidney,KI,792988,669656,99859,223191,123332,92605,208556
-Liver,LI,264156,252012,11273,23417,12144,10817,22501
-Lung,LU,56383,55185,1132,2330,1198,1059,2181
+Heart,HR,89516,83624,5465,11357,5892,2865,6077
+Kidney,KI,795695,643225,119224,271694,152470,98438,229384
+Liver,LI,264281,238078,23265,49468,26203,13185,28690
+Lung,LU,56393,52613,3492,7272,3780,1600,3422

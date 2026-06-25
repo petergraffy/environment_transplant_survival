@@ -1,5 +1,5 @@
 Organ,Formula / model use
-Heart,Heart US-CRS proxy = -0.656*albumin + 0.617*log1p(bilirubin) - 0.012*eGFR - 0.077*sodium - 0.377*durable LVAD + 1.092*short-term mechanical circulatory support + 0.433*log1p(BNP).
+Heart,Heart US-CRS proxy = 1.02*short-term mechanical circulatory support + 0.55*log1p(bilirubin) - 0.01*eGFR + 0.40*log1p(BNP)*BNP indicator + 0.20*log1p(BNP)*NT-proBNP indicator - 0.63*albumin - 0.07*sodium - 1.12*durable LVAD. BNP type was taken from RiskStratDataHR when available; statjust-only BNP values were treated as unknown type and assigned the BNP coefficient.
 Kidney,"Kidney models did not use a composite organ score. Instead, no dialysis time, dialysis duration in years, and diabetes were included as separate adjustment covariates."
 Liver,"Liver models used the SRTR MELD/PELD field as a continuous adjustment covariate, using initial MELD/PELD with last MELD/PELD as fallback."
 Lung,Lung LAS/CAS component proxy = -0.010*FEV1 - 0.005*FVC + 0.020*PCO2 + 0.010*resting oxygen - 0.002*6-minute walk + 0.010*mean pulmonary artery pressure - 0.050*cardiac output + 1.000*ventilator + 1.500*ECMO + 0.300*corticosteroid dependence.

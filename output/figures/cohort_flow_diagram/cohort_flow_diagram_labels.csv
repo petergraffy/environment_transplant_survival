@@ -1,51 +1,51 @@
 id,label
 eligible,"SRTR waitlist registrations assessed for eligibility
 Heart, kidney, liver, or lung; 2005-2025
-N = 1,206,457"
+N = 1,209,138"
 zcta,"Included registrations with residential ZCTA
-N = 1,203,009"
-episodes,"Deduplicated waitlist candidates
-N = 1,063,807"
+N = 1,205,885"
+episodes,"Deduplicated candidate-organ episodes
+N = 1,017,540"
 organ_Heart,"Heart
-Candidates: 86,954"
+Candidates: 83,624"
 organ_Kidney,"Kidney
-Candidates: 669,656"
+Candidates: 643,225"
 organ_Liver,"Liver
-Candidates: 252,012"
+Candidates: 238,078"
 organ_Lung,"Lung
-Candidates: 55,185"
+Candidates: 52,613"
 outcome_Heart,"Adverse events:
-11,276
+10,957
 Transplant/improvement:
-67,049
+64,921
 Median waitlist:
-83 days"
+89 days"
 outcome_Kidney,"Adverse events:
-134,979
+135,003
 Transplant/improvement:
-381,276
+368,483
 Median waitlist:
-985 days"
+702 days"
 outcome_Liver,"Adverse events:
-47,355
+46,526
 Transplant/improvement:
-176,382
+166,103
 Median waitlist:
-118 days"
+137 days"
 outcome_Lung,"Adverse events:
-6,233
+6,019
 Transplant/improvement:
-45,633
+43,727
 Median waitlist:
-53 days"
+57 days"
 missing_zcta,"Excluded
 Missing residential ZCTA
-n = 3,448"
+n = 3,253"
 duplicate_registrations,"Excluded
-Overlapping duplicate
-registration rows
-n = 139,202
-Heart: 2,528
-Kidney: 123,332
-Liver: 12,144
-Lung: 1,198"
+Duplicate same-candidate,
+same-organ registration rows
+n = 188,345
+Heart: 5,892
+Kidney: 152,470
+Liver: 26,203
+Lung: 3,780"

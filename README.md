@@ -40,7 +40,8 @@ Run scripts from the repository root so relative paths resolve correctly.
 
 1. `code/50_primary_waitlist_period_pollution_cox.R`
    - Builds the deduplicated waitlist cohort.
-   - Collapses overlapping same-person, same-organ registrations.
+   - Collapses same-person, same-organ registrations to first-listing baseline
+     exposure/covariates and final observed waitlist outcome.
    - Computes waitlist-period pollutant exposures.
    - Fits the primary cause-specific Cox models.
 
