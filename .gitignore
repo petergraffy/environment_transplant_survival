@@ -14,8 +14,13 @@ data/cache/cb_2020_us_tract_500k/
 data/cache/tract_lookup_lghap_pm25_*.csv
 data/cache/tract_points_lghap_pm25_*.csv
 data/cache/tract_zone_raster_lghap_pm25_*.tif
+data/cache/tract_lookup_daily_o3_*.csv
+data/cache/tract_points_daily_o3_*.csv
+data/cache/tract_zone_raster_daily_o3_*.tif
 data/processed/lghap_pm25_tract_daily*/
+data/processed/o3_tract_daily*/
 data/release/lghap_pm25_tract_daily*_csv/
+data/release/o3_tract_daily*_csv/
 data/processed/gridmet_zcta_daily/gridmet_zcta_daily_20??.csv.gz
 data/processed/o3_zcta_daily/o3_zcta_daily_*.csv.gz
 data/processed/no2_zcta_monthly/no2_zcta_monthly_*.csv.gz
