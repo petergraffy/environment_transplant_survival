@@ -57,63 +57,59 @@ log_msg <- function(...) {
 
 cohort_accounting_path <- file.path(out_dir, "cohort_flow_accounting.csv")
 
-if (!file.exists(cohort_accounting_path)) {
-  log_msg("Computing pre-ZCTA cohort accounting from SAF")
-  candidate_files <- tribble(
-    ~candidate_group, ~path,
-    "kidney_pancreas", file.path(pubsaf_dir, "cand_kipa.sas7bdat"),
-    "liver_intestine", file.path(pubsaf_dir, "cand_liin.sas7bdat"),
-    "thoracic", file.path(pubsaf_dir, "cand_thor.sas7bdat")
+log_msg("Computing pre-ZCTA cohort accounting from SAF")
+candidate_files <- tribble(
+  ~candidate_group, ~path,
+  "kidney_pancreas", file.path(pubsaf_dir, "cand_kipa.sas7bdat"),
+  "liver_intestine", file.path(pubsaf_dir, "cand_liin.sas7bdat"),
+  "thoracic", file.path(pubsaf_dir, "cand_thor.sas7bdat")
+)
+
+candidate_cols <- c(
+  "PERS_ID", "PX_ID", "WL_ORG", "CAN_LISTING_DT", "CAN_SOURCE",
+  "CAN_REM_DT", "CAN_DEATH_DT", "CAN_ENDWLFU"
+)
+
+candidate_zip <- read_sas(saf_paths$canzip_file) %>%
+  transmute(PERS_ID, PX_ID, candidate_zip = clean_zip(CAN_PERM_ZIP)) %>%
+  distinct(PERS_ID, PX_ID, .keep_all = TRUE)
+
+candidate_data <- candidate_files %>%
+  rowwise() %>%
+  mutate(data = list(read_sas(path, col_select = any_of(candidate_cols)))) %>%
+  ungroup() %>%
+  select(data) %>%
+  tidyr::unnest(data)
+
+max_end_date <- as.Date("2025-12-31")
+pre_zcta <- candidate_data %>%
+  filter(WL_ORG %in% c("HR", "KI", "LI", "LU")) %>%
+  left_join(candidate_zip, by = c("PERS_ID", "PX_ID")) %>%
+  mutate(
+    index_date = CAN_LISTING_DT,
+    index_year = as.integer(format(index_date, "%Y")),
+    raw_event_date = coalesce(CAN_REM_DT, CAN_DEATH_DT, CAN_ENDWLFU),
+    observed_end_date = if_else(is.na(raw_event_date) | raw_event_date > max_end_date, max_end_date, raw_event_date)
+  ) %>%
+  filter(
+    index_year >= 2005L,
+    index_year <= 2025L,
+    CAN_SOURCE %in% c("A", "R"),
+    !is.na(index_date),
+    !is.na(observed_end_date),
+    observed_end_date >= index_date
   )
 
-  candidate_cols <- c(
-    "PERS_ID", "PX_ID", "WL_ORG", "CAN_LISTING_DT", "CAN_ACTIVATE_DT",
-    "CAN_SOURCE", "CAN_REM_DT", "CAN_DEATH_DT", "CAN_ENDWLFU"
-  )
-
-  candidate_zip <- read_sas(saf_paths$canzip_file) %>%
-    transmute(PERS_ID, PX_ID, candidate_zip = clean_zip(CAN_PERM_ZIP)) %>%
-    distinct(PERS_ID, PX_ID, .keep_all = TRUE)
-
-  candidate_data <- candidate_files %>%
-    rowwise() %>%
-    mutate(data = list(read_sas(path, col_select = any_of(candidate_cols)))) %>%
-    ungroup() %>%
-    select(data) %>%
-    tidyr::unnest(data)
-
-  max_end_date <- as.Date("2025-12-31")
-  pre_zcta <- candidate_data %>%
-    filter(WL_ORG %in% c("HR", "KI", "LI", "LU")) %>%
-    left_join(candidate_zip, by = c("PERS_ID", "PX_ID")) %>%
-    mutate(
-      index_date = coalesce(CAN_ACTIVATE_DT, CAN_LISTING_DT),
-      index_year = as.integer(format(index_date, "%Y")),
-      raw_event_date = coalesce(CAN_REM_DT, CAN_DEATH_DT, CAN_ENDWLFU),
-      observed_end_date = if_else(is.na(raw_event_date) | raw_event_date > max_end_date, max_end_date, raw_event_date)
-    ) %>%
-    filter(
-      index_year >= 2005L,
-      index_year <= 2025L,
-      CAN_SOURCE %in% c("A", "R"),
-      !is.na(index_date),
-      !is.na(observed_end_date),
-      observed_end_date >= index_date
-    )
-
-  cohort_accounting <- bind_rows(
-    pre_zcta %>%
-      summarise(step = "Eligible registrations before ZCTA exclusion", n = n(), .groups = "drop"),
-    pre_zcta %>%
-      summarise(step = "Excluded: missing residential ZCTA", n = sum(is.na(candidate_zip)), .groups = "drop"),
-    pre_zcta %>%
-      filter(!is.na(candidate_zip)) %>%
-      summarise(step = "Included: residential ZCTA available", n = n(), .groups = "drop")
-  )
-  write_csv(cohort_accounting, cohort_accounting_path)
-} else {
-  cohort_accounting <- read_csv(cohort_accounting_path, show_col_types = FALSE)
-}
+cohort_accounting <- bind_rows(
+  pre_zcta %>%
+    summarise(step = "Eligible registrations before ZCTA exclusion", n = n(), .groups = "drop"),
+  pre_zcta %>%
+    summarise(step = "Excluded: missing residential ZCTA", n = sum(is.na(candidate_zip)), .groups = "drop"),
+  pre_zcta %>%
+    filter(!is.na(candidate_zip)) %>%
+    summarise(step = "Included: residential ZCTA available", n = n(), .groups = "drop")
+)
+write_csv(cohort_accounting, cohort_accounting_path)
 
 pre_zcta_n <- cohort_accounting %>%
   filter(step == "Eligible registrations before ZCTA exclusion") %>%
@@ -142,31 +138,27 @@ organ_counts <- collapse_summary %>%
 
 organ_outcomes_path <- file.path(out_dir, "cohort_flow_organ_outcomes.csv")
 
-if (!file.exists(organ_outcomes_path)) {
-  log_msg("Computing organ-level outcomes from deduplicated analysis dataset")
-  organ_outcomes <- read_csv(
-    analysis_dataset_path,
-    col_select = c(WL_ORG, index_date, observed_end_date, adverse_event, transplant_or_improvement),
-    show_col_types = FALSE
+log_msg("Computing organ-level outcomes from deduplicated analysis dataset")
+organ_outcomes <- read_csv(
+  analysis_dataset_path,
+  col_select = c(WL_ORG, index_date, observed_end_date, adverse_event, transplant_or_improvement),
+  show_col_types = FALSE
+) %>%
+  mutate(
+    organ_label = recode(WL_ORG, !!!setNames(c("Heart", "Kidney", "Liver", "Lung"), c("HR", "KI", "LI", "LU"))),
+    index_date = as.Date(index_date),
+    observed_end_date = as.Date(observed_end_date),
+    waitlist_days = as.numeric(observed_end_date - index_date)
   ) %>%
-    mutate(
-      organ_label = recode(WL_ORG, !!!setNames(c("Heart", "Kidney", "Liver", "Lung"), c("HR", "KI", "LI", "LU"))),
-      index_date = as.Date(index_date),
-      observed_end_date = as.Date(observed_end_date),
-      waitlist_days = as.numeric(observed_end_date - index_date)
-    ) %>%
-    group_by(organ_label) %>%
-    summarise(
-      candidates = n(),
-      adverse_events = sum(adverse_event == 1L, na.rm = TRUE),
-      transplant_or_improvement = sum(transplant_or_improvement == 1L, na.rm = TRUE),
-      median_waitlist_days = median(waitlist_days, na.rm = TRUE),
-      .groups = "drop"
-    )
-  write_csv(organ_outcomes, organ_outcomes_path)
-} else {
-  organ_outcomes <- read_csv(organ_outcomes_path, show_col_types = FALSE)
-}
+  group_by(organ_label) %>%
+  summarise(
+    candidates = n(),
+    adverse_events = sum(adverse_event == 1L, na.rm = TRUE),
+    transplant_or_improvement = sum(transplant_or_improvement == 1L, na.rm = TRUE),
+    median_waitlist_days = median(waitlist_days, na.rm = TRUE),
+    .groups = "drop"
+  )
+write_csv(organ_outcomes, organ_outcomes_path)
 
 organ_outcome_counts <- organ_outcomes %>%
   mutate(
@@ -206,7 +198,7 @@ box_df <- tibble(
       "N = ", fmt_n(zcta_available_n)
     ),
     paste0(
-      "Deduplicated waitlist candidates\n",
+      "Deduplicated candidate-organ episodes\n",
       "N = ", fmt_n(total_episodes)
     ),
     organ_counts$label,
@@ -234,8 +226,8 @@ exclusion_df <- tibble(
     ),
     paste0(
       "Excluded\n",
-      "Overlapping duplicate\n",
-      "registration rows\n",
+      "Duplicate same-candidate,\n",
+      "same-organ registration rows\n",
       "n = ", fmt_n(total_removed), "\n",
       duplicate_breakdown
     )

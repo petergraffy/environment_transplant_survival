@@ -173,6 +173,15 @@ collapse_overlap_episode <- function(episode_dat) {
     )
 }
 
+event_priority <- function(adverse_event, transplant_or_improvement, other_exit) {
+  case_when(
+    adverse_event == 1L ~ 3L,
+    transplant_or_improvement == 1L ~ 2L,
+    other_exit == 1L ~ 1L,
+    TRUE ~ 0L
+  )
+}
+
 candidate_files <- tribble(
   ~candidate_group, ~path,
   "kidney_pancreas", file.path(pubsaf_dir, "cand_kipa.sas7bdat"),
@@ -232,7 +241,7 @@ heart_riskstrat <- read_sas(
   col_select = any_of(c(
     "px_id", "RiskStratId", "ChangeDate", "HrSevFailCreatinine",
     "HrSevFailBilirubin", "HrSevFailAlbumin", "HrSevFailSodium",
-    "HrSevFailBnp"
+    "HrSevFailBnp", "HrSevFailNtBnpType"
   ))
 ) %>%
   rename(PX_ID = px_id) %>%
@@ -246,7 +255,8 @@ heart_riskstrat <- read_sas(
     hr_riskstrat_bilirubin = HrSevFailBilirubin,
     hr_riskstrat_albumin = HrSevFailAlbumin,
     hr_riskstrat_sodium = HrSevFailSodium,
-    hr_riskstrat_bnp = HrSevFailBnp
+    hr_riskstrat_bnp = HrSevFailBnp,
+    hr_riskstrat_bnp_type = HrSevFailNtBnpType
   )
 
 log_msg("Constructing waitlist cohort")
@@ -258,7 +268,7 @@ cohort <- candidate_data %>%
   left_join(heart_riskstrat, by = "PX_ID") %>%
   mutate(
     waitlist_row_id = row_number(),
-    index_date = coalesce(CAN_ACTIVATE_DT, CAN_LISTING_DT),
+    index_date = CAN_LISTING_DT,
     index_year = as.integer(format(index_date, "%Y")),
     raw_event_date = coalesce(CAN_REM_DT, CAN_DEATH_DT, CAN_ENDWLFU),
     observed_end_date = if_else(is.na(raw_event_date) | raw_event_date > max_end_date, max_end_date, raw_event_date),
@@ -295,7 +305,21 @@ cohort <- candidate_data %>%
     hr_albumin = coalesce(hr_riskstrat_albumin, hr_albumin, CAN_TOT_ALBUMIN),
     hr_bilirubin = coalesce(hr_riskstrat_bilirubin, hr_bilirubin, CAN_TOT_BILI),
     hr_sodium = coalesce(hr_riskstrat_sodium, hr_sodium, CAN_LAST_SERUM_SODIUM),
+    hr_bnp_source = case_when(
+      !is.na(hr_riskstrat_bnp) ~ "RiskStratDataHR",
+      !is.na(hr_bnp) ~ "statjust_hr1a",
+      TRUE ~ NA_character_
+    ),
+    hr_bnp_type_raw = if_else(!is.na(hr_riskstrat_bnp), hr_riskstrat_bnp_type, NA_character_),
     hr_bnp = coalesce(hr_riskstrat_bnp, hr_bnp),
+    hr_bnp_type = case_when(
+      str_detect(str_to_upper(str_squish(coalesce(hr_bnp_type_raw, ""))), "NT") ~ "NT-proBNP",
+      str_detect(str_to_upper(str_squish(coalesce(hr_bnp_type_raw, ""))), "BNP") ~ "BNP",
+      !is.na(hr_bnp) ~ "Unknown",
+      TRUE ~ "Missing"
+    ),
+    hr_bnp_regular_indicator = as.integer(hr_bnp_type %in% c("BNP", "Unknown")),
+    hr_bnp_ntpro_indicator = as.integer(hr_bnp_type == "NT-proBNP"),
     hr_albumin_observed = as.numeric(hr_albumin),
     hr_bilirubin_observed = as.numeric(hr_bilirubin),
     hr_sodium_observed = as.numeric(hr_sodium),
@@ -331,13 +355,14 @@ cohort <- candidate_data %>%
   ungroup() %>%
   mutate(
     hr_egfr = calc_egfr_2021(hr_creatinine_imputed, age, sex),
-    us_crs_proxy = -0.656 * hr_albumin_imputed +
-      0.617 * safe_log1p(hr_bilirubin_imputed) -
-      0.012 * hr_egfr -
-      0.077 * hr_sodium_imputed -
-      0.377 * hr_durable_lvad +
-      1.092 * hr_short_mcs +
-      0.433 * safe_log1p(hr_bnp_imputed),
+    us_crs_proxy = 1.02 * hr_short_mcs +
+      0.55 * safe_log1p(hr_bilirubin_imputed) -
+      0.01 * hr_egfr +
+      0.40 * safe_log1p(hr_bnp_imputed) * hr_bnp_regular_indicator +
+      0.20 * safe_log1p(hr_bnp_imputed) * hr_bnp_ntpro_indicator -
+      0.63 * hr_albumin_imputed -
+      0.07 * hr_sodium_imputed -
+      1.12 * hr_durable_lvad,
     lung_las_cas_component_score = rowSums(cbind(
       lung_fev1_score_input * -0.01,
       lung_fvc_score_input * -0.005,
@@ -376,21 +401,21 @@ cohort <- candidate_data %>%
 registration_cohort <- cohort %>%
   arrange(PERS_ID, WL_ORG, index_date, observed_end_date, waitlist_row_id) %>%
   group_by(PERS_ID, WL_ORG) %>%
-  mutate(person_organ_episode = assign_overlap_episode(index_date, observed_end_date)) %>%
+  mutate(person_organ_episode = 1L) %>%
   ungroup()
 
-overlap_episode_audit <- registration_cohort %>%
+collapse_episode_audit <- registration_cohort %>%
   group_by(WL_ORG, PERS_ID, person_organ_episode) %>%
   summarise(
     episode_start = min(index_date, na.rm = TRUE),
     episode_end = max(observed_end_date, na.rm = TRUE),
     registrations = n(),
     centers = n_distinct(listing_center),
-    simultaneous_multicenter = registrations > 1L & centers > 1L,
+    multicenter = registrations > 1L & centers > 1L,
     .groups = "drop"
   )
 
-collapse_summary <- overlap_episode_audit %>%
+collapse_summary <- collapse_episode_audit %>%
   group_by(WL_ORG) %>%
   summarise(
     registration_rows_before_collapse = sum(registrations),
@@ -398,8 +423,8 @@ collapse_summary <- overlap_episode_audit %>%
     collapsed_episode_count = sum(registrations > 1L),
     collapsed_registration_rows = sum(registrations[registrations > 1L]),
     removed_duplicate_registration_rows = registration_rows_before_collapse - person_waitlist_episodes_after_collapse,
-    multicenter_collapsed_episode_count = sum(simultaneous_multicenter),
-    multicenter_collapsed_registration_rows = sum(registrations[simultaneous_multicenter]),
+    multicenter_collapsed_episode_count = sum(multicenter),
+    multicenter_collapsed_registration_rows = sum(registrations[multicenter]),
     .groups = "drop"
   ) %>%
   mutate(organ_label = recode(WL_ORG, !!!organ_labels), .before = 1)
@@ -410,13 +435,13 @@ write_csv(
 )
 
 log_msg(
-  "Collapsed overlapping same-person/same-organ listings: ",
+  "Collapsed same-person/same-organ listings: ",
   sum(collapse_summary$registration_rows_before_collapse),
   " registrations -> ",
   sum(collapse_summary$person_waitlist_episodes_after_collapse),
   " person waitlist episodes; removed ",
   sum(collapse_summary$removed_duplicate_registration_rows),
-  " overlapping duplicate registration rows"
+  " duplicate registration rows"
 )
 
 registration_dt <- as.data.table(registration_cohort)
@@ -425,14 +450,17 @@ episode_keys <- c("PERS_ID", "WL_ORG", "person_organ_episode")
 
 baseline_dt <- registration_dt[, .SD[1], by = episode_keys]
 episode_event_dt <- registration_dt[, {
-  adverse_dates <- observed_end_date[adverse_event == 1L]
-  good_dates <- observed_end_date[transplant_or_improvement == 1L]
-  terminal_dates <- c(adverse_dates, good_dates)
-  if (length(terminal_dates) > 0L) {
-    episode_end <- min(terminal_dates, na.rm = TRUE)
-    episode_adverse <- as.integer(any(adverse_event == 1L & observed_end_date == episode_end, na.rm = TRUE))
-    episode_good <- as.integer(episode_adverse == 0L && any(transplant_or_improvement == 1L & observed_end_date == episode_end, na.rm = TRUE))
-    episode_other <- 0L
+  outcome_priority <- event_priority(adverse_event, transplant_or_improvement, other_exit)
+  outcome_rows <- which(outcome_priority > 0L)
+  if (length(outcome_rows) > 0L) {
+    event_dat <- .SD[outcome_rows]
+    event_dat[, outcome_priority := outcome_priority[outcome_rows]]
+    setorder(event_dat, observed_end_date, outcome_priority, waitlist_row_id)
+    final_event <- event_dat[.N]
+    episode_end <- final_event$observed_end_date
+    episode_adverse <- as.integer(final_event$adverse_event == 1L)
+    episode_good <- as.integer(final_event$transplant_or_improvement == 1L)
+    episode_other <- as.integer(final_event$other_exit == 1L)
   } else {
     episode_end <- max(observed_end_date, na.rm = TRUE)
     episode_adverse <- 0L
@@ -554,7 +582,8 @@ write_csv(
       event_type, adverse_event, transplant_or_improvement, other_exit,
       age, sex, race, listing_year, organ_score, organ_score_name, listing_center,
       hr_riskstrat_creatinine, hr_riskstrat_albumin, hr_riskstrat_bilirubin,
-      hr_riskstrat_sodium, hr_riskstrat_bnp,
+      hr_riskstrat_sodium, hr_riskstrat_bnp, hr_bnp_source, hr_bnp_type_raw,
+      hr_bnp_type, hr_bnp_regular_indicator, hr_bnp_ntpro_indicator,
       hr_albumin_observed, hr_bilirubin_observed, hr_sodium_observed, hr_bnp_observed,
       hr_albumin_imputed, hr_bilirubin_imputed, hr_egfr, hr_sodium_imputed,
       hr_durable_lvad, hr_short_mcs, hr_bnp_imputed,

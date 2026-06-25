@@ -59,7 +59,7 @@ Outputs are written to:
 - Organs: heart (`HR`), kidney (`KI`), liver (`LI`), lung (`LU`)
 - Listing years: 2006-2023 by default, matching the period with full PM2.5 and O3 exposure data
 - Candidate sources: active/relisted candidates (`CAN_SOURCE %in% c("A", "R")`)
-- Follow-up: activation/listing date to death, waitlist removal, last follow-up, or administrative censoring at 2023-12-31
+- Follow-up: listing date to death, waitlist removal, last follow-up, or administrative censoring at 2023-12-31
 
 ### Outcome
 
@@ -121,7 +121,7 @@ Outputs are written to:
 - Organs: heart (`HR`), kidney (`KI`), liver (`LI`), lung (`LU`)
 - Listing years: 2006-2023
 - Candidate sources: active/relisted candidates (`CAN_SOURCE %in% c("A", "R")`)
-- Follow-up: activation/listing date to observed removal/death/end follow-up, administratively censored at 2023-12-31
+- Follow-up: listing date to observed removal/death/end follow-up, administratively censored at 2023-12-31
 
 ### Outcome
 
