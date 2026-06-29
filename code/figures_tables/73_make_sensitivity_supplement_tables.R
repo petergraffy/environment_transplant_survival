@@ -40,6 +40,8 @@ model_labels <- c(
   no_organ_score = "No organ score",
   no_listing_center = "No listing center strata",
   primary_plus_svi = "Primary model + SVI proxy",
+  single_organ_candidates = "Single-organ candidates only",
+  primary_plus_multi_organ = "Primary model + multi-organ status",
   prior_1y_no_score_no_center = "Prior-year exposure, no organ score or center strata",
   multipollutant_pm25_no2 = "Multipollutant PM2.5 + NO2",
   multipollutant_pm25_no2_o3 = "Multipollutant PM2.5 + NO2 + O3"
@@ -116,6 +118,7 @@ model_spec_table <- all_results %>%
     center_adjustment = as.character(center_adjustment),
     exposure_window = case_when(
       sensitivity == "prior_1y_no_score_no_center" ~ "Mean exposure during the calendar year before listing",
+      sensitivity == "single_organ_candidates" ~ "Day-weighted mean exposure during observed waitlist follow-up; restricted to candidates listed for one organ group",
       str_detect(sensitivity, "^multipollutant_") ~ "Day-weighted mean exposure during observed waitlist follow-up; common data horizon through 2023",
       exposure_window == "observed_waitlist_period_mean" ~ "Day-weighted mean exposure during observed waitlist follow-up",
       exposure_window == "prior_year_mean" ~ "Mean exposure during the calendar year before listing",
@@ -193,7 +196,7 @@ writeLines(
   c(
     "Supplemental sensitivity table notes:",
     "The primary model used day-weighted waitlist-period pollutant exposure and adjusted for age, sex, race, listing year, organ-specific baseline severity, and listing-center strata. For kidney candidates, baseline severity adjustment was represented by no dialysis time, dialysis duration, and diabetes rather than a composite organ score.",
-    "Sensitivity models removed organ-specific severity adjustment, removed listing-center strata, added an ACS-derived ZCTA-level SVI proxy, or used prior-year exposure without organ score or center strata.",
+    "Sensitivity models removed organ-specific severity adjustment, removed listing-center strata, added an ACS-derived ZCTA-level SVI proxy, restricted the cohort to single-organ candidates, added multi-organ candidate status, or used prior-year exposure without organ score or center strata.",
     "PM2.5 is scaled per 5-ug/m3 increase; O3 and NO2 are scaled per 10-ppb increase."
   ),
   file.path(out_dir, "supplemental_sensitivity_table_notes.txt")
