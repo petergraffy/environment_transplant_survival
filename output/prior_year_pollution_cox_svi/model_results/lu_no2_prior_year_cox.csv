@@ -1,0 +1,2 @@
+organ,organ_label,exposure,exposure_label,exposure_window,endpoint,n,people,centers,adverse_events,hazard_ratio,conf_low,conf_high,p_value,concordance,adjustment_set,variance_estimator,center_adjustment
+LU,Lung,no2,Prior-year NO2 per 10 ppb,calendar_year_before_listing,death_or_deterioration_delist_cause_specific,50401,50401,84,5675,1.1166248790871192,1.0624650814041114,1.1735455050894799,1.3704253608030085e-5,0.5301374120258768,age + sex + race + zcta_svi_proxy + strata(listing_center),model_based,stratified_baseline_hazard_by_listing_center

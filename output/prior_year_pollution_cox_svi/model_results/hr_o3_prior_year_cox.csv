@@ -1,0 +1,2 @@
+organ,organ_label,exposure,exposure_label,exposure_window,endpoint,n,people,centers,adverse_events,hazard_ratio,conf_low,conf_high,p_value,concordance,adjustment_set,variance_estimator,center_adjustment
+HR,Heart,o3,Prior-year O3 per 10 ppb,calendar_year_before_listing,death_or_deterioration_delist_cause_specific,79381,79381,168,10242,1.0074675928541093,0.9407897085043111,1.078871230707773,0.8313661960219458,0.5178064254820709,age + sex + race + zcta_svi_proxy + strata(listing_center),model_based,stratified_baseline_hazard_by_listing_center

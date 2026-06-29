@@ -100,9 +100,11 @@ results <- read_csv(in_path, show_col_types = FALSE) %>%
     ),
     hr_ci = format_ci(hazard_ratio, conf_low, conf_high),
     label_left = organ_label == "Kidney" &
-      subgroup_label == "Race" &
-      subgroup_level == "Black" &
-      as.character(exposure) == "pm25",
+      as.character(exposure) == "pm25" &
+      (
+        (subgroup_label == "Race" & subgroup_level == "Black") |
+          (subgroup_label == "Age group" & subgroup_level %in% c("<18", "18-39"))
+      ),
     label_x = if_else(label_left, conf_low * 0.97, conf_high * 1.03),
     label_hjust = if_else(label_left, 1, 0)
   )

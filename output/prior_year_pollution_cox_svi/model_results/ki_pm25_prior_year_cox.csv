@@ -1,0 +1,2 @@
+organ,organ_label,exposure,exposure_label,exposure_window,endpoint,n,people,centers,adverse_events,hazard_ratio,conf_low,conf_high,p_value,concordance,adjustment_set,variance_estimator,center_adjustment
+KI,Kidney,pm25,Prior-year PM2.5 per 5 ug/m3,calendar_year_before_listing,death_or_deterioration_delist_cause_specific,492197,492197,276,118004,0.9222103700346931,0.909218181407614,0.9353882093326159,4.7311684282930574e-29,0.6431255063344227,age + sex + race + zcta_svi_proxy + strata(listing_center),model_based,stratified_baseline_hazard_by_listing_center

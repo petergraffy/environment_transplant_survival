@@ -1,0 +1,16 @@
+organ_label,outcome_label,pollutant,exposure,n,measure,estimate_ci,p_value_display,adjustment_set
+Kidney,"Dialysis duration at listing, years",pm25,Prior-year PM2.5 per 5 ug/m3,492965,mean_difference,0.04 (0.02-0.06),<.001,age + sex + race + listing_year + zcta_svi_proxy + listing_center
+Kidney,"Dialysis duration at listing, years",o3,Prior-year O3 per 10 ppb,601017,mean_difference,0.04 (0.02-0.05),<.001,age + sex + race + listing_year + zcta_svi_proxy + listing_center
+Kidney,"Dialysis duration at listing, years",no2,Prior-year NO2 per 10 ppb,601017,mean_difference,0.03 (0.02-0.05),<.001,age + sex + race + listing_year + zcta_svi_proxy + listing_center
+Kidney,Diabetes at listing,pm25,Prior-year PM2.5 per 5 ug/m3,492965,odds_ratio,OR 1.04 (1.02-1.06),<.001,age + sex + race + listing_year + zcta_svi_proxy + listing_center
+Kidney,Diabetes at listing,o3,Prior-year O3 per 10 ppb,601017,odds_ratio,OR 0.98 (0.96-1.00),0.031,age + sex + race + listing_year + zcta_svi_proxy + listing_center
+Kidney,Diabetes at listing,no2,Prior-year NO2 per 10 ppb,601017,odds_ratio,OR 0.97 (0.95-0.98),<.001,age + sex + race + listing_year + zcta_svi_proxy + listing_center
+Liver,MELD/PELD at listing,pm25,Prior-year PM2.5 per 5 ug/m3,181761,mean_difference,0.14 (0.01-0.27),0.038,age + sex + race + listing_year + zcta_svi_proxy + listing_center
+Liver,MELD/PELD at listing,o3,Prior-year O3 per 10 ppb,222811,mean_difference,0.01 (-0.12-0.14),0.875,age + sex + race + listing_year + zcta_svi_proxy + listing_center
+Liver,MELD/PELD at listing,no2,Prior-year NO2 per 10 ppb,222811,mean_difference,-0.02 (-0.11-0.07),0.734,age + sex + race + listing_year + zcta_svi_proxy + listing_center
+Heart,US-candidate risk score proxy at listing,pm25,Prior-year PM2.5 per 5 ug/m3,63393,mean_difference,0.05 (0.03-0.08),<.001,age + sex + race + listing_year + zcta_svi_proxy + listing_center
+Heart,US-candidate risk score proxy at listing,o3,Prior-year O3 per 10 ppb,79446,mean_difference,0.01 (-0.01-0.04),0.347,age + sex + race + listing_year + zcta_svi_proxy + listing_center
+Heart,US-candidate risk score proxy at listing,no2,Prior-year NO2 per 10 ppb,79446,mean_difference,0.02 (0.01-0.04),0.014,age + sex + race + listing_year + zcta_svi_proxy + listing_center
+Lung,Continuous lung waitlist urgency score proxy at listing,pm25,Prior-year PM2.5 per 5 ug/m3,40195,mean_difference,0.04 (0.01-0.07),0.004,age + sex + race + listing_year + zcta_svi_proxy + listing_center
+Lung,Continuous lung waitlist urgency score proxy at listing,o3,Prior-year O3 per 10 ppb,50431,mean_difference,-0.02 (-0.04-0.01),0.192,age + sex + race + listing_year + zcta_svi_proxy + listing_center
+Lung,Continuous lung waitlist urgency score proxy at listing,no2,Prior-year NO2 per 10 ppb,50431,mean_difference,0.04 (0.02-0.06),<.001,age + sex + race + listing_year + zcta_svi_proxy + listing_center

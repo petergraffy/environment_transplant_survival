@@ -1,4 +1,4 @@
 Supplemental sensitivity table notes:
 The primary model used day-weighted waitlist-period pollutant exposure and adjusted for age, sex, race, listing year, organ-specific baseline severity, and listing-center strata. For kidney candidates, baseline severity adjustment was represented by no dialysis time, dialysis duration, and diabetes rather than a composite organ score.
-Sensitivity models removed organ-specific severity adjustment, removed listing-center strata, added an ACS-derived ZCTA-level SVI proxy, or used prior-year exposure without organ score or center strata.
+Sensitivity models removed organ-specific severity adjustment, removed listing-center strata, added an ACS-derived ZCTA-level SVI proxy, restricted the cohort to single-organ candidates, added multi-organ candidate status, or used prior-year exposure without organ score or center strata.
 PM2.5 is scaled per 5-ug/m3 increase; O3 and NO2 are scaled per 10-ppb increase.

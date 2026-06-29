@@ -1,0 +1,2 @@
+organ,organ_label,exposure,exposure_label,exposure_window,endpoint,n,people,centers,adverse_events,hazard_ratio,conf_low,conf_high,p_value,concordance,adjustment_set,variance_estimator,center_adjustment
+HR,Heart,pm25,Prior-year PM2.5 per 5 ug/m3,calendar_year_before_listing,death_or_deterioration_delist_cause_specific,63342,63342,165,9332,1.253007999656194,1.1887473193562612,1.3207424501723628,4.5896266861337845e-17,0.5289004533165288,age + sex + race + zcta_svi_proxy + strata(listing_center),model_based,stratified_baseline_hazard_by_listing_center

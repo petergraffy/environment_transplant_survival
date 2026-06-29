@@ -116,7 +116,7 @@ read_annual_pollution <- function() {
 }
 
 primary_terms <- function(org, include_score = TRUE, include_center = TRUE, include_svi = FALSE,
-                          include_kidney_clinical = TRUE) {
+                          include_kidney_clinical = TRUE, include_multi_organ = FALSE) {
   terms <- c("age", "sex", "race", "listing_year")
   vars <- c("age", "sex", "race", "listing_year")
 
@@ -133,6 +133,11 @@ primary_terms <- function(org, include_score = TRUE, include_center = TRUE, incl
     vars <- c(vars, "zcta_svi_proxy")
   }
 
+  if (include_multi_organ) {
+    terms <- c(terms, "multi_organ_candidate")
+    vars <- c(vars, "multi_organ_candidate")
+  }
+
   if (include_center) {
     terms <- c(terms, "strata(listing_center)")
     vars <- c(vars, "listing_center")
@@ -142,7 +147,7 @@ primary_terms <- function(org, include_score = TRUE, include_center = TRUE, incl
 }
 
 format_adjustment <- function(org, include_score = TRUE, include_center = TRUE, include_svi = FALSE,
-                              include_kidney_clinical = TRUE) {
+                              include_kidney_clinical = TRUE, include_multi_organ = FALSE) {
   parts <- c("age", "sex", "race", "listing_year")
   if (org == "KI" && include_kidney_clinical) {
     parts <- c(parts, "no_dialysis_time", "dialysis_duration_years", "diabetes")
@@ -150,25 +155,29 @@ format_adjustment <- function(org, include_score = TRUE, include_center = TRUE, 
     parts <- c(parts, "baseline_organ_score")
   }
   if (include_svi) parts <- c(parts, "zcta_svi_proxy")
+  if (include_multi_organ) parts <- c(parts, "multi_organ_candidate")
   if (include_center) parts <- c(parts, "strata(listing_center)")
   paste(parts, collapse = " + ")
 }
 
 fit_sensitivity_cox <- function(dat, org, exposure_name, spec, sensitivity_name, sensitivity_label,
                                 include_score = TRUE, include_center = TRUE, include_svi = FALSE,
-                                include_kidney_clinical = TRUE) {
+                                include_kidney_clinical = TRUE, include_multi_organ = FALSE,
+                                exclude_multi_organ = FALSE) {
   adj <- primary_terms(
     org,
     include_score = include_score,
     include_center = include_center,
     include_svi = include_svi,
-    include_kidney_clinical = include_kidney_clinical
+    include_kidney_clinical = include_kidney_clinical,
+    include_multi_organ = include_multi_organ
   )
   vars_needed <- c(spec$followup, spec$event, adj$vars, spec$term)
 
   model_dat <- dat %>%
     filter(
       index_year <= spec$end_year,
+      !exclude_multi_organ | multi_organ_candidate == "Single-organ candidate",
       complete.cases(across(all_of(vars_needed))),
       .data[[spec$followup]] > 0
     ) %>%
@@ -203,7 +212,7 @@ fit_sensitivity_cox <- function(dat, org, exposure_name, spec, sensitivity_name,
       conf_high = conf.high,
       p_value = p.value,
       concordance = unname(summary(fit)$concordance[1]),
-      adjustment_set = format_adjustment(org, include_score, include_center, include_svi, include_kidney_clinical),
+      adjustment_set = format_adjustment(org, include_score, include_center, include_svi, include_kidney_clinical, include_multi_organ),
       variance_estimator = "model_based",
       center_adjustment = if_else(include_center, "stratified_baseline_hazard_by_listing_center", "none")
     )
@@ -294,6 +303,21 @@ analysis_dat <- read_csv(analysis_path, show_col_types = FALSE) %>%
     no2_waitlist_10unit = no2_waitlist / 10
   )
 
+multi_organ_people <- analysis_dat %>%
+  distinct(PERS_ID, WL_ORG) %>%
+  count(PERS_ID, name = "n_organ_groups") %>%
+  mutate(multi_organ_candidate = n_organ_groups > 1L) %>%
+  select(PERS_ID, n_organ_groups, multi_organ_candidate)
+
+analysis_dat <- analysis_dat %>%
+  left_join(multi_organ_people, by = "PERS_ID") %>%
+  mutate(
+    multi_organ_candidate = factor(
+      if_else(multi_organ_candidate, "Multi-organ candidate", "Single-organ candidate"),
+      levels = c("Single-organ candidate", "Multi-organ candidate")
+    )
+  )
+
 log_msg("Attaching ACS-derived ZCTA SVI proxy")
 svi <- make_complete_acs_svi_proxy(community_path)
 analysis_dat <- analysis_dat %>%
@@ -330,11 +354,13 @@ prior_exposure_specs <- list(
 )
 
 sensitivity_definitions <- tribble(
-  ~sensitivity, ~sensitivity_label, ~spec_set, ~include_score, ~include_center, ~include_svi, ~include_kidney_clinical,
-  "no_organ_score", "Primary waitlist-period exposure model without organ score", "waitlist", FALSE, TRUE, FALSE, TRUE,
-  "no_listing_center", "Primary waitlist-period exposure model without listing-center strata", "waitlist", TRUE, FALSE, FALSE, TRUE,
-  "primary_plus_svi", "Primary waitlist-period exposure model additionally adjusted for ACS-derived ZCTA SVI proxy", "waitlist", TRUE, TRUE, TRUE, TRUE,
-  "prior_1y_no_score_no_center", "One-year prior exposure model without organ score, kidney clinical covariates, or listing-center strata", "prior", FALSE, FALSE, FALSE, FALSE
+  ~sensitivity, ~sensitivity_label, ~spec_set, ~include_score, ~include_center, ~include_svi, ~include_kidney_clinical, ~include_multi_organ, ~exclude_multi_organ,
+  "no_organ_score", "Primary waitlist-period exposure model without organ score", "waitlist", FALSE, TRUE, FALSE, TRUE, FALSE, FALSE,
+  "no_listing_center", "Primary waitlist-period exposure model without listing-center strata", "waitlist", TRUE, FALSE, FALSE, TRUE, FALSE, FALSE,
+  "primary_plus_svi", "Primary waitlist-period exposure model additionally adjusted for ACS-derived ZCTA SVI proxy", "waitlist", TRUE, TRUE, TRUE, TRUE, FALSE, FALSE,
+  "single_organ_candidates", "Primary waitlist-period exposure model restricted to single-organ candidates", "waitlist", TRUE, TRUE, FALSE, TRUE, FALSE, TRUE,
+  "primary_plus_multi_organ", "Primary waitlist-period exposure model additionally adjusted for multi-organ candidate status", "waitlist", TRUE, TRUE, FALSE, TRUE, TRUE, FALSE,
+  "prior_1y_no_score_no_center", "One-year prior exposure model without organ score, kidney clinical covariates, or listing-center strata", "prior", FALSE, FALSE, FALSE, FALSE, FALSE, FALSE
 )
 
 multipollutant_definitions <- tribble(
@@ -361,7 +387,9 @@ for (i in seq_len(nrow(sensitivity_definitions))) {
         include_score = def$include_score,
         include_center = def$include_center,
         include_svi = def$include_svi,
-        include_kidney_clinical = def$include_kidney_clinical
+        include_kidney_clinical = def$include_kidney_clinical,
+        include_multi_organ = def$include_multi_organ,
+        exclude_multi_organ = def$exclude_multi_organ
       )
       result_path <- file.path(model_result_dir, paste0(def$sensitivity, "_", tolower(org), "_", exposure_name, ".csv"))
       write_csv(result, result_path)
