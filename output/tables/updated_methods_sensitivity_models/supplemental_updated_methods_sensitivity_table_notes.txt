@@ -1,0 +1,6 @@
+Supplemental table. Updated sensitivity analyses for prior-year baseline and time-varying Cox models.
+Baseline Cox models used 1-year exposure before listing and adjusted for age, sex, race, ZCTA-level SVI proxy, and transplant center strata unless listing center was omitted by design.
+Time-varying Cox models used monthly waitlist-period exposure intervals and adjusted for age, sex, race, ZCTA-level SVI proxy, organ-specific time-updated severity, and transplant center strata unless listing center was omitted by design.
+Multi-organ candidate sensitivity analyses either excluded candidates listed for more than one organ group or added an indicator for multi-organ candidate status.
+Time-varying multipollutant models were restricted to intervals with complete exposure data for included pollutants; daily PM2.5 and O3 availability limited the common multipollutant time-varying window to December 31, 2024.
+Pollution-organ severity association rows report adjusted mean differences in the organ-specific severity measure rather than hazard ratios.

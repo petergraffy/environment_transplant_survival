@@ -7,6 +7,8 @@ if (file.exists(runtime_source)) {
   ensure_user_library()
 }
 
+source(file.path("code", "rolling_prior_pollution.R"))
+
 suppressPackageStartupMessages({
   library(arrow)
   library(broom)
@@ -46,26 +48,6 @@ parquet_files <- function(path) {
   list.files(path, pattern = "[.]parquet$", full.names = TRUE)
 }
 
-make_daily_annual <- function(path, value_col, out_col, cache_file) {
-  if (file.exists(cache_file)) {
-    return(read_csv(cache_file, show_col_types = FALSE) %>% mutate(zip = clean_zip(zip)))
-  }
-  open_dataset(parquet_files(path)) %>%
-    transmute(zip = zip, year = year, value = .data[[value_col]]) %>%
-    group_by(zip, year) %>%
-    summarise(
-      n_days = sum(!is.na(value)),
-      value = mean(value, na.rm = TRUE),
-      .groups = "drop"
-    ) %>%
-    filter(n_days >= 300, is.finite(value)) %>%
-    collect() %>%
-    transmute(zip = clean_zip(zip), year = as.integer(year), !!out_col := value) %>%
-    {
-      write_csv(., cache_file)
-      .
-    }
-}
 
 make_complete_acs_svi_proxy <- function(path) {
   community <- read_csv(path, show_col_types = FALSE) %>%
@@ -118,32 +100,12 @@ make_complete_acs_svi_proxy <- function(path) {
     select(zip, analysis_year, zcta_svi_proxy)
 }
 
-read_prior_pollution <- function() {
-  log_msg("Summarising daily PM2.5 and O3 to annual prior-year values")
-  pm25 <- make_daily_annual(
-    file.path(release_dir, "lghap_pm25_zcta_daily_parquet"),
-    "pm25_ug_m3",
-    "pm25_prior_ug_m3",
-    file.path(cache_dir, "pm25_daily_annual_zcta.csv.gz")
-  )
-  o3 <- make_daily_annual(
-    file.path(release_dir, "o3_zcta_daily_parquet"),
-    "o3_ppb",
-    "o3_prior_ppb",
-    file.path(cache_dir, "o3_daily_annual_zcta.csv.gz")
-  )
-  no2 <- read_parquet(file.path(annual_pollution_dir, "air_pollution_zcta_no2_annual_2005_2025.parquet")) %>%
-    transmute(zip = clean_zip(zip), year = as.integer(year), no2_prior_ppb = no2)
-
-  list(pm25 = pm25, o3 = o3, no2 = no2)
-}
 
 attach_prior_pollution <- function(dat, prior_pollution) {
   dat %>%
-    mutate(prior_exposure_year = listing_year_int - 1L) %>%
-    left_join(prior_pollution$pm25, by = c("candidate_zip" = "zip", "prior_exposure_year" = "year")) %>%
-    left_join(prior_pollution$o3, by = c("candidate_zip" = "zip", "prior_exposure_year" = "year")) %>%
-    left_join(prior_pollution$no2, by = c("candidate_zip" = "zip", "prior_exposure_year" = "year")) %>%
+    left_join(prior_pollution$pm25, by = c("candidate_zip" = "zip", "index_date" = "index_date")) %>%
+    left_join(prior_pollution$o3, by = c("candidate_zip" = "zip", "index_date" = "index_date")) %>%
+    left_join(prior_pollution$no2, by = c("candidate_zip" = "zip", "index_date" = "index_date")) %>%
     mutate(
       pm25_prior_5ug = pm25_prior_ug_m3 / 5,
       o3_prior_10ppb = o3_prior_ppb / 10,
@@ -154,7 +116,7 @@ attach_prior_pollution <- function(dat, prior_pollution) {
 
 fit_severity_model <- function(dat, org, outcome, outcome_label, pollutant, exposure_term, exposure_label, family) {
   org_dat <- dat %>% filter(WL_ORG == org)
-  rhs <- c(exposure_term, "age", "sex", "race", "listing_year", "zcta_svi_proxy", "listing_center")
+  rhs <- c(exposure_term, "age", "sex", "race", "zcta_svi_proxy", "listing_center")
   vars_needed <- c(outcome, rhs)
   model_dat <- org_dat %>%
     filter(complete.cases(across(all_of(vars_needed))))
@@ -189,7 +151,64 @@ fit_severity_model <- function(dat, org, outcome, outcome_label, pollutant, expo
       conf_high = conf_high_display,
       p_value = p.value,
       measure = if_else(family == "binomial", "odds_ratio", "mean_difference"),
-      adjustment_set = "age + sex + race + listing_year + zcta_svi_proxy + listing_center"
+      adjustment_set = "age + sex + race + zcta_svi_proxy + listing_center"
+    )
+}
+
+fit_severity_model_coefficients <- function(dat, org, outcome, outcome_label, pollutant, exposure_term, exposure_label, family) {
+  org_dat <- dat %>% filter(WL_ORG == org)
+  rhs <- c(exposure_term, "age", "sex", "race", "zcta_svi_proxy", "listing_center")
+  vars_needed <- c(outcome, rhs)
+  model_dat <- org_dat %>%
+    filter(complete.cases(across(all_of(vars_needed))))
+  if (nrow(model_dat) == 0L) return(tibble())
+
+  form <- as.formula(paste(outcome, "~", paste(rhs, collapse = " + ")))
+  fit <- if (family == "binomial") {
+    glm(form, data = model_dat, family = binomial())
+  } else {
+    lm(form, data = model_dat)
+  }
+
+  tidy(fit, conf.int = FALSE) %>%
+    mutate(
+      conf_low = estimate - 1.96 * std.error,
+      conf_high = estimate + 1.96 * std.error,
+      transformed_estimate = if (family == "binomial") exp(estimate) else estimate,
+      transformed_conf_low = if (family == "binomial") exp(conf_low) else conf_low,
+      transformed_conf_high = if (family == "binomial") exp(conf_high) else conf_high,
+      term_type = case_when(
+        term == "(Intercept)" ~ "intercept",
+        term == exposure_term ~ "pollutant",
+        term == "age" ~ "covariate",
+        startsWith(term, "sex") ~ "covariate",
+        startsWith(term, "race") ~ "covariate",
+        term == "zcta_svi_proxy" ~ "covariate",
+        startsWith(term, "listing_center") ~ "listing_center_fixed_effect",
+        TRUE ~ "covariate"
+      )
+    ) %>%
+    transmute(
+      organ = org,
+      organ_label = recode(org, !!!organ_labels),
+      outcome = outcome,
+      outcome_label = outcome_label,
+      outcome_family = family,
+      pollutant = pollutant,
+      exposure = exposure_label,
+      n = nrow(model_dat),
+      term,
+      term_type,
+      coefficient = estimate,
+      std_error = std.error,
+      conf_low,
+      conf_high,
+      transformed_measure = if_else(family == "binomial", "odds_ratio", "mean_difference"),
+      transformed_estimate,
+      transformed_conf_low,
+      transformed_conf_high,
+      p_value = p.value,
+      adjustment_set = "age + sex + race + zcta_svi_proxy + listing_center"
     )
 }
 
@@ -212,7 +231,7 @@ analysis_dat <- analysis_dat %>%
   mutate(zcta_svi_proxy = coalesce(zcta_svi_proxy, zcta_svi_proxy_community)) %>%
   select(-any_of("zcta_svi_proxy_community"))
 
-prior_pollution <- read_prior_pollution()
+prior_pollution <- read_rolling_prior_pollution(analysis_dat)
 analysis_dat <- attach_prior_pollution(analysis_dat, prior_pollution)
 
 severity_specs <- tribble(
@@ -248,6 +267,23 @@ results <- bind_rows(lapply(seq_len(nrow(severity_specs)), function(i) {
   }))
 }))
 
+coefficient_results <- bind_rows(lapply(seq_len(nrow(severity_specs)), function(i) {
+  sev <- severity_specs[i, ]
+  bind_rows(lapply(seq_len(nrow(pollutant_specs)), function(j) {
+    pol <- pollutant_specs[j, ]
+    fit_severity_model_coefficients(
+      analysis_dat,
+      sev$org,
+      sev$outcome,
+      sev$outcome_label,
+      pol$pollutant,
+      pol$term,
+      pol$label,
+      sev$family
+    )
+  }))
+}))
+
 write_csv(results, file.path(out_dir, "prior_year_pollution_baseline_severity_associations.csv"))
 write_csv(
   results %>%
@@ -261,6 +297,44 @@ write_csv(
     ) %>%
     select(organ_label, outcome_label, pollutant, exposure, n, measure, estimate_ci, p_value_display, adjustment_set),
   file.path(out_dir, "prior_year_pollution_baseline_severity_associations_table.csv")
+)
+
+write_csv(
+  coefficient_results,
+  file.path(out_dir, "prior_year_pollution_baseline_severity_full_coefficients_all_terms.csv")
+)
+
+write_csv(
+  coefficient_results %>%
+    filter(term_type != "listing_center_fixed_effect") %>%
+    mutate(
+      coefficient_ci = sprintf("%.4f (%.4f to %.4f)", coefficient, conf_low, conf_high),
+      transformed_ci = if_else(
+        transformed_measure == "odds_ratio",
+        sprintf("OR %.2f (%.2f to %.2f)", transformed_estimate, transformed_conf_low, transformed_conf_high),
+        sprintf("%.2f (%.2f to %.2f)", transformed_estimate, transformed_conf_low, transformed_conf_high)
+      ),
+      p_value_display = case_when(
+        is.na(p_value) ~ "",
+        p_value < 0.001 ~ "<.001",
+        TRUE ~ sprintf("%.3f", p_value)
+      )
+    ) %>%
+    select(
+      organ_label,
+      outcome_label,
+      pollutant,
+      exposure,
+      n,
+      term,
+      term_type,
+      coefficient_ci,
+      transformed_measure,
+      transformed_ci,
+      p_value_display,
+      adjustment_set
+    ),
+  file.path(out_dir, "prior_year_pollution_baseline_severity_full_coefficients_supplement.csv")
 )
 
 log_msg("Wrote prior-year pollution baseline severity association outputs to ", normalizePath(out_dir, winslash = "/"))

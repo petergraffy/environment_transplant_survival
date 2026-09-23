@@ -4,9 +4,9 @@ Cohort,"Unique candidates, n","83,624","643,225","238,078","52,613"
 Cohort,"Listing centers, n",170,283,163,85
 Baseline characteristics,"Age at listing, median (IQR), years",53.0 (36.0 to 62.0),54.0 (43.0 to 62.0),56.0 (47.0 to 62.0),60.0 (51.0 to 66.0)
 Baseline characteristics,"Listing year, median (IQR)",2017 (2011 to 2022),2016 (2010 to 2021),2016 (2010 to 2021),2017 (2011 to 2022)
-Organ-specific baseline severity,"Heart US-CRS proxy, median (IQR)",-12.2 (-12.8 to -11.1),,,
+Organ-specific baseline severity,"Heart US-CRS point score, median (IQR)",10 (4 to 29),,,
 Organ-specific baseline severity,"Liver MELD/PELD score, median (IQR)",,,16 (11 to 23),
-Organ-specific baseline severity,"Lung LAS/CAS component proxy, median (IQR)",,,,-0.0 (-0.5 to 0.1)
+Organ-specific baseline severity,"Lung LAS/CAS component proxy linear predictor, median (IQR)",,,,-0.0 (-0.5 to 0.1)
 Organ-score components,"Heart albumin observed score input, median (IQR), g/dL",3.8 (3.3 to 4.2),,,
 Organ-score components,"Heart bilirubin observed score input, median (IQR), mg/dL",0.8 (0.5 to 1.2),,,
 Organ-score components,"Heart eGFR score input, median (IQR), mL/min/1.73 m2",73.2 (52.8 to 101.3),,,
@@ -39,6 +39,6 @@ Organ-score components,"Lung corticosteroid dependence score input, n (%)",,,,"6
 "Waitlist outcome, n (%)",Death or delisting due to deterioration,"10,957 (13.1%)","135,003 (21.0%)","46,526 (19.5%)","6,019 (11.4%)"
 "Waitlist outcome, n (%)",Other waitlist exit,"4,329 (5.2%)","61,094 (9.5%)","17,607 (7.4%)","2,012 (3.8%)"
 "Waitlist outcome, n (%)",Administrative censoring,"3,417 (4.1%)","78,645 (12.2%)","7,842 (3.3%)",855 (1.6%)
-Waitlist-period pollution exposure,"PM2.5, median (IQR); range, ug/m3",8.2 (7.1 to 9.6); 3.1 to 21.8,8.4 (7.3 to 9.7); 2.8 to 33.6,8.3 (7.1 to 9.8); 2.3 to 34.8,8.1 (7.0 to 9.6); 3.0 to 41.5
-Waitlist-period pollution exposure,"O3, median (IQR); range, ppb",38.2 (36.6 to 40.3); 24.2 to 56.9,38.2 (36.4 to 40.3); 23.0 to 57.9,38.3 (36.5 to 40.6); 22.9 to 57.4,38.3 (36.7 to 40.4); 23.7 to 57.1
-Waitlist-period pollution exposure,"NO2, median (IQR); range, ppb",6.6 (3.8 to 10.7); 0.2 to 51.1,6.9 (3.9 to 11.5); 0.2 to 50.7,6.8 (3.9 to 11.2); 0.2 to 51.1,6.4 (3.8 to 10.3); 0.2 to 50.7
+Prelisting pollution exposure,"PM2.5, median (IQR); range, ug/m3",8.5 (7.3 to 10.0); 2.3 to 28.9,8.7 (7.4 to 10.3); 2.2 to 31.6,8.6 (7.3 to 10.1); 2.3 to 32.7,8.4 (7.2 to 9.9); 2.4 to 29.8
+Prelisting pollution exposure,"O3, median (IQR); range, ppb",37.9 (36.0 to 40.1); 20.8 to 59.6,37.8 (35.7 to 40.2); 15.1 to 63.5,37.9 (36.0 to 40.4); 21.1 to 60.5,38.0 (36.2 to 40.1); 23.6 to 59.0
+Prelisting pollution exposure,"NO2, median (IQR); range, ppb",6.2 (3.8 to 10.5); 0.2 to 49.3,7.0 (4.1 to 11.9); 0.2 to 52.0,6.4 (3.8 to 11.1); 0.2 to 50.5,6.0 (3.7 to 10.0); 0.2 to 50.8

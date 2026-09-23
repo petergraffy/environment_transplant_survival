@@ -1,0 +1,7 @@
+Initial-listing prior-year cause-specific Cox model set.
+All models use mean PM2.5/O3 during the 365 days before initial listing, or day-weighted NO2 during the 12 complete calendar months before the listing month. Annual NO2 approximates months before monthly coverage begins in 2019.
+Unadjusted models include pollutant exposure term(s) only.
+Adjusted + SDOH models include age, sex, race, ZCTA-level SVI proxy, and transplant center strata.
+Adjusted + SDOH + organ score at listing models additionally include baseline organ_score for heart, liver, and lung candidates; kidney models additionally include no dialysis time, dialysis duration in years, and diabetes.
+Single-pollutant models were fit separately for PM2.5, O3, and NO2. Multipollutant models included PM2.5 + NO2 and PM2.5 + NO2 + O3.
+Values are hazard ratios with 95% confidence intervals; PM2.5 is per 5 ug/m3, O3 per 10 ppb, and NO2 per 10 ppb.

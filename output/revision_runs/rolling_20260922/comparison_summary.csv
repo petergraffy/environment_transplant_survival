@@ -1,0 +1,7 @@
+analysis,rows,direction_changes,significance_changes,max_absolute_relative_hr_change_percent
+baseline,12,1,2,4.758396210410631
+baseline_tiers,96,6,18,9.658968915053535
+baseline_coefficients,486,19,35,113636.2255314777
+timevarying,12,0,1,0.9385344350834046
+subgroups,216,6,11,11.761891458461948
+sensitivities,112,4,16,7.5888461402017215

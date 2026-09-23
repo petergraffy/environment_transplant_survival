@@ -26,8 +26,13 @@ in_path <- file.path(
   "primary_waitlist_period_pollution_cox",
   "primary_waitlist_period_pollution_analysis_dataset.csv.gz"
 )
+uscrs_mapping_path <- file.path("data", "reference", "uscrs_mapping_table.csv")
 out_dir <- file.path("output", "tables", "table1_baseline_waitlist_characteristics")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
+
+if (!file.exists(uscrs_mapping_path)) {
+  stop("Missing US-CRS mapping table: ", uscrs_mapping_path, call. = FALSE)
+}
 
 organ_labels <- c(HR = "Heart", KI = "Kidney", LI = "Liver", LU = "Lung")
 organ_levels <- unname(organ_labels)
@@ -86,6 +91,23 @@ fmt_median_iqr_range <- function(x, digits = 1) {
   )
 }
 
+map_uscrs_points <- function(x, mapping) {
+  x <- as.numeric(x)
+  out <- rep(NA_integer_, length(x))
+  for (i in seq_len(nrow(mapping))) {
+    idx <- !is.na(x) &
+      x >= mapping$min_raw_score[[i]] &
+      x < mapping$max_raw_score[[i]]
+    if (i == nrow(mapping)) {
+      idx <- !is.na(x) &
+        x >= mapping$min_raw_score[[i]] &
+        x <= mapping$max_raw_score[[i]]
+    }
+    out[idx] <- mapping$us_crs[[i]]
+  }
+  out
+}
+
 component_cont_row <- function(dat, org, var, characteristic, row_order, digits = 1, transform = identity) {
   dat %>%
     filter(WL_ORG == org) %>%
@@ -132,7 +154,11 @@ recode_race <- function(x) {
   )
 }
 
-message("Reading primary waitlist-period pollution analysis dataset")
+source(file.path("code", "rolling_prior_pollution.R"))
+message("Reading deduplicated waitlist analysis dataset")
+uscrs_mapping <- read_csv(uscrs_mapping_path, show_col_types = FALSE) %>%
+  arrange(us_crs)
+
 analysis_dat <- read_csv(in_path, show_col_types = FALSE) %>%
   filter(WL_ORG %in% names(organ_labels)) %>%
   mutate(
@@ -143,8 +169,20 @@ analysis_dat <- read_csv(in_path, show_col_types = FALSE) %>%
     organ_score_display = case_when(
       WL_ORG == "LI" ~ organ_score - 6200,
       TRUE ~ organ_score
+    ),
+    uscrs_points = if_else(
+      WL_ORG == "HR",
+      as.numeric(map_uscrs_points(organ_score, uscrs_mapping)),
+      NA_real_
     )
   )
+
+prior_pollution <- read_rolling_prior_pollution(analysis_dat)
+analysis_dat <- analysis_dat %>%
+  mutate(index_date = as.Date(index_date), candidate_zip = sprintf("%05d", as.integer(candidate_zip))) %>%
+  left_join(prior_pollution$pm25, by = c("candidate_zip" = "zip", "index_date")) %>%
+  left_join(prior_pollution$o3, by = c("candidate_zip" = "zip", "index_date")) %>%
+  left_join(prior_pollution$no2, by = c("candidate_zip" = "zip", "index_date"))
 
 denoms <- analysis_dat %>%
   count(organ, name = "n")
@@ -177,8 +215,8 @@ score_rows <- bind_rows(
   analysis_dat %>%
     filter(WL_ORG == "HR") %>%
     group_by(organ) %>%
-    summarise(value = fmt_median_iqr(organ_score_display, digits = 1), .groups = "drop") %>%
-    mutate(section = "Organ-specific baseline severity", characteristic = "Heart US-CRS proxy, median (IQR)", row_order = 6),
+    summarise(value = fmt_median_iqr(uscrs_points, digits = 0), .groups = "drop") %>%
+    mutate(section = "Organ-specific baseline severity", characteristic = "Heart US-CRS point score, median (IQR)", row_order = 6),
   analysis_dat %>%
     filter(WL_ORG == "LI") %>%
     group_by(organ) %>%
@@ -188,7 +226,7 @@ score_rows <- bind_rows(
     filter(WL_ORG == "LU") %>%
     group_by(organ) %>%
     summarise(value = fmt_median_iqr(organ_score_display, digits = 1), .groups = "drop") %>%
-    mutate(section = "Organ-specific baseline severity", characteristic = "Lung LAS/CAS component proxy, median (IQR)", row_order = 9)
+    mutate(section = "Organ-specific baseline severity", characteristic = "Lung LAS/CAS component proxy linear predictor, median (IQR)", row_order = 9)
 ) %>%
   select(section, characteristic, row_order, organ, value)
 
@@ -226,20 +264,20 @@ score_component_rows <- bind_rows(
 
 exposure_rows <- bind_rows(
   analysis_dat %>%
-    filter(listing_year <= 2023, is.finite(pm25_waitlist_ug_m3)) %>%
+    filter(is.finite(pm25_prior_ug_m3)) %>%
     group_by(organ) %>%
-    summarise(value = fmt_median_iqr_range(pm25_waitlist_ug_m3, digits = 1), .groups = "drop") %>%
-    mutate(section = "Waitlist-period pollution exposure", characteristic = "PM2.5, median (IQR); range, ug/m3", row_order = 80),
+    summarise(value = fmt_median_iqr_range(pm25_prior_ug_m3, digits = 1), .groups = "drop") %>%
+    mutate(section = "Prelisting pollution exposure", characteristic = "PM2.5, median (IQR); range, ug/m3", row_order = 80),
   analysis_dat %>%
-    filter(listing_year <= 2023, is.finite(o3_waitlist_ppb)) %>%
+    filter(is.finite(o3_prior_ppb)) %>%
     group_by(organ) %>%
-    summarise(value = fmt_median_iqr_range(o3_waitlist_ppb, digits = 1), .groups = "drop") %>%
-    mutate(section = "Waitlist-period pollution exposure", characteristic = "O3, median (IQR); range, ppb", row_order = 81),
+    summarise(value = fmt_median_iqr_range(o3_prior_ppb, digits = 1), .groups = "drop") %>%
+    mutate(section = "Prelisting pollution exposure", characteristic = "O3, median (IQR); range, ppb", row_order = 81),
   analysis_dat %>%
-    filter(listing_year <= 2025, is.finite(no2_waitlist)) %>%
+    filter(is.finite(no2_prior_ppb)) %>%
     group_by(organ) %>%
-    summarise(value = fmt_median_iqr_range(no2_waitlist, digits = 1), .groups = "drop") %>%
-    mutate(section = "Waitlist-period pollution exposure", characteristic = "NO2, median (IQR); range, ppb", row_order = 82)
+    summarise(value = fmt_median_iqr_range(no2_prior_ppb, digits = 1), .groups = "drop") %>%
+    mutate(section = "Prelisting pollution exposure", characteristic = "NO2, median (IQR); range, ppb", row_order = 82)
 ) %>%
   select(section, characteristic, row_order, organ, value)
 
@@ -299,7 +337,7 @@ gt_table <- table_wide %>%
   gt(groupname_col = "section", rowname_col = "characteristic") %>%
   tab_header(
     title = "Baseline Characteristics of Waitlist Candidates by Organ",
-    subtitle = "Primary waitlist-period pollution analysis cohort"
+    subtitle = "Deduplicated waitlist candidate cohort"
   ) %>%
   cols_label(
     Heart = "Heart",
@@ -311,10 +349,10 @@ gt_table <- table_wide %>%
     source_note = "Values are median (IQR) for continuous variables and n (%) for categorical variables unless otherwise indicated."
   ) %>%
   tab_source_note(
-    source_note = "Organ-specific severity scores and score components are shown only for the organ to which each score applies. Observed heart and lung numeric score inputs are summarized among candidates with nonmissing values; the model proxy score used median-imputed heart laboratory values and set missing lung numeric components to 0. Liver MELD/PELD is displayed after subtracting the SRTR 6200 offset from the stored MELD/PELD field."
+    source_note = "Organ-specific severity scores and score components are shown only for the organ to which each score applies. Heart US-CRS was calculated as a raw formula-derived linear predictor and mapped to the 1-50 point scale using the US-CRS mapping table; the model covariate remained the raw linear predictor. The SAF-derived analysis file did not include official LAS/CAS display-score fields, so the lung row reports the formula-derived component proxy linear predictor used for modeling rather than official allocation-score points. Observed heart and lung numeric score inputs are summarized among candidates with nonmissing values; the model proxy score used median-imputed heart laboratory values and set missing lung numeric components to 0. Liver MELD/PELD is displayed after subtracting the SRTR 6200 offset from the stored MELD/PELD field."
   ) %>%
   tab_source_note(
-    source_note = "Pollution exposures are day-weighted waitlist-period means. PM2.5 and O3 are summarized among candidates with exposure follow-up through 2023; NO2 is summarized among candidates with exposure follow-up through 2025."
+    source_note = "Exposure rows include candidates with complete prelisting windows: the 365 days before listing for PM2.5/O3 and the 12 complete calendar months before the listing month for NO2, weighted by days. NO2 months before 2019 use annual approximations. Exposure availability differs from the overall cohort denominator."
   ) %>%
   tab_source_note(
     source_note = "Waitlist outcomes are mutually exclusive final observed outcomes in the primary cohort before pollutant-specific exposure censoring."
@@ -337,9 +375,9 @@ writeLines(
     "Table 1 caption:",
     "Baseline characteristics of person waitlist episodes included in the primary waitlist-period pollution analysis cohort, stratified by listed organ.",
     "Values are median (IQR) for continuous variables and n (%) for categorical variables unless otherwise indicated.",
-    "Organ-specific severity scores and score components are shown only for the organ to which each score applies. Observed heart and lung numeric score inputs are summarized among candidates with nonmissing values; the model proxy score used median-imputed heart laboratory values and set missing lung numeric components to 0. Liver MELD/PELD is displayed after subtracting the SRTR 6200 offset from the stored MELD/PELD field.",
+    "Organ-specific severity scores and score components are shown only for the organ to which each score applies. Heart US-CRS was calculated as a raw formula-derived linear predictor and mapped to the 1-50 point scale using the US-CRS mapping table; the model covariate remained the raw linear predictor. The SAF-derived analysis file did not include official LAS/CAS display-score fields, so the lung row reports the formula-derived component proxy linear predictor used for modeling rather than official allocation-score points. Observed heart and lung numeric score inputs are summarized among candidates with nonmissing values; the model proxy score used median-imputed heart laboratory values and set missing lung numeric components to 0. Liver MELD/PELD is displayed after subtracting the SRTR 6200 offset from the stored MELD/PELD field.",
     "Waitlist outcomes are mutually exclusive final observed outcomes in the primary cohort before pollutant-specific exposure censoring.",
-    "Pollution exposures are day-weighted waitlist-period means; exposure rows include median (IQR) and range."
+    "Pollution exposures are means over the 365 days before listing for PM2.5/O3 and day-weighted means over the 12 complete months before the listing month for NO2, with annual NO2 approximations before 2019. Exposure rows summarize complete windows and include median (IQR) and range; availability differs from the overall cohort denominator."
   ),
   caption_path
 )

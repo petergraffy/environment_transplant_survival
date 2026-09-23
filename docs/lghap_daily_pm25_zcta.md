@@ -41,3 +41,24 @@ Manifest and QA:
 
 ZCTAs without a direct zonal grid value are filled from the nearest valid raster
 cell, matching the audit pattern used in the other ZCTA exposure pipelines.
+
+## 2022 monthly downloads
+
+For separately downloaded monthly archives, set `LGHAP_DAILY_PM25_MONTHLY_ZIP_DIR`
+to their directory. The script reads those ZIP files in place and extracts only
+the daily NetCDF being processed into the repository's raw-data directory.
+The default removes each extracted NetCDF after aggregation.
+
+```r
+Sys.setenv(
+  LGHAP_DAILY_PM25_YEAR = "2022",
+  LGHAP_DAILY_PM25_MONTHLY_ZIP_DIR = "C:/Users/Peter Graffy/Downloads",
+  LGHAP_DAILY_PM25_SKIP_EXISTING_MONTH = "true"
+)
+source("code/pollution_aggregation/40_aggregate_lghap_daily_pm25_to_zcta.R")
+```
+
+These source-product PM2.5 aggregates go into `lghap_pm25_zcta_daily`, using
+the same schema as 2005-2021. They are distinct from the earlier locally
+derived 2022 AOD-to-PM2.5 estimates in `lghap_pm25_zcta_daily_derived`.
+The cached ZCTA raster geometry is checked against the input grid before use.

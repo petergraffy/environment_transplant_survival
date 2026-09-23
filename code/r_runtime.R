@@ -24,7 +24,8 @@ ensure_user_library <- function() {
     candidate_libs <- c(candidate_libs, paste0(gsub("\\\\", "/", userprofile), "/AppData/Local/R/win-library/", R.version$major, ".", r_minor))
   }
   candidate_libs <- c(candidate_libs, user_lib)
-  candidate_libs <- unique(candidate_libs[dir.exists(candidate_libs)])
+  candidate_libs <- unique(gsub("\\\\", "/", candidate_libs))
+  candidate_libs <- unique(normalizePath(candidate_libs[dir.exists(candidate_libs)], winslash = "/", mustWork = TRUE))
   .libPaths(c(candidate_libs, .libPaths()))
 
   invisible(.libPaths())

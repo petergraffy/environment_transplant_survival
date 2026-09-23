@@ -4,6 +4,14 @@ This repository contains the analysis code and generated display assets for a
 study of air pollution exposure and adverse outcomes among heart, kidney, liver,
 and lung transplant waitlist candidates.
 
+For the manuscript revision, the baseline and time-varying model scripts now
+use daily PM2.5 and O3 releases covering 2005-2024. See
+[daily exposure input preparation](docs/daily_pollution_analysis_inputs.md)
+for sources, verification, and eligibility limits. Current baseline,
+time-varying, subgroup, and sensitivity models and their figures were rerun
+in September 2026. See the [revision comparison report](output/revision_runs/rolling_20260922/results_comparison.md).
+The original workflow below is retained for provenance.
+
 ## Study Overview
 
 The primary analysis estimates associations between waitlist-period air

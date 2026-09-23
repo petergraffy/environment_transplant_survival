@@ -1,0 +1,4 @@
+Supplemental wide sensitivity table set.
+Primary model rows are the updated single-pollutant primary models for each analysis: 1-year exposure before listing for baseline Cox models and monthly waitlist-period exposure for time-varying Cox models.
+The PM2.5 + NO2 multipollutant model does not include O3; therefore O3 cells are blank in that column.
+Values are hazard ratios with 95% confidence intervals.

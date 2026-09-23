@@ -7,6 +7,8 @@ if (file.exists(runtime_source)) {
   ensure_user_library()
 }
 
+source(file.path("code", "rolling_prior_pollution.R"))
+
 suppressPackageStartupMessages({
   library(arrow)
   library(dplyr)
@@ -28,13 +30,19 @@ analysis_path <- file.path(
 pollution_dir <- file.path("data", "release")
 annual_pollution_dir <- file.path(pollution_dir, "air_pollution_zcta_parquet")
 out_dir <- file.path("output", "prior_year_pollution_quartile_aalen_johansen_cif")
-fig_dir <- file.path("output", "figures", "prior_year_pollution_quartile_aalen_johansen_cif")
+fig_dir <- file.path("output", "figures", "prior_year_pollution_quartile_aalen_johansen_cif", "rolling_365d_20260922")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(fig_dir, recursive = TRUE, showWarnings = FALSE)
 
 organ_labels <- c(HR = "Heart", KI = "Kidney", LI = "Liver", LU = "Lung")
 organ_levels <- c("Heart", "Kidney", "Liver", "Lung")
 quartile_labels <- c("Q1 lowest", "Q2", "Q3", "Q4 highest")
+quartile_legend_labels <- c(
+  "Q1 lowest" = "1st quartile (lowest)",
+  "Q2" = "2nd quartile",
+  "Q3" = "3rd quartile",
+  "Q4 highest" = "4th quartile (highest)"
+)
 quartile_colors <- c(
   "Q1 lowest" = "#2166AC",
   "Q2" = "#67A9CF",
@@ -58,42 +66,11 @@ parquet_files <- function(path) {
   list.files(path, pattern = "[.]parquet$", full.names = TRUE)
 }
 
-make_daily_annual <- function(path, value_col, out_col) {
-  open_dataset(parquet_files(path)) %>%
-    transmute(zip = zip, year = year, value = .data[[value_col]]) %>%
-    group_by(zip, year) %>%
-    summarise(
-      n_days = sum(!is.na(value)),
-      value = mean(value, na.rm = TRUE),
-      .groups = "drop"
-    ) %>%
-    filter(n_days >= 300, is.finite(value)) %>%
-    collect() %>%
-    transmute(zip = clean_zip(zip), year = as.integer(year), !!out_col := value)
-}
 
-read_prior_pollution <- function() {
-  log_msg("Summarising daily PM2.5 and O3 to annual prior-year values")
-  pm25 <- make_daily_annual(
-    file.path(pollution_dir, "lghap_pm25_zcta_daily_parquet"),
-    "pm25_ug_m3",
-    "pm25_prior_ug_m3"
-  )
-  o3 <- make_daily_annual(
-    file.path(pollution_dir, "o3_zcta_daily_parquet"),
-    "o3_ppb",
-    "o3_prior_ppb"
-  )
-  no2 <- read_parquet(file.path(annual_pollution_dir, "air_pollution_zcta_no2_annual_2005_2025.parquet")) %>%
-    transmute(zip = clean_zip(zip), year = as.integer(year), no2_prior_ppb = no2)
-
-  list(pm25 = pm25, o3 = o3, no2 = no2)
-}
 
 make_pollutant_dat <- function(dat, prior_pollution, pollutant, exposure_col, unit_label) {
   base <- dat %>%
-    mutate(prior_exposure_year = listing_year_int - 1L) %>%
-    left_join(prior_pollution, by = c("candidate_zip" = "zip", "prior_exposure_year" = "year")) %>%
+    left_join(prior_pollution, by = c("candidate_zip" = "zip", "index_date" = "index_date")) %>%
     filter(
       is.finite(.data[[exposure_col]]),
       followup_days > 0,
@@ -199,7 +176,7 @@ theme_cif <- function() {
       axis.ticks = element_line(color = "black", linewidth = 0.35),
       legend.position = "bottom",
       legend.title = element_blank(),
-      legend.text = element_text(size = 18),
+      legend.text = element_text(size = 16),
       legend.key.width = unit(30, "pt"),
       plot.title = element_text(face = "bold", size = 21),
       axis.title = element_text(size = 18),
@@ -223,7 +200,8 @@ plot_for_horizon <- function(curve_dat, horizon) {
     panel_dat <- curve_dat %>% filter(pollutant == pollutant_value, organ == organ_value, time <= horizon)
     ggplot(panel_dat, aes(x = time, y = cif_adverse, color = quartile)) +
       geom_step(linewidth = 0.86) +
-      scale_color_manual(values = quartile_colors) +
+      scale_color_manual(values = quartile_colors, breaks = quartile_labels, labels = quartile_legend_labels) +
+      guides(color = guide_legend(nrow = 2, byrow = TRUE)) +
       scale_x_continuous(
         breaks = breaks,
         labels = label_number(accuracy = 0.1, trim = TRUE),
@@ -249,6 +227,7 @@ plot_for_horizon <- function(curve_dat, horizon) {
     )
 }
 
+if (!("--render-only" %in% commandArgs(trailingOnly = TRUE))) {
 log_msg("Reading primary deduplicated cohort")
 analysis_dat <- read_csv(analysis_path, show_col_types = FALSE) %>%
   mutate(
@@ -260,7 +239,7 @@ analysis_dat <- read_csv(analysis_path, show_col_types = FALSE) %>%
     followup_days = as.numeric(observed_end_date - index_date)
   )
 
-prior_pollution <- read_prior_pollution()
+prior_pollution <- read_rolling_prior_pollution(analysis_dat)
 plot_dat <- bind_rows(
   make_pollutant_dat(analysis_dat, prior_pollution$pm25, "PM2.5", "pm25_prior_ug_m3", "ug/m3"),
   make_pollutant_dat(analysis_dat, prior_pollution$o3, "O3", "o3_prior_ppb", "ppb"),
@@ -304,6 +283,10 @@ timepoint_dat <- bind_rows(lapply(split_dat, tidy_aj_times, times = timepoint_ye
 
 write_csv(curve_dat, file.path(out_dir, "prior_year_pollution_quartile_aalen_johansen_curve_data.csv"))
 write_csv(timepoint_dat, file.path(out_dir, "prior_year_pollution_quartile_cif_at_1_3_5_10_years.csv"))
+
+} else {
+  curve_dat <- read_csv(file.path(out_dir, "prior_year_pollution_quartile_aalen_johansen_curve_data.csv"), show_col_types = FALSE)
+}
 
 for (horizon in timepoint_years) {
   p <- plot_for_horizon(curve_dat, horizon)

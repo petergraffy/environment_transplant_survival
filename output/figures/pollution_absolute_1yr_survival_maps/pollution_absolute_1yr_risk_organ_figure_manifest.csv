@@ -1,0 +1,5 @@
+organ,png_path,pdf_path,scale_lo,scale_hi,scale_breaks
+Kidney,output/figures/pollution_absolute_1yr_survival_maps/figure_pollution_absolute_1yr_risk_maps_kidney.png,output/figures/pollution_absolute_1yr_survival_maps/figure_pollution_absolute_1yr_risk_maps_kidney.pdf,4.4,5.2,"4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2"
+Liver,output/figures/pollution_absolute_1yr_survival_maps/figure_pollution_absolute_1yr_risk_maps_liver.png,output/figures/pollution_absolute_1yr_survival_maps/figure_pollution_absolute_1yr_risk_maps_liver.pdf,19.9,20.6,"19.9, 20.0, 20.1, 20.2, 20.3, 20.4, 20.5, 20.6"
+Heart,output/figures/pollution_absolute_1yr_survival_maps/figure_pollution_absolute_1yr_risk_maps_heart.png,output/figures/pollution_absolute_1yr_survival_maps/figure_pollution_absolute_1yr_risk_maps_heart.pdf,14.9,20.5,"14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0"
+Lung,output/figures/pollution_absolute_1yr_survival_maps/figure_pollution_absolute_1yr_risk_maps_lung.png,output/figures/pollution_absolute_1yr_survival_maps/figure_pollution_absolute_1yr_risk_maps_lung.pdf,17.3,21.3,"17.0, 17.5, 18.0, 18.5, 19.0, 19.5, 20.0, 20.5, 21.0, 21.5"

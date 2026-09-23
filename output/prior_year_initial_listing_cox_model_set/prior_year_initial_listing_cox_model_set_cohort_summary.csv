@@ -1,0 +1,61 @@
+model_tier,model_type,organ,organ_label,n,people,adverse_events,median_followup_days
+Unadjusted,Single-pollutant PM2.5,HR,Heart,74114,74114,10020,97
+Unadjusted,Single-pollutant PM2.5,KI,Kidney,564725,564725,123423,761
+Unadjusted,Single-pollutant PM2.5,LI,Liver,208792,208792,42137,153
+Unadjusted,Single-pollutant PM2.5,LU,Lung,46843,46843,5588,61
+Adjusted + SDOH,Single-pollutant PM2.5,HR,Heart,74028,74028,10010,97
+Adjusted + SDOH,Single-pollutant PM2.5,KI,Kidney,564179,564179,123299,761
+Adjusted + SDOH,Single-pollutant PM2.5,LI,Liver,208592,208592,42101,153
+Adjusted + SDOH,Single-pollutant PM2.5,LU,Lung,46788,46788,5582,61
+Adjusted + SDOH + organ score at listing,Single-pollutant PM2.5,HR,Heart,74028,74028,10010,97
+Adjusted + SDOH + organ score at listing,Single-pollutant PM2.5,KI,Kidney,564179,564179,123299,761
+Adjusted + SDOH + organ score at listing,Single-pollutant PM2.5,LI,Liver,208591,208591,42101,153
+Adjusted + SDOH + organ score at listing,Single-pollutant PM2.5,LU,Lung,46788,46788,5582,61
+Unadjusted,Single-pollutant O3,HR,Heart,74114,74114,10020,97
+Unadjusted,Single-pollutant O3,KI,Kidney,564725,564725,123423,761
+Unadjusted,Single-pollutant O3,LI,Liver,208792,208792,42137,153
+Unadjusted,Single-pollutant O3,LU,Lung,46843,46843,5588,61
+Adjusted + SDOH,Single-pollutant O3,HR,Heart,74028,74028,10010,97
+Adjusted + SDOH,Single-pollutant O3,KI,Kidney,564179,564179,123299,761
+Adjusted + SDOH,Single-pollutant O3,LI,Liver,208592,208592,42101,153
+Adjusted + SDOH,Single-pollutant O3,LU,Lung,46788,46788,5582,61
+Adjusted + SDOH + organ score at listing,Single-pollutant O3,HR,Heart,74028,74028,10010,97
+Adjusted + SDOH + organ score at listing,Single-pollutant O3,KI,Kidney,564179,564179,123299,761
+Adjusted + SDOH + organ score at listing,Single-pollutant O3,LI,Liver,208591,208591,42101,153
+Adjusted + SDOH + organ score at listing,Single-pollutant O3,LU,Lung,46788,46788,5582,61
+Unadjusted,Single-pollutant NO2,HR,Heart,79469,79469,10252,89
+Unadjusted,Single-pollutant NO2,KI,Kidney,600708,600708,124065,691
+Unadjusted,Single-pollutant NO2,LI,Liver,222766,222766,42883,137
+Unadjusted,Single-pollutant NO2,LU,Lung,50458,50458,5681,56
+Adjusted + SDOH,Single-pollutant NO2,HR,Heart,79381,79381,10242,89
+Adjusted + SDOH,Single-pollutant NO2,KI,Kidney,600141,600141,123941,691
+Adjusted + SDOH,Single-pollutant NO2,LI,Liver,222559,222559,42847,137
+Adjusted + SDOH,Single-pollutant NO2,LU,Lung,50401,50401,5675,56
+Adjusted + SDOH + organ score at listing,Single-pollutant NO2,HR,Heart,79381,79381,10242,89
+Adjusted + SDOH + organ score at listing,Single-pollutant NO2,KI,Kidney,600141,600141,123941,691
+Adjusted + SDOH + organ score at listing,Single-pollutant NO2,LI,Liver,222557,222557,42847,137
+Adjusted + SDOH + organ score at listing,Single-pollutant NO2,LU,Lung,50401,50401,5675,56
+Unadjusted,Multipollutant PM2.5 + NO2,HR,Heart,74114,74114,10020,97
+Unadjusted,Multipollutant PM2.5 + NO2,KI,Kidney,564725,564725,123423,761
+Unadjusted,Multipollutant PM2.5 + NO2,LI,Liver,208792,208792,42137,153
+Unadjusted,Multipollutant PM2.5 + NO2,LU,Lung,46843,46843,5588,61
+Adjusted + SDOH,Multipollutant PM2.5 + NO2,HR,Heart,74028,74028,10010,97
+Adjusted + SDOH,Multipollutant PM2.5 + NO2,KI,Kidney,564179,564179,123299,761
+Adjusted + SDOH,Multipollutant PM2.5 + NO2,LI,Liver,208592,208592,42101,153
+Adjusted + SDOH,Multipollutant PM2.5 + NO2,LU,Lung,46788,46788,5582,61
+Adjusted + SDOH + organ score at listing,Multipollutant PM2.5 + NO2,HR,Heart,74028,74028,10010,97
+Adjusted + SDOH + organ score at listing,Multipollutant PM2.5 + NO2,KI,Kidney,564179,564179,123299,761
+Adjusted + SDOH + organ score at listing,Multipollutant PM2.5 + NO2,LI,Liver,208591,208591,42101,153
+Adjusted + SDOH + organ score at listing,Multipollutant PM2.5 + NO2,LU,Lung,46788,46788,5582,61
+Unadjusted,Multipollutant PM2.5 + NO2 + O3,HR,Heart,74114,74114,10020,97
+Unadjusted,Multipollutant PM2.5 + NO2 + O3,KI,Kidney,564725,564725,123423,761
+Unadjusted,Multipollutant PM2.5 + NO2 + O3,LI,Liver,208792,208792,42137,153
+Unadjusted,Multipollutant PM2.5 + NO2 + O3,LU,Lung,46843,46843,5588,61
+Adjusted + SDOH,Multipollutant PM2.5 + NO2 + O3,HR,Heart,74028,74028,10010,97
+Adjusted + SDOH,Multipollutant PM2.5 + NO2 + O3,KI,Kidney,564179,564179,123299,761
+Adjusted + SDOH,Multipollutant PM2.5 + NO2 + O3,LI,Liver,208592,208592,42101,153
+Adjusted + SDOH,Multipollutant PM2.5 + NO2 + O3,LU,Lung,46788,46788,5582,61
+Adjusted + SDOH + organ score at listing,Multipollutant PM2.5 + NO2 + O3,HR,Heart,74028,74028,10010,97
+Adjusted + SDOH + organ score at listing,Multipollutant PM2.5 + NO2 + O3,KI,Kidney,564179,564179,123299,761
+Adjusted + SDOH + organ score at listing,Multipollutant PM2.5 + NO2 + O3,LI,Liver,208591,208591,42101,153
+Adjusted + SDOH + organ score at listing,Multipollutant PM2.5 + NO2 + O3,LU,Lung,46788,46788,5582,61

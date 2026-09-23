@@ -17,7 +17,7 @@ source_dir <- file.path("data", "processed", "lghap_pm25_zcta_daily")
 release_dir <- file.path("data", "release", "lghap_pm25_zcta_daily_parquet")
 dir.create(release_dir, recursive = TRUE, showWarnings = FALSE)
 
-years <- as.integer(strsplit(Sys.getenv("LGHAP_PM25_RELEASE_YEARS", "2005:2021"), ":", fixed = TRUE)[[1]])
+years <- as.integer(strsplit(Sys.getenv("LGHAP_PM25_RELEASE_YEARS", "2005:2024"), ":", fixed = TRUE)[[1]])
 if (length(years) == 2L) years <- seq(years[1], years[2])
 
 value_cols <- c(
@@ -108,6 +108,8 @@ convert_year <- function(year) {
 
 log_msg("Packaging LGHAP daily PM2.5 ZCTA Parquet release assets")
 manifest <- bind_rows(lapply(years, convert_year))
+stopifnot(all(manifest$rows == manifest$expected_rows), all(manifest$zips == 33300L),
+          all(manifest$missing_values == 0L))
 write_csv(manifest, file.path(release_dir, "lghap_pm25_zcta_daily_parquet_manifest.csv"))
 
 qc_files <- file.path(source_dir, sprintf("lghap_pm25_zcta_daily_qc_%04d_all_months.csv", years))
@@ -121,6 +123,7 @@ readme <- c(
   "# LGHAP Daily PM2.5 ZCTA Parquet Release Assets",
   "",
   "These files contain daily LGHAP PM2.5 exposures aggregated to 2020 ZCTA5 polygons for CONUS.",
+  paste0("Coverage: ", min(years), "-", max(years), "."),
   "",
   "Assets:",
   "",
@@ -132,7 +135,9 @@ readme <- c(
   "",
   paste0("- `", value_cols, "`"),
   "",
-  "The `pm25_ug_m3` column is daily PM2.5 in micrograms per cubic meter. `value_source`, `fill_distance_m`, and `fill_cell` provide audit metadata for nearest-cell fills; the completed 2005-2021 local outputs have zero missing ZCTA-day PM2.5 values.",
+  "The `pm25_ug_m3` column is daily PM2.5 in micrograms per cubic meter. `value_source`, `fill_distance_m`, and `fill_cell` provide audit metadata for nearest-cell fills. All packaged years have zero missing ZCTA-day PM2.5 values. Join using `zip` (a five-character string) and `date`.",
+  "",
+  "The 2022-2024 additions were aggregated from downloaded LGHAP daily PM2.5 NetCDF files using the same pipeline and 2020 ZCTA boundaries. The 2022 asset contains LGHAP PM2.5, not the separate locally derived AOD-to-PM2.5 estimates. Leap days are included.",
   "",
   "Citation:",
   "",

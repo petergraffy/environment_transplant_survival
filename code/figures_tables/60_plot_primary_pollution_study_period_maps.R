@@ -7,6 +7,8 @@ if (file.exists(runtime_source)) {
   ensure_user_library()
 }
 
+source(file.path("code", "daily_pollution_inputs.R"))
+
 suppressPackageStartupMessages({
   library(arrow)
   library(dplyr)
@@ -43,25 +45,23 @@ zcta <- suppressWarnings(st_crop(zcta, st_transform(conus_bbox, st_crs(zcta))))
 zcta <- st_transform(zcta, 5070)
 
 log_msg("Reading primary pollution release tables")
-pm25 <- read_parquet(file.path(pollution_dir, "air_pollution_zcta_pm25_monthly_2005_2023.parquet")) %>%
-  transmute(zip = clean_zip(zip), year = as.integer(year), value = pm25_ug_m3) %>%
-  filter(year >= 2005, year <= 2023) %>%
-  group_by(zip, year) %>%
-  summarise(n_months = sum(!is.na(value)), annual_mean = mean(value, na.rm = TRUE), .groups = "drop") %>%
-  filter(n_months == 12L, is.finite(annual_mean)) %>%
+pm25 <- read_daily_pollution_aggregate(
+  file.path("data", "release", "lghap_pm25_zcta_daily_parquet"),
+  "pm25_ug_m3", "pm25_prior_ug_m3", "annual",
+  file.path("output", "prior_year_pollution_cox_svi", "cache", "pm25_daily_annual_zcta.csv.gz")
+) %>%
   group_by(zip) %>%
-  summarise(value = mean(annual_mean, na.rm = TRUE), years = n(), .groups = "drop") %>%
-  filter(years == 19L)
+  summarise(value = mean(pm25_prior_ug_m3), years = n(), .groups = "drop") %>%
+  filter(years == 20L)
 
-o3 <- read_parquet(file.path(pollution_dir, "air_pollution_zcta_o3_monthly_2005_2023.parquet")) %>%
-  transmute(zip = clean_zip(zip), year = as.integer(year), value = o3_ppb) %>%
-  filter(year >= 2005, year <= 2023) %>%
-  group_by(zip, year) %>%
-  summarise(n_months = sum(!is.na(value)), annual_mean = mean(value, na.rm = TRUE), .groups = "drop") %>%
-  filter(n_months == 12L, is.finite(annual_mean)) %>%
+o3 <- read_daily_pollution_aggregate(
+  file.path("data", "release", "o3_zcta_daily_parquet"),
+  "o3_ppb", "o3_prior_ppb", "annual",
+  file.path("output", "prior_year_pollution_cox_svi", "cache", "o3_daily_annual_zcta.csv.gz")
+) %>%
   group_by(zip) %>%
-  summarise(value = mean(annual_mean, na.rm = TRUE), years = n(), .groups = "drop") %>%
-  filter(years == 19L)
+  summarise(value = mean(o3_prior_ppb), years = n(), .groups = "drop") %>%
+  filter(years == 20L)
 
 no2 <- read_parquet(file.path(pollution_dir, "air_pollution_zcta_no2_annual_2005_2025.parquet")) %>%
   transmute(zip = clean_zip(zip), year = as.integer(year), value = no2) %>%
@@ -71,9 +71,9 @@ no2 <- read_parquet(file.path(pollution_dir, "air_pollution_zcta_no2_annual_2005
   filter(years == 21L)
 
 map_specs <- list(
-  pm25 = list(data = pm25, title = quote(A.~Mean~PM[2.5]~concentration*","~2005-2025), legend = "ug/m3", palette = "magma", direction = -1),
-  o3 = list(data = o3, title = quote(B.~Mean~O[3]~concentration*","~2005-2025), legend = "ppb", palette = "viridis", direction = -1),
-  no2 = list(data = no2, title = quote(C.~Mean~NO[2]~concentration*","~2005-2025), legend = "ppb", palette = "inferno", direction = -1)
+  pm25 = list(data = pm25, title = quote(A.~Mean~PM[2.5]~concentration*","~2005-2024), legend = "ug/m3", palette = "magma", direction = 1),
+  o3 = list(data = o3, title = quote(B.~Mean~O[3]~concentration*","~2005-2024), legend = "ppb", palette = "viridis", direction = 1),
+  no2 = list(data = no2, title = quote(C.~Mean~NO[2]~concentration*","~2005-2025), legend = "ppb", palette = "inferno", direction = 1)
 )
 
 summary <- bind_rows(lapply(names(map_specs), function(nm) {

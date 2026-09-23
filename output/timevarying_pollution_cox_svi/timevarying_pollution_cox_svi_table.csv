@@ -1,8 +1,8 @@
 organ_label,pollutant,exposure,candidate_organ_episodes,adverse_events,hazard_ratio_ci,p_value_display,adjustment_set
-Heart,pm25,Daily PM2.5-derived monthly exposure per 5 ug/m3,61449,9050,1.14 (1.10-1.18),<.001,age + sex + race + zcta_svi_proxy + time_updated_organ_score + strata(listing_center)
-Kidney,pm25,Daily PM2.5-derived monthly exposure per 5 ug/m3,486543,100486,0.99 (0.98-1.01),0.298,age + sex + race + zcta_svi_proxy + no_dialysis_time + time_updated_dialysis_duration_years + diabetes + strata(listing_center)
-Liver,pm25,Daily PM2.5-derived monthly exposure per 5 ug/m3,179632,38142,1.03 (1.02-1.05),<.001,age + sex + race + zcta_svi_proxy + time_updated_organ_score + strata(listing_center)
-Lung,pm25,Daily PM2.5-derived monthly exposure per 5 ug/m3,38786,5168,1.13 (1.08-1.18),<.001,age + sex + race + zcta_svi_proxy + time_updated_organ_score + strata(listing_center)
+Heart,pm25,Daily PM2.5-derived monthly exposure per 5 ug/m3,76760,10342,1.14 (1.11-1.18),<.001,age + sex + race + zcta_svi_proxy + time_updated_organ_score + strata(listing_center)
+Kidney,pm25,Daily PM2.5-derived monthly exposure per 5 ug/m3,592129,123989,0.99 (0.98-1.00),0.003,age + sex + race + zcta_svi_proxy + no_dialysis_time + time_updated_dialysis_duration_years + diabetes + strata(listing_center)
+Liver,pm25,Daily PM2.5-derived monthly exposure per 5 ug/m3,218837,43864,1.04 (1.02-1.05),<.001,age + sex + race + zcta_svi_proxy + time_updated_organ_score + strata(listing_center)
+Lung,pm25,Daily PM2.5-derived monthly exposure per 5 ug/m3,48311,5776,1.14 (1.10-1.19),<.001,age + sex + race + zcta_svi_proxy + time_updated_organ_score + strata(listing_center)
 Heart,o3,Daily O3-derived monthly exposure per 10 ppb,76760,10342,1.00 (0.98-1.03),0.682,age + sex + race + zcta_svi_proxy + time_updated_organ_score + strata(listing_center)
 Kidney,o3,Daily O3-derived monthly exposure per 10 ppb,592129,123989,0.99 (0.98-0.99),<.001,age + sex + race + zcta_svi_proxy + no_dialysis_time + time_updated_dialysis_duration_years + diabetes + strata(listing_center)
 Liver,o3,Daily O3-derived monthly exposure per 10 ppb,218837,43864,0.99 (0.98-1.00),0.015,age + sex + race + zcta_svi_proxy + time_updated_organ_score + strata(listing_center)
