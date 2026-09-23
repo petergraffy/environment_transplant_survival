@@ -7,6 +7,8 @@ if (file.exists(runtime_source)) {
   ensure_user_library()
 }
 
+source(file.path("code", "daily_pollution_inputs.R"))
+
 suppressPackageStartupMessages({
   library(arrow)
   library(broom)
@@ -138,23 +140,7 @@ make_complete_acs_svi_proxy <- function(path) {
 }
 
 daily_to_monthly_cache <- function(path, value_col, out_col, cache_file) {
-  if (file.exists(cache_file)) {
-    return(read_csv(cache_file, show_col_types = FALSE) %>% mutate(zip = clean_zip(zip)))
-  }
-  log_msg("Building monthly cache from daily data: ", basename(path))
-  monthly <- open_dataset(parquet_files(path)) %>%
-    transmute(zip = zip, year = year, month = month, value = .data[[value_col]]) %>%
-    group_by(zip, year, month) %>%
-    summarise(
-      n_days = sum(!is.na(value)),
-      value = mean(value, na.rm = TRUE),
-      .groups = "drop"
-    ) %>%
-    filter(n_days >= 20, is.finite(value)) %>%
-    collect() %>%
-    transmute(zip = clean_zip(zip), year = as.integer(year), month = as.integer(month), !!out_col := value)
-  write_csv(monthly, cache_file)
-  monthly
+  read_daily_pollution_aggregate(path, value_col, out_col, "monthly", cache_file)
 }
 
 read_exposure_tables <- function() {
@@ -186,21 +172,10 @@ read_exposure_tables <- function() {
 }
 
 make_month_intervals <- function(cohort_dt, exposure_end_date) {
-  intervals <- copy(cohort_dt)
+  intervals <- trim_monthly_cohort(cohort_dt)
   intervals[, analysis_end_date := pmin(observed_end_date, exposure_end_date)]
   intervals <- intervals[analysis_end_date >= index_date]
-  intervals[, month_seq := lapply(seq_len(.N), function(i) {
-    start_month <- as.Date(format(index_date[i], "%Y-%m-01"))
-    end_month <- as.Date(format(analysis_end_date[i], "%Y-%m-01"))
-    if (is.na(start_month) || is.na(end_month) || end_month < start_month) return(as.Date(character()))
-    seq(start_month, end_month, by = "month")
-  })]
-  intervals <- intervals[lengths(month_seq) > 0L]
-  interval_lengths <- lengths(intervals$month_seq)
-  out <- intervals[rep(seq_len(nrow(intervals)), interval_lengths)]
-  out[, month_start := as.Date(unlist(intervals$month_seq, use.names = FALSE), origin = "1970-01-01")]
-  out[, month_seq := NULL]
-  out[, month_end := as.Date(format(month_start + 35L, "%Y-%m-01")) - 1L]
+  out <- expand_monthly_cohort(intervals)
   out[, interval_start_date := pmax(index_date, month_start)]
   out[, interval_end_date := pmin(analysis_end_date, month_end)]
   out <- out[interval_end_date >= interval_start_date]
@@ -402,8 +377,8 @@ score_sources <- make_time_updated_score_sources()
 
 pollutant_specs <- tribble(
   ~pollutant, ~exposure_end_date, ~term, ~label,
-  "pm25", as.Date("2021-12-31"), "pm25_interval_5ug", "Daily PM2.5-derived monthly exposure per 5 ug/m3",
-  "o3", as.Date("2024-12-31"), "o3_interval_10ppb", "Daily O3-derived monthly exposure per 10 ppb",
+  "pm25", daily_pollution_end_date, "pm25_interval_5ug", "Daily PM2.5-derived monthly exposure per 5 ug/m3",
+  "o3", daily_pollution_end_date, "o3_interval_10ppb", "Daily O3-derived monthly exposure per 10 ppb",
   "no2", as.Date("2025-12-31"), "no2_interval_10ppb", "Monthly NO2 when available, annual NO2 before monthly coverage, per 10 ppb"
 )
 
@@ -447,13 +422,8 @@ for (i in seq_len(nrow(pollutant_specs))) {
   for (org in target_organs) {
     result_path <- file.path(model_result_dir, paste0(tolower(org), "_", spec$pollutant, "_timevarying_cox.csv"))
     result_paths <- c(result_paths, result_path)
-    if (file.exists(result_path)) {
-      log_msg("Reusing existing time-varying Cox result ", org, " | ", spec$pollutant)
-      result <- read_csv(result_path, show_col_types = FALSE)
-    } else {
-      result <- fit_tv_cox(intervals, org, spec$pollutant, spec$term, spec$label)
-      write_csv(result, result_path)
-    }
+    result <- fit_tv_cox(intervals, org, spec$pollutant, spec$term, spec$label)
+    write_csv(result, result_path)
     all_results[[length(all_results) + 1L]] <- result
   }
 

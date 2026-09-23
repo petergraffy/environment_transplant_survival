@@ -10,6 +10,7 @@ if (file.exists(runtime_source)) {
 saf_source <- file.path("code", "saf_paths.R")
 if (!file.exists(saf_source)) saf_source <- "saf_paths.R"
 source(saf_source)
+source(file.path("code", "rolling_prior_pollution.R"))
 
 suppressPackageStartupMessages({
   library(dplyr)
@@ -29,7 +30,7 @@ in_path <- file.path(
   "primary_waitlist_period_pollution_cox",
   "primary_waitlist_period_pollution_analysis_dataset.csv.gz"
 )
-fig_dir <- file.path("output", "figures", "organ_subgroup_aalen_johansen_cif")
+fig_dir <- file.path("output", "figures", "organ_subgroup_aalen_johansen_cif", "rolling_365d_20260922")
 dir.create(fig_dir, recursive = TRUE, showWarnings = FALSE)
 
 saf_paths <- get_saf_paths(required = TRUE, release = "q1_2026")
@@ -38,11 +39,9 @@ pubsaf_dir <- saf_paths$pubsaf_dir
 pollutant_specs <- tibble(
   pollutant = c("pm25", "o3", "no2"),
   pollutant_label = c("PM[2.5]", "O[3]", "NO[2]"),
-  exposure_col = c("pm25_waitlist_ug_m3", "o3_waitlist_ppb", "no2_waitlist"),
-  event_col = c("event_pm25", "event_o3", "event_no2"),
-  followup_col = c("followup_days_pm25", "followup_days_o3", "followup_days_no2"),
-  end_year = c(2023L, 2023L, 2025L),
-  exposure_end_date = as.Date(c("2023-12-31", "2023-12-31", "2025-12-31"))
+  exposure_col = c("pm25_prior_ug_m3", "o3_prior_ppb", "no2_prior_ppb"),
+  event_col = rep("adverse_event", 3),
+  followup_col = rep("baseline_followup_days", 3)
 )
 
 quartile_labels <- c("Q1 lowest", "Q2", "Q3", "Q4 highest")
@@ -83,7 +82,6 @@ pollutant_title <- function(pollutant_value) {
 make_pollutant_dat <- function(dat, spec) {
   base <- dat %>%
     filter(
-      listing_year_int <= spec$end_year,
       .data[[spec$followup_col]] > 0,
       is.finite(.data[[spec$exposure_col]]),
       !is.na(.data[[spec$event_col]]),
@@ -99,8 +97,7 @@ make_pollutant_dat <- function(dat, spec) {
       adverse = as.integer(.data[[spec$event_col]] == 1),
       competing = as.integer(
         .data[[spec$event_col]] == 0 &
-          transplant_or_improvement == 1L &
-          observed_end_date <= spec$exposure_end_date
+          transplant_or_improvement == 1L
       )
     ) %>%
     mutate(
@@ -192,7 +189,7 @@ theme_cif <- function() {
       axis.text = element_text(size = 15, color = "grey20"),
       strip.text = element_text(face = "bold", size = 17),
       strip.background = element_rect(fill = "grey94", color = "grey65", linewidth = 0.5),
-      panel.spacing.x = unit(12, "pt"),
+      panel.spacing.x = unit(24, "pt"),
       panel.spacing.y = unit(12, "pt"),
       plot.margin = margin(4, 8, 6, 8)
     )
@@ -254,7 +251,7 @@ make_outputs <- function(plot_dat, stem, title, width, height) {
       scale_color_manual(values = quartile_colors) +
       scale_x_continuous(
         breaks = breaks,
-        labels = label_number(accuracy = 0.1, trim = TRUE),
+        labels = label_number(accuracy = if (horizon == 1) 0.1 else 1, trim = TRUE),
         limits = c(0, horizon),
         expand = expansion(mult = c(0.01, 0.01))
       ) +
@@ -302,6 +299,14 @@ analysis_dat <- read_csv(in_path, show_col_types = FALSE) %>%
     index_date = as.Date(index_date),
     observed_end_date = as.Date(observed_end_date)
   )
+
+prior_pollution <- read_rolling_prior_pollution(analysis_dat)
+analysis_dat <- analysis_dat %>%
+  mutate(candidate_zip = sprintf("%05d", as.integer(candidate_zip)),
+         baseline_followup_days = as.numeric(observed_end_date - index_date)) %>%
+  left_join(prior_pollution$pm25, by = c("candidate_zip" = "zip", "index_date")) %>%
+  left_join(prior_pollution$o3, by = c("candidate_zip" = "zip", "index_date")) %>%
+  left_join(prior_pollution$no2, by = c("candidate_zip" = "zip", "index_date"))
 
 log_msg("Reading heart LVAD variables from Q1 2026 SAF")
 heart_candidate <- read_sas(
@@ -378,9 +383,9 @@ make_outputs(
 writeLines(
   c(
     "Figure note:",
-    "Curves show nonparametric Aalen-Johansen cumulative incidence estimates for death or delisting due to deterioration, stratified by pollutant-specific waitlist-period exposure quartile.",
+    "Curves show nonparametric Aalen-Johansen cumulative incidence estimates for death or delisting due to deterioration, stratified by pollutant-specific prelisting exposure quartile within each organ. PM2.5/O3 use the prior 365 days; NO2 uses the preceding 12 complete months, day weighted, with annual approximations before 2019.",
     "Transplant and delisting due to improvement are treated as competing events.",
-    "Other waitlist exits, administrative end of follow-up, and pollutant data end are treated as censoring events.",
+    "Other waitlist exits and administrative end of follow-up are treated as censoring events. Baseline exposure completeness does not truncate outcome follow-up at the pollution data endpoint.",
     "Heart strata are based on durable LVAD brand codes in CAND_THOR CAN_VAD1 or CAN_VAD2.",
     "Kidney strata are based on dialysis status and dialysis duration at listing."
   ),

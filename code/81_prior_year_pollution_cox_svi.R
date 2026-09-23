@@ -7,6 +7,8 @@ if (file.exists(runtime_source)) {
   ensure_user_library()
 }
 
+source(file.path("code", "rolling_prior_pollution.R"))
+
 suppressPackageStartupMessages({
   library(arrow)
   library(broom)
@@ -100,42 +102,7 @@ make_complete_acs_svi_proxy <- function(path) {
     select(zip, analysis_year, zcta_svi_proxy)
 }
 
-make_daily_annual <- function(path, value_col, out_col, cache_file) {
-  if (file.exists(cache_file)) {
-    return(read_csv(cache_file, show_col_types = FALSE) %>% mutate(zip = clean_zip(zip)))
-  }
-  annual <- open_dataset(parquet_files(path)) %>%
-    transmute(zip = zip, year = year, value = .data[[value_col]]) %>%
-    group_by(zip, year) %>%
-    summarise(
-      n_days = sum(!is.na(value)),
-      value = mean(value, na.rm = TRUE),
-      .groups = "drop"
-    ) %>%
-    filter(n_days >= 300, is.finite(value)) %>%
-    collect() %>%
-    transmute(zip = clean_zip(zip), year = as.integer(year), !!out_col := value)
-  write_csv(annual, cache_file)
-  annual
-}
 
-read_prior_pollution <- function() {
-  pm25 <- make_daily_annual(
-    file.path(release_dir, "lghap_pm25_zcta_daily_parquet"),
-    "pm25_ug_m3",
-    "pm25_prior_ug_m3",
-    file.path(cache_dir, "pm25_daily_annual_zcta.csv.gz")
-  )
-  o3 <- make_daily_annual(
-    file.path(release_dir, "o3_zcta_daily_parquet"),
-    "o3_ppb",
-    "o3_prior_ppb",
-    file.path(cache_dir, "o3_daily_annual_zcta.csv.gz")
-  )
-  no2 <- read_parquet(file.path(annual_pollution_dir, "air_pollution_zcta_no2_annual_2005_2025.parquet")) %>%
-    transmute(zip = clean_zip(zip), year = as.integer(year), no2_prior_ppb = no2)
-  list(pm25 = pm25, o3 = o3, no2 = no2)
-}
 
 fit_prior_year_cox <- function(dat, org, pollutant, exposure_term, exposure_label) {
   vars_needed <- c("followup_days", "adverse_event", exposure_term, "age", "sex", "race", "zcta_svi_proxy", "listing_center")
@@ -166,7 +133,7 @@ fit_prior_year_cox <- function(dat, org, pollutant, exposure_term, exposure_labe
       organ_label = recode(org, !!!organ_labels),
       exposure = pollutant,
       exposure_label = exposure_label,
-      exposure_window = "calendar_year_before_listing",
+      exposure_window = if_else(pollutant == "no2", "previous_12_complete_months", "previous_365_days"),
       endpoint = "death_or_deterioration_delist_cause_specific",
       n = nrow(model_dat),
       people = n_distinct(model_dat$PERS_ID),
@@ -190,7 +157,6 @@ analysis_dat <- read_csv(analysis_path, show_col_types = FALSE) %>%
     index_date = as.Date(index_date),
     observed_end_date = as.Date(observed_end_date),
     listing_year_int = as.integer(as.character(listing_year)),
-    prior_exposure_year = listing_year_int - 1L,
     followup_days = as.numeric(observed_end_date - index_date),
     sex = factor(sex),
     race = factor(race),
@@ -206,11 +172,11 @@ analysis_dat <- analysis_dat %>%
   select(-any_of("zcta_svi_proxy_community"))
 
 log_msg("Attaching prior-year pollution")
-prior_pollution <- read_prior_pollution()
+prior_pollution <- read_rolling_prior_pollution(analysis_dat)
 analysis_dat <- analysis_dat %>%
-  left_join(prior_pollution$pm25, by = c("candidate_zip" = "zip", "prior_exposure_year" = "year")) %>%
-  left_join(prior_pollution$o3, by = c("candidate_zip" = "zip", "prior_exposure_year" = "year")) %>%
-  left_join(prior_pollution$no2, by = c("candidate_zip" = "zip", "prior_exposure_year" = "year")) %>%
+  left_join(prior_pollution$pm25, by = c("candidate_zip" = "zip", "index_date" = "index_date")) %>%
+  left_join(prior_pollution$o3, by = c("candidate_zip" = "zip", "index_date" = "index_date")) %>%
+  left_join(prior_pollution$no2, by = c("candidate_zip" = "zip", "index_date" = "index_date")) %>%
   mutate(
     pm25_prior_5ug = pm25_prior_ug_m3 / 5,
     o3_prior_10ppb = o3_prior_ppb / 10,

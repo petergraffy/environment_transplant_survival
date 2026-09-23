@@ -34,3 +34,16 @@ data/release/lghap_pm25_zcta_daily_parquet/*.parquet
 data/release/lghap_pm25_tract_daily*_parquet/*.parquet
 data/release/o3_zcta_daily_parquet/*.parquet
 data/release/no2_zcta_monthly_parquet/*.parquet
+
+# Local candidate-level analysis inputs and reproducible caches.
+data/cache/rolling_prior_pollution/
+output/**/cache/
+output/primary_waitlist_period_pollution_cox/*analysis_dataset.csv.gz
+
+# Local revision snapshots, logs, and visual QA intermediates.
+output/revision_runs/**/before/
+output/revision_runs/**/code_at_start/
+output/revision_runs/**/figure_qa/
+output/revision_runs/**/*.log
+output/revision_runs/**/*.done
+output/revision_runs/**/snapshot_complete.txt

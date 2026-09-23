@@ -18,6 +18,7 @@ terraOptions(progress = as.integer(Sys.getenv("LGHAP_DAILY_TERRA_PROGRESS", "0")
 sf_use_s2(FALSE)
 
 outer_zip <- Sys.getenv("LGHAP_DAILY_PM25_ZIP", "C:/Users/Peter Graffy/Downloads/8313615.zip")
+monthly_zip_dir <- Sys.getenv("LGHAP_DAILY_PM25_MONTHLY_ZIP_DIR", "")
 target_year <- as.integer(Sys.getenv("LGHAP_DAILY_PM25_YEAR", "2021"))
 target_months <- as.integer(strsplit(Sys.getenv("LGHAP_DAILY_PM25_MONTHS", "1:12"), ":", fixed = TRUE)[[1]])
 if (length(target_months) == 2L) target_months <- seq(target_months[1], target_months[2])
@@ -76,6 +77,13 @@ month_zip_path <- function(year, month) {
 }
 
 ensure_month_zip <- function(year, month) {
+  if (nzchar(monthly_zip_dir)) {
+    source_zip <- file.path(monthly_zip_dir, month_member(year, month))
+    if (!file.exists(source_zip) || file.info(source_zip)$size <= 0) {
+      stop("Monthly PM2.5 archive not found or empty: ", source_zip, call. = FALSE)
+    }
+    return(source_zip)
+  }
   dest <- month_zip_path(year, month)
   if (file.exists(dest) && file.info(dest)$size > 0) return(dest)
   if (!file.exists(outer_zip)) stop("Daily PM2.5 archive not found: ", outer_zip, call. = FALSE)
@@ -133,8 +141,12 @@ make_zone_raster <- function(template, zcta) {
   lookup_path <- file.path(cache_dir, "zcta_lookup_lghap_pm25_001deg_v1.csv")
   points_path <- file.path(cache_dir, "zcta_points_lghap_pm25_001deg_v1.csv")
   if (file.exists(cache_path) && file.exists(lookup_path) && file.exists(points_path)) {
+    cached_zones <- rast(cache_path)
+    if (!compareGeom(template, cached_zones, stopOnError = FALSE)) {
+      stop("LGHAP grid differs from cached ZCTA grid; rebuild mapping before aggregation.", call. = FALSE)
+    }
     return(list(
-      zones = rast(cache_path),
+      zones = cached_zones,
       lookup = fread(lookup_path, colClasses = c(zip = "character")),
       points = fread(points_path, colClasses = c(zip = "character"))
     ))
@@ -254,6 +266,7 @@ process_month <- function(month, zcta) {
 }
 
 log_msg("LGHAP daily PM2.5 archive: ", outer_zip)
+if (nzchar(monthly_zip_dir)) log_msg("Monthly archives directory: ", monthly_zip_dir)
 log_msg("LGHAP daily PM2.5 year: ", target_year)
 log_msg("Months: ", paste(target_months, collapse = ", "))
 zcta <- read_zctas()
