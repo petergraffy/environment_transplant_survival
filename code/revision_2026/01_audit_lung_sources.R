@@ -1,0 +1,16 @@
+source("code/revision_2026/common.R")
+source("code/saf_paths.R")
+paths <- get_saf_paths(release = "q1_2026")
+files <- list.files(paths$saf_dir, pattern = "[.]sas7bdat$", recursive = TRUE, full.names = TRUE)
+files <- files[!grepl("ptr_", files, fixed = TRUE)]
+rows <- lapply(files, function(path) {
+  log_revision("Schema: ", basename(path))
+  d <- haven::read_sas(path, n_max = 0)
+  labels <- vapply(d, function(x) {a <- attr(x, "label"); if (is.null(a)) "" else a}, character(1))
+  data.frame(file = substring(path, nchar(paths$saf_dir)+2L), variable = names(d), label = labels)
+})
+schema <- bind_rows(rows)
+write_csv(schema, file.path(revision_dir, "saf_variable_schema.csv"))
+hits <- schema %>% filter(grepl("(^|_)LAS($|_)|(^|_)CAS($|_)|lung.*score|allocation.*score|composite.*score|medical.*urgency", paste(variable,label), ignore.case = TRUE))
+write_csv(hits, file.path(revision_dir, "lung_score_source_candidates.csv"))
+print(as_tibble(hits), n = 100)
