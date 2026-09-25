@@ -1,0 +1,25 @@
+Organ	Pollutant	analysis	n	events	estimate_ci	p_value	convergence_note
+Heart	PM2.5	Recent cohort: Fine-Gray	20504	2531	1.20 (1.03-1.41)	0.018	
+Heart	NO2	Recent cohort: Fine-Gray	20504	2531	1.06 (0.94-1.19)	0.328	
+Heart	O3	Recent cohort: Fine-Gray	20504	2531	1.04 (0.88-1.23)	0.676	
+Kidney	PM2.5	Recent cohort: Fine-Gray	145305	16667	0.91 (0.85-0.96) [a]	<.001	Loglik converged before variable  6 ; beta may be infinite.
+Kidney	NO2	Recent cohort: Fine-Gray	145305	16667	0.85 (0.81-0.89) [a]	<.001	Loglik converged before variable  6 ; beta may be infinite.
+Kidney	O3	Recent cohort: Fine-Gray	145305	16667	1.09 (1.03-1.16) [a]	0.003	Loglik converged before variable  6 ; beta may be infinite.
+Liver	PM2.5	Recent cohort: Fine-Gray	56090	9926	1.02 (0.95-1.09)	0.554	
+Liver	NO2	Recent cohort: Fine-Gray	56090	9926	0.94 (0.89-0.99)	0.026	
+Liver	O3	Recent cohort: Fine-Gray	56090	9926	1.03 (0.96-1.11)	0.376	
+Lung	PM2.5	Recent cohort: Fine-Gray	13532	1436	1.09 (0.92-1.30)	0.325	
+Lung	NO2	Recent cohort: Fine-Gray	13532	1436	1.24 (1.07-1.42)	0.003	
+Lung	O3	Recent cohort: Fine-Gray	13532	1436	0.96 (0.79-1.17)	0.668	
+Heart	PM2.5	Recent cohort: cause-specific	20504	2531	1.14 (0.97-1.33)	0.107	
+Heart	NO2	Recent cohort: cause-specific	20504	2531	1.03 (0.91-1.16)	0.654	
+Heart	O3	Recent cohort: cause-specific	20504	2531	1.05 (0.89-1.25)	0.569	
+Kidney	PM2.5	Recent cohort: cause-specific	145305	16667	0.87 (0.82-0.92) [a]	<.001	Loglik converged before variable  6 ; coefficient may be infinite.
+Kidney	NO2	Recent cohort: cause-specific	145305	16667	0.81 (0.77-0.85) [a]	<.001	Loglik converged before variable  6 ; coefficient may be infinite.
+Kidney	O3	Recent cohort: cause-specific	145305	16667	1.13 (1.07-1.20) [a]	<.001	Loglik converged before variable  6 ; coefficient may be infinite.
+Liver	PM2.5	Recent cohort: cause-specific	56090	9926	1.02 (0.95-1.09)	0.574	
+Liver	NO2	Recent cohort: cause-specific	56090	9926	0.92 (0.87-0.98)	0.005	
+Liver	O3	Recent cohort: cause-specific	56090	9926	1.04 (0.97-1.11)	0.285	
+Lung	PM2.5	Recent cohort: cause-specific	13532	1436	1.08 (0.90-1.30)	0.403	
+Lung	NO2	Recent cohort: cause-specific	13532	1436	1.21 (1.05-1.40)	0.008	
+Lung	O3	Recent cohort: cause-specific	13532	1436	0.95 (0.78-1.14)	0.562	

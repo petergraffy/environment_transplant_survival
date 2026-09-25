@@ -1,0 +1,37 @@
+analysis,organ,pollutant,message,affected_terms
+baseline_band_2,HR,pm25,Loglik converged before variable  6 ; beta may be infinite. ,raceMissing
+baseline_band_4,HR,pm25,Loglik converged before variable  5 ; beta may be infinite. ,raceMULTI
+baseline_band_2,HR,no2,Loglik converged before variable  6 ; beta may be infinite. ,raceMissing
+baseline_band_4,HR,no2,Loglik converged before variable  5 ; beta may be infinite. ,raceMULTI
+baseline_band_2,HR,o3,Loglik converged before variable  6 ; beta may be infinite. ,raceMissing
+baseline_band_4,HR,o3,Loglik converged before variable  5 ; beta may be infinite. ,raceMULTI
+baseline_band_3,KI,pm25,Loglik converged before variable  6 ; beta may be infinite. ,raceMissing
+baseline_band_4,KI,pm25,Loglik converged before variable  6 ; beta may be infinite. ,raceMissing
+listing_Era 2,KI,pm25,Loglik converged before variable  6 ; coefficient may be infinite. ,raceMissing
+baseline_band_3,KI,no2,Loglik converged before variable  6 ; beta may be infinite. ,raceMissing
+baseline_band_4,KI,no2,Loglik converged before variable  6 ; beta may be infinite. ,raceMissing
+listing_Era 2,KI,no2,Loglik converged before variable  6 ; coefficient may be infinite. ,raceMissing
+baseline_band_3,KI,o3,Loglik converged before variable  6 ; beta may be infinite. ,raceMissing
+baseline_band_4,KI,o3,Loglik converged before variable  6 ; beta may be infinite. ,raceMissing
+listing_Era 2,KI,o3,Loglik converged before variable  6 ; coefficient may be infinite. ,raceMissing
+baseline_band_3,LI,pm25,Loglik converged before variable  6 ; beta may be infinite. ,raceMissing
+baseline_band_3,LI,no2,Loglik converged before variable  6 ; beta may be infinite. ,raceMissing
+baseline_band_3,LI,o3,Loglik converged before variable  6 ; beta may be infinite. ,raceMissing
+baseline_band_2,LU,pm25,Loglik converged before variable  6 ; beta may be infinite. ,raceMissing
+baseline_band_3,LU,pm25,Loglik converged before variable  5 ; beta may be infinite. ,raceMULTI
+baseline_band_4,LU,pm25,"Loglik converged before variable  5,7 ; beta may be infinite. ",raceMULTI; raceNATIVE
+listing_Era 3,LU,pm25,"Loglik converged before variable  5,7 ; coefficient may be infinite. ",raceMULTI; raceNATIVE
+baseline_band_2,LU,no2,Loglik converged before variable  6 ; beta may be infinite. ,raceMissing
+baseline_band_3,LU,no2,Loglik converged before variable  5 ; beta may be infinite. ,raceMULTI
+baseline_band_4,LU,no2,"Loglik converged before variable  5,7 ; beta may be infinite. ",raceMULTI; raceNATIVE
+listing_Era 3,LU,no2,"Loglik converged before variable  5,7 ; coefficient may be infinite. ",raceMULTI; raceNATIVE
+baseline_band_2,LU,o3,Loglik converged before variable  6 ; beta may be infinite. ,raceMissing
+baseline_band_3,LU,o3,Loglik converged before variable  5 ; beta may be infinite. ,raceMULTI
+baseline_band_4,LU,o3,"Loglik converged before variable  5,7 ; beta may be infinite. ",raceMULTI; raceNATIVE
+listing_Era 3,LU,o3,"Loglik converged before variable  5,7 ; coefficient may be infinite. ",raceMULTI; raceNATIVE
+recent_FineGray,KI,pm25,Loglik converged before variable  6 ; beta may be infinite. ,raceMissing
+recent_FineGray,KI,no2,Loglik converged before variable  6 ; beta may be infinite. ,raceMissing
+recent_FineGray,KI,o3,Loglik converged before variable  6 ; beta may be infinite. ,raceMissing
+recent_cause_specific,KI,pm25,Loglik converged before variable  6 ; coefficient may be infinite. ,raceMissing
+recent_cause_specific,KI,no2,Loglik converged before variable  6 ; coefficient may be infinite. ,raceMissing
+recent_cause_specific,KI,o3,Loglik converged before variable  6 ; coefficient may be infinite. ,raceMissing

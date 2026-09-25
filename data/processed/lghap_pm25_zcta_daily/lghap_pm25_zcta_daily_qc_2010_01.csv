@@ -1,0 +1,2 @@
+year,month,rows,zips,dates,missing_values,zonal_mean_values,nearest_fill_values,mean,p01,p50,p99,output
+2010,1,1032300,33300,31,0,999316,32984,9.54351317237363,2.01333333333333,8.59579840313009,24.4140744173729,C:/Users/Peter Graffy/Documents/GitHub/environment_transplant_survival/data/processed/lghap_pm25_zcta_daily/lghap_pm25_zcta_daily_2010_01.csv.gz

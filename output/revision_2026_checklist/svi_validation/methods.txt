@@ -1,0 +1,5 @@
+CDC source: https://svi.cdc.gov/Documents/Data/2022/csv/zcta/SVI_2022_US_ZCTA.csv
+SHA256: e2007404c6e63aca40fcfab64893599de8e3cd79887d61463b36b7ca60f2791a
+One observation per ZCTA; 2022 ACS proxy and CDC national 2022 SVI. No patient-level data.
+Bootstrap confidence intervals resample ZCTAs (500 replicates); spatial dependence is not modeled.
+Quartiles are ranked within the common matched geography; agreement is convergent validity, not interchangeability.

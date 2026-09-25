@@ -1,0 +1,342 @@
+[
+  {
+    "file": "output\\revision_2026_checklist\\aj_with_risk_tables\\aj_o3_10yr_with_risk.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      2875,
+      8250
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\aj_with_risk_tables_aj_o3_10yr_with_risk.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\aj_with_risk_tables\\aj_o3_1yr_with_risk.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      2875,
+      8250
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\aj_with_risk_tables_aj_o3_1yr_with_risk.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\aj_with_risk_tables\\aj_o3_3yr_with_risk.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      2875,
+      8250
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\aj_with_risk_tables_aj_o3_3yr_with_risk.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\aj_with_risk_tables\\aj_o3_5yr_with_risk.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      2875,
+      8250
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\aj_with_risk_tables_aj_o3_5yr_with_risk.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\aj_with_risk_tables\\aj_pm25_no2_10yr_with_risk.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      4750,
+      8250
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\aj_with_risk_tables_aj_pm25_no2_10yr_with_risk.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\aj_with_risk_tables\\aj_pm25_no2_1yr_with_risk.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      4750,
+      8250
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\aj_with_risk_tables_aj_pm25_no2_1yr_with_risk.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\aj_with_risk_tables\\aj_pm25_no2_3yr_with_risk.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      4750,
+      8250
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\aj_with_risk_tables_aj_pm25_no2_3yr_with_risk.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\aj_with_risk_tables\\aj_pm25_no2_5yr_with_risk.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      4750,
+      8250
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\aj_with_risk_tables_aj_pm25_no2_5yr_with_risk.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\baseline_diagnostics\\schoenfeld_HR_no2.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\baseline_diagnostics_schoenfeld_HR_no2.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\baseline_diagnostics\\schoenfeld_HR_o3.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\baseline_diagnostics_schoenfeld_HR_o3.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\baseline_diagnostics\\schoenfeld_HR_pm25.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\baseline_diagnostics_schoenfeld_HR_pm25.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\baseline_diagnostics\\schoenfeld_KI_no2.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\baseline_diagnostics_schoenfeld_KI_no2.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\baseline_diagnostics\\schoenfeld_KI_o3.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\baseline_diagnostics_schoenfeld_KI_o3.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\baseline_diagnostics\\schoenfeld_KI_pm25.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\baseline_diagnostics_schoenfeld_KI_pm25.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\baseline_diagnostics\\schoenfeld_LI_no2.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\baseline_diagnostics_schoenfeld_LI_no2.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\baseline_diagnostics\\schoenfeld_LI_o3.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\baseline_diagnostics_schoenfeld_LI_o3.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\baseline_diagnostics\\schoenfeld_LI_pm25.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\baseline_diagnostics_schoenfeld_LI_pm25.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\baseline_diagnostics\\schoenfeld_LU_no2.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\baseline_diagnostics_schoenfeld_LU_no2.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\baseline_diagnostics\\schoenfeld_LU_o3.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\baseline_diagnostics_schoenfeld_LU_o3.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\baseline_diagnostics\\schoenfeld_LU_pm25.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\baseline_diagnostics_schoenfeld_LU_pm25.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\timevarying_diagnostics\\HR_no2_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\timevarying_diagnostics_HR_no2_schoenfeld.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\timevarying_diagnostics\\HR_o3_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\timevarying_diagnostics_HR_o3_schoenfeld.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\timevarying_diagnostics\\HR_pm25_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\timevarying_diagnostics_HR_pm25_schoenfeld.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\timevarying_diagnostics\\KI_no2_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\timevarying_diagnostics_KI_no2_schoenfeld.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\timevarying_diagnostics\\KI_o3_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\timevarying_diagnostics_KI_o3_schoenfeld.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\timevarying_diagnostics\\KI_pm25_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\timevarying_diagnostics_KI_pm25_schoenfeld.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\timevarying_diagnostics\\LI_no2_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\timevarying_diagnostics_LI_no2_schoenfeld.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\timevarying_diagnostics\\LI_o3_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\timevarying_diagnostics_LI_o3_schoenfeld.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\timevarying_diagnostics\\LI_pm25_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\timevarying_diagnostics_LI_pm25_schoenfeld.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\timevarying_diagnostics\\LU_no2_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\timevarying_diagnostics_LU_no2_schoenfeld.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\timevarying_diagnostics\\LU_o3_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\timevarying_diagnostics_LU_o3_schoenfeld.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\timevarying_diagnostics\\LU_pm25_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\timevarying_diagnostics_LU_pm25_schoenfeld.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\svi_validation\\svi_overall.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      2400,
+      1800
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\svi_validation_svi_overall.png",
+    "nonblank": true
+  },
+  {
+    "file": "output\\revision_2026_checklist\\svi_validation\\svi_socioeconomic.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      2400,
+      1800
+    ],
+    "rendered_pdf": "output\\revision_2026_checklist\\visual_qa\\svi_validation_svi_socioeconomic.png",
+    "nonblank": true
+  }
+]

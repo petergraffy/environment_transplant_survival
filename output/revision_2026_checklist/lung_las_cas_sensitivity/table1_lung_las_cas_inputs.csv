@@ -1,0 +1,19 @@
+variable,SRTR_field,N,observed,missing_percent,median_IQR,handling
+age,score_age,52613,52613,0,60.00 (51.00-66.00),Age at clinical listing form
+diagnosis,CAN_DGN,52613,52613,0,Categorical; see distribution below,Explicit diagnosis mapping; unmapped => LAS unavailable
+BMI,CAN_BMI,52613,52526,0.2,26.00 (22.00-29.00),Missing: 100 kg/m2
+height_cm,CAN_HGT_CM,52613,52533,0.2,170.00 (161.01-177.80),Used only for derived cardiac index
+weight_kg,CAN_WGT_KG,52613,52572,0.1,74.00 (61.23-86.18),Used only for derived cardiac index
+oxygen_L_min,CAN_AT_REST_O2,52613,17372,67,3.00 (2.00-5.00),Missing: WL 0; TX 26.33 L/min
+walk_feet,CAN_SIX_MIN_WALK,52613,18037,65.7,810.00 (450.00-1111.00),Missing: WL 4000; TX 0 feet
+PCO2_mmHg,CAN_PCO2,52613,15358,70.8,43.00 (38.00-51.00),Minimum/default 40 mmHg; no serial rise inferred
+PA_systolic_mmHg,CAN_PULM_ART_SYST,52613,49436,6,39.00 (32.00-49.00),Minimum/default 20 mmHg
+PA_mean_mmHg,CAN_PULM_ART_MEAN,52613,48530,7.8,25.00 (20.00-32.00),Missing sarcoidosis pressure: group A
+cardiac_output_L_min,CAN_CARDIAC_OUTPUT,52613,47812,9.1,5.18 (4.35-6.11),Used with height and weight to derive cardiac index
+derived_cardiac_index,cardiac_index,52613,47767,9.2,2.78 (2.37-3.27),CO / sqrt(height_cm * weight_kg / 3600); missing: 3
+functional_status,CAN_FUNCTN_STAT,52613,51657,1.8,Categorical; see distribution below,No assistance if code 1 or Karnofsky/Lansky >=70; missing: no assistance
+mechanical_ventilation,ventilation,52613,52613,0,Categorical; see distribution below,CAN_VENTILATOR; fallback CAN_ON_VENTILATOR; missing: WL 0 / TX 1
+creatinine_mg_dL,dated_creatinine,52613,0,100,Not available,"No dated LU value: WL 0.1 / TX 40 for adults, no contribution under18"
+bilirubin_mg_dL,dated_bilirubin,52613,0,100,Not available,Unavailable: 0.7 mg/dL
+reconstructed_LAS,las,52613,50873,3.3,0.39 (0.24-1.95),2021 formula; unavailable diagnosis or age<12 => indicator
+CAS at listing (post-transition candidates),PTR_TOT_SCORE,9739,0,100,Not available before first eligible offer,No backward filling from later offer; CAS availability indicator until first score

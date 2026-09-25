@@ -1,0 +1,5 @@
+organ,pollutant,phase,band,message,call
+KI,pm25,followup_band,3-5 years,Loglik converged before variable  6 ; beta may be infinite. ,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+KI,o3,followup_band,3-5 years,Loglik converged before variable  6 ; beta may be infinite. ,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+KI,no2,followup_band,3-5 years,Loglik converged before variable  6 ; beta may be infinite. ,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+KI,no2,followup_band,5+ years,Loglik converged before variable  6 ; beta may be infinite. ,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"

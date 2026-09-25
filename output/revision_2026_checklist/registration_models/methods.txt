@@ -1,0 +1,5 @@
+Separate spells: overlapping or same-day touching registrations combined; positive gaps begin a new spell.
+Each spell uses its first listing date, address, center, covariates and recomputed preceding-year exposure; current last-terminal-outcome resolution preserved within spells.
+Model-based variance and a separate person-clustered variance sensitivity are both reported.
+Concurrency changes at observed registration start/end boundaries. Baseline exposure is unchanged; primary covariates plus concurrent listing count and a zero-open-listing indicator are fitted.
+The zero-open-listing indicator distinguishes gaps retained by the primary person-organ construction. Maximum future concurrency is never a baseline covariate.

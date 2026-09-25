@@ -1,0 +1,11 @@
+category,n,variable,percent
+D,30660,diagnosis_group,58.27
+C,4251,diagnosis_group,8.08
+A,13455,diagnosis_group,25.57
+B,2985,diagnosis_group,5.67
+,1262,diagnosis_group,2.4
+Independent,15041,functional_dependence,28.59
+Dependent,36616,functional_dependence,69.59
+Missing,956,functional_dependence,1.82
+0,50741,CAN_VENTILATOR,96.44
+1,1872,CAN_VENTILATOR,3.56

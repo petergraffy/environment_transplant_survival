@@ -1,0 +1,11 @@
+variable,level,n,percent
+Diagnosis group,D,30660,58.3
+Diagnosis group,C,4251,8.1
+Diagnosis group,A,13527,25.7
+Diagnosis group,B,2985,5.7
+Diagnosis group,Unmapped,1190,2.3
+Functional independence,No assistance,15041,28.6
+Functional independence,Some/total assistance,36616,69.6
+Functional independence,Missing,956,1.8
+Mechanical ventilation,No,50741,96.4
+Mechanical ventilation,Yes,1872,3.6

@@ -1,0 +1,2 @@
+analysis,organ,pollutant,n,people,events,hazard_ratio,conf_low,conf_high,p_value,convergence_note,competing_events,expanded_rows,variance,centers_with_events
+recent_2015_2019_3yr_FineGray,LU,o3,13532,13532,1436,0.9581247546210583,0.7878541462469772,1.1651941540076463,0.6682890673046082,,11056,55509,person_clustered_sandwich_for_FineGray_expansion,71

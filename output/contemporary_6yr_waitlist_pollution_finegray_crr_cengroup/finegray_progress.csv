@@ -1,0 +1,5 @@
+pollutant,organ,status,started_at,finished_at,elapsed_seconds,n,adverse_events,competing_events,expanded_rows,error
+pm25,HR,started,2026-06-11 11:26:13.824535,NA,NA,27324,2784,19344,NA,NA
+pm25,HR,started,2026-06-11 11:36:26.66271,NA,NA,27324,2784,19344,NA,NA
+pm25,HR,completed,2026-06-11 11:36:26.66271,2026-06-11 11:41:51.777162,324.90999999999997,27324,2784,19344,NA,NA
+pm25,KI,started,2026-06-11 11:41:52.105651,NA,NA,234581,16122,72164,NA,NA

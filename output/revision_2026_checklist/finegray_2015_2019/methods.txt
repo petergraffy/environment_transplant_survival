@@ -1,0 +1,5 @@
+Listings from 2015-01-01 through 2019-12-31 inclusive; all eligible candidates; follow-up capped at 3*365.25 days.
+Listing-era restriction does not exclude pandemic-era follow-up. The collapsed primary candidate-organ cohort is retained.
+Prior-year exposure; age, sex, race, ACS proxy; center-specific censoring weights and center-stratified Fine-Gray baseline hazards.
+Transplant/improvement competing; other exits censored. No subsampling. Centers without adverse events contribute no coefficient information.
+Breslow handling of tied event times; person-clustered sandwich variance accounts for Fine-Gray pseudo-record expansion.

@@ -1,0 +1,61 @@
+analysis,organ,pollutant,message,affected_terms,phase,band,call
+baseline_band_2,HR,pm25,Loglik converged before variable  6 ; beta may be infinite.,raceMissing,NA,NA,NA
+baseline_band_4,HR,pm25,Loglik converged before variable  5 ; beta may be infinite.,raceMULTI,NA,NA,NA
+baseline_band_2,HR,no2,Loglik converged before variable  6 ; beta may be infinite.,raceMissing,NA,NA,NA
+baseline_band_4,HR,no2,Loglik converged before variable  5 ; beta may be infinite.,raceMULTI,NA,NA,NA
+baseline_band_2,HR,o3,Loglik converged before variable  6 ; beta may be infinite.,raceMissing,NA,NA,NA
+baseline_band_4,HR,o3,Loglik converged before variable  5 ; beta may be infinite.,raceMULTI,NA,NA,NA
+baseline_band_3,KI,pm25,Loglik converged before variable  6 ; beta may be infinite.,raceMissing,NA,NA,NA
+baseline_band_4,KI,pm25,Loglik converged before variable  6 ; beta may be infinite.,raceMissing,NA,NA,NA
+listing_Era 2,KI,pm25,Loglik converged before variable  6 ; coefficient may be infinite.,raceMissing,NA,NA,NA
+baseline_band_3,KI,no2,Loglik converged before variable  6 ; beta may be infinite.,raceMissing,NA,NA,NA
+baseline_band_4,KI,no2,Loglik converged before variable  6 ; beta may be infinite.,raceMissing,NA,NA,NA
+listing_Era 2,KI,no2,Loglik converged before variable  6 ; coefficient may be infinite.,raceMissing,NA,NA,NA
+baseline_band_3,KI,o3,Loglik converged before variable  6 ; beta may be infinite.,raceMissing,NA,NA,NA
+baseline_band_4,KI,o3,Loglik converged before variable  6 ; beta may be infinite.,raceMissing,NA,NA,NA
+listing_Era 2,KI,o3,Loglik converged before variable  6 ; coefficient may be infinite.,raceMissing,NA,NA,NA
+baseline_band_3,LI,pm25,Loglik converged before variable  6 ; beta may be infinite.,raceMissing,NA,NA,NA
+baseline_band_3,LI,no2,Loglik converged before variable  6 ; beta may be infinite.,raceMissing,NA,NA,NA
+baseline_band_3,LI,o3,Loglik converged before variable  6 ; beta may be infinite.,raceMissing,NA,NA,NA
+baseline_band_2,LU,pm25,Loglik converged before variable  6 ; beta may be infinite.,raceMissing,NA,NA,NA
+baseline_band_3,LU,pm25,Loglik converged before variable  5 ; beta may be infinite.,raceMULTI,NA,NA,NA
+baseline_band_4,LU,pm25,"Loglik converged before variable  5,7 ; beta may be infinite.",raceMULTI; raceNATIVE,NA,NA,NA
+listing_Era 3,LU,pm25,"Loglik converged before variable  5,7 ; coefficient may be infinite.",raceMULTI; raceNATIVE,NA,NA,NA
+baseline_band_2,LU,no2,Loglik converged before variable  6 ; beta may be infinite.,raceMissing,NA,NA,NA
+baseline_band_3,LU,no2,Loglik converged before variable  5 ; beta may be infinite.,raceMULTI,NA,NA,NA
+baseline_band_4,LU,no2,"Loglik converged before variable  5,7 ; beta may be infinite.",raceMULTI; raceNATIVE,NA,NA,NA
+listing_Era 3,LU,no2,"Loglik converged before variable  5,7 ; coefficient may be infinite.",raceMULTI; raceNATIVE,NA,NA,NA
+baseline_band_2,LU,o3,Loglik converged before variable  6 ; beta may be infinite.,raceMissing,NA,NA,NA
+baseline_band_3,LU,o3,Loglik converged before variable  5 ; beta may be infinite.,raceMULTI,NA,NA,NA
+baseline_band_4,LU,o3,"Loglik converged before variable  5,7 ; beta may be infinite.",raceMULTI; raceNATIVE,NA,NA,NA
+listing_Era 3,LU,o3,"Loglik converged before variable  5,7 ; coefficient may be infinite.",raceMULTI; raceNATIVE,NA,NA,NA
+recent_FineGray,KI,pm25,Loglik converged before variable  6 ; beta may be infinite.,raceMissing,NA,NA,NA
+recent_FineGray,KI,no2,Loglik converged before variable  6 ; beta may be infinite.,raceMissing,NA,NA,NA
+recent_FineGray,KI,o3,Loglik converged before variable  6 ; beta may be infinite.,raceMissing,NA,NA,NA
+recent_cause_specific,KI,pm25,Loglik converged before variable  6 ; coefficient may be infinite.,raceMissing,NA,NA,NA
+recent_cause_specific,KI,no2,Loglik converged before variable  6 ; coefficient may be infinite.,raceMissing,NA,NA,NA
+recent_cause_specific,KI,o3,Loglik converged before variable  6 ; coefficient may be infinite.,raceMissing,NA,NA,NA
+NA,HR,pm25,Loglik converged before variable  6 ; beta may be infinite.,NA,followup_band,1-3 years,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+NA,HR,pm25,Loglik converged before variable  5 ; beta may be infinite.,NA,followup_band,5+ years,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+NA,LU,pm25,Loglik converged before variable  8 ; beta may be infinite.,NA,followup_band,3-5 years,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+NA,LU,pm25,"Loglik converged before variable  5,7 ; beta may be infinite.",NA,followup_band,5+ years,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+NA,HR,o3,Loglik converged before variable  6 ; beta may be infinite.,NA,followup_band,1-3 years,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+NA,HR,o3,Loglik converged before variable  5 ; beta may be infinite.,NA,followup_band,5+ years,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+NA,LU,o3,Loglik converged before variable  8 ; beta may be infinite.,NA,followup_band,3-5 years,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+NA,LU,o3,"Loglik converged before variable  5,7 ; beta may be infinite.",NA,followup_band,5+ years,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+NA,HR,no2,Loglik converged before variable  6 ; beta may be infinite.,NA,followup_band,1-3 years,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+NA,HR,no2,Loglik converged before variable  5 ; beta may be infinite.,NA,followup_band,5+ years,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+NA,LI,no2,Loglik converged before variable  6 ; beta may be infinite.,NA,followup_band,3-5 years,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+NA,LU,no2,Loglik converged before variable  6 ; beta may be infinite.,NA,followup_band,1-3 years,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+NA,LU,no2,Loglik converged before variable  8 ; beta may be infinite.,NA,followup_band,3-5 years,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+NA,LU,no2,"Loglik converged before variable  5,7 ; beta may be infinite.",NA,followup_band,5+ years,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+NA,KI,pm25,Loglik converged before variable  6 ; beta may be infinite.,NA,followup_band,3-5 years,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+NA,KI,o3,Loglik converged before variable  6 ; beta may be infinite.,NA,followup_band,3-5 years,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+NA,KI,no2,Loglik converged before variable  6 ; beta may be infinite.,NA,followup_band,3-5 years,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+NA,KI,no2,Loglik converged before variable  6 ; beta may be infinite.,NA,followup_band,5+ years,"agreg.fit(X, Y, istrat, offset, init, control, weights = weights,      method = method, rname, nocenter = nocenter)"
+recent_2015_2019_3yr_FineGray,KI,pm25,Loglik converged before variable  6 ; beta may be infinite.,NA,NA,NA,NA
+recent_2015_2019_3yr_FineGray,KI,no2,Loglik converged before variable  6 ; beta may be infinite.,NA,NA,NA,NA
+recent_2015_2019_3yr_FineGray,KI,o3,Loglik converged before variable  6 ; beta may be infinite.,NA,NA,NA,NA
+recent_2015_2019_3yr_cause_specific,KI,pm25,Loglik converged before variable  6 ; coefficient may be infinite.,NA,NA,NA,NA
+recent_2015_2019_3yr_cause_specific,KI,no2,Loglik converged before variable  6 ; coefficient may be infinite.,NA,NA,NA,NA
+recent_2015_2019_3yr_cause_specific,KI,o3,Loglik converged before variable  6 ; coefficient may be infinite.,NA,NA,NA,NA

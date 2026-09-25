@@ -1,0 +1,2 @@
+year,month,rows,zips,dates,missing_values,zonal_mean_values,nearest_fill_values,mean,p01,p50,p99,output
+2022,2,932400,33300,28,0,902664,29736,0.129976290476061,0.00925,0.117163656746841,0.383226458635704,C:/Users/Peter Graffy/Documents/GitHub/environment_transplant_survival/data/processed/lghap_aod_zcta_daily/lghap_aod_zcta_daily_2022_02.csv.gz

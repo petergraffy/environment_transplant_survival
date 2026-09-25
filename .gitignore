@@ -47,3 +47,17 @@ output/revision_runs/**/figure_qa/
 output/revision_runs/**/*.log
 output/revision_runs/**/*.done
 output/revision_runs/**/snapshot_complete.txt
+
+# Never publish registration/candidate-level derived analysis datasets.
+output/**/*analysis_dataset.csv.gz
+
+# Local scratch downloads and execution logs.
+/tmp_lghap_aod_inspect/
+/tmp_pm25_tract_inspect/
+/Rplots.pdf
+logs/*.log
+output/revision_2026_checklist/**/*.log
+
+# Regenerable vector maps exceed GitHub's 100 MiB file limit.
+output/figures/pollution_absolute_1yr_survival_maps/figure_pollution_absolute_1yr_survival_maps.pdf
+output/figures/pollution_attributable_relative_hazard_maps/figure_pollution_attributable_relative_hazard_maps.pdf

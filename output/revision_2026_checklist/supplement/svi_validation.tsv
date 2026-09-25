@@ -1,0 +1,3 @@
+cdc_measure	n_zctas	spearman	rho_low	rho_high	pearson	quartile_agreement	linear_weighted_kappa	top_quartile_jaccard	top_quartile_sensitivity
+overall	32428	0.767	0.763	0.773	0.767	0.521	0.556	0.524	0.687
+socioeconomic	32428	0.858	0.855	0.862	0.851	0.635	0.681	0.622	0.767

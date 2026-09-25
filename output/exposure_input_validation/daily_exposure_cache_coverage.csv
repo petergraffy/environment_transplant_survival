@@ -1,0 +1,5 @@
+pollutant,resolution,rows,zctas,first_year,last_year,release
+pm25,annual,666000,33300,2005,2024,https://github.com/petergraffy/environment_transplant_survival/releases/tag/lghap-pm25-zcta-daily-v1
+pm25,monthly,7992000,33300,2005,2024,https://github.com/petergraffy/environment_transplant_survival/releases/tag/lghap-pm25-zcta-daily-v1
+o3,annual,666000,33300,2005,2024,https://github.com/petergraffy/environment_transplant_survival/releases/tag/o3-zcta-daily-v1
+o3,monthly,7992000,33300,2005,2024,https://github.com/petergraffy/environment_transplant_survival/releases/tag/o3-zcta-daily-v1

@@ -1,0 +1,2 @@
+analysis,organ,pollutant,n,people,events,hazard_ratio,conf_low,conf_high,p_value,competing_events,expanded_rows,variance,centers_with_events
+recent_2020_2022_3yr_FineGray,KI,pm25,93355,93355,10937,0.9689102018138191,0.9008496819435263,1.0421127941717445,0.3953730634213336,48553,934590,person_clustered_sandwich_for_FineGray_expansion,213

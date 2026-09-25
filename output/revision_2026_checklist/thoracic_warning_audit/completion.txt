@@ -1,0 +1,1 @@
+Thoracic/liver fits and diagnostic plots were independently rerun from parsed expressions; primary coefficients, sample sizes and event counts matched the reference.

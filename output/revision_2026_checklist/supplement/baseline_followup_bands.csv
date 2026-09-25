@@ -1,0 +1,49 @@
+organ,pollutant,lower_year,upper_year,n,events,estimate_ci,p_value,convergence_note
+HR,pm25,0,1,74028,6993,1.35 (1.27-1.43),<.001,
+HR,pm25,1,3,18768,1922,1.10 (0.97-1.25) [a],0.146,Loglik converged before variable  6 ; beta may be infinite.
+HR,pm25,3,5,6131,696,1.05 (0.84-1.31),0.673,
+HR,pm25,5,Inf,2665,399,0.91 (0.67-1.22) [a],0.517,Loglik converged before variable  5 ; beta may be infinite.
+HR,no2,0,1,79381,7225,1.25 (1.19-1.31),<.001,
+HR,no2,1,3,18768,1922,1.11 (1.01-1.22) [a],0.034,Loglik converged before variable  6 ; beta may be infinite.
+HR,no2,3,5,6131,696,0.95 (0.81-1.11),0.515,
+HR,no2,5,Inf,2665,399,0.94 (0.77-1.15) [a],0.551,Loglik converged before variable  5 ; beta may be infinite.
+HR,o3,0,1,74028,6993,1.01 (0.93-1.09),0.893,
+HR,o3,1,3,18768,1922,0.96 (0.82-1.14) [a],0.672,Loglik converged before variable  6 ; beta may be infinite.
+HR,o3,3,5,6131,696,1.13 (0.86-1.50),0.375,
+HR,o3,5,Inf,2665,399,0.80 (0.56-1.14) [a],0.213,Loglik converged before variable  5 ; beta may be infinite.
+KI,pm25,0,1,564179,22264,1.02 (0.98-1.05),0.358,
+KI,pm25,1,3,397492,42838,0.99 (0.96-1.01),0.269,
+KI,pm25,3,5,208520,29662,0.89 (0.86-0.92) [a],<.001,Loglik converged before variable  6 ; beta may be infinite.
+KI,pm25,5,Inf,100377,28535,0.84 (0.81-0.86) [a],<.001,Loglik converged before variable  6 ; beta may be infinite.
+KI,no2,0,1,600141,22906,0.95 (0.93-0.98),<.001,
+KI,no2,1,3,397492,42838,0.93 (0.91-0.95),<.001,
+KI,no2,3,5,208520,29662,0.88 (0.86-0.90) [a],<.001,Loglik converged before variable  6 ; beta may be infinite.
+KI,no2,5,Inf,100377,28535,0.86 (0.84-0.88) [a],<.001,Loglik converged before variable  6 ; beta may be infinite.
+KI,o3,0,1,564179,22264,1.09 (1.04-1.13),<.001,
+KI,o3,1,3,397492,42838,1.06 (1.02-1.09),<.001,
+KI,o3,3,5,208520,29662,1.08 (1.04-1.11) [a],<.001,Loglik converged before variable  6 ; beta may be infinite.
+KI,o3,5,Inf,100377,28535,1.02 (0.99-1.05) [a],0.201,Loglik converged before variable  6 ; beta may be infinite.
+LI,pm25,0,1,208592,26623,1.06 (1.03-1.09),<.001,
+LI,pm25,1,3,63753,9903,0.98 (0.94-1.03),0.416,
+LI,pm25,3,5,22448,3131,0.95 (0.87-1.03) [a],0.207,Loglik converged before variable  6 ; beta may be infinite.
+LI,pm25,5,Inf,10542,2444,0.93 (0.84-1.02),0.122,
+LI,no2,0,1,222559,27369,1.03 (1.01-1.05),0.010,
+LI,no2,1,3,63753,9903,0.96 (0.93-1.00),0.029,
+LI,no2,3,5,22448,3131,0.92 (0.87-0.98) [a],0.014,Loglik converged before variable  6 ; beta may be infinite.
+LI,no2,5,Inf,10542,2444,0.92 (0.86-0.98),0.013,
+LI,o3,0,1,208592,26623,1.04 (1.00-1.08),0.048,
+LI,o3,1,3,63753,9903,1.04 (0.98-1.10),0.228,
+LI,o3,3,5,22448,3131,1.05 (0.96-1.16) [a],0.298,Loglik converged before variable  6 ; beta may be infinite.
+LI,o3,5,Inf,10542,2444,0.97 (0.88-1.08),0.609,
+LU,pm25,0,1,46788,4223,1.14 (1.06-1.23),<.001,
+LU,pm25,1,3,7830,961,1.13 (0.96-1.32) [a],0.151,Loglik converged before variable  6 ; beta may be infinite.
+LU,pm25,3,5,2233,245,1.07 (0.77-1.48) [a],0.689,Loglik converged before variable  5 ; beta may be infinite.
+LU,pm25,5,Inf,935,153,1.36 (0.89-2.09) [a],0.155,"Loglik converged before variable  5,7 ; beta may be infinite."
+LU,no2,0,1,50401,4316,1.15 (1.08-1.22),<.001,
+LU,no2,1,3,7830,961,1.05 (0.93-1.18) [a],0.470,Loglik converged before variable  6 ; beta may be infinite.
+LU,no2,3,5,2233,245,0.95 (0.75-1.20) [a],0.662,Loglik converged before variable  5 ; beta may be infinite.
+LU,no2,5,Inf,935,153,1.35 (0.98-1.86) [a],0.067,"Loglik converged before variable  5,7 ; beta may be infinite."
+LU,o3,0,1,46788,4223,0.97 (0.88-1.07),0.578,
+LU,o3,1,3,7830,961,0.92 (0.75-1.12) [a],0.395,Loglik converged before variable  6 ; beta may be infinite.
+LU,o3,3,5,2233,245,1.06 (0.72-1.56) [a],0.772,Loglik converged before variable  5 ; beta may be infinite.
+LU,o3,5,Inf,935,153,0.97 (0.57-1.66) [a],0.918,"Loglik converged before variable  5,7 ; beta may be infinite."

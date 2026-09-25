@@ -1,0 +1,6 @@
+component,SRTR_fields,transformation_weight,fixed_pretransition_median,N,missing_n,missing_percent
+diagnosis,CAN_DGN; CAN_PULM_ART_MEAN (sarcoidosis),A=0; B=1.263193; C=1.780242; D=1.514401; diagnosis-specific additions documented in methods,1.51440083414275,52613,1262,2.4
+functional_dependence,CAN_FUNCTN_STAT,0.597904 if dependent; 0 if independent,0.59790409246653,52613,956,1.82
+ventilation,CAN_VENTILATOR; CAN_ON_VENTILATOR fallback,1.576185 if ventilation; 0 if not,0,52613,0,0
+low_BMI,CAN_BMI,"0.107441 * max(20 - BMI, 0)",0,52613,87,0.17
+pulmonary_pressure,CAN_PULM_ART_SYST; diagnosis group,"A: 0.557670 * max(PASP - 40, 0)/10; B/C/D: 0.123048 * max(PASP, 20)/10",0.43066731515465,52613,4194,7.97

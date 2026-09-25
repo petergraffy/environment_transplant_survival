@@ -1,0 +1,7 @@
+metric,value
+lung_candidates,52613
+candidates_with_reconstructed_baseline_LAS,50873
+candidates_with_postbaseline_LAS_record,2961
+candidates_with_eligible_CAS_record,10916
+LAS_records,45002
+CAS_candidate_days,719506

@@ -1,0 +1,2 @@
+analysis,organ,pollutant,n,people,events,hazard_ratio,conf_low,conf_high,p_value,convergence_note,competing_events,expanded_rows,variance,centers_with_events
+recent_2015_2019_3yr_FineGray,KI,pm25,145305,145305,16667,0.9050208851157634,0.8536866639643063,0.9594419557782455,8.091250825469598e-4,Loglik converged before variable  6 ; beta may be infinite. ,64213,1557737,person_clustered_sandwich_for_FineGray_expansion,223

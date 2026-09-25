@@ -1,0 +1,4 @@
+Listings in 2020-2022; all eligible candidates; follow-up capped at 3*365.25 days.
+Prior-year exposure; age, sex, race, ACS proxy; center-specific censoring weights and center-stratified Fine-Gray baseline hazards.
+Transplant/improvement competing; other exits censored. No subsampling. Centers without adverse events contribute no coefficient information.
+Breslow handling of tied event times; person-clustered sandwich variance accounts for Fine-Gray pseudo-record expansion.

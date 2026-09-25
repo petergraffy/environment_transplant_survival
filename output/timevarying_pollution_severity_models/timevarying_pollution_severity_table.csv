@@ -1,0 +1,13 @@
+model_type,organ_label,outcome_label,pollutant,exposure,candidate_organ_episodes,intervals,estimate_ci,p_value_display,adjustment_set
+time_varying,Heart,US-CRS proxy,pm25,Monthly PM2.5 per 5 ug/m3,61449,775904,-0.145 (-0.151 to -0.139),<.001,age + sex + race + zcta_svi_proxy + listing_center fixed effects
+time_varying,Kidney,"Dialysis duration, years",pm25,Monthly PM2.5 per 5 ug/m3,486543,17405373,-0.225 (-0.228 to -0.222),<.001,age + sex + race + zcta_svi_proxy + listing_center fixed effects
+time_varying,Liver,MELD/PELD,pm25,Monthly PM2.5 per 5 ug/m3,179632,2815706,-0.038 (-0.051 to -0.026),<.001,age + sex + race + zcta_svi_proxy + listing_center fixed effects
+time_varying,Lung,Lung urgency proxy,pm25,Monthly PM2.5 per 5 ug/m3,38786,371147,-0.295 (-0.301 to -0.288),<.001,age + sex + race + zcta_svi_proxy + listing_center fixed effects
+time_varying,Heart,US-CRS proxy,o3,Monthly O3 per 10 ppb,76760,923609,-0.013 (-0.016 to -0.010),<.001,age + sex + race + zcta_svi_proxy + listing_center fixed effects
+time_varying,Kidney,"Dialysis duration, years",o3,Monthly O3 per 10 ppb,592129,20633921,-0.008 (-0.010 to -0.006),<.001,age + sex + race + zcta_svi_proxy + listing_center fixed effects
+time_varying,Liver,MELD/PELD,o3,Monthly O3 per 10 ppb,218837,3245102,-0.006 (-0.013 to 0.002),0.120,age + sex + race + zcta_svi_proxy + listing_center fixed effects
+time_varying,Lung,Lung urgency proxy,o3,Monthly O3 per 10 ppb,48311,424842,-0.003 (-0.007 to 0.000),0.068,age + sex + race + zcta_svi_proxy + listing_center fixed effects
+time_varying,Heart,US-CRS proxy,no2,Monthly NO2 per 10 ppb,82122,969185,-0.142 (-0.149 to -0.136),<.001,age + sex + race + zcta_svi_proxy + listing_center fixed effects
+time_varying,Kidney,"Dialysis duration, years",no2,Monthly NO2 per 10 ppb,628132,21563296,-0.180 (-0.184 to -0.177),<.001,age + sex + race + zcta_svi_proxy + listing_center fixed effects
+time_varying,Liver,MELD/PELD,no2,Monthly NO2 per 10 ppb,232844,3357717,-0.048 (-0.062 to -0.034),<.001,age + sex + race + zcta_svi_proxy + listing_center fixed effects
+time_varying,Lung,Lung urgency proxy,no2,Monthly NO2 per 10 ppb,51932,439313,-0.547 (-0.554 to -0.540),<.001,age + sex + race + zcta_svi_proxy + listing_center fixed effects

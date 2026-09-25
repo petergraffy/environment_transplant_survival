@@ -1,0 +1,6 @@
+PASS: all 48 AJ quartile baseline risk counts reproduce the original AJ cohort counts.
+PASS: all 12 baseline and all 12 time-varying primary effect estimates reproduced within 1e-7 in the fitting scripts, with matching sample/event counts.
+PASS: synthetic overlap-chain, same-day boundary, gap, concurrency and pre-event risk-count tests.
+PASS: observed ACS vintage is 2022; no forward/backward-carried vintage used for SVI validation.
+Diagnostic figures show full scaled residuals and a separate smoothed coefficient with approximate 95% bands. The horizontal dashed line is the fitted constant coefficient; x-axis spacing uses the KM transform.
+Official LAS/CAS replacement remains unresolved; see docs/lung_score_source_audit.md.

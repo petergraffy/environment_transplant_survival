@@ -1,0 +1,49 @@
+organ,pollutant,band,n,events,estimate_ci,p_value,convergence_note
+HR,pm25,0-1 years,76760,7310,1.18 (1.14-1.23),<.001,
+HR,pm25,1-3 years,18501,1933,1.03 (0.94-1.12) [a],0.561,Loglik converged before variable  6 ; beta may be infinite.
+HR,pm25,3-5 years,6193,679,0.87 (0.73-1.03),0.101,
+HR,pm25,5+ years,2752,420,1.06 (0.84-1.34) [a],0.615,Loglik converged before variable  5 ; beta may be infinite.
+KI,pm25,0-1 years,592129,22721,1.02 (1.00-1.04),0.111,
+KI,pm25,1-3 years,397352,42535,0.98 (0.96-0.99),0.009,
+KI,pm25,3-5 years,211919,29649,0.97 (0.95-0.99) [a],0.001,Loglik converged before variable  6 ; beta may be infinite.
+KI,pm25,5+ years,104770,29084,0.96 (0.94-0.99),<.001,
+LI,pm25,0-1 years,218837,27764,1.04 (1.02-1.06),<.001,
+LI,pm25,1-3 years,65383,10130,0.98 (0.95-1.01),0.146,
+LI,pm25,3-5 years,23939,3274,1.09 (1.02-1.15),0.006,
+LI,pm25,5+ years,11571,2696,1.06 (0.99-1.13),0.090,
+LU,pm25,0-1 years,48311,4344,1.17 (1.11-1.22),<.001,
+LU,pm25,1-3 years,8106,996,1.03 (0.93-1.15),0.559,
+LU,pm25,3-5 years,2440,274,1.09 (0.88-1.36) [a],0.434,Loglik converged before variable  8 ; beta may be infinite.
+LU,pm25,5+ years,1016,162,1.14 (0.81-1.62) [a],0.450,"Loglik converged before variable  5,7 ; beta may be infinite."
+HR,o3,0-1 years,76760,7310,1.00 (0.97-1.02),0.777,
+HR,o3,1-3 years,18501,1933,1.03 (0.98-1.08) [a],0.264,Loglik converged before variable  6 ; beta may be infinite.
+HR,o3,3-5 years,6193,679,1.04 (0.95-1.13),0.431,
+HR,o3,5+ years,2752,420,0.99 (0.87-1.12) [a],0.832,Loglik converged before variable  5 ; beta may be infinite.
+KI,o3,0-1 years,592129,22721,0.99 (0.98-1.01),0.331,
+KI,o3,1-3 years,397352,42535,0.98 (0.97-0.99),<.001,
+KI,o3,3-5 years,211919,29649,0.99 (0.98-1.00) [a],0.045,Loglik converged before variable  6 ; beta may be infinite.
+KI,o3,5+ years,104770,29084,0.99 (0.98-1.00),0.154,
+LI,o3,0-1 years,218837,27764,0.99 (0.97-1.00),0.018,
+LI,o3,1-3 years,65383,10130,0.98 (0.96-1.00),0.124,
+LI,o3,3-5 years,23939,3274,1.00 (0.97-1.04),0.865,
+LI,o3,5+ years,11571,2696,1.01 (0.97-1.06),0.518,
+LU,o3,0-1 years,48311,4344,0.97 (0.94-1.00),0.055,
+LU,o3,1-3 years,8106,996,0.97 (0.91-1.04),0.423,
+LU,o3,3-5 years,2440,274,0.91 (0.80-1.04) [a],0.171,Loglik converged before variable  8 ; beta may be infinite.
+LU,o3,5+ years,1016,162,0.87 (0.72-1.06) [a],0.169,"Loglik converged before variable  5,7 ; beta may be infinite."
+HR,no2,0-1 years,82122,7610,1.37 (1.32-1.44),<.001,
+HR,no2,1-3 years,19428,1997,1.10 (0.99-1.22) [a],0.065,Loglik converged before variable  6 ; beta may be infinite.
+HR,no2,3-5 years,6414,716,1.04 (0.86-1.25),0.695,
+HR,no2,5+ years,2840,449,0.95 (0.72-1.24) [a],0.700,Loglik converged before variable  5 ; beta may be infinite.
+KI,no2,0-1 years,628132,24108,0.97 (0.95-0.99),0.013,
+KI,no2,1-3 years,417741,45028,0.90 (0.88-0.92),<.001,
+KI,no2,3-5 years,220958,31196,0.85 (0.83-0.87) [a],<.001,Loglik converged before variable  6 ; beta may be infinite.
+KI,no2,5+ years,108081,31120,0.82 (0.79-0.84) [a],<.001,Loglik converged before variable  6 ; beta may be infinite.
+LI,no2,0-1 years,232844,28863,1.04 (1.02-1.06),<.001,
+LI,no2,1-3 years,67545,10441,0.95 (0.92-0.99),0.017,
+LI,no2,3-5 years,24445,3367,0.91 (0.85-0.98) [a],0.018,Loglik converged before variable  6 ; beta may be infinite.
+LI,no2,5+ years,11782,2810,0.88 (0.80-0.97),0.008,
+LU,no2,0-1 years,51932,4477,1.45 (1.37-1.53),<.001,
+LU,no2,1-3 years,8318,1013,1.03 (0.90-1.17) [a],0.689,Loglik converged before variable  6 ; beta may be infinite.
+LU,no2,3-5 years,2472,280,1.00 (0.76-1.31) [a],0.978,Loglik converged before variable  8 ; beta may be infinite.
+LU,no2,5+ years,1032,169,1.23 (0.81-1.88) [a],0.337,"Loglik converged before variable  5,7 ; beta may be infinite."

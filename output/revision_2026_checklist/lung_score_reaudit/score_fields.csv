@@ -1,0 +1,27 @@
+file,variable,label
+ptr_lu_2018_2025/ptr_lu_20180101_20181231.sas7bdat,PTR_TOT_SCORE,PTR_TOT_SCORE
+ptr_lu_2018_2025/ptr_lu_20190101_20191231.sas7bdat,PTR_TOT_SCORE,PTR_TOT_SCORE
+ptr_lu_2018_2025/ptr_lu_20200101_20201231.sas7bdat,PTR_TOT_SCORE,PTR_TOT_SCORE
+ptr_lu_2018_2025/ptr_lu_20210101_20211231_pub.sas7bdat,PTR_TOT_SCORE,PTR_TOT_SCORE
+ptr_lu_2018_2025/ptr_lu_20220101_20221231_pub.sas7bdat,PTR_TOT_SCORE,PTR_TOT_SCORE
+ptr_lu_2018_2025/ptr_lu_20230101_20231231_pub.sas7bdat,PTR_TOT_SCORE,PTR_TOT_SCORE
+ptr_lu_2018_2025/ptr_lu_20240101_20241231_pub.sas7bdat,PTR_TOT_SCORE,PTR_TOT_SCORE
+ptr_lu_2018_2025/ptr_lu_20250101_20251231_pub.sas7bdat,PTR_TOT_SCORE,PTR_TOT_SCORE
+pubsaf2603/cand_kipa.sas7bdat,CAN_GFR,Measured GFR Score
+pubsaf2603/cand_kipa.sas7bdat,CAN_GFR_DT,Date Candidate met the minimum GFR score to begin accruing waiting time
+pubsaf2603/cand_liin.sas7bdat,CAN_CTP_SCORE,Candidate/s CTP score (used for MAOB Liver Variance
+pubsaf2603/mpexcept.sas7bdat,CANHX_MPXCPT_MELD_OR_PELD,Indicates if the score is MELD or PELD
+pubsaf2603/mpexcept.sas7bdat,CANHX_MPXCPT_REQUEST_SCORE,Requested M/P Exception score
+pubsaf2603/stathist_liin.sas7bdat,CANHX_MELD_DIFF_REASON_CD,Reason Match and Laboratory MELD/PELD score are different
+pubsaf2603/stathist_liin.sas7bdat,CANHX_OPTN_LAB_MELD_TY,OPTN score MELD or PELD
+pubsaf2603/stathist_liin.sas7bdat,CANHX_PREV_LOWER_MELD_SCORE,Previous lower MELD score
+pubsaf2603/stathist_liin.sas7bdat,CANHX_SRTR_LAB_MELD_TY,SRTR score MELD or PELD
+pubsaf2603/stathist_liin.sas7bdat,CANHX_SCORE_MISSING,Missing MELD/PELD flag
+pubsaf2603/stathist_liin.sas7bdat,CANHX_EXC_DIAG_HCC1,Exception MELD/PELD Score for HCC1
+pubsaf2603/stathist_liin.sas7bdat,CANHX_EXC_DIAG_HCC2,Exception MELD/PELD Score for HCC2
+pubsaf2603/stathist_liin.sas7bdat,CANHX_EXC_DIAG_HCC_NOPOLICY,Exception MELD/PELD score for HCC not by policy
+pubsaf2603/stathist_liin.sas7bdat,CANHX_EXC_DIAG_OTHER,Other diagnosis MELD/PELD score exception
+pubsaf2603/stathist_liin.sas7bdat,CANHX_EXC_SCORE,Exception Score
+pubsaf2603/statjust_li2a.sas7bdat,CANHX_STAT_CD,Candidate/s current Medical Urgency Status
+pubsaf2603/statjust_li2a.sas7bdat,CANHX_CTP_SCORE,CTP Score
+pubsaf2603/statjust_li2b.sas7bdat,CANHX_CTP_SCORE,CTP Score

@@ -1,0 +1,37 @@
+organ	pollutant	listing_start	listing_end_exclusive	n	events	estimate_ci	p_value	adult_heart_only	convergence_note
+HR	pm25	Study start	2018-10-18	38247	6425	1.17 (1.10-1.25)	<.001	TRUE	
+HR	pm25	2018-10-18	Study end	25140	1893	0.94 (0.78-1.14)	0.527	TRUE	
+HR	no2	Study start	2018-10-18	38247	6425	1.07 (1.02-1.13)	0.006	TRUE	
+HR	no2	2018-10-18	Study end	29917	2083	0.85 (0.70-1.04)	0.119	TRUE	
+HR	o3	Study start	2018-10-18	38247	6425	0.97 (0.89-1.06)	0.546	TRUE	
+HR	o3	2018-10-18	Study end	25140	1893	0.88 (0.72-1.08)	0.237	TRUE	
+KI	pm25	Study start	2014-12-04	251552	70830	0.97 (0.95-0.99)	0.003	FALSE	
+KI	pm25	2014-12-04	2021-03-15	181165	38928	0.89 (0.86-0.93) [a]	<.001	FALSE	Loglik converged before variable  6 ; coefficient may be infinite.
+KI	pm25	2021-03-15	Study end	131462	13541	1.02 (0.96-1.09)	0.475	FALSE	
+KI	no2	Study start	2014-12-04	251552	70830	0.94 (0.93-0.95)	<.001	FALSE	
+KI	no2	2014-12-04	2021-03-15	181165	38928	0.81 (0.79-0.84) [a]	<.001	FALSE	Loglik converged before variable  6 ; coefficient may be infinite.
+KI	no2	2021-03-15	Study end	167424	14183	0.91 (0.83-1.00)	0.056	FALSE	
+KI	o3	Study start	2014-12-04	251552	70830	1.05 (1.03-1.07)	<.001	FALSE	
+KI	o3	2014-12-04	2021-03-15	181165	38928	1.09 (1.05-1.13) [a]	<.001	FALSE	Loglik converged before variable  6 ; coefficient may be infinite.
+KI	o3	2021-03-15	Study end	131462	13541	1.14 (1.06-1.23)	<.001	FALSE	
+LI	pm25	Study start	2016-01-11	99996	25278	0.94 (0.91-0.97)	<.001	FALSE	
+LI	pm25	2016-01-11	2020-02-04	46465	8872	0.96 (0.89-1.04)	0.330	FALSE	
+LI	pm25	2020-02-04	2023-07-13	41926	5970	1.02 (0.94-1.11)	0.633	FALSE	
+LI	pm25	2023-07-13	Study end	20205	1981	0.77 (0.64-0.93)	0.006	FALSE	
+LI	no2	Study start	2016-01-11	99996	25278	0.94 (0.92-0.96)	<.001	FALSE	
+LI	no2	2016-01-11	2020-02-04	46465	8872	0.90 (0.84-0.95)	<.001	FALSE	
+LI	no2	2020-02-04	2023-07-13	41926	5970	0.90 (0.79-1.03)	0.116	FALSE	
+LI	no2	2023-07-13	Study end	34172	2727	0.93 (0.77-1.13)	0.476	FALSE	
+LI	o3	Study start	2016-01-11	99996	25278	1.05 (1.01-1.09)	0.005	FALSE	
+LI	o3	2016-01-11	2020-02-04	46465	8872	1.06 (0.98-1.14)	0.121	FALSE	
+LI	o3	2020-02-04	2023-07-13	41926	5970	1.01 (0.92-1.11)	0.830	FALSE	
+LI	o3	2023-07-13	Study end	20205	1981	1.21 (1.00-1.45)	0.051	FALSE	
+LU	pm25	Study start	2017-11-24	25724	3943	1.12 (1.04-1.22)	0.004	FALSE	
+LU	pm25	2017-11-24	2023-03-09	15009	1352	0.97 (0.79-1.20)	0.797	FALSE	
+LU	pm25	2023-03-09	Study end	6055	287	0.89 (0.53-1.49) [a]	0.658	FALSE	Loglik converged before variable  5,7 ; coefficient may be infinite.
+LU	no2	Study start	2017-11-24	25724	3943	1.04 (0.98-1.11)	0.160	FALSE	
+LU	no2	2017-11-24	2023-03-09	15009	1352	1.03 (0.87-1.23)	0.702	FALSE	
+LU	no2	2023-03-09	Study end	9668	380	1.07 (0.62-1.83) [a]	0.814	FALSE	Loglik converged before variable  5,7 ; coefficient may be infinite.
+LU	o3	Study start	2017-11-24	25724	3943	1.01 (0.92-1.11)	0.816	FALSE	
+LU	o3	2017-11-24	2023-03-09	15009	1352	0.85 (0.69-1.04)	0.122	FALSE	
+LU	o3	2023-03-09	Study end	6055	287	0.93 (0.53-1.63) [a]	0.795	FALSE	Loglik converged before variable  5,7 ; coefficient may be infinite.

@@ -1,0 +1,913 @@
+organ,pollutant,quartile,horizon,time,n_risk
+Heart,PM2.5,Q1 lowest,1,0,19389
+Heart,PM2.5,Q1 lowest,1,0.5,7132
+Heart,PM2.5,Q1 lowest,1,1,4712
+Heart,PM2.5,Q1 lowest,3,0,19389
+Heart,PM2.5,Q1 lowest,3,1,4712
+Heart,PM2.5,Q1 lowest,3,2,2432
+Heart,PM2.5,Q1 lowest,3,3,1401
+Heart,PM2.5,Q1 lowest,5,0,19389
+Heart,PM2.5,Q1 lowest,5,1,4712
+Heart,PM2.5,Q1 lowest,5,2,2432
+Heart,PM2.5,Q1 lowest,5,3,1401
+Heart,PM2.5,Q1 lowest,5,4,867
+Heart,PM2.5,Q1 lowest,5,5,482
+Heart,PM2.5,Q1 lowest,10,0,19389
+Heart,PM2.5,Q1 lowest,10,2,2432
+Heart,PM2.5,Q1 lowest,10,4,867
+Heart,PM2.5,Q1 lowest,10,6,290
+Heart,PM2.5,Q1 lowest,10,8,92
+Heart,PM2.5,Q1 lowest,10,10,44
+Heart,PM2.5,Q2,1,0,19661
+Heart,PM2.5,Q2,1,0.5,7579
+Heart,PM2.5,Q2,1,1,5064
+Heart,PM2.5,Q2,3,0,19661
+Heart,PM2.5,Q2,3,1,5064
+Heart,PM2.5,Q2,3,2,2636
+Heart,PM2.5,Q2,3,3,1538
+Heart,PM2.5,Q2,5,0,19661
+Heart,PM2.5,Q2,5,1,5064
+Heart,PM2.5,Q2,5,2,2636
+Heart,PM2.5,Q2,5,3,1538
+Heart,PM2.5,Q2,5,4,948
+Heart,PM2.5,Q2,5,5,615
+Heart,PM2.5,Q2,10,0,19661
+Heart,PM2.5,Q2,10,2,2636
+Heart,PM2.5,Q2,10,4,948
+Heart,PM2.5,Q2,10,6,412
+Heart,PM2.5,Q2,10,8,199
+Heart,PM2.5,Q2,10,10,77
+Heart,PM2.5,Q3,1,0,18644
+Heart,PM2.5,Q3,1,0.5,7492
+Heart,PM2.5,Q3,1,1,4965
+Heart,PM2.5,Q3,3,0,18644
+Heart,PM2.5,Q3,3,1,4965
+Heart,PM2.5,Q3,3,2,2724
+Heart,PM2.5,Q3,3,3,1640
+Heart,PM2.5,Q3,5,0,18644
+Heart,PM2.5,Q3,5,1,4965
+Heart,PM2.5,Q3,5,2,2724
+Heart,PM2.5,Q3,5,3,1640
+Heart,PM2.5,Q3,5,4,1065
+Heart,PM2.5,Q3,5,5,728
+Heart,PM2.5,Q3,10,0,18644
+Heart,PM2.5,Q3,10,2,2724
+Heart,PM2.5,Q3,10,4,1065
+Heart,PM2.5,Q3,10,6,514
+Heart,PM2.5,Q3,10,8,288
+Heart,PM2.5,Q3,10,10,154
+Heart,PM2.5,Q4 highest,1,0,16420
+Heart,PM2.5,Q4 highest,1,0.5,6014
+Heart,PM2.5,Q4 highest,1,1,4045
+Heart,PM2.5,Q4 highest,3,0,16420
+Heart,PM2.5,Q4 highest,3,1,4045
+Heart,PM2.5,Q4 highest,3,2,2366
+Heart,PM2.5,Q4 highest,3,3,1555
+Heart,PM2.5,Q4 highest,5,0,16420
+Heart,PM2.5,Q4 highest,5,1,4045
+Heart,PM2.5,Q4 highest,5,2,2366
+Heart,PM2.5,Q4 highest,5,3,1555
+Heart,PM2.5,Q4 highest,5,4,1138
+Heart,PM2.5,Q4 highest,5,5,842
+Heart,PM2.5,Q4 highest,10,0,16420
+Heart,PM2.5,Q4 highest,10,2,2366
+Heart,PM2.5,Q4 highest,10,4,1138
+Heart,PM2.5,Q4 highest,10,6,628
+Heart,PM2.5,Q4 highest,10,8,385
+Heart,PM2.5,Q4 highest,10,10,255
+Kidney,PM2.5,Q1 lowest,1,0,137360
+Kidney,PM2.5,Q1 lowest,1,0.5,109316
+Kidney,PM2.5,Q1 lowest,1,1,91777
+Kidney,PM2.5,Q1 lowest,3,0,137360
+Kidney,PM2.5,Q1 lowest,3,1,91777
+Kidney,PM2.5,Q1 lowest,3,2,62202
+Kidney,PM2.5,Q1 lowest,3,3,41569
+Kidney,PM2.5,Q1 lowest,5,0,137360
+Kidney,PM2.5,Q1 lowest,5,1,91777
+Kidney,PM2.5,Q1 lowest,5,2,62202
+Kidney,PM2.5,Q1 lowest,5,3,41569
+Kidney,PM2.5,Q1 lowest,5,4,26643
+Kidney,PM2.5,Q1 lowest,5,5,15833
+Kidney,PM2.5,Q1 lowest,10,0,137360
+Kidney,PM2.5,Q1 lowest,10,2,62202
+Kidney,PM2.5,Q1 lowest,10,4,26643
+Kidney,PM2.5,Q1 lowest,10,6,8892
+Kidney,PM2.5,Q1 lowest,10,8,3002
+Kidney,PM2.5,Q1 lowest,10,10,1178
+Kidney,PM2.5,Q2,1,0,137830
+Kidney,PM2.5,Q2,1,0.5,108849
+Kidney,PM2.5,Q2,1,1,92164
+Kidney,PM2.5,Q2,3,0,137830
+Kidney,PM2.5,Q2,3,1,92164
+Kidney,PM2.5,Q2,3,2,64419
+Kidney,PM2.5,Q2,3,3,43689
+Kidney,PM2.5,Q2,5,0,137830
+Kidney,PM2.5,Q2,5,1,92164
+Kidney,PM2.5,Q2,5,2,64419
+Kidney,PM2.5,Q2,5,3,43689
+Kidney,PM2.5,Q2,5,4,28546
+Kidney,PM2.5,Q2,5,5,18777
+Kidney,PM2.5,Q2,10,0,137830
+Kidney,PM2.5,Q2,10,2,64419
+Kidney,PM2.5,Q2,10,4,28546
+Kidney,PM2.5,Q2,10,6,11972
+Kidney,PM2.5,Q2,10,8,4721
+Kidney,PM2.5,Q2,10,10,2023
+Kidney,PM2.5,Q3,1,0,142258
+Kidney,PM2.5,Q3,1,0.5,117060
+Kidney,PM2.5,Q3,1,1,101853
+Kidney,PM2.5,Q3,3,0,142258
+Kidney,PM2.5,Q3,3,1,101853
+Kidney,PM2.5,Q3,3,2,74961
+Kidney,PM2.5,Q3,3,3,53778
+Kidney,PM2.5,Q3,5,0,142258
+Kidney,PM2.5,Q3,5,1,101853
+Kidney,PM2.5,Q3,5,2,74961
+Kidney,PM2.5,Q3,5,3,53778
+Kidney,PM2.5,Q3,5,4,37871
+Kidney,PM2.5,Q3,5,5,26344
+Kidney,PM2.5,Q3,10,0,142258
+Kidney,PM2.5,Q3,10,2,74961
+Kidney,PM2.5,Q3,10,4,37871
+Kidney,PM2.5,Q3,10,6,18099
+Kidney,PM2.5,Q3,10,8,8461
+Kidney,PM2.5,Q3,10,10,4340
+Kidney,PM2.5,Q4 highest,1,0,147277
+Kidney,PM2.5,Q4 highest,1,0.5,125769
+Kidney,PM2.5,Q4 highest,1,1,112053
+Kidney,PM2.5,Q4 highest,3,0,147277
+Kidney,PM2.5,Q4 highest,3,1,112053
+Kidney,PM2.5,Q4 highest,3,2,88895
+Kidney,PM2.5,Q4 highest,3,3,69669
+Kidney,PM2.5,Q4 highest,5,0,147277
+Kidney,PM2.5,Q4 highest,5,1,112053
+Kidney,PM2.5,Q4 highest,5,2,88895
+Kidney,PM2.5,Q4 highest,5,3,69669
+Kidney,PM2.5,Q4 highest,5,4,53035
+Kidney,PM2.5,Q4 highest,5,5,39501
+Kidney,PM2.5,Q4 highest,10,0,147277
+Kidney,PM2.5,Q4 highest,10,2,88895
+Kidney,PM2.5,Q4 highest,10,4,53035
+Kidney,PM2.5,Q4 highest,10,6,29429
+Kidney,PM2.5,Q4 highest,10,8,15874
+Kidney,PM2.5,Q4 highest,10,10,8927
+Liver,PM2.5,Q1 lowest,1,0,53727
+Liver,PM2.5,Q1 lowest,1,0.5,25045
+Liver,PM2.5,Q1 lowest,1,1,15884
+Liver,PM2.5,Q1 lowest,3,0,53727
+Liver,PM2.5,Q1 lowest,3,1,15884
+Liver,PM2.5,Q1 lowest,3,2,8060
+Liver,PM2.5,Q1 lowest,3,3,4796
+Liver,PM2.5,Q1 lowest,5,0,53727
+Liver,PM2.5,Q1 lowest,5,1,15884
+Liver,PM2.5,Q1 lowest,5,2,8060
+Liver,PM2.5,Q1 lowest,5,3,4796
+Liver,PM2.5,Q1 lowest,5,4,2968
+Liver,PM2.5,Q1 lowest,5,5,1876
+Liver,PM2.5,Q1 lowest,10,0,53727
+Liver,PM2.5,Q1 lowest,10,2,8060
+Liver,PM2.5,Q1 lowest,10,4,2968
+Liver,PM2.5,Q1 lowest,10,6,1142
+Liver,PM2.5,Q1 lowest,10,8,448
+Liver,PM2.5,Q1 lowest,10,10,174
+Liver,PM2.5,Q2,1,0,53638
+Liver,PM2.5,Q2,1,0.5,24512
+Liver,PM2.5,Q2,1,1,15237
+Liver,PM2.5,Q2,3,0,53638
+Liver,PM2.5,Q2,3,1,15237
+Liver,PM2.5,Q2,3,2,7771
+Liver,PM2.5,Q2,3,3,4724
+Liver,PM2.5,Q2,5,0,53638
+Liver,PM2.5,Q2,5,1,15237
+Liver,PM2.5,Q2,5,2,7771
+Liver,PM2.5,Q2,5,3,4724
+Liver,PM2.5,Q2,5,4,3098
+Liver,PM2.5,Q2,5,5,2123
+Liver,PM2.5,Q2,10,0,53638
+Liver,PM2.5,Q2,10,2,7771
+Liver,PM2.5,Q2,10,4,3098
+Liver,PM2.5,Q2,10,6,1479
+Liver,PM2.5,Q2,10,8,704
+Liver,PM2.5,Q2,10,10,321
+Liver,PM2.5,Q3,1,0,51345
+Liver,PM2.5,Q3,1,0.5,23873
+Liver,PM2.5,Q3,1,1,15719
+Liver,PM2.5,Q3,3,0,51345
+Liver,PM2.5,Q3,3,1,15719
+Liver,PM2.5,Q3,3,2,8711
+Liver,PM2.5,Q3,3,3,5725
+Liver,PM2.5,Q3,5,0,51345
+Liver,PM2.5,Q3,5,1,15719
+Liver,PM2.5,Q3,5,2,8711
+Liver,PM2.5,Q3,5,3,5725
+Liver,PM2.5,Q3,5,4,3927
+Liver,PM2.5,Q3,5,5,2771
+Liver,PM2.5,Q3,10,0,51345
+Liver,PM2.5,Q3,10,2,8711
+Liver,PM2.5,Q3,10,4,3927
+Liver,PM2.5,Q3,10,6,1978
+Liver,PM2.5,Q3,10,8,1031
+Liver,PM2.5,Q3,10,10,540
+Liver,PM2.5,Q4 highest,1,0,50082
+Liver,PM2.5,Q4 highest,1,0.5,23994
+Liver,PM2.5,Q4 highest,1,1,16978
+Liver,PM2.5,Q4 highest,3,0,50082
+Liver,PM2.5,Q4 highest,3,1,16978
+Liver,PM2.5,Q4 highest,3,2,10325
+Liver,PM2.5,Q4 highest,3,3,7223
+Liver,PM2.5,Q4 highest,5,0,50082
+Liver,PM2.5,Q4 highest,5,1,16978
+Liver,PM2.5,Q4 highest,5,2,10325
+Liver,PM2.5,Q4 highest,5,3,7223
+Liver,PM2.5,Q4 highest,5,4,5207
+Liver,PM2.5,Q4 highest,5,5,3781
+Liver,PM2.5,Q4 highest,10,0,50082
+Liver,PM2.5,Q4 highest,10,2,10325
+Liver,PM2.5,Q4 highest,10,4,5207
+Liver,PM2.5,Q4 highest,10,6,2771
+Liver,PM2.5,Q4 highest,10,8,1556
+Liver,PM2.5,Q4 highest,10,10,861
+Lung,PM2.5,Q1 lowest,1,0,13143
+Lung,PM2.5,Q1 lowest,1,0.5,3371
+Lung,PM2.5,Q1 lowest,1,1,1895
+Lung,PM2.5,Q1 lowest,3,0,13143
+Lung,PM2.5,Q1 lowest,3,1,1895
+Lung,PM2.5,Q1 lowest,3,2,867
+Lung,PM2.5,Q1 lowest,3,3,479
+Lung,PM2.5,Q1 lowest,5,0,13143
+Lung,PM2.5,Q1 lowest,5,1,1895
+Lung,PM2.5,Q1 lowest,5,2,867
+Lung,PM2.5,Q1 lowest,5,3,479
+Lung,PM2.5,Q1 lowest,5,4,284
+Lung,PM2.5,Q1 lowest,5,5,192
+Lung,PM2.5,Q1 lowest,10,0,13143
+Lung,PM2.5,Q1 lowest,10,2,867
+Lung,PM2.5,Q1 lowest,10,4,284
+Lung,PM2.5,Q1 lowest,10,6,110
+Lung,PM2.5,Q1 lowest,10,8,41
+Lung,PM2.5,Q1 lowest,10,10,13
+Lung,PM2.5,Q2,1,0,12492
+Lung,PM2.5,Q2,1,0.5,3179
+Lung,PM2.5,Q2,1,1,1806
+Lung,PM2.5,Q2,3,0,12492
+Lung,PM2.5,Q2,3,1,1806
+Lung,PM2.5,Q2,3,2,854
+Lung,PM2.5,Q2,3,3,460
+Lung,PM2.5,Q2,5,0,12492
+Lung,PM2.5,Q2,5,1,1806
+Lung,PM2.5,Q2,5,2,854
+Lung,PM2.5,Q2,5,3,460
+Lung,PM2.5,Q2,5,4,276
+Lung,PM2.5,Q2,5,5,186
+Lung,PM2.5,Q2,10,0,12492
+Lung,PM2.5,Q2,10,2,854
+Lung,PM2.5,Q2,10,4,276
+Lung,PM2.5,Q2,10,6,113
+Lung,PM2.5,Q2,10,8,40
+Lung,PM2.5,Q2,10,10,18
+Lung,PM2.5,Q3,1,0,11368
+Lung,PM2.5,Q3,1,0.5,3350
+Lung,PM2.5,Q3,1,1,2016
+Lung,PM2.5,Q3,3,0,11368
+Lung,PM2.5,Q3,3,1,2016
+Lung,PM2.5,Q3,3,2,1003
+Lung,PM2.5,Q3,3,3,594
+Lung,PM2.5,Q3,5,0,11368
+Lung,PM2.5,Q3,5,1,2016
+Lung,PM2.5,Q3,5,2,1003
+Lung,PM2.5,Q3,5,3,594
+Lung,PM2.5,Q3,5,4,366
+Lung,PM2.5,Q3,5,5,241
+Lung,PM2.5,Q3,10,0,11368
+Lung,PM2.5,Q3,10,2,1003
+Lung,PM2.5,Q3,10,4,366
+Lung,PM2.5,Q3,10,6,181
+Lung,PM2.5,Q3,10,8,89
+Lung,PM2.5,Q3,10,10,36
+Lung,PM2.5,Q4 highest,1,0,9840
+Lung,PM2.5,Q4 highest,1,0.5,3336
+Lung,PM2.5,Q4 highest,1,1,2119
+Lung,PM2.5,Q4 highest,3,0,9840
+Lung,PM2.5,Q4 highest,3,1,2119
+Lung,PM2.5,Q4 highest,3,2,1166
+Lung,PM2.5,Q4 highest,3,3,702
+Lung,PM2.5,Q4 highest,5,0,9840
+Lung,PM2.5,Q4 highest,5,1,2119
+Lung,PM2.5,Q4 highest,5,2,1166
+Lung,PM2.5,Q4 highest,5,3,702
+Lung,PM2.5,Q4 highest,5,4,480
+Lung,PM2.5,Q4 highest,5,5,317
+Lung,PM2.5,Q4 highest,10,0,9840
+Lung,PM2.5,Q4 highest,10,2,1166
+Lung,PM2.5,Q4 highest,10,4,480
+Lung,PM2.5,Q4 highest,10,6,213
+Lung,PM2.5,Q4 highest,10,8,105
+Lung,PM2.5,Q4 highest,10,10,58
+Heart,NO2,Q1 lowest,1,0,21635
+Heart,NO2,Q1 lowest,1,0.5,6620
+Heart,NO2,Q1 lowest,1,1,4063
+Heart,NO2,Q1 lowest,3,0,21635
+Heart,NO2,Q1 lowest,3,1,4063
+Heart,NO2,Q1 lowest,3,2,1937
+Heart,NO2,Q1 lowest,3,3,997
+Heart,NO2,Q1 lowest,5,0,21635
+Heart,NO2,Q1 lowest,5,1,4063
+Heart,NO2,Q1 lowest,5,2,1937
+Heart,NO2,Q1 lowest,5,3,997
+Heart,NO2,Q1 lowest,5,4,590
+Heart,NO2,Q1 lowest,5,5,312
+Heart,NO2,Q1 lowest,10,0,21635
+Heart,NO2,Q1 lowest,10,2,1937
+Heart,NO2,Q1 lowest,10,4,590
+Heart,NO2,Q1 lowest,10,6,185
+Heart,NO2,Q1 lowest,10,8,82
+Heart,NO2,Q1 lowest,10,10,40
+Heart,NO2,Q2,1,0,21258
+Heart,NO2,Q2,1,0.5,7738
+Heart,NO2,Q2,1,1,5018
+Heart,NO2,Q2,3,0,21258
+Heart,NO2,Q2,3,1,5018
+Heart,NO2,Q2,3,2,2628
+Heart,NO2,Q2,3,3,1579
+Heart,NO2,Q2,5,0,21258
+Heart,NO2,Q2,5,1,5018
+Heart,NO2,Q2,5,2,2628
+Heart,NO2,Q2,5,3,1579
+Heart,NO2,Q2,5,4,1022
+Heart,NO2,Q2,5,5,656
+Heart,NO2,Q2,10,0,21258
+Heart,NO2,Q2,10,2,2628
+Heart,NO2,Q2,10,4,1022
+Heart,NO2,Q2,10,6,426
+Heart,NO2,Q2,10,8,211
+Heart,NO2,Q2,10,10,112
+Heart,NO2,Q3,1,0,19881
+Heart,NO2,Q3,1,0.5,7739
+Heart,NO2,Q3,1,1,5095
+Heart,NO2,Q3,3,0,19881
+Heart,NO2,Q3,3,1,5095
+Heart,NO2,Q3,3,2,2887
+Heart,NO2,Q3,3,3,1781
+Heart,NO2,Q3,5,0,19881
+Heart,NO2,Q3,5,1,5095
+Heart,NO2,Q3,5,2,2887
+Heart,NO2,Q3,5,3,1781
+Heart,NO2,Q3,5,4,1152
+Heart,NO2,Q3,5,5,790
+Heart,NO2,Q3,10,0,19881
+Heart,NO2,Q3,10,2,2887
+Heart,NO2,Q3,10,4,1152
+Heart,NO2,Q3,10,6,558
+Heart,NO2,Q3,10,8,289
+Heart,NO2,Q3,10,10,156
+Heart,NO2,Q4 highest,1,0,16695
+Heart,NO2,Q4 highest,1,0.5,6800
+Heart,NO2,Q4 highest,1,1,4610
+Heart,NO2,Q4 highest,3,0,16695
+Heart,NO2,Q4 highest,3,1,4610
+Heart,NO2,Q4 highest,3,2,2706
+Heart,NO2,Q4 highest,3,3,1777
+Heart,NO2,Q4 highest,5,0,16695
+Heart,NO2,Q4 highest,5,1,4610
+Heart,NO2,Q4 highest,5,2,2706
+Heart,NO2,Q4 highest,5,3,1777
+Heart,NO2,Q4 highest,5,4,1254
+Heart,NO2,Q4 highest,5,5,909
+Heart,NO2,Q4 highest,10,0,16695
+Heart,NO2,Q4 highest,10,2,2706
+Heart,NO2,Q4 highest,10,4,1254
+Heart,NO2,Q4 highest,10,6,675
+Heart,NO2,Q4 highest,10,8,382
+Heart,NO2,Q4 highest,10,10,222
+Kidney,NO2,Q1 lowest,1,0,141719
+Kidney,NO2,Q1 lowest,1,0.5,102400
+Kidney,NO2,Q1 lowest,1,1,79849
+Kidney,NO2,Q1 lowest,3,0,141719
+Kidney,NO2,Q1 lowest,3,1,79849
+Kidney,NO2,Q1 lowest,3,2,50191
+Kidney,NO2,Q1 lowest,3,3,30861
+Kidney,NO2,Q1 lowest,5,0,141719
+Kidney,NO2,Q1 lowest,5,1,79849
+Kidney,NO2,Q1 lowest,5,2,50191
+Kidney,NO2,Q1 lowest,5,3,30861
+Kidney,NO2,Q1 lowest,5,4,18171
+Kidney,NO2,Q1 lowest,5,5,10395
+Kidney,NO2,Q1 lowest,10,0,141719
+Kidney,NO2,Q1 lowest,10,2,50191
+Kidney,NO2,Q1 lowest,10,4,18171
+Kidney,NO2,Q1 lowest,10,6,6015
+Kidney,NO2,Q1 lowest,10,8,2513
+Kidney,NO2,Q1 lowest,10,10,1204
+Kidney,NO2,Q2,1,0,147241
+Kidney,NO2,Q2,1,0.5,112355
+Kidney,NO2,Q2,1,1,92157
+Kidney,NO2,Q2,3,0,147241
+Kidney,NO2,Q2,3,1,92157
+Kidney,NO2,Q2,3,2,63766
+Kidney,NO2,Q2,3,3,43259
+Kidney,NO2,Q2,5,0,147241
+Kidney,NO2,Q2,5,1,92157
+Kidney,NO2,Q2,5,2,63766
+Kidney,NO2,Q2,5,3,43259
+Kidney,NO2,Q2,5,4,28408
+Kidney,NO2,Q2,5,5,18115
+Kidney,NO2,Q2,10,0,147241
+Kidney,NO2,Q2,10,2,63766
+Kidney,NO2,Q2,10,4,28408
+Kidney,NO2,Q2,10,6,11544
+Kidney,NO2,Q2,10,8,4996
+Kidney,NO2,Q2,10,10,2547
+Kidney,NO2,Q3,1,0,151439
+Kidney,NO2,Q3,1,0.5,120721
+Kidney,NO2,Q3,1,1,102593
+Kidney,NO2,Q3,3,0,151439
+Kidney,NO2,Q3,3,1,102593
+Kidney,NO2,Q3,3,2,76376
+Kidney,NO2,Q3,3,3,55264
+Kidney,NO2,Q3,5,0,151439
+Kidney,NO2,Q3,5,1,102593
+Kidney,NO2,Q3,5,2,76376
+Kidney,NO2,Q3,5,3,55264
+Kidney,NO2,Q3,5,4,38718
+Kidney,NO2,Q3,5,5,26499
+Kidney,NO2,Q3,10,0,151439
+Kidney,NO2,Q3,10,2,76376
+Kidney,NO2,Q3,10,4,38718
+Kidney,NO2,Q3,10,6,17767
+Kidney,NO2,Q3,10,8,7806
+Kidney,NO2,Q3,10,10,3899
+Kidney,NO2,Q4 highest,1,0,160309
+Kidney,NO2,Q4 highest,1,0.5,137405
+Kidney,NO2,Q4 highest,1,1,123248
+Kidney,NO2,Q4 highest,3,0,160309
+Kidney,NO2,Q4 highest,3,1,123248
+Kidney,NO2,Q4 highest,3,2,100144
+Kidney,NO2,Q4 highest,3,3,79321
+Kidney,NO2,Q4 highest,5,0,160309
+Kidney,NO2,Q4 highest,5,1,123248
+Kidney,NO2,Q4 highest,5,2,100144
+Kidney,NO2,Q4 highest,5,3,79321
+Kidney,NO2,Q4 highest,5,4,60798
+Kidney,NO2,Q4 highest,5,5,45446
+Kidney,NO2,Q4 highest,10,0,160309
+Kidney,NO2,Q4 highest,10,2,100144
+Kidney,NO2,Q4 highest,10,4,60798
+Kidney,NO2,Q4 highest,10,6,33066
+Kidney,NO2,Q4 highest,10,8,16743
+Kidney,NO2,Q4 highest,10,10,8818
+Liver,NO2,Q1 lowest,1,0,60662
+Liver,NO2,Q1 lowest,1,0.5,22553
+Liver,NO2,Q1 lowest,1,1,12910
+Liver,NO2,Q1 lowest,3,0,60662
+Liver,NO2,Q1 lowest,3,1,12910
+Liver,NO2,Q1 lowest,3,2,6002
+Liver,NO2,Q1 lowest,3,3,3250
+Liver,NO2,Q1 lowest,5,0,60662
+Liver,NO2,Q1 lowest,5,1,12910
+Liver,NO2,Q1 lowest,5,2,6002
+Liver,NO2,Q1 lowest,5,3,3250
+Liver,NO2,Q1 lowest,5,4,1917
+Liver,NO2,Q1 lowest,5,5,1171
+Liver,NO2,Q1 lowest,10,0,60662
+Liver,NO2,Q1 lowest,10,2,6002
+Liver,NO2,Q1 lowest,10,4,1917
+Liver,NO2,Q1 lowest,10,6,736
+Liver,NO2,Q1 lowest,10,8,354
+Liver,NO2,Q1 lowest,10,10,163
+Liver,NO2,Q2,1,0,56169
+Liver,NO2,Q2,1,0.5,24544
+Liver,NO2,Q2,1,1,15380
+Liver,NO2,Q2,3,0,56169
+Liver,NO2,Q2,3,1,15380
+Liver,NO2,Q2,3,2,8289
+Liver,NO2,Q2,3,3,5205
+Liver,NO2,Q2,5,0,56169
+Liver,NO2,Q2,5,1,15380
+Liver,NO2,Q2,5,2,8289
+Liver,NO2,Q2,5,3,5205
+Liver,NO2,Q2,5,4,3380
+Liver,NO2,Q2,5,5,2298
+Liver,NO2,Q2,10,0,56169
+Liver,NO2,Q2,10,2,8289
+Liver,NO2,Q2,10,4,3380
+Liver,NO2,Q2,10,6,1549
+Liver,NO2,Q2,10,8,708
+Liver,NO2,Q2,10,10,348
+Liver,NO2,Q3,1,0,53994
+Liver,NO2,Q3,1,0.5,25329
+Liver,NO2,Q3,1,1,16443
+Liver,NO2,Q3,3,0,53994
+Liver,NO2,Q3,3,1,16443
+Liver,NO2,Q3,3,2,9169
+Liver,NO2,Q3,3,3,6048
+Liver,NO2,Q3,5,0,53994
+Liver,NO2,Q3,5,1,16443
+Liver,NO2,Q3,5,2,9169
+Liver,NO2,Q3,5,3,6048
+Liver,NO2,Q3,5,4,4107
+Liver,NO2,Q3,5,5,2826
+Liver,NO2,Q3,10,0,53994
+Liver,NO2,Q3,10,2,9169
+Liver,NO2,Q3,10,4,4107
+Liver,NO2,Q3,10,6,1980
+Liver,NO2,Q3,10,8,987
+Liver,NO2,Q3,10,10,469
+Liver,NO2,Q4 highest,1,0,51941
+Liver,NO2,Q4 highest,1,0.5,26983
+Liver,NO2,Q4 highest,1,1,19085
+Liver,NO2,Q4 highest,3,0,51941
+Liver,NO2,Q4 highest,3,1,19085
+Liver,NO2,Q4 highest,3,2,11407
+Liver,NO2,Q4 highest,3,3,7965
+Liver,NO2,Q4 highest,5,0,51941
+Liver,NO2,Q4 highest,5,1,19085
+Liver,NO2,Q4 highest,5,2,11407
+Liver,NO2,Q4 highest,5,3,7965
+Liver,NO2,Q4 highest,5,4,5796
+Liver,NO2,Q4 highest,5,5,4256
+Liver,NO2,Q4 highest,10,0,51941
+Liver,NO2,Q4 highest,10,2,11407
+Liver,NO2,Q4 highest,10,4,5796
+Liver,NO2,Q4 highest,10,6,3105
+Liver,NO2,Q4 highest,10,8,1690
+Liver,NO2,Q4 highest,10,10,916
+Lung,NO2,Q1 lowest,1,0,14336
+Lung,NO2,Q1 lowest,1,0.5,2779
+Lung,NO2,Q1 lowest,1,1,1444
+Lung,NO2,Q1 lowest,3,0,14336
+Lung,NO2,Q1 lowest,3,1,1444
+Lung,NO2,Q1 lowest,3,2,617
+Lung,NO2,Q1 lowest,3,3,329
+Lung,NO2,Q1 lowest,5,0,14336
+Lung,NO2,Q1 lowest,5,1,1444
+Lung,NO2,Q1 lowest,5,2,617
+Lung,NO2,Q1 lowest,5,3,329
+Lung,NO2,Q1 lowest,5,4,174
+Lung,NO2,Q1 lowest,5,5,117
+Lung,NO2,Q1 lowest,10,0,14336
+Lung,NO2,Q1 lowest,10,2,617
+Lung,NO2,Q1 lowest,10,4,174
+Lung,NO2,Q1 lowest,10,6,57
+Lung,NO2,Q1 lowest,10,8,26
+Lung,NO2,Q1 lowest,10,10,7
+Lung,NO2,Q2,1,0,13681
+Lung,NO2,Q2,1,0.5,3468
+Lung,NO2,Q2,1,1,1922
+Lung,NO2,Q2,3,0,13681
+Lung,NO2,Q2,3,1,1922
+Lung,NO2,Q2,3,2,911
+Lung,NO2,Q2,3,3,519
+Lung,NO2,Q2,5,0,13681
+Lung,NO2,Q2,5,1,1922
+Lung,NO2,Q2,5,2,911
+Lung,NO2,Q2,5,3,519
+Lung,NO2,Q2,5,4,327
+Lung,NO2,Q2,5,5,214
+Lung,NO2,Q2,10,0,13681
+Lung,NO2,Q2,10,2,911
+Lung,NO2,Q2,10,4,327
+Lung,NO2,Q2,10,6,141
+Lung,NO2,Q2,10,8,67
+Lung,NO2,Q2,10,10,35
+Lung,NO2,Q3,1,0,13036
+Lung,NO2,Q3,1,0.5,3882
+Lung,NO2,Q3,1,1,2341
+Lung,NO2,Q3,3,0,13036
+Lung,NO2,Q3,3,1,2341
+Lung,NO2,Q3,3,2,1203
+Lung,NO2,Q3,3,3,688
+Lung,NO2,Q3,5,0,13036
+Lung,NO2,Q3,5,1,2341
+Lung,NO2,Q3,5,2,1203
+Lung,NO2,Q3,5,3,688
+Lung,NO2,Q3,5,4,435
+Lung,NO2,Q3,5,5,291
+Lung,NO2,Q3,10,0,13036
+Lung,NO2,Q3,10,2,1203
+Lung,NO2,Q3,10,4,435
+Lung,NO2,Q3,10,6,199
+Lung,NO2,Q3,10,8,83
+Lung,NO2,Q3,10,10,35
+Lung,NO2,Q4 highest,1,0,9405
+Lung,NO2,Q4 highest,1,0.5,3311
+Lung,NO2,Q4 highest,1,1,2129
+Lung,NO2,Q4 highest,3,0,9405
+Lung,NO2,Q4 highest,3,1,2129
+Lung,NO2,Q4 highest,3,2,1159
+Lung,NO2,Q4 highest,3,3,699
+Lung,NO2,Q4 highest,5,0,9405
+Lung,NO2,Q4 highest,5,1,2129
+Lung,NO2,Q4 highest,5,2,1159
+Lung,NO2,Q4 highest,5,3,699
+Lung,NO2,Q4 highest,5,4,470
+Lung,NO2,Q4 highest,5,5,314
+Lung,NO2,Q4 highest,10,0,9405
+Lung,NO2,Q4 highest,10,2,1159
+Lung,NO2,Q4 highest,10,4,470
+Lung,NO2,Q4 highest,10,6,220
+Lung,NO2,Q4 highest,10,8,99
+Lung,NO2,Q4 highest,10,10,48
+Heart,O3,Q1 lowest,1,0,17313
+Heart,O3,Q1 lowest,1,0.5,7042
+Heart,O3,Q1 lowest,1,1,4780
+Heart,O3,Q1 lowest,3,0,17313
+Heart,O3,Q1 lowest,3,1,4780
+Heart,O3,Q1 lowest,3,2,2639
+Heart,O3,Q1 lowest,3,3,1649
+Heart,O3,Q1 lowest,5,0,17313
+Heart,O3,Q1 lowest,5,1,4780
+Heart,O3,Q1 lowest,5,2,2639
+Heart,O3,Q1 lowest,5,3,1649
+Heart,O3,Q1 lowest,5,4,1110
+Heart,O3,Q1 lowest,5,5,713
+Heart,O3,Q1 lowest,10,0,17313
+Heart,O3,Q1 lowest,10,2,2639
+Heart,O3,Q1 lowest,10,4,1110
+Heart,O3,Q1 lowest,10,6,498
+Heart,O3,Q1 lowest,10,8,249
+Heart,O3,Q1 lowest,10,10,138
+Heart,O3,Q2,1,0,19399
+Heart,O3,Q2,1,0.5,7771
+Heart,O3,Q2,1,1,5199
+Heart,O3,Q2,3,0,19399
+Heart,O3,Q2,3,1,5199
+Heart,O3,Q2,3,2,2858
+Heart,O3,Q2,3,3,1687
+Heart,O3,Q2,5,0,19399
+Heart,O3,Q2,5,1,5199
+Heart,O3,Q2,5,2,2858
+Heart,O3,Q2,5,3,1687
+Heart,O3,Q2,5,4,1066
+Heart,O3,Q2,5,5,684
+Heart,O3,Q2,10,0,19399
+Heart,O3,Q2,10,2,2858
+Heart,O3,Q2,10,4,1066
+Heart,O3,Q2,10,6,456
+Heart,O3,Q2,10,8,215
+Heart,O3,Q2,10,10,95
+Heart,O3,Q3,1,0,19903
+Heart,O3,Q3,1,0.5,7336
+Heart,O3,Q3,1,1,4809
+Heart,O3,Q3,3,0,19903
+Heart,O3,Q3,3,1,4809
+Heart,O3,Q3,3,2,2503
+Heart,O3,Q3,3,3,1474
+Heart,O3,Q3,5,0,19903
+Heart,O3,Q3,5,1,4809
+Heart,O3,Q3,5,2,2503
+Heart,O3,Q3,5,3,1474
+Heart,O3,Q3,5,4,934
+Heart,O3,Q3,5,5,623
+Heart,O3,Q3,10,0,19903
+Heart,O3,Q3,10,2,2503
+Heart,O3,Q3,10,4,934
+Heart,O3,Q3,10,6,406
+Heart,O3,Q3,10,8,194
+Heart,O3,Q3,10,10,102
+Heart,O3,Q4 highest,1,0,17499
+Heart,O3,Q4 highest,1,0.5,6068
+Heart,O3,Q4 highest,1,1,3998
+Heart,O3,Q4 highest,3,0,17499
+Heart,O3,Q4 highest,3,1,3998
+Heart,O3,Q4 highest,3,2,2158
+Heart,O3,Q4 highest,3,3,1324
+Heart,O3,Q4 highest,5,0,17499
+Heart,O3,Q4 highest,5,1,3998
+Heart,O3,Q4 highest,5,2,2158
+Heart,O3,Q4 highest,5,3,1324
+Heart,O3,Q4 highest,5,4,908
+Heart,O3,Q4 highest,5,5,647
+Heart,O3,Q4 highest,10,0,17499
+Heart,O3,Q4 highest,10,2,2158
+Heart,O3,Q4 highest,10,4,908
+Heart,O3,Q4 highest,10,6,484
+Heart,O3,Q4 highest,10,8,306
+Heart,O3,Q4 highest,10,10,195
+Kidney,O3,Q1 lowest,1,0,147252
+Kidney,O3,Q1 lowest,1,0.5,122412
+Kidney,O3,Q1 lowest,1,1,107701
+Kidney,O3,Q1 lowest,3,0,147252
+Kidney,O3,Q1 lowest,3,1,107701
+Kidney,O3,Q1 lowest,3,2,82960
+Kidney,O3,Q1 lowest,3,3,62300
+Kidney,O3,Q1 lowest,5,0,147252
+Kidney,O3,Q1 lowest,5,1,107701
+Kidney,O3,Q1 lowest,5,2,82960
+Kidney,O3,Q1 lowest,5,3,62300
+Kidney,O3,Q1 lowest,5,4,45292
+Kidney,O3,Q1 lowest,5,5,31501
+Kidney,O3,Q1 lowest,10,0,147252
+Kidney,O3,Q1 lowest,10,2,82960
+Kidney,O3,Q1 lowest,10,4,45292
+Kidney,O3,Q1 lowest,10,6,21532
+Kidney,O3,Q1 lowest,10,8,10157
+Kidney,O3,Q1 lowest,10,10,5138
+Kidney,O3,Q2,1,0,139424
+Kidney,O3,Q2,1,0.5,111875
+Kidney,O3,Q2,1,1,95496
+Kidney,O3,Q2,3,0,139424
+Kidney,O3,Q2,3,1,95496
+Kidney,O3,Q2,3,2,68606
+Kidney,O3,Q2,3,3,47864
+Kidney,O3,Q2,5,0,139424
+Kidney,O3,Q2,5,1,95496
+Kidney,O3,Q2,5,2,68606
+Kidney,O3,Q2,5,3,47864
+Kidney,O3,Q2,5,4,32146
+Kidney,O3,Q2,5,5,20875
+Kidney,O3,Q2,10,0,139424
+Kidney,O3,Q2,10,2,68606
+Kidney,O3,Q2,10,4,32146
+Kidney,O3,Q2,10,6,13630
+Kidney,O3,Q2,10,8,5809
+Kidney,O3,Q2,10,10,2794
+Kidney,O3,Q3,1,0,136957
+Kidney,O3,Q3,1,0.5,109992
+Kidney,O3,Q3,1,1,93289
+Kidney,O3,Q3,3,0,136957
+Kidney,O3,Q3,3,1,93289
+Kidney,O3,Q3,3,2,64717
+Kidney,O3,Q3,3,3,44244
+Kidney,O3,Q3,5,0,136957
+Kidney,O3,Q3,5,1,93289
+Kidney,O3,Q3,5,2,64717
+Kidney,O3,Q3,5,3,44244
+Kidney,O3,Q3,5,4,29470
+Kidney,O3,Q3,5,5,20042
+Kidney,O3,Q3,10,0,136957
+Kidney,O3,Q3,10,2,64717
+Kidney,O3,Q3,10,4,29470
+Kidney,O3,Q3,10,6,13372
+Kidney,O3,Q3,10,8,6124
+Kidney,O3,Q3,10,10,3161
+Kidney,O3,Q4 highest,1,0,141092
+Kidney,O3,Q4 highest,1,0.5,116715
+Kidney,O3,Q4 highest,1,1,101361
+Kidney,O3,Q4 highest,3,0,141092
+Kidney,O3,Q4 highest,3,1,101361
+Kidney,O3,Q4 highest,3,2,74194
+Kidney,O3,Q4 highest,3,3,54297
+Kidney,O3,Q4 highest,5,0,141092
+Kidney,O3,Q4 highest,5,1,101361
+Kidney,O3,Q4 highest,5,2,74194
+Kidney,O3,Q4 highest,5,3,54297
+Kidney,O3,Q4 highest,5,4,39187
+Kidney,O3,Q4 highest,5,5,28037
+Kidney,O3,Q4 highest,10,0,141092
+Kidney,O3,Q4 highest,10,2,74194
+Kidney,O3,Q4 highest,10,4,39187
+Kidney,O3,Q4 highest,10,6,19858
+Kidney,O3,Q4 highest,10,8,9968
+Kidney,O3,Q4 highest,10,10,5375
+Liver,O3,Q1 lowest,1,0,49337
+Liver,O3,Q1 lowest,1,0.5,23920
+Liver,O3,Q1 lowest,1,1,15931
+Liver,O3,Q1 lowest,3,0,49337
+Liver,O3,Q1 lowest,3,1,15931
+Liver,O3,Q1 lowest,3,2,8668
+Liver,O3,Q1 lowest,3,3,5615
+Liver,O3,Q1 lowest,5,0,49337
+Liver,O3,Q1 lowest,5,1,15931
+Liver,O3,Q1 lowest,5,2,8668
+Liver,O3,Q1 lowest,5,3,5615
+Liver,O3,Q1 lowest,5,4,3796
+Liver,O3,Q1 lowest,5,5,2638
+Liver,O3,Q1 lowest,10,0,49337
+Liver,O3,Q1 lowest,10,2,8668
+Liver,O3,Q1 lowest,10,4,3796
+Liver,O3,Q1 lowest,10,6,1823
+Liver,O3,Q1 lowest,10,8,928
+Liver,O3,Q1 lowest,10,10,493
+Liver,O3,Q2,1,0,51927
+Liver,O3,Q2,1,0.5,23574
+Liver,O3,Q2,1,1,14755
+Liver,O3,Q2,3,0,51927
+Liver,O3,Q2,3,1,14755
+Liver,O3,Q2,3,2,7762
+Liver,O3,Q2,3,3,4790
+Liver,O3,Q2,5,0,51927
+Liver,O3,Q2,5,1,14755
+Liver,O3,Q2,5,2,7762
+Liver,O3,Q2,5,3,4790
+Liver,O3,Q2,5,4,3119
+Liver,O3,Q2,5,5,2093
+Liver,O3,Q2,10,0,51927
+Liver,O3,Q2,10,2,7762
+Liver,O3,Q2,10,4,3119
+Liver,O3,Q2,10,6,1435
+Liver,O3,Q2,10,8,683
+Liver,O3,Q2,10,10,324
+Liver,O3,Q3,1,0,53778
+Liver,O3,Q3,1,0.5,23897
+Liver,O3,Q3,1,1,15200
+Liver,O3,Q3,3,0,53778
+Liver,O3,Q3,3,1,15200
+Liver,O3,Q3,3,2,8035
+Liver,O3,Q3,3,3,5117
+Liver,O3,Q3,5,0,53778
+Liver,O3,Q3,5,1,15200
+Liver,O3,Q3,5,2,8035
+Liver,O3,Q3,5,3,5117
+Liver,O3,Q3,5,4,3454
+Liver,O3,Q3,5,5,2408
+Liver,O3,Q3,10,0,53778
+Liver,O3,Q3,10,2,8035
+Liver,O3,Q3,10,4,3454
+Liver,O3,Q3,10,6,1688
+Liver,O3,Q3,10,8,833
+Liver,O3,Q3,10,10,404
+Liver,O3,Q4 highest,1,0,53750
+Liver,O3,Q4 highest,1,0.5,26033
+Liver,O3,Q4 highest,1,1,17932
+Liver,O3,Q4 highest,3,0,53750
+Liver,O3,Q4 highest,3,1,17932
+Liver,O3,Q4 highest,3,2,10402
+Liver,O3,Q4 highest,3,3,6946
+Liver,O3,Q4 highest,5,0,53750
+Liver,O3,Q4 highest,5,1,17932
+Liver,O3,Q4 highest,5,2,10402
+Liver,O3,Q4 highest,5,3,6946
+Liver,O3,Q4 highest,5,4,4831
+Liver,O3,Q4 highest,5,5,3412
+Liver,O3,Q4 highest,10,0,53750
+Liver,O3,Q4 highest,10,2,10402
+Liver,O3,Q4 highest,10,4,4831
+Liver,O3,Q4 highest,10,6,2424
+Liver,O3,Q4 highest,10,8,1295
+Liver,O3,Q4 highest,10,10,675
+Lung,O3,Q1 lowest,1,0,9717
+Lung,O3,Q1 lowest,1,0.5,3005
+Lung,O3,Q1 lowest,1,1,1805
+Lung,O3,Q1 lowest,3,0,9717
+Lung,O3,Q1 lowest,3,1,1805
+Lung,O3,Q1 lowest,3,2,893
+Lung,O3,Q1 lowest,3,3,507
+Lung,O3,Q1 lowest,5,0,9717
+Lung,O3,Q1 lowest,5,1,1805
+Lung,O3,Q1 lowest,5,2,893
+Lung,O3,Q1 lowest,5,3,507
+Lung,O3,Q1 lowest,5,4,330
+Lung,O3,Q1 lowest,5,5,220
+Lung,O3,Q1 lowest,10,0,9717
+Lung,O3,Q1 lowest,10,2,893
+Lung,O3,Q1 lowest,10,4,330
+Lung,O3,Q1 lowest,10,6,146
+Lung,O3,Q1 lowest,10,8,58
+Lung,O3,Q1 lowest,10,10,20
+Lung,O3,Q2,1,0,12869
+Lung,O3,Q2,1,0.5,3596
+Lung,O3,Q2,1,1,2100
+Lung,O3,Q2,3,0,12869
+Lung,O3,Q2,3,1,2100
+Lung,O3,Q2,3,2,1010
+Lung,O3,Q2,3,3,568
+Lung,O3,Q2,5,0,12869
+Lung,O3,Q2,5,1,2100
+Lung,O3,Q2,5,2,1010
+Lung,O3,Q2,5,3,568
+Lung,O3,Q2,5,4,347
+Lung,O3,Q2,5,5,224
+Lung,O3,Q2,10,0,12869
+Lung,O3,Q2,10,2,1010
+Lung,O3,Q2,10,4,347
+Lung,O3,Q2,10,6,130
+Lung,O3,Q2,10,8,51
+Lung,O3,Q2,10,10,22
+Lung,O3,Q3,1,0,12979
+Lung,O3,Q3,1,0.5,3488
+Lung,O3,Q3,1,1,2017
+Lung,O3,Q3,3,0,12979
+Lung,O3,Q3,3,1,2017
+Lung,O3,Q3,3,2,967
+Lung,O3,Q3,3,3,563
+Lung,O3,Q3,5,0,12979
+Lung,O3,Q3,5,1,2017
+Lung,O3,Q3,5,2,967
+Lung,O3,Q3,5,3,563
+Lung,O3,Q3,5,4,351
+Lung,O3,Q3,5,5,242
+Lung,O3,Q3,10,0,12979
+Lung,O3,Q3,10,2,967
+Lung,O3,Q3,10,4,351
+Lung,O3,Q3,10,6,173
+Lung,O3,Q3,10,8,79
+Lung,O3,Q3,10,10,45
+Lung,O3,Q4 highest,1,0,11278
+Lung,O3,Q4 highest,1,0.5,3147
+Lung,O3,Q4 highest,1,1,1914
+Lung,O3,Q4 highest,3,0,11278
+Lung,O3,Q4 highest,3,1,1914
+Lung,O3,Q4 highest,3,2,1020
+Lung,O3,Q4 highest,3,3,597
+Lung,O3,Q4 highest,5,0,11278
+Lung,O3,Q4 highest,5,1,1914
+Lung,O3,Q4 highest,5,2,1020
+Lung,O3,Q4 highest,5,3,597
+Lung,O3,Q4 highest,5,4,378
+Lung,O3,Q4 highest,5,5,250
+Lung,O3,Q4 highest,10,0,11278
+Lung,O3,Q4 highest,10,2,1020
+Lung,O3,Q4 highest,10,4,378
+Lung,O3,Q4 highest,10,6,168
+Lung,O3,Q4 highest,10,8,87
+Lung,O3,Q4 highest,10,10,38
