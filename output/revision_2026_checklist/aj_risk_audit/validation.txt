@@ -1,0 +1,5 @@
+Latest observed end date: 2025-12-31
+All displayed risk counts reproduced using independent survival::survfit multistate fits.
+All saved CIFs at years 1, 3, 5 and 10 reproduced within 1e-10.
+At each horizon: starting N = at risk + prior adverse events + prior competing events + prior censoring.
+Censoring at the latest observed end date is reported as such, not assumed to prove administrative censoring.

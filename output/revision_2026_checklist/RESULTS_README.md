@@ -22,6 +22,21 @@ independent checks, and warning-producing fits were independently rerun with
 matching estimates, candidate counts and events. Patient-level cache files
 remain git-ignored.
 
+## Death-only outcome sensitivity and Table 1 components
+
+The new `death_only_sensitivity` folder contains paired primary-composite and
+death-only cause-specific Cox estimates for all four organs and three pollutants,
+for both baseline and time-varying models. The formatted supplement is
+`death_only_sensitivity/death_only_sensitivity.html`; full coefficients and
+outcome-code audits accompany it. Scripts are `25_death_only_sensitivity.R` and
+`26_death_only_report.R`, with `test_death_only_outputs.R` for output validation.
+
+The main Table 1 now separates death, deterioration removal, transplantation,
+and improvement removal. All other Table 1 values are unchanged. The existing
+terminal-registration selection is retained; death-only events use removal code
+8, with final deterioration removals censored at exit. Transplant-procedure
+deaths (codes 21/23) remain in the primary transplantation category.
+
 ## Registration sensitivities
 
 Separate-spell reconstruction yielded 87,231 heart, 690,923 kidney, 252,217 liver
@@ -153,6 +168,15 @@ and CAS medical-urgency history is required before replacing it. PTR match-total
 scores were not substituted. See `docs/lung_score_source_audit.md`.
 
 ## Supplemental tables
+
+### Updated LAS-era lung results
+
+The new `las_era_lung/` bundle replaces the lung proxy with official longitudinal
+calculated LAS, restricting both listings and follow-up to March 8, 2023 or
+earlier. CAS is not used. See its README for primary estimates, model formulas,
+score coverage, and subgroup convergence warnings. These versioned results have
+not yet been propagated into existing manuscript figures and canonical tables;
+the older source limitation above describes the previous analysis.
 
 The `supplement` directory contains CSV, TSV and HTML tables. HTML tables can be
 opened in a browser and copied into Word. The wide sensitivity table puts the

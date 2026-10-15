@@ -1,0 +1,193 @@
+organ,quartile,event_type,N,pollutant
+Heart,Q4 highest,death_or_deterioration_delist,2660,PM2.5
+Heart,Q4 highest,transplant_or_improvement,12849,PM2.5
+Heart,Q3,transplant_or_improvement,14547,PM2.5
+Heart,Q4 highest,other_exit,785,PM2.5
+Heart,Q1 lowest,transplant_or_improvement,15520,PM2.5
+Heart,Q2,other_exit,1142,PM2.5
+Heart,Q1 lowest,death_or_deterioration_delist,2164,PM2.5
+Heart,Q2,transplant_or_improvement,15446,PM2.5
+Heart,Q3,death_or_deterioration_delist,2663,PM2.5
+Heart,Q3,other_exit,1036,PM2.5
+Heart,Q2,death_or_deterioration_delist,2533,PM2.5
+Heart,Q2,administrative_censor,540,PM2.5
+Heart,Q4 highest,administrative_censor,126,PM2.5
+Heart,Q1 lowest,other_exit,1087,PM2.5
+Heart,Q3,administrative_censor,398,PM2.5
+Heart,Q1 lowest,administrative_censor,618,PM2.5
+Kidney,Q1 lowest,transplant_or_improvement,82921,PM2.5
+Kidney,Q4 highest,death_or_deterioration_delist,39010,PM2.5
+Kidney,Q4 highest,transplant_or_improvement,85007,PM2.5
+Kidney,Q4 highest,other_exit,16802,PM2.5
+Kidney,Q3,death_or_deterioration_delist,32675,PM2.5
+Kidney,Q1 lowest,other_exit,11082,PM2.5
+Kidney,Q3,transplant_or_improvement,83677,PM2.5
+Kidney,Q2,transplant_or_improvement,83823,PM2.5
+Kidney,Q3,other_exit,14985,PM2.5
+Kidney,Q1 lowest,death_or_deterioration_delist,24554,PM2.5
+Kidney,Q2,other_exit,12745,PM2.5
+Kidney,Q2,death_or_deterioration_delist,27184,PM2.5
+Kidney,Q3,administrative_censor,10921,PM2.5
+Kidney,Q1 lowest,administrative_censor,18803,PM2.5
+Kidney,Q2,administrative_censor,14078,PM2.5
+Kidney,Q4 highest,administrative_censor,6458,PM2.5
+Liver,Q4 highest,transplant_or_improvement,33491,PM2.5
+Liver,Q4 highest,death_or_deterioration_delist,11902,PM2.5
+Liver,Q3,transplant_or_improvement,36172,PM2.5
+Liver,Q3,other_exit,3971,PM2.5
+Liver,Q2,death_or_deterioration_delist,9941,PM2.5
+Liver,Q2,transplant_or_improvement,38818,PM2.5
+Liver,Q3,death_or_deterioration_delist,10511,PM2.5
+Liver,Q1 lowest,transplant_or_improvement,38789,PM2.5
+Liver,Q1 lowest,death_or_deterioration_delist,9783,PM2.5
+Liver,Q2,other_exit,3965,PM2.5
+Liver,Q1 lowest,administrative_censor,1204,PM2.5
+Liver,Q4 highest,other_exit,4286,PM2.5
+Liver,Q3,administrative_censor,691,PM2.5
+Liver,Q1 lowest,other_exit,3951,PM2.5
+Liver,Q4 highest,administrative_censor,403,PM2.5
+Liver,Q2,administrative_censor,914,PM2.5
+Lung,Q3,transplant_or_improvement,9431,PM2.5
+Lung,Q3,other_exit,465,PM2.5
+Lung,Q4 highest,transplant_or_improvement,7911,PM2.5
+Lung,Q2,transplant_or_improvement,10656,PM2.5
+Lung,Q4 highest,death_or_deterioration_delist,1492,PM2.5
+Lung,Q4 highest,other_exit,425,PM2.5
+Lung,Q1 lowest,transplant_or_improvement,11246,PM2.5
+Lung,Q1 lowest,other_exit,517,PM2.5
+Lung,Q3,death_or_deterioration_delist,1437,PM2.5
+Lung,Q1 lowest,death_or_deterioration_delist,1309,PM2.5
+Lung,Q2,death_or_deterioration_delist,1350,PM2.5
+Lung,Q2,other_exit,430,PM2.5
+Lung,Q1 lowest,administrative_censor,71,PM2.5
+Lung,Q2,administrative_censor,56,PM2.5
+Lung,Q3,administrative_censor,35,PM2.5
+Lung,Q4 highest,administrative_censor,12,PM2.5
+Heart,Q3,death_or_deterioration_delist,2783,NO2
+Heart,Q4 highest,transplant_or_improvement,13061,NO2
+Heart,Q4 highest,other_exit,857,NO2
+Heart,Q1 lowest,transplant_or_improvement,16706,NO2
+Heart,Q2,other_exit,1191,NO2
+Heart,Q4 highest,death_or_deterioration_delist,2669,NO2
+Heart,Q3,transplant_or_improvement,15493,NO2
+Heart,Q2,death_or_deterioration_delist,2641,NO2
+Heart,Q2,transplant_or_improvement,16432,NO2
+Heart,Q1 lowest,death_or_deterioration_delist,2159,NO2
+Heart,Q1 lowest,administrative_censor,1730,NO2
+Heart,Q1 lowest,other_exit,1040,NO2
+Heart,Q3,other_exit,1066,NO2
+Heart,Q4 highest,administrative_censor,108,NO2
+Heart,Q2,administrative_censor,994,NO2
+Heart,Q3,administrative_censor,539,NO2
+Kidney,Q2,transplant_or_improvement,84004,NO2
+Kidney,Q4 highest,death_or_deterioration_delist,42814,NO2
+Kidney,Q4 highest,transplant_or_improvement,94104,NO2
+Kidney,Q4 highest,other_exit,18365,NO2
+Kidney,Q3,other_exit,13913,NO2
+Kidney,Q3,death_or_deterioration_delist,31723,NO2
+Kidney,Q2,other_exit,12649,NO2
+Kidney,Q1 lowest,transplant_or_improvement,74756,NO2
+Kidney,Q3,transplant_or_improvement,90643,NO2
+Kidney,Q2,death_or_deterioration_delist,27148,NO2
+Kidney,Q1 lowest,death_or_deterioration_delist,22380,NO2
+Kidney,Q1 lowest,other_exit,11150,NO2
+Kidney,Q4 highest,administrative_censor,5026,NO2
+Kidney,Q2,administrative_censor,23440,NO2
+Kidney,Q3,administrative_censor,15160,NO2
+Kidney,Q1 lowest,administrative_censor,33433,NO2
+Liver,Q4 highest,transplant_or_improvement,33753,NO2
+Liver,Q4 highest,death_or_deterioration_delist,12990,NO2
+Liver,Q3,other_exit,4152,NO2
+Liver,Q3,transplant_or_improvement,37837,NO2
+Liver,Q3,death_or_deterioration_delist,10826,NO2
+Liver,Q2,transplant_or_improvement,39885,NO2
+Liver,Q1 lowest,transplant_or_improvement,44329,NO2
+Liver,Q1 lowest,death_or_deterioration_delist,8825,NO2
+Liver,Q2,death_or_deterioration_delist,10242,NO2
+Liver,Q2,administrative_censor,2199,NO2
+Liver,Q4 highest,other_exit,4824,NO2
+Liver,Q2,other_exit,3843,NO2
+Liver,Q1 lowest,other_exit,3588,NO2
+Liver,Q1 lowest,administrative_censor,3920,NO2
+Liver,Q3,administrative_censor,1179,NO2
+Liver,Q4 highest,administrative_censor,374,NO2
+Lung,Q3,transplant_or_improvement,10786,NO2
+Lung,Q2,other_exit,511,NO2
+Lung,Q4 highest,transplant_or_improvement,7378,NO2
+Lung,Q2,transplant_or_improvement,11588,NO2
+Lung,Q1 lowest,transplant_or_improvement,12281,NO2
+Lung,Q4 highest,death_or_deterioration_delist,1570,NO2
+Lung,Q4 highest,other_exit,427,NO2
+Lung,Q1 lowest,administrative_censor,457,NO2
+Lung,Q1 lowest,death_or_deterioration_delist,1129,NO2
+Lung,Q1 lowest,other_exit,469,NO2
+Lung,Q3,other_exit,493,NO2
+Lung,Q3,death_or_deterioration_delist,1624,NO2
+Lung,Q2,death_or_deterioration_delist,1358,NO2
+Lung,Q2,administrative_censor,224,NO2
+Lung,Q3,administrative_censor,133,NO2
+Lung,Q4 highest,administrative_censor,30,NO2
+Heart,Q4 highest,death_or_deterioration_delist,2266,O3
+Heart,Q4 highest,transplant_or_improvement,14109,O3
+Heart,Q1 lowest,transplant_or_improvement,13516,O3
+Heart,Q4 highest,other_exit,799,O3
+Heart,Q2,transplant_or_improvement,15125,O3
+Heart,Q2,other_exit,1143,O3
+Heart,Q3,death_or_deterioration_delist,2703,O3
+Heart,Q3,transplant_or_improvement,15612,O3
+Heart,Q1 lowest,death_or_deterioration_delist,2453,O3
+Heart,Q2,death_or_deterioration_delist,2598,O3
+Heart,Q4 highest,administrative_censor,325,O3
+Heart,Q3,other_exit,1045,O3
+Heart,Q1 lowest,other_exit,1063,O3
+Heart,Q3,administrative_censor,543,O3
+Heart,Q2,administrative_censor,533,O3
+Heart,Q1 lowest,administrative_censor,281,O3
+Kidney,Q2,transplant_or_improvement,84962,O3
+Kidney,Q4 highest,death_or_deterioration_delist,31839,O3
+Kidney,Q4 highest,transplant_or_improvement,81748,O3
+Kidney,Q1 lowest,other_exit,15432,O3
+Kidney,Q3,other_exit,12458,O3
+Kidney,Q3,death_or_deterioration_delist,27960,O3
+Kidney,Q4 highest,other_exit,14393,O3
+Kidney,Q1 lowest,death_or_deterioration_delist,35197,O3
+Kidney,Q3,transplant_or_improvement,81879,O3
+Kidney,Q2,death_or_deterioration_delist,28427,O3
+Kidney,Q1 lowest,transplant_or_improvement,86839,O3
+Kidney,Q2,other_exit,13331,O3
+Kidney,Q2,administrative_censor,12704,O3
+Kidney,Q3,administrative_censor,14660,O3
+Kidney,Q1 lowest,administrative_censor,9784,O3
+Kidney,Q4 highest,administrative_censor,13112,O3
+Liver,Q4 highest,transplant_or_improvement,36835,O3
+Liver,Q3,death_or_deterioration_delist,10047,O3
+Liver,Q1 lowest,transplant_or_improvement,34054,O3
+Liver,Q4 highest,death_or_deterioration_delist,11444,O3
+Liver,Q2,transplant_or_improvement,37451,O3
+Liver,Q3,transplant_or_improvement,38930,O3
+Liver,Q3,other_exit,3715,O3
+Liver,Q1 lowest,death_or_deterioration_delist,10715,O3
+Liver,Q2,death_or_deterioration_delist,9931,O3
+Liver,Q2,other_exit,3763,O3
+Liver,Q3,administrative_censor,1086,O3
+Liver,Q4 highest,other_exit,4615,O3
+Liver,Q1 lowest,other_exit,4080,O3
+Liver,Q4 highest,administrative_censor,856,O3
+Liver,Q2,administrative_censor,782,O3
+Liver,Q1 lowest,administrative_censor,488,O3
+Lung,Q4 highest,transplant_or_improvement,9482,O3
+Lung,Q3,other_exit,462,O3
+Lung,Q1 lowest,transplant_or_improvement,7977,O3
+Lung,Q3,transplant_or_improvement,10952,O3
+Lung,Q2,transplant_or_improvement,10833,O3
+Lung,Q3,death_or_deterioration_delist,1512,O3
+Lung,Q2,other_exit,497,O3
+Lung,Q1 lowest,death_or_deterioration_delist,1255,O3
+Lung,Q4 highest,death_or_deterioration_delist,1353,O3
+Lung,Q2,death_or_deterioration_delist,1468,O3
+Lung,Q4 highest,other_exit,420,O3
+Lung,Q1 lowest,other_exit,458,O3
+Lung,Q2,administrative_censor,71,O3
+Lung,Q4 highest,administrative_censor,23,O3
+Lung,Q1 lowest,administrative_censor,27,O3
+Lung,Q3,administrative_censor,53,O3

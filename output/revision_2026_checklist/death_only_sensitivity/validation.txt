@@ -1,0 +1,7 @@
+PASS: 24 paired sensitivities, 48 exposure estimates.
+PASS: all 24 primary composite HRs, CIs, candidate counts, and event counts reproduced.
+PASS: identical candidates and intervals within each model pair; death events are a strict subset.
+PASS: coefficients, standard errors, HRs and CIs reconcile.
+PASS: four lung warnings localized to zero-death missing-race category; diagnostic HR changes <0.0001. Full-cohort fits retained and flagged.
+PASS: six mutually exclusive outcome categories sum to each organ denominator and 1,017,540 total.
+PASS: all non-outcome Table 1 cells identical to HEAD.
