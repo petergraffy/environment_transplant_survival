@@ -39,14 +39,18 @@ organ_levels <- unname(organ_labels)
 sex_levels <- c("Female", "Male", "Unknown")
 race_levels <- c("White", "Black", "Asian", "Other/Unknown")
 outcome_levels <- c(
-  "transplant_or_improvement",
-  "death_or_deterioration_delist",
+  "death",
+  "deterioration",
+  "transplant",
+  "improvement",
   "other_exit",
   "administrative_censor"
 )
 outcome_labels <- c(
-  transplant_or_improvement = "Transplant or delisting due to improvement",
-  death_or_deterioration_delist = "Death or delisting due to deterioration",
+  death = "Death on the waitlist",
+  deterioration = "Removal due to deterioration",
+  transplant = "Transplantation",
+  improvement = "Removal due to improvement",
   other_exit = "Other waitlist exit",
   administrative_censor = "Administrative censoring"
 )
@@ -305,8 +309,12 @@ race_rows <- analysis_dat %>%
   ) %>%
   select(section, characteristic, row_order, organ, value)
 
+source("code/revision_2026/outcome_components.R")
+outcome_components <- primary_outcome_components(analysis_dat)
 outcome_rows <- analysis_dat %>%
-  mutate(event_type = factor(event_type, levels = outcome_levels)) %>%
+  left_join(as_tibble(outcome_components) %>% select(PERS_ID, WL_ORG, component),
+    by = c("PERS_ID", "WL_ORG")) %>%
+  mutate(event_type = factor(component, levels = outcome_levels)) %>%
   count(organ, event_type, name = "n") %>%
   complete(organ, event_type = factor(outcome_levels, levels = outcome_levels), fill = list(n = 0)) %>%
   left_join(denoms, by = "organ", suffix = c("", "_denom")) %>%
@@ -355,7 +363,7 @@ gt_table <- table_wide %>%
     source_note = "Exposure rows include candidates with complete prelisting windows: the 365 days before listing for PM2.5/O3 and the 12 complete calendar months before the listing month for NO2, weighted by days. NO2 months before 2019 use annual approximations. Exposure availability differs from the overall cohort denominator."
   ) %>%
   tab_source_note(
-    source_note = "Waitlist outcomes are mutually exclusive final observed outcomes in the primary cohort before pollutant-specific exposure censoring."
+    source_note = "Waitlist outcomes are mutually exclusive final observed outcomes before pollutant-specific exposure censoring; percentages use the full organ-specific cohort denominator. Death and deterioration comprise the adverse endpoint; transplantation and improvement comprise the competing endpoint. Transplantation retains the primary definition, including deaths during the transplant procedure (SRTR removal codes 21 and 23), which are not classified as waitlist deaths."
   ) %>%
   tab_options(
     table.font.names = "Arial",
@@ -376,7 +384,7 @@ writeLines(
     "Baseline characteristics of person waitlist episodes included in the primary waitlist-period pollution analysis cohort, stratified by listed organ.",
     "Values are median (IQR) for continuous variables and n (%) for categorical variables unless otherwise indicated.",
     "Organ-specific severity scores and score components are shown only for the organ to which each score applies. Heart US-CRS was calculated as a raw formula-derived linear predictor and mapped to the 1-50 point scale using the US-CRS mapping table; the model covariate remained the raw linear predictor. The SAF-derived analysis file did not include official LAS/CAS display-score fields, so the lung row reports the formula-derived component proxy linear predictor used for modeling rather than official allocation-score points. Observed heart and lung numeric score inputs are summarized among candidates with nonmissing values; the model proxy score used median-imputed heart laboratory values and set missing lung numeric components to 0. Liver MELD/PELD is displayed after subtracting the SRTR 6200 offset from the stored MELD/PELD field.",
-    "Waitlist outcomes are mutually exclusive final observed outcomes in the primary cohort before pollutant-specific exposure censoring.",
+    "Waitlist outcomes are mutually exclusive final observed outcomes before pollutant-specific exposure censoring; percentages use the full organ-specific cohort denominator. Death and deterioration comprise the adverse endpoint; transplantation and improvement comprise the competing endpoint. Transplantation includes deaths during the transplant procedure (SRTR removal codes 21 and 23), not classified as waitlist deaths.",
     "Pollution exposures are means over the 365 days before listing for PM2.5/O3 and day-weighted means over the 12 complete months before the listing month for NO2, with annual NO2 approximations before 2019. Exposure rows summarize complete windows and include median (IQR) and range; availability differs from the overall cohort denominator."
   ),
   caption_path
