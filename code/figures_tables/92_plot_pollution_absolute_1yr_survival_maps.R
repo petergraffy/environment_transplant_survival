@@ -295,7 +295,8 @@ risk_palette <- c(
 )
 
 log_msg("Reading primary deduplicated cohort")
-analysis_dat <- read_csv(analysis_path, show_col_types = FALSE) %>%
+source("code/publication_cohort.R")
+analysis_dat <- read_publication_cohort(analysis_path) %>%
   mutate(
     candidate_zip = clean_zip(candidate_zip),
     index_date = as.Date(index_date),

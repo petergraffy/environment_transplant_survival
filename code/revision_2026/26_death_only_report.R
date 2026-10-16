@@ -22,10 +22,10 @@ fwrite(wide, file.path(dest, "death_only_comparison.csv"))
 notes <- c(
   "Values are adjusted cause-specific hazard ratios (95% CIs). Models use the identical cohort, exposure, covariates, and follow-up as the corresponding primary model; only the endpoint changes.",
   "Baseline: exposure in the 365 days before listing for PM2.5 and O3, or 12 complete calendar months before listing for NO2 (annual approximations when monthly data are unavailable); adjustment for age, sex, race, ACS-derived ZCTA vulnerability proxy, and listing-center strata.",
-  "Time-varying: monthly pollution intervals and the existing primary severity covariates, in addition to age, sex, race, vulnerability proxy, and center strata. Kidney: no-dialysis indicator, updated dialysis duration, and diabetes. Heart/liver: existing updated score; lung: existing primary component proxy. This analysis does not substitute the separate lung-composite sensitivity score. Neither model includes listing year.",
+  "Time-varying: monthly pollution intervals and primary severity covariates, plus age, sex, race, vulnerability proxy, and center strata. Kidney: no-dialysis indicator, updated dialysis duration, and diabetes. Heart/liver: existing updated score. Lung: official monthly-updated LAS/10, missing-LAS and age<12 indicators; listings and follow-up end March 8, 2023. No CAS is used. Neither model includes listing year.",
   "Death-only events are final waitlist removals coded 8 (died). Final deterioration removals (code 13), transplantation, improvement, and other removals are censored at their recorded exit dates; administrative and pollutant-coverage censoring are unchanged. The primary registration-collapsing rules are retained. Death after final removal is not counted. Transplant-procedure deaths (codes 21/23) retain their primary transplant classification.",
   "These are cause-specific hazard estimates, not cumulative probabilities. Censoring deterioration removals does not estimate mortality if those candidates had remained on the waitlist. Model-based standard errors and Efron ties were used; no person-level robust clustering.",
-  "[a] Four lung PM2.5/O3 death-only fits had a separation warning for the missing-race coefficient, not the pollutant coefficient. No deaths occurred in that race category. Diagnostic refits excluding only that category changed the pollutant HR by less than 0.0001 and eliminated the warnings. Full-cohort estimates are retained here; diagnostic refits are not substituted. See lung_warning_audit.csv.",
+  "[a] Any model warning is retained explicitly in the numeric outputs. The previous full-era lung warning audit is historical; revised LAS-era primary and death-only fits are warning-free.",
   "Abbreviations: ACS, American Community Survey; CI, confidence interval; HR, hazard ratio; NO2, nitrogen dioxide; O3, ozone; PM2.5, particulate matter with diameter of 2.5 micrometers or less; ZCTA, ZIP Code Tabulation Area."
 )
 display <- as.data.frame(wide[, .(model, Organ, Pollutant, N, composite_events, composite_HR, death_events, death_HR)])
@@ -59,7 +59,7 @@ fwrite(ct, file.path(dest, "table1_outcome_components.csv"))
 ctab <- gt(as.data.frame(ct)) |>
   tab_header(title = "Components of Waitlist Outcomes by Organ") |>
   tab_source_note("Values are n (% of the full organ-specific cohort). Outcomes are mutually exclusive, before pollutant-specific censoring. Death plus deterioration is the primary adverse endpoint; transplant plus improvement is the competing endpoint.") |>
-  tab_source_note("Transplantation includes deaths during the transplant procedure, preserving the primary outcome definition: heart 85, kidney 10, liver 542, and lung 33.") |>
+  tab_source_note("Transplantation includes deaths during the transplant procedure (removal codes 21/23), preserving the primary outcome definition. Lung listings and follow-up end March 8, 2023; other organs are unchanged.") |>
   tab_options(table.font.names = "Arial", table.font.size = px(14), column_labels.font.weight = "bold")
 gtsave(ctab, file.path(dest, "table1_outcome_components.html"))
 writeLines(c("# Death-only sensitivity analysis", "", notes,

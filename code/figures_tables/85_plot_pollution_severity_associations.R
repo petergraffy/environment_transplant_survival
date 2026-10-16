@@ -73,14 +73,14 @@ plot_dat <- bind_rows(continuous_baseline, continuous_tv) %>%
       organ_label == "Kidney" ~ "Kidney: dialysis duration",
       organ_label == "Liver" ~ "Liver: MELD/PELD",
       organ_label == "Heart" ~ "Heart: US-CRS proxy",
-      organ_label == "Lung" ~ "Lung: urgency proxy",
+      organ_label == "Lung" ~ "Lung: official LAS",
       TRUE ~ outcome_label
     ),
     outcome_panel = factor(outcome_panel, levels = rev(c(
       "Kidney: dialysis duration",
       "Liver: MELD/PELD",
       "Heart: US-CRS proxy",
-      "Lung: urgency proxy"
+      "Lung: official LAS"
     )))
   )
 

@@ -37,7 +37,7 @@ dir.create(model_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
 
 organ_labels <- c(HR = "Heart", KI = "Kidney", LI = "Liver", LU = "Lung")
-target_organs <- names(organ_labels)
+target_organs <- getOption("publication.organs", names(organ_labels))
 
 log_msg <- function(...) {
   message(format(Sys.time(), "%Y-%m-%d %H:%M:%S"), " | ", paste0(..., collapse = ""))
@@ -117,6 +117,7 @@ make_complete_acs_svi_proxy <- function(path) {
 
 
 severity_terms_for_organ <- function(org) {
+  if (org == "LU") return(c("las_per10", "las_unavailable", "las_under12"))
   if (org == "KI") {
     return(c("kidney_no_dialysis_time", "kidney_dialysis_years", "kidney_diabetes"))
   }
@@ -281,6 +282,10 @@ fit_initial_listing_model_coefficients <- function(dat, org, model_tier, model_t
 }
 
 log_msg("Reading primary deduplicated cohort")
+if (isTRUE(getOption("publication.cached_cohort", TRUE))) {
+  source("code/publication_cohort.R")
+  analysis_dat <- as_tibble(publication_baseline_data())
+} else {
 analysis_dat <- read_csv(analysis_path, show_col_types = FALSE) %>%
   mutate(
     candidate_zip = clean_zip(candidate_zip),
@@ -314,6 +319,11 @@ analysis_dat <- analysis_dat %>%
     o3_prior_10ppb = o3_prior_ppb / 10,
     no2_prior_10ppb = no2_prior_ppb / 10
   )
+}
+if (!"baseline_las" %in% names(analysis_dat)) stop("Use the audited LAS publication cohort for the revised model set")
+analysis_dat <- analysis_dat %>% mutate(
+  las_unavailable = as.integer(is.na(baseline_las)), las_under12 = as.integer(age < 12),
+  las_per10 = if_else(is.na(baseline_las), 37.80857, baseline_las)/10)
 
 exposure_term_labels <- c(
   pm25_prior_5ug = "Prior-year PM2.5 per 5 ug/m3",
@@ -336,6 +346,10 @@ model_specs <- list(
 
 results <- list()
 coefficient_results <- list()
+if(length(target_organs)<4L) {
+  results[[1]] <- read_csv(file.path(out_dir,"prior_year_initial_listing_cox_model_set_results.csv"),show_col_types=FALSE) %>% filter(!organ %in% target_organs)
+  coefficient_results[[1]] <- read_csv(file.path(out_dir,"prior_year_initial_listing_cox_model_set_full_coefficients.csv"),show_col_types=FALSE) %>% filter(!organ %in% target_organs)
+}
 for (org in target_organs) {
   for (tier in model_tiers) {
     for (model_type in names(model_specs)) {
@@ -467,6 +481,8 @@ cohort_summary <- bind_rows(lapply(names(model_specs), function(model_type) {
     }))
   }))
 }))
+if(length(target_organs)<4L) cohort_summary <- bind_rows(
+  read_csv(file.path(out_dir,"prior_year_initial_listing_cox_model_set_cohort_summary.csv"),show_col_types=FALSE) %>% filter(!organ %in% target_organs),cohort_summary)
 write_csv(cohort_summary, file.path(out_dir, "prior_year_initial_listing_cox_model_set_cohort_summary.csv"))
 
 notes <- c(
@@ -474,7 +490,7 @@ notes <- c(
   "All models use mean PM2.5/O3 during the 365 days before initial listing, or day-weighted NO2 during the 12 complete calendar months before the listing month. Annual NO2 approximates months before monthly coverage begins in 2019.",
   "Unadjusted models include pollutant exposure term(s) only.",
   "Adjusted + SDOH models include age, sex, race, ZCTA-level SVI proxy, and transplant center strata.",
-  "Adjusted + SDOH + organ score at listing models additionally include baseline organ_score for heart, liver, and lung candidates; kidney models additionally include no dialysis time, dialysis duration in years, and diabetes.",
+  "Adjusted + SDOH + organ score at listing models include baseline organ_score for heart and liver; kidney uses no dialysis time, duration, and diabetes. Lung uses official baseline LAS/10 with missing and age<12 indicators; missing LAS is filled with 37.80857. Lung listings and follow-up end March 8, 2023; CAS is not used.",
   "Single-pollutant models were fit separately for PM2.5, O3, and NO2. Multipollutant models included PM2.5 + NO2 and PM2.5 + NO2 + O3.",
   "Values are hazard ratios with 95% confidence intervals; PM2.5 is per 5 ug/m3, O3 per 10 ppb, and NO2 per 10 ppb."
 )

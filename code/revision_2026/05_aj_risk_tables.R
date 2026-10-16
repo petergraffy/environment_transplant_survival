@@ -1,6 +1,8 @@
 source("code/revision_2026/common.R")
 suppressPackageStartupMessages(library(patchwork))
-dat <- baseline_data()
+source("code/publication_cohort.R")
+dat <- publication_baseline_data()
+reference_dat <- baseline_data()
 dest <- file.path(revision_dir,"aj_with_risk_tables"); dir.create(dest,showWarnings=FALSE)
 curves <- read_csv("output/prior_year_pollution_quartile_aalen_johansen_cif/prior_year_pollution_quartile_aalen_johansen_curve_data.csv",show_col_types=FALSE)
 quartiles <- c("Q1 lowest","Q2","Q3","Q4 highest")
@@ -10,7 +12,7 @@ titles <- c("PM2.5"="PM[2.5]","NO2"="NO[2]","O3"="O[3]")
 raws <- c("PM2.5"="pm25_prior_ug_m3","NO2"="no2_prior_ppb","O3"="o3_prior_ppb")
 ticks <- function(h) switch(as.character(h),`1`=c(0,.5,1),`3`=0:3,`5`=0:5,`10`=seq(0,10,2))
 counts <- list(); zeros <- list(); reconciliation <- list()
-cohort_reference <- read_csv(file.path(revision_dir,"registration_spell_summary.csv"),show_col_types=FALSE)
+cohort_reference <- read_csv(file.path(revision_dir,"las_era_lung","publication_cohort_counts.csv"),show_col_types=FALSE)
 original_aj <- read_csv("output/prior_year_pollution_quartile_aalen_johansen_cif/prior_year_pollution_quartile_event_summary.csv",show_col_types=FALSE)
 for(p in names(raws)) {
   col <- raws[[p]]
@@ -24,7 +26,8 @@ for(p in names(raws)) {
     excluded_exposure=sum(exclusion=="Unavailable prelisting exposure"),
     aj_n=sum(exclusion=="Included")),by=WL_ORG][,pollutant:=p]
   d <- copy(dat[is.finite(get(col)) & followup_days>0 & !is.na(adverse_event) & !is.na(transplant_or_improvement)])
-  br <- quantile(d[[col]],seq(0,1,.25),type=7); br[c(1,5)]<-c(-Inf,Inf)
+  ref <- reference_dat[is.finite(get(col)) & followup_days>0 & !is.na(adverse_event) & !is.na(transplant_or_improvement)]
+  br <- quantile(ref[[col]],seq(0,1,.25),type=7); br[c(1,5)]<-c(-Inf,Inf)
   d[,quartile:=cut(get(col),br,labels=quartiles,include.lowest=TRUE)]
   for(org in names(organ_names)) for(q in quartiles) {
     x <- d[WL_ORG==org & quartile==q,followup_days/365.25]

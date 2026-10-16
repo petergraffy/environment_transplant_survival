@@ -1,7 +1,8 @@
 source("code/revision_2026/common.R")
 setDTthreads(2)
-dest <- file.path(revision_dir, "las_era_lung")
-prep <- readRDS(file.path(revision_dir, "cache", "las_era_lung", "prepared.rds"))
+bundle <- getOption("las.bundle", "las_era_lung")
+dest <- file.path(revision_dir, bundle)
+prep <- readRDS(file.path(revision_dir, "cache", bundle, "prepared.rds"))
 b <- prep$cohort
 b[, `:=`(age_group = cut(age, c(-Inf, 17, 39, 59, Inf), labels = c("<18", "18-39", "40-59", "60+")),
   race_group = fcase(as.character(race) == "WHITE", "White", as.character(race) == "BLACK", "Black",
@@ -11,6 +12,11 @@ fit_one <- function(d, terms, model_type, variant = "Primary", subgroup = "All",
                     adjust = c("age", "sex", "race", "zcta_svi_proxy"), center = TRUE,
                     severity = TRUE, death_only = FALSE) {
   tv <- model_type == "Time-varying"
+  if (tv && isTRUE(prep$extended)) {
+    exposure_end <- if (any(terms %in% c("pm25_interval_5ug", "o3_interval_10ppb")))
+      as.Date("2024-12-31") else as.Date("2025-12-31")
+    d <- d[interval_end_date <= exposure_end]
+  }
   event <- if(tv) "tv_adverse_event" else "adverse_event"
   severity_terms <- if(tv && severity) c("las_per10", "las_unavailable", "las_under12") else character()
   if(variant == "Previous proxy") severity_terms <- "organ_score_tv"
@@ -95,7 +101,7 @@ d <- ex$no2_annual[d, on = c("zip", "year")]
 d[, `:=`(pm25_interval_5ug = pm25_interval_ug_m3 / 5, o3_interval_10ppb = o3_interval_ppb / 10,
   no2_interval_10ppb = fifelse(!is.na(no2_interval_ppb), no2_interval_ppb, no2_annual_ppb) / 10)]
 terms <- c(pm25 = "pm25_interval_5ug", no2 = "no2_interval_10ppb", o3 = "o3_interval_10ppb")
-saveRDS(d, file.path(revision_dir, "cache", "las_era_lung", "monthly_intervals.rds"), compress = FALSE)
+saveRDS(d, file.path(revision_dir, "cache", bundle, "monthly_intervals.rds"), compress = FALSE)
 fit_suite(d, terms, "Time-varying")
 r <- rbindlist(results)
 print(r[variant == "Primary", .(model, term, N, events, HR, HR_low, HR_high, status)])

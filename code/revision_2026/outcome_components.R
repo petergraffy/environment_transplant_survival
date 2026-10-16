@@ -35,6 +35,16 @@ primary_outcome_components <- function(base, cache_dir = "output/revision_2026_c
       transplant_or_improvement, other_exit, terminal_removal_code = CAN_REM_CD,
       component, death_event = as.integer(component == "death"))]
   }
+  # Cache the original cohort resolution, never the publication-specific censoring.
+  if (!file.exists(cache_file)) saveRDS(out, cache_file, compress = FALSE)
+  out <- copy(out)
+  if ("lung_las_era" %in% names(b) && any(b$lung_las_era)) {
+    cutoff <- as.Date("2023-03-08")
+    out <- out[WL_ORG != "LU" | PERS_ID %in% b[WL_ORG == "LU", PERS_ID]]
+    out[WL_ORG == "LU" & observed_end_date > cutoff, `:=`(
+      observed_end_date = cutoff, adverse_event = 0L, transplant_or_improvement = 0L,
+      other_exit = 0L, death_event = 0L, component = "administrative_censor")]
+  }
   check <- merge(b[, .(PERS_ID, WL_ORG, observed_end_date, adverse_event,
     transplant_or_improvement, other_exit)], out, by = c("PERS_ID", "WL_ORG"),
     suffixes = c("_primary", "_resolved"))
@@ -44,6 +54,5 @@ primary_outcome_components <- function(base, cache_dir = "output/revision_2026_c
   }
   stopifnot(all(out$adverse_event == as.integer(out$component %in% c("death", "deterioration"))),
     all(out$transplant_or_improvement == as.integer(out$component %in% c("transplant", "improvement"))))
-  if (!file.exists(cache_file)) saveRDS(out, cache_file, compress = FALSE)
   out[]
 }

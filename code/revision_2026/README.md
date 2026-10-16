@@ -1,5 +1,17 @@
 # September 2026 manuscript revision analyses
 
+## October 2026 LAS-era update
+
+Official LAS histories are now available. Lung candidates and follow-up are
+restricted to March 8, 2023 or earlier; official LAS replaces the proxy at
+monthly interval starts. CAS is not used. Scripts 29-39 implement the source
+audit, cohort preparation, model refits, publication synchronization, diagnostic
+updates, and visual/data checks. The current artifact index is
+`output/revision_2026_checklist/las_era_lung/publication_index.html`; its adjacent
+README gives reproduction order. Primary figure/table inputs now incorporate
+the lung update. The preservation/source-limitation statements below describe
+the earlier September revision, not the current publication state.
+
 These scripts preserve the primary outputs and write to
 `output/revision_2026_checklist`. Candidate-level intermediates are stored only
 in its git-ignored `cache` directory. Run from the repository root with the
@@ -81,6 +93,16 @@ invalidate these caches after changing source data, cohort definitions or model
 specifications; existing checkpoints are not automatically fingerprinted.
 
 ## Additional lung sensitivities
+
+- `40_las_extended_followup.R`: refits the LAS-era entry cohort with subsequent
+  follow-up retained. LAS updates stop March 8, 2023 and the last observed LAS
+  carries forward; missing/pediatric handling is unchanged. Baseline follow-up
+  extends through observed outcomes (at most December 2025); time-varying models
+  stop December 2024 for PM2.5/O3 and December 2025 for NO2. Results and private
+  caches are isolated in `las_extended_followup`, preserving `las_era_lung` as
+  the transition-censored comparison. Publication displays are not overwritten
+  by this entry point. `primary_comparison.csv` and `post_transition_followup.csv`
+  summarize changes and dependence on the carry-forward assumption.
 
 - `17_svi_validation_figure.R`: combined appendix SVI validation figure.
 - `18_lung_score_reaudit.R`: fresh lung score/source schema audit.
