@@ -10,13 +10,6 @@ Kidney,No composite organ score,No dialysis time,CAN_ON_DIAL/CAN_DIAL and CAN_DI
 Kidney,No composite organ score,Dialysis duration,CAN_DIAL_DT and waitlist episode start date,Continuous years,Estimated model coefficient per year,Set to 0 when no dialysis time indicator was 1
 Kidney,No composite organ score,Diabetes,CAN_DIAB or CAN_DIAB_TY,Binary indicator,Estimated model coefficient,Constructed from SRTR diabetes fields
 Liver,MELD/PELD score,Initial MELD/PELD,CAN_INIT_SRTR_LAB_MELD; fallback CAN_LAST_SRTR_LAB_MELD,Continuous score as stored in SRTR model; Table 1 display subtracts 6200 offset,Estimated model coefficient per 1-point increase,Initial value used when available; last value used when initial missing
-Lung,Lung LAS/CAS component proxy,FEV1,CAN_FEV1,Continuous,-0.010,Missing numeric values set to 0 for proxy score calculation
-Lung,Lung LAS/CAS component proxy,FVC,CAN_FVC,Continuous,-0.005,Missing numeric values set to 0 for proxy score calculation
-Lung,Lung LAS/CAS component proxy,PCO2,CAN_PCO2,"Continuous, mm Hg",0.020,Missing numeric values set to 0 for proxy score calculation
-Lung,Lung LAS/CAS component proxy,Resting oxygen requirement,CAN_AT_REST_O2,Continuous,0.010,Missing numeric values set to 0 for proxy score calculation
-Lung,Lung LAS/CAS component proxy,6-minute walk distance,CAN_SIX_MIN_WALK,"Continuous, ft",-0.002,Missing numeric values set to 0 for proxy score calculation
-Lung,Lung LAS/CAS component proxy,Mean pulmonary artery pressure,CAN_PULM_ART_MEAN,"Continuous, mm Hg",0.010,Missing numeric values set to 0 for proxy score calculation
-Lung,Lung LAS/CAS component proxy,Cardiac output,CAN_CARDIAC_OUTPUT,"Continuous, L/min",-0.050,Missing numeric values set to 0 for proxy score calculation
-Lung,Lung LAS/CAS component proxy,Ventilator use,CAN_VENTILATOR or CAN_ON_VENTILATOR,Binary indicator,1.000,Missing/no ventilator coded 0
-Lung,Lung LAS/CAS component proxy,ECMO use,CAN_ECMO,Binary indicator,1.500,Missing/no ECMO coded 0
-Lung,Lung LAS/CAS component proxy,Corticosteroid dependence,CAN_CORTICOST_DEPND,Binary indicator,0.300,Missing/no corticosteroid dependence coded 0
+Lung,las_per10,Official calculated LAS,CANHX_LAS_SCORE_CALC; CANHX_LAS_SCORE_BEGIN_DT; PX_ID,"Latest score at monthly interval start, divided by 10",Estimated separately in each time-varying model,"Carry forward; no future backfill. Missing filled with 37.80857, with missing and under-12 indicators"
+Lung,las_unavailable,LAS unavailable,Availability at interval start,Binary indicator,Estimated separately in each time-varying model,1 when LAS missing or age <12
+Lung,las_under12,Age below LAS applicability,Age at listing plus elapsed follow-up,Binary age <12 years indicator,Estimated separately in each time-varying model,LAS not applied below age 12

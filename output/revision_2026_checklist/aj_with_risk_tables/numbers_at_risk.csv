@@ -227,82 +227,82 @@ Liver,PM2.5,Q4 highest,10,4,5207
 Liver,PM2.5,Q4 highest,10,6,2771
 Liver,PM2.5,Q4 highest,10,8,1556
 Liver,PM2.5,Q4 highest,10,10,861
-Lung,PM2.5,Q1 lowest,1,0,13143
-Lung,PM2.5,Q1 lowest,1,0.5,3371
-Lung,PM2.5,Q1 lowest,1,1,1895
-Lung,PM2.5,Q1 lowest,3,0,13143
-Lung,PM2.5,Q1 lowest,3,1,1895
-Lung,PM2.5,Q1 lowest,3,2,867
-Lung,PM2.5,Q1 lowest,3,3,479
-Lung,PM2.5,Q1 lowest,5,0,13143
-Lung,PM2.5,Q1 lowest,5,1,1895
-Lung,PM2.5,Q1 lowest,5,2,867
-Lung,PM2.5,Q1 lowest,5,3,479
-Lung,PM2.5,Q1 lowest,5,4,284
-Lung,PM2.5,Q1 lowest,5,5,192
-Lung,PM2.5,Q1 lowest,10,0,13143
-Lung,PM2.5,Q1 lowest,10,2,867
-Lung,PM2.5,Q1 lowest,10,4,284
-Lung,PM2.5,Q1 lowest,10,6,110
-Lung,PM2.5,Q1 lowest,10,8,41
-Lung,PM2.5,Q1 lowest,10,10,13
-Lung,PM2.5,Q2,1,0,12492
-Lung,PM2.5,Q2,1,0.5,3179
-Lung,PM2.5,Q2,1,1,1806
-Lung,PM2.5,Q2,3,0,12492
-Lung,PM2.5,Q2,3,1,1806
-Lung,PM2.5,Q2,3,2,854
-Lung,PM2.5,Q2,3,3,460
-Lung,PM2.5,Q2,5,0,12492
-Lung,PM2.5,Q2,5,1,1806
-Lung,PM2.5,Q2,5,2,854
-Lung,PM2.5,Q2,5,3,460
-Lung,PM2.5,Q2,5,4,276
-Lung,PM2.5,Q2,5,5,186
-Lung,PM2.5,Q2,10,0,12492
-Lung,PM2.5,Q2,10,2,854
-Lung,PM2.5,Q2,10,4,276
-Lung,PM2.5,Q2,10,6,113
-Lung,PM2.5,Q2,10,8,40
-Lung,PM2.5,Q2,10,10,18
-Lung,PM2.5,Q3,1,0,11368
-Lung,PM2.5,Q3,1,0.5,3350
-Lung,PM2.5,Q3,1,1,2016
-Lung,PM2.5,Q3,3,0,11368
-Lung,PM2.5,Q3,3,1,2016
-Lung,PM2.5,Q3,3,2,1003
-Lung,PM2.5,Q3,3,3,594
-Lung,PM2.5,Q3,5,0,11368
-Lung,PM2.5,Q3,5,1,2016
-Lung,PM2.5,Q3,5,2,1003
-Lung,PM2.5,Q3,5,3,594
-Lung,PM2.5,Q3,5,4,366
-Lung,PM2.5,Q3,5,5,241
-Lung,PM2.5,Q3,10,0,11368
-Lung,PM2.5,Q3,10,2,1003
-Lung,PM2.5,Q3,10,4,366
-Lung,PM2.5,Q3,10,6,181
-Lung,PM2.5,Q3,10,8,89
-Lung,PM2.5,Q3,10,10,36
-Lung,PM2.5,Q4 highest,1,0,9840
-Lung,PM2.5,Q4 highest,1,0.5,3336
-Lung,PM2.5,Q4 highest,1,1,2119
-Lung,PM2.5,Q4 highest,3,0,9840
-Lung,PM2.5,Q4 highest,3,1,2119
-Lung,PM2.5,Q4 highest,3,2,1166
-Lung,PM2.5,Q4 highest,3,3,702
-Lung,PM2.5,Q4 highest,5,0,9840
-Lung,PM2.5,Q4 highest,5,1,2119
-Lung,PM2.5,Q4 highest,5,2,1166
-Lung,PM2.5,Q4 highest,5,3,702
-Lung,PM2.5,Q4 highest,5,4,480
-Lung,PM2.5,Q4 highest,5,5,317
-Lung,PM2.5,Q4 highest,10,0,9840
-Lung,PM2.5,Q4 highest,10,2,1166
-Lung,PM2.5,Q4 highest,10,4,480
-Lung,PM2.5,Q4 highest,10,6,213
-Lung,PM2.5,Q4 highest,10,8,105
-Lung,PM2.5,Q4 highest,10,10,58
+Lung,PM2.5,Q1 lowest,1,0,10841
+Lung,PM2.5,Q1 lowest,1,0.5,2995
+Lung,PM2.5,Q1 lowest,1,1,1681
+Lung,PM2.5,Q1 lowest,3,0,10841
+Lung,PM2.5,Q1 lowest,3,1,1681
+Lung,PM2.5,Q1 lowest,3,2,775
+Lung,PM2.5,Q1 lowest,3,3,416
+Lung,PM2.5,Q1 lowest,5,0,10841
+Lung,PM2.5,Q1 lowest,5,1,1681
+Lung,PM2.5,Q1 lowest,5,2,775
+Lung,PM2.5,Q1 lowest,5,3,416
+Lung,PM2.5,Q1 lowest,5,4,248
+Lung,PM2.5,Q1 lowest,5,5,156
+Lung,PM2.5,Q1 lowest,10,0,10841
+Lung,PM2.5,Q1 lowest,10,2,775
+Lung,PM2.5,Q1 lowest,10,4,248
+Lung,PM2.5,Q1 lowest,10,6,88
+Lung,PM2.5,Q1 lowest,10,8,31
+Lung,PM2.5,Q1 lowest,10,10,9
+Lung,PM2.5,Q2,1,0,10664
+Lung,PM2.5,Q2,1,0.5,2784
+Lung,PM2.5,Q2,1,1,1580
+Lung,PM2.5,Q2,3,0,10664
+Lung,PM2.5,Q2,3,1,1580
+Lung,PM2.5,Q2,3,2,788
+Lung,PM2.5,Q2,3,3,426
+Lung,PM2.5,Q2,5,0,10664
+Lung,PM2.5,Q2,5,1,1580
+Lung,PM2.5,Q2,5,2,788
+Lung,PM2.5,Q2,5,3,426
+Lung,PM2.5,Q2,5,4,252
+Lung,PM2.5,Q2,5,5,157
+Lung,PM2.5,Q2,10,0,10664
+Lung,PM2.5,Q2,10,2,788
+Lung,PM2.5,Q2,10,4,252
+Lung,PM2.5,Q2,10,6,93
+Lung,PM2.5,Q2,10,8,34
+Lung,PM2.5,Q2,10,10,14
+Lung,PM2.5,Q3,1,0,9890
+Lung,PM2.5,Q3,1,0.5,3078
+Lung,PM2.5,Q3,1,1,1863
+Lung,PM2.5,Q3,3,0,9890
+Lung,PM2.5,Q3,3,1,1863
+Lung,PM2.5,Q3,3,2,940
+Lung,PM2.5,Q3,3,3,568
+Lung,PM2.5,Q3,5,0,9890
+Lung,PM2.5,Q3,5,1,1863
+Lung,PM2.5,Q3,5,2,940
+Lung,PM2.5,Q3,5,3,568
+Lung,PM2.5,Q3,5,4,353
+Lung,PM2.5,Q3,5,5,229
+Lung,PM2.5,Q3,10,0,9890
+Lung,PM2.5,Q3,10,2,940
+Lung,PM2.5,Q3,10,4,353
+Lung,PM2.5,Q3,10,6,168
+Lung,PM2.5,Q3,10,8,82
+Lung,PM2.5,Q3,10,10,32
+Lung,PM2.5,Q4 highest,1,0,9380
+Lung,PM2.5,Q4 highest,1,0.5,3256
+Lung,PM2.5,Q4 highest,1,1,2068
+Lung,PM2.5,Q4 highest,3,0,9380
+Lung,PM2.5,Q4 highest,3,1,2068
+Lung,PM2.5,Q4 highest,3,2,1146
+Lung,PM2.5,Q4 highest,3,3,689
+Lung,PM2.5,Q4 highest,5,0,9380
+Lung,PM2.5,Q4 highest,5,1,2068
+Lung,PM2.5,Q4 highest,5,2,1146
+Lung,PM2.5,Q4 highest,5,3,689
+Lung,PM2.5,Q4 highest,5,4,477
+Lung,PM2.5,Q4 highest,5,5,315
+Lung,PM2.5,Q4 highest,10,0,9380
+Lung,PM2.5,Q4 highest,10,2,1146
+Lung,PM2.5,Q4 highest,10,4,477
+Lung,PM2.5,Q4 highest,10,6,211
+Lung,PM2.5,Q4 highest,10,8,103
+Lung,PM2.5,Q4 highest,10,10,55
 Heart,NO2,Q1 lowest,1,0,21635
 Heart,NO2,Q1 lowest,1,0.5,6620
 Heart,NO2,Q1 lowest,1,1,4063
@@ -531,82 +531,82 @@ Liver,NO2,Q4 highest,10,4,5796
 Liver,NO2,Q4 highest,10,6,3105
 Liver,NO2,Q4 highest,10,8,1690
 Liver,NO2,Q4 highest,10,10,916
-Lung,NO2,Q1 lowest,1,0,14336
-Lung,NO2,Q1 lowest,1,0.5,2779
-Lung,NO2,Q1 lowest,1,1,1444
-Lung,NO2,Q1 lowest,3,0,14336
-Lung,NO2,Q1 lowest,3,1,1444
-Lung,NO2,Q1 lowest,3,2,617
-Lung,NO2,Q1 lowest,3,3,329
-Lung,NO2,Q1 lowest,5,0,14336
-Lung,NO2,Q1 lowest,5,1,1444
-Lung,NO2,Q1 lowest,5,2,617
-Lung,NO2,Q1 lowest,5,3,329
-Lung,NO2,Q1 lowest,5,4,174
-Lung,NO2,Q1 lowest,5,5,117
-Lung,NO2,Q1 lowest,10,0,14336
-Lung,NO2,Q1 lowest,10,2,617
-Lung,NO2,Q1 lowest,10,4,174
-Lung,NO2,Q1 lowest,10,6,57
-Lung,NO2,Q1 lowest,10,8,26
-Lung,NO2,Q1 lowest,10,10,7
-Lung,NO2,Q2,1,0,13681
-Lung,NO2,Q2,1,0.5,3468
-Lung,NO2,Q2,1,1,1922
-Lung,NO2,Q2,3,0,13681
-Lung,NO2,Q2,3,1,1922
-Lung,NO2,Q2,3,2,911
-Lung,NO2,Q2,3,3,519
-Lung,NO2,Q2,5,0,13681
-Lung,NO2,Q2,5,1,1922
-Lung,NO2,Q2,5,2,911
-Lung,NO2,Q2,5,3,519
-Lung,NO2,Q2,5,4,327
-Lung,NO2,Q2,5,5,214
-Lung,NO2,Q2,10,0,13681
-Lung,NO2,Q2,10,2,911
-Lung,NO2,Q2,10,4,327
-Lung,NO2,Q2,10,6,141
-Lung,NO2,Q2,10,8,67
-Lung,NO2,Q2,10,10,35
-Lung,NO2,Q3,1,0,13036
-Lung,NO2,Q3,1,0.5,3882
-Lung,NO2,Q3,1,1,2341
-Lung,NO2,Q3,3,0,13036
-Lung,NO2,Q3,3,1,2341
-Lung,NO2,Q3,3,2,1203
-Lung,NO2,Q3,3,3,688
-Lung,NO2,Q3,5,0,13036
-Lung,NO2,Q3,5,1,2341
-Lung,NO2,Q3,5,2,1203
-Lung,NO2,Q3,5,3,688
-Lung,NO2,Q3,5,4,435
-Lung,NO2,Q3,5,5,291
-Lung,NO2,Q3,10,0,13036
-Lung,NO2,Q3,10,2,1203
-Lung,NO2,Q3,10,4,435
-Lung,NO2,Q3,10,6,199
-Lung,NO2,Q3,10,8,83
-Lung,NO2,Q3,10,10,35
-Lung,NO2,Q4 highest,1,0,9405
-Lung,NO2,Q4 highest,1,0.5,3311
-Lung,NO2,Q4 highest,1,1,2129
-Lung,NO2,Q4 highest,3,0,9405
-Lung,NO2,Q4 highest,3,1,2129
-Lung,NO2,Q4 highest,3,2,1159
-Lung,NO2,Q4 highest,3,3,699
-Lung,NO2,Q4 highest,5,0,9405
-Lung,NO2,Q4 highest,5,1,2129
-Lung,NO2,Q4 highest,5,2,1159
-Lung,NO2,Q4 highest,5,3,699
-Lung,NO2,Q4 highest,5,4,470
-Lung,NO2,Q4 highest,5,5,314
-Lung,NO2,Q4 highest,10,0,9405
-Lung,NO2,Q4 highest,10,2,1159
-Lung,NO2,Q4 highest,10,4,470
-Lung,NO2,Q4 highest,10,6,220
-Lung,NO2,Q4 highest,10,8,99
-Lung,NO2,Q4 highest,10,10,48
+Lung,NO2,Q1 lowest,1,0,9078
+Lung,NO2,Q1 lowest,1,0.5,2115
+Lung,NO2,Q1 lowest,1,1,1135
+Lung,NO2,Q1 lowest,3,0,9078
+Lung,NO2,Q1 lowest,3,1,1135
+Lung,NO2,Q1 lowest,3,2,497
+Lung,NO2,Q1 lowest,3,3,267
+Lung,NO2,Q1 lowest,5,0,9078
+Lung,NO2,Q1 lowest,5,1,1135
+Lung,NO2,Q1 lowest,5,2,497
+Lung,NO2,Q1 lowest,5,3,267
+Lung,NO2,Q1 lowest,5,4,147
+Lung,NO2,Q1 lowest,5,5,97
+Lung,NO2,Q1 lowest,10,0,9078
+Lung,NO2,Q1 lowest,10,2,497
+Lung,NO2,Q1 lowest,10,4,147
+Lung,NO2,Q1 lowest,10,6,48
+Lung,NO2,Q1 lowest,10,8,21
+Lung,NO2,Q1 lowest,10,10,6
+Lung,NO2,Q2,1,0,10988
+Lung,NO2,Q2,1,0.5,3070
+Lung,NO2,Q2,1,1,1739
+Lung,NO2,Q2,3,0,10988
+Lung,NO2,Q2,3,1,1739
+Lung,NO2,Q2,3,2,842
+Lung,NO2,Q2,3,3,477
+Lung,NO2,Q2,5,0,10988
+Lung,NO2,Q2,5,1,1739
+Lung,NO2,Q2,5,2,842
+Lung,NO2,Q2,5,3,477
+Lung,NO2,Q2,5,4,298
+Lung,NO2,Q2,5,5,193
+Lung,NO2,Q2,10,0,10988
+Lung,NO2,Q2,10,2,842
+Lung,NO2,Q2,10,4,298
+Lung,NO2,Q2,10,6,128
+Lung,NO2,Q2,10,8,64
+Lung,NO2,Q2,10,10,31
+Lung,NO2,Q3,1,0,11604
+Lung,NO2,Q3,1,0.5,3655
+Lung,NO2,Q3,1,1,2212
+Lung,NO2,Q3,3,0,11604
+Lung,NO2,Q3,3,1,2212
+Lung,NO2,Q3,3,2,1160
+Lung,NO2,Q3,3,3,663
+Lung,NO2,Q3,5,0,11604
+Lung,NO2,Q3,5,1,2212
+Lung,NO2,Q3,5,2,1160
+Lung,NO2,Q3,5,3,663
+Lung,NO2,Q3,5,4,420
+Lung,NO2,Q3,5,5,263
+Lung,NO2,Q3,10,0,11604
+Lung,NO2,Q3,10,2,1160
+Lung,NO2,Q3,10,4,420
+Lung,NO2,Q3,10,6,175
+Lung,NO2,Q3,10,8,74
+Lung,NO2,Q3,10,10,29
+Lung,NO2,Q4 highest,1,0,9105
+Lung,NO2,Q4 highest,1,0.5,3273
+Lung,NO2,Q4 highest,1,1,2106
+Lung,NO2,Q4 highest,3,0,9105
+Lung,NO2,Q4 highest,3,1,2106
+Lung,NO2,Q4 highest,3,2,1150
+Lung,NO2,Q4 highest,3,3,692
+Lung,NO2,Q4 highest,5,0,9105
+Lung,NO2,Q4 highest,5,1,2106
+Lung,NO2,Q4 highest,5,2,1150
+Lung,NO2,Q4 highest,5,3,692
+Lung,NO2,Q4 highest,5,4,465
+Lung,NO2,Q4 highest,5,5,304
+Lung,NO2,Q4 highest,10,0,9105
+Lung,NO2,Q4 highest,10,2,1150
+Lung,NO2,Q4 highest,10,4,465
+Lung,NO2,Q4 highest,10,6,209
+Lung,NO2,Q4 highest,10,8,91
+Lung,NO2,Q4 highest,10,10,44
 Heart,O3,Q1 lowest,1,0,17313
 Heart,O3,Q1 lowest,1,0.5,7042
 Heart,O3,Q1 lowest,1,1,4780
@@ -835,79 +835,79 @@ Liver,O3,Q4 highest,10,4,4831
 Liver,O3,Q4 highest,10,6,2424
 Liver,O3,Q4 highest,10,8,1295
 Liver,O3,Q4 highest,10,10,675
-Lung,O3,Q1 lowest,1,0,9717
-Lung,O3,Q1 lowest,1,0.5,3005
-Lung,O3,Q1 lowest,1,1,1805
-Lung,O3,Q1 lowest,3,0,9717
-Lung,O3,Q1 lowest,3,1,1805
-Lung,O3,Q1 lowest,3,2,893
-Lung,O3,Q1 lowest,3,3,507
-Lung,O3,Q1 lowest,5,0,9717
-Lung,O3,Q1 lowest,5,1,1805
-Lung,O3,Q1 lowest,5,2,893
-Lung,O3,Q1 lowest,5,3,507
-Lung,O3,Q1 lowest,5,4,330
-Lung,O3,Q1 lowest,5,5,220
-Lung,O3,Q1 lowest,10,0,9717
-Lung,O3,Q1 lowest,10,2,893
-Lung,O3,Q1 lowest,10,4,330
-Lung,O3,Q1 lowest,10,6,146
-Lung,O3,Q1 lowest,10,8,58
-Lung,O3,Q1 lowest,10,10,20
-Lung,O3,Q2,1,0,12869
-Lung,O3,Q2,1,0.5,3596
-Lung,O3,Q2,1,1,2100
-Lung,O3,Q2,3,0,12869
-Lung,O3,Q2,3,1,2100
-Lung,O3,Q2,3,2,1010
-Lung,O3,Q2,3,3,568
-Lung,O3,Q2,5,0,12869
-Lung,O3,Q2,5,1,2100
-Lung,O3,Q2,5,2,1010
-Lung,O3,Q2,5,3,568
-Lung,O3,Q2,5,4,347
-Lung,O3,Q2,5,5,224
-Lung,O3,Q2,10,0,12869
-Lung,O3,Q2,10,2,1010
-Lung,O3,Q2,10,4,347
-Lung,O3,Q2,10,6,130
-Lung,O3,Q2,10,8,51
-Lung,O3,Q2,10,10,22
-Lung,O3,Q3,1,0,12979
-Lung,O3,Q3,1,0.5,3488
-Lung,O3,Q3,1,1,2017
-Lung,O3,Q3,3,0,12979
-Lung,O3,Q3,3,1,2017
-Lung,O3,Q3,3,2,967
-Lung,O3,Q3,3,3,563
-Lung,O3,Q3,5,0,12979
-Lung,O3,Q3,5,1,2017
-Lung,O3,Q3,5,2,967
-Lung,O3,Q3,5,3,563
-Lung,O3,Q3,5,4,351
-Lung,O3,Q3,5,5,242
-Lung,O3,Q3,10,0,12979
-Lung,O3,Q3,10,2,967
-Lung,O3,Q3,10,4,351
-Lung,O3,Q3,10,6,173
-Lung,O3,Q3,10,8,79
-Lung,O3,Q3,10,10,45
-Lung,O3,Q4 highest,1,0,11278
-Lung,O3,Q4 highest,1,0.5,3147
-Lung,O3,Q4 highest,1,1,1914
-Lung,O3,Q4 highest,3,0,11278
-Lung,O3,Q4 highest,3,1,1914
-Lung,O3,Q4 highest,3,2,1020
-Lung,O3,Q4 highest,3,3,597
-Lung,O3,Q4 highest,5,0,11278
-Lung,O3,Q4 highest,5,1,1914
-Lung,O3,Q4 highest,5,2,1020
-Lung,O3,Q4 highest,5,3,597
-Lung,O3,Q4 highest,5,4,378
-Lung,O3,Q4 highest,5,5,250
-Lung,O3,Q4 highest,10,0,11278
-Lung,O3,Q4 highest,10,2,1020
-Lung,O3,Q4 highest,10,4,378
-Lung,O3,Q4 highest,10,6,168
-Lung,O3,Q4 highest,10,8,87
-Lung,O3,Q4 highest,10,10,38
+Lung,O3,Q1 lowest,1,0,8968
+Lung,O3,Q1 lowest,1,0.5,2859
+Lung,O3,Q1 lowest,1,1,1711
+Lung,O3,Q1 lowest,3,0,8968
+Lung,O3,Q1 lowest,3,1,1711
+Lung,O3,Q1 lowest,3,2,824
+Lung,O3,Q1 lowest,3,3,460
+Lung,O3,Q1 lowest,5,0,8968
+Lung,O3,Q1 lowest,5,1,1711
+Lung,O3,Q1 lowest,5,2,824
+Lung,O3,Q1 lowest,5,3,460
+Lung,O3,Q1 lowest,5,4,307
+Lung,O3,Q1 lowest,5,5,199
+Lung,O3,Q1 lowest,10,0,8968
+Lung,O3,Q1 lowest,10,2,824
+Lung,O3,Q1 lowest,10,4,307
+Lung,O3,Q1 lowest,10,6,130
+Lung,O3,Q1 lowest,10,8,48
+Lung,O3,Q1 lowest,10,10,19
+Lung,O3,Q2,1,0,11315
+Lung,O3,Q2,1,0.5,3227
+Lung,O3,Q2,1,1,1858
+Lung,O3,Q2,3,0,11315
+Lung,O3,Q2,3,1,1858
+Lung,O3,Q2,3,2,924
+Lung,O3,Q2,3,3,519
+Lung,O3,Q2,5,0,11315
+Lung,O3,Q2,5,1,1858
+Lung,O3,Q2,5,2,924
+Lung,O3,Q2,5,3,519
+Lung,O3,Q2,5,4,321
+Lung,O3,Q2,5,5,192
+Lung,O3,Q2,10,0,11315
+Lung,O3,Q2,10,2,924
+Lung,O3,Q2,10,4,321
+Lung,O3,Q2,10,6,111
+Lung,O3,Q2,10,8,43
+Lung,O3,Q2,10,10,20
+Lung,O3,Q3,1,0,10655
+Lung,O3,Q3,1,0.5,3078
+Lung,O3,Q3,1,1,1805
+Lung,O3,Q3,3,0,10655
+Lung,O3,Q3,3,1,1805
+Lung,O3,Q3,3,2,907
+Lung,O3,Q3,3,3,538
+Lung,O3,Q3,5,0,10655
+Lung,O3,Q3,5,1,1805
+Lung,O3,Q3,5,2,907
+Lung,O3,Q3,5,3,538
+Lung,O3,Q3,5,4,331
+Lung,O3,Q3,5,5,223
+Lung,O3,Q3,10,0,10655
+Lung,O3,Q3,10,2,907
+Lung,O3,Q3,10,4,331
+Lung,O3,Q3,10,6,159
+Lung,O3,Q3,10,8,75
+Lung,O3,Q3,10,10,37
+Lung,O3,Q4 highest,1,0,9837
+Lung,O3,Q4 highest,1,0.5,2949
+Lung,O3,Q4 highest,1,1,1818
+Lung,O3,Q4 highest,3,0,9837
+Lung,O3,Q4 highest,3,1,1818
+Lung,O3,Q4 highest,3,2,994
+Lung,O3,Q4 highest,3,3,582
+Lung,O3,Q4 highest,5,0,9837
+Lung,O3,Q4 highest,5,1,1818
+Lung,O3,Q4 highest,5,2,994
+Lung,O3,Q4 highest,5,3,582
+Lung,O3,Q4 highest,5,4,371
+Lung,O3,Q4 highest,5,5,243
+Lung,O3,Q4 highest,10,0,9837
+Lung,O3,Q4 highest,10,2,994
+Lung,O3,Q4 highest,10,4,371
+Lung,O3,Q4 highest,10,6,160
+Lung,O3,Q4 highest,10,8,84
+Lung,O3,Q4 highest,10,10,34

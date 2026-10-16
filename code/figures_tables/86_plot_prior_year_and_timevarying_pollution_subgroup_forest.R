@@ -21,7 +21,7 @@ in_path <- file.path(
   "prior_year_and_timevarying_pollution_subgroup_cox",
   "prior_year_and_timevarying_pollution_subgroup_cox_results.csv"
 )
-fig_dir <- file.path("output", "figures", "prior_year_and_timevarying_pollution_subgroup_cox")
+fig_dir <- file.path("output", "figures", "prior_year_and_timevarying_pollution_subgroup_cox", "las_era_20261015")
 dir.create(fig_dir, recursive = TRUE, showWarnings = FALSE)
 
 pollutant_levels <- c("pm25", "o3", "no2")
@@ -77,7 +77,7 @@ plot_one_model <- function(dat, model_value, title_text) {
         subgroup_label == "Sex" ~ factor(subgroup_level, levels = rev(c("Female", "Male"))),
         TRUE ~ factor(subgroup_level, levels = rev(c("White", "Black", "Asian")))
       ),
-      hr_ci = format_ci(hazard_ratio, conf_low, conf_high),
+      hr_ci = paste0(format_ci(hazard_ratio, conf_low, conf_high), if_else(!is.na(warnings) & nzchar(warnings), "*", "")),
       label_x = conf_high * 1.01
     )
 

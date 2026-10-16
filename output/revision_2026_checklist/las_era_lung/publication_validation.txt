@@ -1,0 +1,7 @@
+PASS: final cohort and outcome components reconcile.
+PASS: all 24 primary baseline/time-varying estimates match their diagnostic refits within 1e-7.
+PASS: baseline risk-table counts reconcile to exposure-eligible cohort counts.
+PASS: all matched nonlung Table 1 cells equal the pre-update committed values.
+PASS: lung map models contain 40,721 candidates and 5,206 adverse events.
+PASS: candidate ABC map includes 1,007,801 candidate-organ observations.
+PASS: 244 publication artifacts indexed; all files exist and are nonempty.

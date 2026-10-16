@@ -1,0 +1,16 @@
+context,warning
+baseline pm25 band 3,Loglik converged before variable  5 ; beta may be infinite. 
+baseline pm25 band 4,"Loglik converged before variable  5,6 ; beta may be infinite. "
+baseline no2 band 3,Loglik converged before variable  5 ; beta may be infinite. 
+baseline no2 band 4,"Loglik converged before variable  5,6 ; beta may be infinite. "
+baseline o3 band 3,Loglik converged before variable  5 ; beta may be infinite. 
+baseline o3 band 4,"Loglik converged before variable  5,6 ; beta may be infinite. "
+tv pm25 band 2,"Loglik converged before variable  12,13 ; beta may be infinite. "
+tv pm25 band 3,"Loglik converged before variable  8,12,13 ; beta may be infinite. "
+tv pm25 band 4,"Loglik converged before variable  5,7,12,13 ; beta may be infinite. "
+tv no2 band 2,"Loglik converged before variable  12,13 ; beta may be infinite. "
+tv no2 band 3,"Loglik converged before variable  8,12,13 ; beta may be infinite. "
+tv no2 band 4,"Loglik converged before variable  5,7,12,13 ; beta may be infinite. "
+tv o3 band 2,"Loglik converged before variable  12,13 ; beta may be infinite. "
+tv o3 band 3,"Loglik converged before variable  8,12,13 ; beta may be infinite. "
+tv o3 band 4,"Loglik converged before variable  5,7,12,13 ; beta may be infinite. "

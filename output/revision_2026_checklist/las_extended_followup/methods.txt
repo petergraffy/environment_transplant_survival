@@ -1,0 +1,6 @@
+Enrollment ends March 8, 2023. Outcomes followed through December 31, 2025, subject to observed follow-up.
+LAS updates use only measurements available by March 8, 2023; the last observed score is carried forward without future backfill.
+Baseline prior-year exposure remains fixed; time-varying PM2.5/O3 follow-up ends December 31, 2024, NO2 December 31, 2025.
+Multipollutant time-varying models use the common December 31, 2024 endpoint.
+Missing and pediatric LAS handling is unchanged. Post-transition LAS is last documented severity, not updated severity.
+The transition-censored results and publication figures remain preserved in their existing locations.

@@ -175,7 +175,8 @@ The new `las_era_lung/` bundle replaces the lung proxy with official longitudina
 calculated LAS, restricting both listings and follow-up to March 8, 2023 or
 earlier. CAS is not used. See its README for primary estimates, model formulas,
 score coverage, and subgroup convergence warnings. These versioned results have
-not yet been propagated into existing manuscript figures and canonical tables;
+now been propagated into manuscript figures and tables. Open
+`las_era_lung/publication_index.html` for the current display inventory;
 the older source limitation above describes the previous analysis.
 
 The `supplement` directory contains CSV, TSV and HTML tables. HTML tables can be

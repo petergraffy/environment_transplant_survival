@@ -1,0 +1,13 @@
+measure,value
+Original lung candidates,52613
+Excluded listings after March 8 2023,9739
+Retained lung candidates,42874
+Candidates with follow-up beyond transition,1274
+Adverse outcomes,5635
+Death outcomes,3328
+Conflicting within-registration score dates omitted,0
+Eligible score-change records,8001796
+Baseline LAS unavailable or age under 12,1021
+Baseline recorded zero LAS,339
+Baseline age under 12,504
+LAS imputation reference,37.8085707292529

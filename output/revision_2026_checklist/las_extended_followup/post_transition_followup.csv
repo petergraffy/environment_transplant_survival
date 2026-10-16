@@ -1,0 +1,4 @@
+pollutant,N,person_days,post_transition_people,post_transition_days,post_transition_percent,adverse_events,post_transition_adverse_events,post_transition_days_with_observed_las
+pm25,42254,11104990,1264,345410,3.11040352129988,5542,74,339028
+no2,42254,11140359,1264,380779,3.4180137282829,5557,89,372812
+o3,42254,11104990,1264,345410,3.11040352129988,5542,74,339028

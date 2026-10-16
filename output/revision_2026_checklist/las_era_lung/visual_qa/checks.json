@@ -1,0 +1,602 @@
+[
+  {
+    "path": "output/figures/figure1_cox_baseline_timevarying/figure1_prior_year_and_timevarying_cox.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      5580,
+      2592
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/figure1_cox_baseline_timevarying__figure1_prior_year_and_timevarying_cox.png"
+  },
+  {
+    "path": "output/figures/prior_year_and_timevarying_pollution_subgroup_cox/las_era_20261015/heart_lung_pm25_no2_subgroup_forest.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      7560,
+      8280
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/las_era_20261015__heart_lung_pm25_no2_subgroup_forest.png"
+  },
+  {
+    "path": "output/figures/prior_year_and_timevarying_pollution_subgroup_cox/las_era_20261015/prior_year_and_timevarying_pollution_subgroup_forest.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      10880,
+      10880
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/las_era_20261015__prior_year_and_timevarying_pollution_subgroup_forest.png"
+  },
+  {
+    "path": "output/figures/prior_year_and_timevarying_pollution_subgroup_cox/las_era_20261015/prior_year_pollution_subgroup_forest.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      10880,
+      5440
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/las_era_20261015__prior_year_pollution_subgroup_forest.png"
+  },
+  {
+    "path": "output/figures/prior_year_and_timevarying_pollution_subgroup_cox/las_era_20261015/timevarying_pollution_subgroup_forest.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      10880,
+      5440
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/las_era_20261015__timevarying_pollution_subgroup_forest.png"
+  },
+  {
+    "path": "output/figures/prior_year_pollution_quartile_aalen_johansen_simplified/prior_year_pm25_no2_aalen_johansen_abcd.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      5220,
+      5472
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/prior_year_pollution_quartile_aalen_johansen_simplified__prior_year_pm25_no2_aalen_johansen_abcd.png"
+  },
+  {
+    "path": "output/figures/prior_year_pollution_quartile_aalen_johansen_simplified/prior_year_pm25_no2_aalen_johansen_abcd_10yr.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      5760,
+      7920
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/prior_year_pollution_quartile_aalen_johansen_simplified__prior_year_pm25_no2_aalen_johansen_abcd_10yr.png"
+  },
+  {
+    "path": "output/figures/prior_year_pollution_quartile_aalen_johansen_simplified/prior_year_pm25_no2_aalen_johansen_abcd_1yr.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      5760,
+      7920
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/prior_year_pollution_quartile_aalen_johansen_simplified__prior_year_pm25_no2_aalen_johansen_abcd_1yr.png"
+  },
+  {
+    "path": "output/figures/prior_year_pollution_quartile_aalen_johansen_simplified/prior_year_pm25_no2_aalen_johansen_abcd_3yr.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      5760,
+      7920
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/prior_year_pollution_quartile_aalen_johansen_simplified__prior_year_pm25_no2_aalen_johansen_abcd_3yr.png"
+  },
+  {
+    "path": "output/figures/prior_year_pollution_quartile_aalen_johansen_simplified/prior_year_pm25_no2_aalen_johansen_abcd_5yr.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      5760,
+      7920
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/prior_year_pollution_quartile_aalen_johansen_simplified__prior_year_pm25_no2_aalen_johansen_abcd_5yr.png"
+  },
+  {
+    "path": "output/figures/prior_year_pollution_quartile_aalen_johansen_simplified/supplemental_prior_year_o3_aalen_johansen.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3311,
+      5472
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/prior_year_pollution_quartile_aalen_johansen_simplified__supplemental_prior_year_o3_aalen_johansen.png"
+  },
+  {
+    "path": "output/figures/prior_year_pollution_quartile_aalen_johansen_simplified/supplemental_prior_year_o3_aalen_johansen_10yr.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3888,
+      7920
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/prior_year_pollution_quartile_aalen_johansen_simplified__supplemental_prior_year_o3_aalen_johansen_10yr.png"
+  },
+  {
+    "path": "output/figures/prior_year_pollution_quartile_aalen_johansen_simplified/supplemental_prior_year_o3_aalen_johansen_1yr.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3888,
+      7920
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/prior_year_pollution_quartile_aalen_johansen_simplified__supplemental_prior_year_o3_aalen_johansen_1yr.png"
+  },
+  {
+    "path": "output/figures/prior_year_pollution_quartile_aalen_johansen_simplified/supplemental_prior_year_o3_aalen_johansen_3yr.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3888,
+      7920
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/prior_year_pollution_quartile_aalen_johansen_simplified__supplemental_prior_year_o3_aalen_johansen_3yr.png"
+  },
+  {
+    "path": "output/figures/prior_year_pollution_quartile_aalen_johansen_simplified/supplemental_prior_year_o3_aalen_johansen_5yr.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3888,
+      7920
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/prior_year_pollution_quartile_aalen_johansen_simplified__supplemental_prior_year_o3_aalen_johansen_5yr.png"
+  },
+  {
+    "path": "output/figures/cohort_flow_diagram/cohort_flow_diagram.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      5120,
+      5760
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/cohort_flow_diagram__cohort_flow_diagram.png"
+  },
+  {
+    "path": "output/figures/pollution_absolute_1yr_survival_maps/figure_pollution_absolute_1yr_risk_maps_heart.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3780,
+      2232
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/pollution_absolute_1yr_survival_maps__figure_pollution_absolute_1yr_risk_maps_heart.png"
+  },
+  {
+    "path": "output/figures/pollution_absolute_1yr_survival_maps/figure_pollution_absolute_1yr_risk_maps_kidney.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3780,
+      2232
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/pollution_absolute_1yr_survival_maps__figure_pollution_absolute_1yr_risk_maps_kidney.png"
+  },
+  {
+    "path": "output/figures/pollution_absolute_1yr_survival_maps/figure_pollution_absolute_1yr_risk_maps_liver.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3780,
+      2232
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/pollution_absolute_1yr_survival_maps__figure_pollution_absolute_1yr_risk_maps_liver.png"
+  },
+  {
+    "path": "output/figures/pollution_absolute_1yr_survival_maps/figure_pollution_absolute_1yr_risk_maps_lung.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3780,
+      2232
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/pollution_absolute_1yr_survival_maps__figure_pollution_absolute_1yr_risk_maps_lung.png"
+  },
+  {
+    "path": "output/figures/pollution_absolute_1yr_survival_maps/figure_pollution_absolute_1yr_survival_maps.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3780,
+      4860
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/pollution_absolute_1yr_survival_maps__figure_pollution_absolute_1yr_survival_maps.png"
+  },
+  {
+    "path": "output/figures/candidates_heart_lung_absolute_risk_abc/candidates_heart_lung_absolute_risk_abc.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      4320,
+      6480
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/candidates_heart_lung_absolute_risk_abc__candidates_heart_lung_absolute_risk_abc.png"
+  },
+  {
+    "path": "output/figures/transplant_centers_by_organ_four_panel/transplant_centers_by_organ_four_panel.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      10350,
+      7379
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/transplant_centers_by_organ_four_panel__transplant_centers_by_organ_four_panel.png"
+  },
+  {
+    "path": "output/figures/waitlist_candidates_zcta_map/waitlist_candidates_by_zcta_map.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      5700,
+      3720
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/waitlist_candidates_zcta_map__waitlist_candidates_by_zcta_map.png"
+  },
+  {
+    "path": "output/figures/waitlist_geography_ab_maps/waitlist_candidates_and_transplant_centers_ab_map.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      5520,
+      6720
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/waitlist_geography_ab_maps__waitlist_candidates_and_transplant_centers_ab_map.png"
+  },
+  {
+    "path": "output/figures/prior_year_initial_listing_cox_model_set/initial_listing_all_specifications_model_tier_forest.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      6480,
+      4680
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/prior_year_initial_listing_cox_model_set__initial_listing_all_specifications_model_tier_forest.png"
+  },
+  {
+    "path": "output/figures/prior_year_initial_listing_cox_model_set/initial_listing_single_pollutant_model_tier_forest.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      6660,
+      4500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/prior_year_initial_listing_cox_model_set__initial_listing_single_pollutant_model_tier_forest.png"
+  },
+  {
+    "path": "output/figures/pollution_severity_associations/figure4_pollution_severity_association_forest.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      5940,
+      2592
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/pollution_severity_associations__figure4_pollution_severity_association_forest.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/aj_with_risk_tables/aj_o3_10yr_with_risk.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      2875,
+      8250
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/aj_with_risk_tables__aj_o3_10yr_with_risk.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/aj_with_risk_tables/aj_o3_1yr_with_risk.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      2875,
+      8250
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/aj_with_risk_tables__aj_o3_1yr_with_risk.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/aj_with_risk_tables/aj_o3_3yr_with_risk.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      2875,
+      8250
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/aj_with_risk_tables__aj_o3_3yr_with_risk.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/aj_with_risk_tables/aj_o3_5yr_with_risk.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      2875,
+      8250
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/aj_with_risk_tables__aj_o3_5yr_with_risk.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/aj_with_risk_tables/aj_pm25_no2_10yr_with_risk.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      4750,
+      8250
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/aj_with_risk_tables__aj_pm25_no2_10yr_with_risk.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/aj_with_risk_tables/aj_pm25_no2_1yr_with_risk.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      4750,
+      8250
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/aj_with_risk_tables__aj_pm25_no2_1yr_with_risk.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/aj_with_risk_tables/aj_pm25_no2_3yr_with_risk.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      4750,
+      8250
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/aj_with_risk_tables__aj_pm25_no2_3yr_with_risk.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/aj_with_risk_tables/aj_pm25_no2_5yr_with_risk.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      4750,
+      8250
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/aj_with_risk_tables__aj_pm25_no2_5yr_with_risk.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/baseline_diagnostics/schoenfeld_HR_no2.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/baseline_diagnostics__schoenfeld_HR_no2.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/baseline_diagnostics/schoenfeld_HR_o3.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/baseline_diagnostics__schoenfeld_HR_o3.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/baseline_diagnostics/schoenfeld_HR_pm25.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/baseline_diagnostics__schoenfeld_HR_pm25.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/baseline_diagnostics/schoenfeld_KI_no2.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/baseline_diagnostics__schoenfeld_KI_no2.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/baseline_diagnostics/schoenfeld_KI_o3.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/baseline_diagnostics__schoenfeld_KI_o3.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/baseline_diagnostics/schoenfeld_KI_pm25.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/baseline_diagnostics__schoenfeld_KI_pm25.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/baseline_diagnostics/schoenfeld_LI_no2.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/baseline_diagnostics__schoenfeld_LI_no2.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/baseline_diagnostics/schoenfeld_LI_o3.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/baseline_diagnostics__schoenfeld_LI_o3.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/baseline_diagnostics/schoenfeld_LI_pm25.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/baseline_diagnostics__schoenfeld_LI_pm25.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/baseline_diagnostics/schoenfeld_LU_no2.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/baseline_diagnostics__schoenfeld_LU_no2.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/baseline_diagnostics/schoenfeld_LU_o3.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/baseline_diagnostics__schoenfeld_LU_o3.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/baseline_diagnostics/schoenfeld_LU_pm25.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/baseline_diagnostics__schoenfeld_LU_pm25.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/timevarying_diagnostics/HR_no2_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/timevarying_diagnostics__HR_no2_schoenfeld.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/timevarying_diagnostics/HR_o3_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/timevarying_diagnostics__HR_o3_schoenfeld.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/timevarying_diagnostics/HR_pm25_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/timevarying_diagnostics__HR_pm25_schoenfeld.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/timevarying_diagnostics/KI_no2_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/timevarying_diagnostics__KI_no2_schoenfeld.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/timevarying_diagnostics/KI_o3_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/timevarying_diagnostics__KI_o3_schoenfeld.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/timevarying_diagnostics/KI_pm25_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/timevarying_diagnostics__KI_pm25_schoenfeld.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/timevarying_diagnostics/LI_no2_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/timevarying_diagnostics__LI_no2_schoenfeld.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/timevarying_diagnostics/LI_o3_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/timevarying_diagnostics__LI_o3_schoenfeld.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/timevarying_diagnostics/LI_pm25_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/timevarying_diagnostics__LI_pm25_schoenfeld.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/timevarying_diagnostics/LU_no2_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/timevarying_diagnostics__LU_no2_schoenfeld.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/timevarying_diagnostics/LU_o3_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/timevarying_diagnostics__LU_o3_schoenfeld.png"
+  },
+  {
+    "path": "output/revision_2026_checklist/timevarying_diagnostics/LU_pm25_schoenfeld.pdf",
+    "pages": 1,
+    "png_dimensions": [
+      3000,
+      1500
+    ],
+    "nonblank": true,
+    "preview": "output/revision_2026_checklist/las_era_lung/visual_qa/timevarying_diagnostics__LU_pm25_schoenfeld.png"
+  }
+]

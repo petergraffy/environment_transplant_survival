@@ -1,4 +1,5 @@
 source("code/revision_2026/common.R")
+source("code/publication_cohort.R")
 suppressPackageStartupMessages(library(tidyr))
 dest <- file.path(revision_dir,"supplement");dir.create(dest,showWarnings=FALSE)
 rd <- function(path) read_csv(file.path(revision_dir,path),show_col_types=FALSE)
@@ -9,6 +10,7 @@ escape <- function(x) {
   x <- gsub("<","&lt;",x,fixed=TRUE);gsub(">","&gt;",x,fixed=TRUE)
 }
 export <- function(d,name,caption,note,era_context=NULL) {
+  note <- paste(note,publication_period_note)
   if(any(grepl("[a]",as.character(unlist(d)),fixed=TRUE))) note <- paste(note,"[a] A sparse categorical nuisance coefficient triggered a possible infinite-coefficient warning. The pollutant coefficient remained finite; interpret the flagged model cautiously. No race categories were silently combined to remove warnings.")
   note <- paste(note,"Abbreviations: ACS, American Community Survey; CDC, Centers for Disease Control and Prevention; CI, confidence interval; HR, hazard ratio; SE, standard error; SVI, Social Vulnerability Index; ZCTA, ZIP Code Tabulation Area; PM2.5, fine particulate matter; NO2, nitrogen dioxide; O3, ozone. Organ codes: HR, heart; KI, kidney; LI, liver; LU, lung.")
   write_csv(d,file.path(dest,paste0(name,".csv")))
@@ -38,6 +40,12 @@ fg <- fg %>% select(-any_of("convergence_note"))
 cs <- cs %>% select(-any_of("convergence_note"))
 audit_base <- rd("baseline_warning_audit/captured_warnings.csv")
 audit_tv <- bind_rows(rd("thoracic_warning_audit/captured_warnings.csv"),rd("kidney_late_band_audit/captured_warnings.csv"))
+new_warnings <- rd("las_era_lung/updated_diagnostic_warnings.csv") %>%
+  tidyr::separate(context,c("family","pollutant","kind","band_number"),sep=" ",fill="right") %>%
+  mutate(organ="LU",message=warning,analysis=paste0("baseline_band_",band_number),
+    band=c("0-1 years","1-3 years","3-5 years","5+ years")[as.integer(band_number)])
+audit_base <- bind_rows(filter(audit_base,organ!="LU"),filter(new_warnings,family=="baseline"))
+audit_tv <- bind_rows(filter(audit_tv,organ!="LU"),filter(new_warnings,family=="tv"))
 warning_summary <- function(w,keys) w %>% group_by(across(all_of(keys))) %>% summarise(convergence_note=paste(unique(message),collapse=" | "),.groups="drop")
 all <- bind_rows(ref,reg,fg,cs) %>% mutate(estimate_ci=hr(hazard_ratio,conf_low,conf_high))
 stopifnot(nrow(ref)==12,nrow(reg)==36,nrow(fg)==12,nrow(cs)==12,all(is.finite(all$hazard_ratio)))
@@ -77,10 +85,11 @@ era_context <- tibble::tribble(
   "Lung", "2017-11-24", "Initial geographic distribution changed from donation service areas to a 250-nautical-mile radius, broadening access.", "https://hrsa.unos.org/media/jlijyukx/thoracic_publiccomment_distribution_20180122.pdf",
   "Lung", "2023-03-09", "Continuous distribution using the composite allocation score (CAS) replaced LAS-based allocation, changing the combination of medical urgency, benefit and access factors.", "https://hrsa.unos.org/news/early-lung-monitoring-report-shows-increase-in-transplants-following-implementation-of-lung-continuous-distribution/"
 )
+era_context <- era_context %>% filter(!(Organ=="Lung" & `New era begins`=="2023-03-09"))
 stopifnot(identical(sort(as.character(cuts$cut_date)),sort(era_context$`New era begins`)))
 era_note <- paste("Era boundaries represent selected major changes in allocation priority or geographic access, not every policy revision.",
   "The first era starts at study entry in 2005; each subsequent era starts on the date below and ends before the next boundary, or at the pollutant-specific study end.",
-  "Era is assigned at listing; follow-up is not split or censored at a policy transition. These analyses do not estimate causal policy effects.",
+  "Era is assigned at listing. Lung listings and follow-up end March 8, 2023; no post-CAS era is analyzed. Other policy transitions do not censor follow-up. These analyses do not estimate causal policy effects.",
   "Adjustment: age, sex, race, ACS vulnerability proxy and transplant-center strata; no listing-year or organ-score term.",
   "MELD, Model for End-Stage Liver Disease; MELD-Na, MELD incorporating sodium; LAS, lung allocation score; CAS, composite allocation score.")
 export(era_context,"policy_era_rationale","Supplemental Table. Policy-era definitions and rationale",era_note)
@@ -121,10 +130,10 @@ export(diagnostic_summary,"ph_diagnostics_summary","Supplemental Table. Proporti
     "Not estimated indicates fewer than 20 adverse events for a baseline interval or fewer than 50 for a time-varying interval. Updating exposure does not itself allow its coefficient to vary over time. Residual plots were also generated with natural cubic spline smooths (4 degrees of freedom) and approximate pointwise 95% bands."))
 export(bind_rows(audit_base,audit_tv,recent_warnings),"convergence_warning_audit","Supplemental Table. Model convergence warnings","Warnings are reported explicitly. Baseline sensitivity warnings identify the affected coefficient names. The time-varying audit identifies affected follow-up bands. The updated recent-cohort warnings are included with their analysis identifiers; full coefficient files are retained in the corresponding results directory. These are distinct from Schoenfeld proportional-hazards tests.")
 export(rd("svi_validation/validation_results.csv") %>% mutate(across(-c(cdc_measure,n_zctas),~round(.x,3))),"svi_validation","Supplemental Table. ACS vulnerability proxy validation against CDC SVI","One observation per matched ZCTA, observed 2022 ACS vintage. Larger values indicate greater vulnerability. Rank correlations, quartile agreement and linearly weighted kappa assess convergent validity, not interchangeability. Bootstrap intervals resample ZCTAs and do not model spatial dependence. Missing proxy components retain the primary median-imputation method.")
-base <- baseline_data()
+base <- publication_baseline_data()
 ints <- readRDS(file.path(revision_dir,"cache","concurrency.rds"))
 entry <- ints[,.(entry_count=concurrent_listings[which.min(tstart)],maximum_count=max(concurrent_listings)),by=primary_id]
 entry <- merge(entry,base[,.(primary_id=waitlist_row_id,WL_ORG)],by="primary_id")
 write_csv(entry[,.N,by=.(WL_ORG,entry_count)][order(WL_ORG,entry_count)],file.path(dest,"entry_listing_count_distribution.csv"))
-export(rd("registration_spell_summary.csv"),"registration_spell_counts","Supplemental Table. Registration and separate-spell counts","Counts describe the reconstructed cohort before pollutant availability and complete-case restrictions. Same-day touching or overlapping registrations are combined; a positive gap begins a new spell. Model-specific eligible counts are in the sensitivity table.")
+export(rd("las_era_lung/publication_registration_spell_summary.csv"),"registration_spell_counts","Supplemental Table. Registration and separate-spell counts","Counts describe the reconstructed cohort before pollutant availability and complete-case restrictions. Same-day touching or overlapping registrations are combined; a positive gap begins a new spell. Lung spells beginning after March 8, 2023 are excluded. Model-specific eligible counts are in the sensitivity table.")
 writeLines(c(paste("Primary reference git commit:",system2("git",c("rev-parse","HEAD"),stdout=TRUE)),paste("Generated:",Sys.time()),capture.output(sessionInfo())),file.path(dest,"provenance.txt"))

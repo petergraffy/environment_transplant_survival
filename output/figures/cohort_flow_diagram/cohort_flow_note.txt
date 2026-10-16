@@ -1,0 +1,2 @@
+Lung listings and follow-up end March 8, 2023; other organs retain their original study periods. Lung time-varying models use official calculated LAS updated at monthly interval starts; CAS is not used.
+The flow applies the lung listing-date restriction after the original candidate-level deduplication. Retained lung follow-up is censored at the transition; 1,274 candidates are affected.

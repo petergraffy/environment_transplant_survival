@@ -1,0 +1,3 @@
+Lung listings and follow-up end March 8, 2023; other organs retain their original study periods. Lung time-varying models use official calculated LAS updated at monthly interval starts; CAS is not used.
+National AJ quartile thresholds are frozen to the original full reference cohort.
+Nonlung source result rows were checked for exact equality before export.

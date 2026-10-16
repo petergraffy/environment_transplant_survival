@@ -163,7 +163,8 @@ message("Reading deduplicated waitlist analysis dataset")
 uscrs_mapping <- read_csv(uscrs_mapping_path, show_col_types = FALSE) %>%
   arrange(us_crs)
 
-analysis_dat <- read_csv(in_path, show_col_types = FALSE) %>%
+source("code/publication_cohort.R")
+analysis_dat <- read_publication_cohort(in_path) %>%
   filter(WL_ORG %in% names(organ_labels)) %>%
   mutate(
     organ = factor(recode(WL_ORG, !!!organ_labels), levels = organ_levels),
@@ -171,6 +172,7 @@ analysis_dat <- read_csv(in_path, show_col_types = FALSE) %>%
     race_group = factor(recode_race(race), levels = race_levels),
     listing_year = as.integer(listing_year),
     organ_score_display = case_when(
+      WL_ORG == "LU" ~ baseline_las,
       WL_ORG == "LI" ~ organ_score - 6200,
       TRUE ~ organ_score
     ),
@@ -230,7 +232,7 @@ score_rows <- bind_rows(
     filter(WL_ORG == "LU") %>%
     group_by(organ) %>%
     summarise(value = fmt_median_iqr(organ_score_display, digits = 1), .groups = "drop") %>%
-    mutate(section = "Organ-specific baseline severity", characteristic = "Lung LAS/CAS component proxy linear predictor, median (IQR)", row_order = 9)
+    mutate(section = "Organ-specific baseline severity", characteristic = "Lung allocation score (LAS), median (IQR)", row_order = 9)
 ) %>%
   select(section, characteristic, row_order, organ, value)
 
@@ -265,6 +267,13 @@ score_component_rows <- bind_rows(
   component_binary_row(analysis_dat, "LU", "lung_ecmo_score_input", "Lung ECMO score input, n (%)", 29),
   component_binary_row(analysis_dat, "LU", "lung_corticosteroid_score_input", "Lung corticosteroid dependence score input, n (%)", 30)
 )
+
+# Official LAS replaces the hand-built lung proxy; its former components are
+# not covariates in the revised lung models.
+score_component_rows <- score_component_rows %>% filter(organ != "Lung")
+score_rows <- bind_rows(score_rows, analysis_dat %>% filter(WL_ORG == "LU") %>%
+  group_by(organ) %>% summarise(value = fmt_n_pct(sum(is.na(baseline_las)), n()), .groups = "drop") %>%
+  mutate(section = "Organ-specific baseline severity", characteristic = "Baseline LAS unavailable or age <12 years, n (%)", row_order = 9.5))
 
 exposure_rows <- bind_rows(
   analysis_dat %>%
@@ -357,7 +366,7 @@ gt_table <- table_wide %>%
     source_note = "Values are median (IQR) for continuous variables and n (%) for categorical variables unless otherwise indicated."
   ) %>%
   tab_source_note(
-    source_note = "Organ-specific severity scores and score components are shown only for the organ to which each score applies. Heart US-CRS was calculated as a raw formula-derived linear predictor and mapped to the 1-50 point scale using the US-CRS mapping table; the model covariate remained the raw linear predictor. The SAF-derived analysis file did not include official LAS/CAS display-score fields, so the lung row reports the formula-derived component proxy linear predictor used for modeling rather than official allocation-score points. Observed heart and lung numeric score inputs are summarized among candidates with nonmissing values; the model proxy score used median-imputed heart laboratory values and set missing lung numeric components to 0. Liver MELD/PELD is displayed after subtracting the SRTR 6200 offset from the stored MELD/PELD field."
+    source_note = "Lung candidates and follow-up are restricted to March 8, 2023 or earlier; other organ study periods are unchanged. Lung LAS is the official calculated score available at listing, summarized among observed values; no CAS or proxy is used. Heart US-CRS is displayed on its mapped 1-50 scale; the model uses the raw linear predictor. Heart laboratory inputs are median-imputed for modeling. Liver MELD/PELD display subtracts the 6200 storage offset. Baseline primary Cox models omit severity; time-varying lung models update LAS at monthly interval starts."
   ) %>%
   tab_source_note(
     source_note = "Exposure rows include candidates with complete prelisting windows: the 365 days before listing for PM2.5/O3 and the 12 complete calendar months before the listing month for NO2, weighted by days. NO2 months before 2019 use annual approximations. Exposure availability differs from the overall cohort denominator."
@@ -383,7 +392,7 @@ writeLines(
     "Table 1 caption:",
     "Baseline characteristics of person waitlist episodes included in the primary waitlist-period pollution analysis cohort, stratified by listed organ.",
     "Values are median (IQR) for continuous variables and n (%) for categorical variables unless otherwise indicated.",
-    "Organ-specific severity scores and score components are shown only for the organ to which each score applies. Heart US-CRS was calculated as a raw formula-derived linear predictor and mapped to the 1-50 point scale using the US-CRS mapping table; the model covariate remained the raw linear predictor. The SAF-derived analysis file did not include official LAS/CAS display-score fields, so the lung row reports the formula-derived component proxy linear predictor used for modeling rather than official allocation-score points. Observed heart and lung numeric score inputs are summarized among candidates with nonmissing values; the model proxy score used median-imputed heart laboratory values and set missing lung numeric components to 0. Liver MELD/PELD is displayed after subtracting the SRTR 6200 offset from the stored MELD/PELD field.",
+    "Lung candidates and follow-up are restricted to March 8, 2023 or earlier; other organ study periods are unchanged. Lung LAS is the official calculated score available at listing, summarized among observed values; no CAS or proxy is used. Heart US-CRS is displayed on its mapped 1-50 scale; the model uses the raw linear predictor. Heart laboratory inputs are median-imputed for modeling. Liver MELD/PELD display subtracts the 6200 storage offset. Baseline primary Cox models omit severity; time-varying lung models update LAS at monthly interval starts.",
     "Waitlist outcomes are mutually exclusive final observed outcomes before pollutant-specific exposure censoring; percentages use the full organ-specific cohort denominator. Death and deterioration comprise the adverse endpoint; transplantation and improvement comprise the competing endpoint. Transplantation includes deaths during the transplant procedure (SRTR removal codes 21 and 23), not classified as waitlist deaths.",
     "Pollution exposures are means over the 365 days before listing for PM2.5/O3 and day-weighted means over the 12 complete months before the listing month for NO2, with annual NO2 approximations before 2019. Exposure rows summarize complete windows and include median (IQR) and range; availability differs from the overall cohort denominator."
   ),

@@ -1,51 +1,39 @@
-id,label
-eligible,"SRTR waitlist registrations assessed for eligibility
-Heart, kidney, liver, or lung; 2005-2025
-N = 1,209,138"
-zcta,"Included registrations with residential ZCTA
-N = 1,205,885"
-episodes,"Deduplicated candidate-organ episodes
-N = 1,017,540"
-organ_Heart,"Heart
-Candidates: 83,624"
-organ_Kidney,"Kidney
-Candidates: 643,225"
-organ_Liver,"Liver
-Candidates: 238,078"
-organ_Lung,"Lung
-Candidates: 52,613"
-outcome_Heart,"Adverse events:
-10,957
-Transplant/improvement:
-64,921
-Median waitlist:
-89 days"
-outcome_Kidney,"Adverse events:
-135,003
-Transplant/improvement:
-368,483
-Median waitlist:
-702 days"
-outcome_Liver,"Adverse events:
-46,526
-Transplant/improvement:
-166,103
-Median waitlist:
-137 days"
-outcome_Lung,"Adverse events:
-6,019
-Transplant/improvement:
-43,727
-Median waitlist:
-57 days"
-missing_zcta,"Excluded
-Missing residential ZCTA
-n = 3,253"
-duplicate_registrations,"Excluded
-Duplicate same-candidate,
-same-organ registration rows
-n = 188,345
+x,y,w,h,label
+5,17,6.8,1.7,"Eligible waitlist registrations, 2005-2025
+1,209,138"
+5,13.5,6.8,1.7,"Registrations with residential ZCTA
+1,205,885"
+5,10,6.8,1.7,"Deduplicated candidate-organ observations
+1,017,540"
+5,6.5,6.8,1.7,"Final analytic cohort
+1,007,801 candidate-organ observations"
+11.5,15.3,4.8,1.8,"Excluded: missing ZCTA
+3,253"
+11.5,11.8,4.8,2.6,"Duplicate registrations removed: 188,345
 Heart: 5,892
 Kidney: 152,470
 Liver: 26,203
 Lung: 3,780"
+11.5,8.3,4.8,1.8,"Excluded: lung listing on or after
+March 9, 2023
+9,739 candidates"
+1.4,3.8,3.25,1.3,"Heart
+83,624 candidates"
+5.1,3.8,3.25,1.3,"Kidney
+643,225 candidates"
+8.8,3.8,3.25,1.3,"Liver
+238,078 candidates"
+12.5,3.8,3.25,1.3,"Lung
+42,874 candidates"
+1.4,1.4,3.25,2,"Adverse events: 10,957
+Transplants: 61,545
+Median waitlist: 89 days"
+5.1,1.4,3.25,2,"Adverse events: 135,003
+Transplants: 365,177
+Median waitlist: 702 days"
+8.8,1.4,3.25,2,"Adverse events: 46,526
+Transplants: 152,424
+Median waitlist: 137 days"
+12.5,1.4,3.25,2,"Adverse events: 5,545
+Transplants: 33,821
+Median waitlist: 69 days"

@@ -50,13 +50,22 @@ formula_notes <- tribble(
   "Lung", "Lung LAS/CAS component proxy = -0.010*FEV1 - 0.005*FVC + 0.020*PCO2 + 0.010*resting oxygen - 0.002*6-minute walk + 0.010*mean pulmonary artery pressure - 0.050*cardiac output + 1.000*ventilator + 1.500*ECMO + 0.300*corticosteroid dependence."
 )
 
+formula_table <- bind_rows(filter(formula_table, Organ != "Lung"), tibble(
+  Organ = "Lung", `Model variable` = c("las_per10", "las_unavailable", "las_under12"),
+  Component = c("Official calculated LAS", "LAS unavailable", "Age below LAS applicability"),
+  `Source variable(s)` = c("CANHX_LAS_SCORE_CALC; CANHX_LAS_SCORE_BEGIN_DT; PX_ID", "Availability at interval start", "Age at listing plus elapsed follow-up"),
+  Transformation = c("Latest score at monthly interval start, divided by 10", "Binary indicator", "Binary age <12 years indicator"),
+  `Coefficient / weight` = "Estimated separately in each time-varying model",
+  `Missing-data handling used for score` = c("Carry forward; no future backfill. Missing filled with 37.80857, with missing and under-12 indicators", "1 when LAS missing or age <12", "LAS not applied below age 12")))
+formula_notes <- formula_notes %>% mutate(`Formula / model use` = if_else(Organ == "Lung",
+  "Official calculated LAS, not a reconstructed composite or CAS. Lung listings and follow-up end March 8, 2023. Time-varying models include LAS/10 and unavailable/under-12 indicators; baseline primary models omit severity for all organs.", `Formula / model use`))
 write_csv(formula_table, file.path(out_dir, "organ_score_formula_weights.csv"))
 write_csv(formula_notes, file.path(out_dir, "organ_score_formula_notes.csv"))
 
 formula_gt <- formula_table %>%
   gt(groupname_col = "Organ") %>%
   tab_header(title = "Organ-Specific Baseline Severity Scores and Component Weights") %>%
-  tab_source_note(source_note = "Heart and lung scores are proxy severity scores derived from available SRTR fields. Kidney models used separate clinical covariates rather than a composite score.") %>%
+  tab_source_note(source_note = "Severity covariates apply to the time-varying models; baseline primary models do not adjust for severity. Lung uses official longitudinal LAS, not a proxy or CAS. Kidney uses separate clinical covariates rather than a composite score.") %>%
   tab_source_note(source_note = "log1p(value) denotes log(value + 1).") %>%
   tab_options(
     table.font.names = "Arial",

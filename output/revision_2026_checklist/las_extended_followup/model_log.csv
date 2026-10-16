@@ -1,0 +1,98 @@
+model,variant,subgroup,N,intervals,events,formula,status
+Baseline,Primary,All,40733,40733,5295,"Surv(followup_days, analysis_event) ~ pm25_prior_5ug + age +      sex + race + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,No center strata,All,40733,40733,5295,"Surv(followup_days, analysis_event) ~ pm25_prior_5ug + age +      sex + race + zcta_svi_proxy",OK
+Baseline,Single organ only,All,38581,38581,4989,"Surv(followup_days, analysis_event) ~ pm25_prior_5ug + age +      sex + race + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Adjust multi-organ,All,40733,40733,5295,"Surv(followup_days, analysis_event) ~ pm25_prior_5ug + age +      sex + race + zcta_svi_proxy + multi_organ_candidate + strata(listing_center)",OK
+Baseline,Death only,All,40733,40733,3073,"Surv(followup_days, analysis_event) ~ pm25_prior_5ug + age +      sex + race + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Age subgroup,<18,1063,1063,257,"Surv(followup_days, analysis_event) ~ pm25_prior_5ug + sex +      race_group + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Age subgroup,18-39,4816,4816,716,"Surv(followup_days, analysis_event) ~ pm25_prior_5ug + sex +      race_group + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Age subgroup,40-59,14472,14472,2000,"Surv(followup_days, analysis_event) ~ pm25_prior_5ug + sex +      race_group + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Age subgroup,60+,20382,20382,2322,"Surv(followup_days, analysis_event) ~ pm25_prior_5ug + sex +      race_group + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Sex subgroup,Female,17524,17524,2798,"Surv(followup_days, analysis_event) ~ pm25_prior_5ug + age +      race_group + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Sex subgroup,Male,23209,23209,2497,"Surv(followup_days, analysis_event) ~ pm25_prior_5ug + age +      race_group + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Race subgroup,White,35379,35379,4441,"Surv(followup_days, analysis_event) ~ pm25_prior_5ug + age +      sex + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Race subgroup,Black,4010,4010,618,"Surv(followup_days, analysis_event) ~ pm25_prior_5ug + age +      sex + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Race subgroup,Asian,1017,1017,191,"Surv(followup_days, analysis_event) ~ pm25_prior_5ug + age +      sex + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Primary,All,40733,40733,5295,"Surv(followup_days, analysis_event) ~ no2_prior_10ppb + age +      sex + race + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,No center strata,All,40733,40733,5295,"Surv(followup_days, analysis_event) ~ no2_prior_10ppb + age +      sex + race + zcta_svi_proxy",OK
+Baseline,Single organ only,All,38581,38581,4989,"Surv(followup_days, analysis_event) ~ no2_prior_10ppb + age +      sex + race + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Adjust multi-organ,All,40733,40733,5295,"Surv(followup_days, analysis_event) ~ no2_prior_10ppb + age +      sex + race + zcta_svi_proxy + multi_organ_candidate + strata(listing_center)",OK
+Baseline,Death only,All,40733,40733,3073,"Surv(followup_days, analysis_event) ~ no2_prior_10ppb + age +      sex + race + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Age subgroup,<18,1063,1063,257,"Surv(followup_days, analysis_event) ~ no2_prior_10ppb + sex +      race_group + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Age subgroup,18-39,4816,4816,716,"Surv(followup_days, analysis_event) ~ no2_prior_10ppb + sex +      race_group + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Age subgroup,40-59,14472,14472,2000,"Surv(followup_days, analysis_event) ~ no2_prior_10ppb + sex +      race_group + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Age subgroup,60+,20382,20382,2322,"Surv(followup_days, analysis_event) ~ no2_prior_10ppb + sex +      race_group + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Sex subgroup,Female,17524,17524,2798,"Surv(followup_days, analysis_event) ~ no2_prior_10ppb + age +      race_group + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Sex subgroup,Male,23209,23209,2497,"Surv(followup_days, analysis_event) ~ no2_prior_10ppb + age +      race_group + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Race subgroup,White,35379,35379,4441,"Surv(followup_days, analysis_event) ~ no2_prior_10ppb + age +      sex + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Race subgroup,Black,4010,4010,618,"Surv(followup_days, analysis_event) ~ no2_prior_10ppb + age +      sex + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Race subgroup,Asian,1017,1017,191,"Surv(followup_days, analysis_event) ~ no2_prior_10ppb + age +      sex + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Primary,All,40733,40733,5295,"Surv(followup_days, analysis_event) ~ o3_prior_10ppb + age +      sex + race + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,No center strata,All,40733,40733,5295,"Surv(followup_days, analysis_event) ~ o3_prior_10ppb + age +      sex + race + zcta_svi_proxy",OK
+Baseline,Single organ only,All,38581,38581,4989,"Surv(followup_days, analysis_event) ~ o3_prior_10ppb + age +      sex + race + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Adjust multi-organ,All,40733,40733,5295,"Surv(followup_days, analysis_event) ~ o3_prior_10ppb + age +      sex + race + zcta_svi_proxy + multi_organ_candidate + strata(listing_center)",OK
+Baseline,Death only,All,40733,40733,3073,"Surv(followup_days, analysis_event) ~ o3_prior_10ppb + age +      sex + race + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Age subgroup,<18,1063,1063,257,"Surv(followup_days, analysis_event) ~ o3_prior_10ppb + sex +      race_group + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Age subgroup,18-39,4816,4816,716,"Surv(followup_days, analysis_event) ~ o3_prior_10ppb + sex +      race_group + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Age subgroup,40-59,14472,14472,2000,"Surv(followup_days, analysis_event) ~ o3_prior_10ppb + sex +      race_group + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Age subgroup,60+,20382,20382,2322,"Surv(followup_days, analysis_event) ~ o3_prior_10ppb + sex +      race_group + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Sex subgroup,Female,17524,17524,2798,"Surv(followup_days, analysis_event) ~ o3_prior_10ppb + age +      race_group + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Sex subgroup,Male,23209,23209,2497,"Surv(followup_days, analysis_event) ~ o3_prior_10ppb + age +      race_group + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Race subgroup,White,35379,35379,4441,"Surv(followup_days, analysis_event) ~ o3_prior_10ppb + age +      sex + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Race subgroup,Black,4010,4010,618,"Surv(followup_days, analysis_event) ~ o3_prior_10ppb + age +      sex + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,Race subgroup,Asian,1017,1017,191,"Surv(followup_days, analysis_event) ~ o3_prior_10ppb + age +      sex + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,PM2.5 + NO2,All,40733,40733,5295,"Surv(followup_days, analysis_event) ~ pm25_prior_5ug + no2_prior_10ppb +      age + sex + race + zcta_svi_proxy + strata(listing_center)",OK
+Baseline,PM2.5 + NO2 + O3,All,40733,40733,5295,"Surv(followup_days, analysis_event) ~ pm25_prior_5ug + no2_prior_10ppb +      o3_prior_10ppb + age + sex + race + zcta_svi_proxy + strata(listing_center)",OK
+Time-varying,Primary,All,42254,405643,5542,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + age +      sex + race + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,No center strata,All,42254,405643,5542,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + age +      sex + race + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12",OK
+Time-varying,Single organ only,All,40028,377510,5230,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + age +      sex + race + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,Adjust multi-organ,All,42254,405643,5542,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + age +      sex + race + zcta_svi_proxy + multi_organ_candidate + las_per10 +      las_unavailable + las_under12 + strata(listing_center)",OK
+Time-varying,Death only,All,42254,405643,3279,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + age +      sex + race + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,Previous proxy,All,42254,405643,5542,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + age +      sex + race + zcta_svi_proxy + organ_score_tv + strata(listing_center)",OK
+Time-varying,No severity adjustment,All,42254,405643,5542,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + age +      sex + race + zcta_svi_proxy + strata(listing_center)",OK
+Time-varying,Observed LAS only,All,41642,396851,5382,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + age +      sex + race + zcta_svi_proxy + las_per10 + strata(listing_center)",OK
+Time-varying,Age subgroup,<18,1158,21037,278,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + sex +      race_group + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,Age subgroup,18-39,5088,78977,779,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + sex +      race_group + zcta_svi_proxy + las_per10 + las_unavailable +      strata(listing_center)",OK
+Time-varying,Age subgroup,40-59,15226,171099,2117,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + sex +      race_group + zcta_svi_proxy + las_per10 + las_unavailable +      strata(listing_center)",OK
+Time-varying,Age subgroup,60+,20782,134530,2368,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + sex +      race_group + zcta_svi_proxy + las_per10 + las_unavailable +      strata(listing_center)",OK
+Time-varying,Sex subgroup,Female,18276,226070,2924,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + age_interval +      race_group + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,Sex subgroup,Male,23978,179573,2618,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + age_interval +      race_group + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,Race subgroup,White,36728,350258,4652,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + age_interval +      sex + zcta_svi_proxy + las_per10 + las_unavailable + las_under12 +      strata(listing_center)",OK
+Time-varying,Race subgroup,Black,4133,42174,644,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + age_interval +      sex + zcta_svi_proxy + las_per10 + las_unavailable + las_under12 +      strata(listing_center)",OK
+Time-varying,Race subgroup,Asian,1047,9326,195,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + age_interval +      sex + zcta_svi_proxy + las_per10 + las_unavailable + las_under12 +      strata(listing_center)",Loglik converged before variable  7 ; beta may be infinite. 
+Time-varying,Primary,All,42254,406896,5557,"Surv(tstart, tstop, analysis_event) ~ no2_interval_10ppb + age +      sex + race + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,No center strata,All,42254,406896,5557,"Surv(tstart, tstop, analysis_event) ~ no2_interval_10ppb + age +      sex + race + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12",OK
+Time-varying,Single organ only,All,40028,378599,5244,"Surv(tstart, tstop, analysis_event) ~ no2_interval_10ppb + age +      sex + race + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,Adjust multi-organ,All,42254,406896,5557,"Surv(tstart, tstop, analysis_event) ~ no2_interval_10ppb + age +      sex + race + zcta_svi_proxy + multi_organ_candidate + las_per10 +      las_unavailable + las_under12 + strata(listing_center)",OK
+Time-varying,Death only,All,42254,406896,3287,"Surv(tstart, tstop, analysis_event) ~ no2_interval_10ppb + age +      sex + race + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,Previous proxy,All,42254,406896,5557,"Surv(tstart, tstop, analysis_event) ~ no2_interval_10ppb + age +      sex + race + zcta_svi_proxy + organ_score_tv + strata(listing_center)",OK
+Time-varying,No severity adjustment,All,42254,406896,5557,"Surv(tstart, tstop, analysis_event) ~ no2_interval_10ppb + age +      sex + race + zcta_svi_proxy + strata(listing_center)",OK
+Time-varying,Observed LAS only,All,41642,398051,5397,"Surv(tstart, tstop, analysis_event) ~ no2_interval_10ppb + age +      sex + race + zcta_svi_proxy + las_per10 + strata(listing_center)",OK
+Time-varying,Age subgroup,<18,1158,21158,278,"Surv(tstart, tstop, analysis_event) ~ no2_interval_10ppb + sex +      race_group + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,Age subgroup,18-39,5088,79267,784,"Surv(tstart, tstop, analysis_event) ~ no2_interval_10ppb + sex +      race_group + zcta_svi_proxy + las_per10 + las_unavailable +      strata(listing_center)",OK
+Time-varying,Age subgroup,40-59,15226,171615,2120,"Surv(tstart, tstop, analysis_event) ~ no2_interval_10ppb + sex +      race_group + zcta_svi_proxy + las_per10 + las_unavailable +      strata(listing_center)",OK
+Time-varying,Age subgroup,60+,20782,134856,2375,"Surv(tstart, tstop, analysis_event) ~ no2_interval_10ppb + sex +      race_group + zcta_svi_proxy + las_per10 + las_unavailable +      strata(listing_center)",OK
+Time-varying,Sex subgroup,Female,18276,226682,2932,"Surv(tstart, tstop, analysis_event) ~ no2_interval_10ppb + age_interval +      race_group + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,Sex subgroup,Male,23978,180214,2625,"Surv(tstart, tstop, analysis_event) ~ no2_interval_10ppb + age_interval +      race_group + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,Race subgroup,White,36728,351258,4663,"Surv(tstart, tstop, analysis_event) ~ no2_interval_10ppb + age_interval +      sex + zcta_svi_proxy + las_per10 + las_unavailable + las_under12 +      strata(listing_center)",OK
+Time-varying,Race subgroup,Black,4133,42378,648,"Surv(tstart, tstop, analysis_event) ~ no2_interval_10ppb + age_interval +      sex + zcta_svi_proxy + las_per10 + las_unavailable + las_under12 +      strata(listing_center)",OK
+Time-varying,Race subgroup,Asian,1047,9371,195,"Surv(tstart, tstop, analysis_event) ~ no2_interval_10ppb + age_interval +      sex + zcta_svi_proxy + las_per10 + las_unavailable + las_under12 +      strata(listing_center)",Loglik converged before variable  7 ; beta may be infinite. 
+Time-varying,Primary,All,42254,405643,5542,"Surv(tstart, tstop, analysis_event) ~ o3_interval_10ppb + age +      sex + race + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,No center strata,All,42254,405643,5542,"Surv(tstart, tstop, analysis_event) ~ o3_interval_10ppb + age +      sex + race + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12",OK
+Time-varying,Single organ only,All,40028,377510,5230,"Surv(tstart, tstop, analysis_event) ~ o3_interval_10ppb + age +      sex + race + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,Adjust multi-organ,All,42254,405643,5542,"Surv(tstart, tstop, analysis_event) ~ o3_interval_10ppb + age +      sex + race + zcta_svi_proxy + multi_organ_candidate + las_per10 +      las_unavailable + las_under12 + strata(listing_center)",OK
+Time-varying,Death only,All,42254,405643,3279,"Surv(tstart, tstop, analysis_event) ~ o3_interval_10ppb + age +      sex + race + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,Previous proxy,All,42254,405643,5542,"Surv(tstart, tstop, analysis_event) ~ o3_interval_10ppb + age +      sex + race + zcta_svi_proxy + organ_score_tv + strata(listing_center)",OK
+Time-varying,No severity adjustment,All,42254,405643,5542,"Surv(tstart, tstop, analysis_event) ~ o3_interval_10ppb + age +      sex + race + zcta_svi_proxy + strata(listing_center)",OK
+Time-varying,Observed LAS only,All,41642,396851,5382,"Surv(tstart, tstop, analysis_event) ~ o3_interval_10ppb + age +      sex + race + zcta_svi_proxy + las_per10 + strata(listing_center)",OK
+Time-varying,Age subgroup,<18,1158,21037,278,"Surv(tstart, tstop, analysis_event) ~ o3_interval_10ppb + sex +      race_group + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,Age subgroup,18-39,5088,78977,779,"Surv(tstart, tstop, analysis_event) ~ o3_interval_10ppb + sex +      race_group + zcta_svi_proxy + las_per10 + las_unavailable +      strata(listing_center)",OK
+Time-varying,Age subgroup,40-59,15226,171099,2117,"Surv(tstart, tstop, analysis_event) ~ o3_interval_10ppb + sex +      race_group + zcta_svi_proxy + las_per10 + las_unavailable +      strata(listing_center)",OK
+Time-varying,Age subgroup,60+,20782,134530,2368,"Surv(tstart, tstop, analysis_event) ~ o3_interval_10ppb + sex +      race_group + zcta_svi_proxy + las_per10 + las_unavailable +      strata(listing_center)",OK
+Time-varying,Sex subgroup,Female,18276,226070,2924,"Surv(tstart, tstop, analysis_event) ~ o3_interval_10ppb + age_interval +      race_group + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,Sex subgroup,Male,23978,179573,2618,"Surv(tstart, tstop, analysis_event) ~ o3_interval_10ppb + age_interval +      race_group + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,Race subgroup,White,36728,350258,4652,"Surv(tstart, tstop, analysis_event) ~ o3_interval_10ppb + age_interval +      sex + zcta_svi_proxy + las_per10 + las_unavailable + las_under12 +      strata(listing_center)",OK
+Time-varying,Race subgroup,Black,4133,42174,644,"Surv(tstart, tstop, analysis_event) ~ o3_interval_10ppb + age_interval +      sex + zcta_svi_proxy + las_per10 + las_unavailable + las_under12 +      strata(listing_center)",OK
+Time-varying,Race subgroup,Asian,1047,9326,195,"Surv(tstart, tstop, analysis_event) ~ o3_interval_10ppb + age_interval +      sex + zcta_svi_proxy + las_per10 + las_unavailable + las_under12 +      strata(listing_center)",Loglik converged before variable  7 ; beta may be infinite. 
+Time-varying,PM2.5 + NO2,All,42254,405643,5542,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + no2_interval_10ppb +      age + sex + race + zcta_svi_proxy + las_per10 + las_unavailable +      las_under12 + strata(listing_center)",OK
+Time-varying,PM2.5 + NO2 + O3,All,42254,405643,5542,"Surv(tstart, tstop, analysis_event) ~ pm25_interval_5ug + no2_interval_10ppb +      o3_interval_10ppb + age + sex + race + zcta_svi_proxy + las_per10 +      las_unavailable + las_under12 + strata(listing_center)",OK

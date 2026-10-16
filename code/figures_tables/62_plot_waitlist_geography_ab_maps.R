@@ -41,11 +41,8 @@ log_msg <- function(...) {
 }
 
 log_msg("Reading candidate ZCTA counts")
-candidate_counts <- read_csv(
-  analysis_path,
-  col_select = c(PERS_ID, candidate_zip),
-  col_types = cols(PERS_ID = col_character(), candidate_zip = col_character())
-) %>%
+source("code/publication_cohort.R")
+candidate_counts <- read_publication_cohort(analysis_path) %>%
   filter(!is.na(candidate_zip), nzchar(candidate_zip)) %>%
   mutate(zip = clean_zip(candidate_zip)) %>%
   group_by(zip) %>%

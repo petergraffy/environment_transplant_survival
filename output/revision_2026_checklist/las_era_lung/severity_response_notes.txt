@@ -1,0 +1,3 @@
+Lung severity response is observed official LAS in points; missing outcomes are not imputed.
+Lung listing and follow-up end March 8, 2023. Baseline response models omit listing year; time-varying response models include listing year, preserving their existing adjustment sets.
+Time-varying response regressions retain the existing interval-level fixed-effect least-squares specification and its model-based uncertainty; they are descriptive associations, not causal mediation estimates.
