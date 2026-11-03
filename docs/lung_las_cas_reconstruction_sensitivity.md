@@ -10,7 +10,7 @@ The fixed September 2021 LAS equation (the final pre-CAS revision) was applied r
 
 `LAS = 100 * (PTAUC - 2 * WLAUC + 730) / 1095`
 
-Each AUC is the sum of days 0 through 364 of the published baseline survival probability raised to `exp(linear predictor)`. Coefficients, diagnosis mapping and transformations are explicit in `code/archive/pre_lung_rmst/revision_2026/las_2021.R`. This is not sample min-max scaling.
+Each AUC is the sum of days 0 through 364 of the published baseline survival probability raised to `exp(linear predictor)`. Coefficients, diagnosis mapping and transformations are explicit in `code/revision_2026/las_2021.R`. This is not sample min-max scaling.
 
 Candidate fields: CAN_AGE_AT_LISTING, CAN_DGN, CAN_BMI, CAN_HGT_CM, CAN_WGT_KG, CAN_FUNCTN_STAT, CAN_VENTILATOR (fallback CAN_ON_VENTILATOR), CAN_AT_REST_O2, CAN_PCO2, CAN_SIX_MIN_WALK, CAN_PULM_ART_SYST, CAN_PULM_ART_MEAN, CAN_CARDIAC_OUTPUT. Cardiac index is cardiac output divided by Mosteller BSA, `sqrt(height_cm * weight_kg / 3600)`. The ventilation flag approximates the policy's hospitalized continuous ventilation term; hospitalization and ventilation timing cannot be fully verified. Functional independence is approximated by old code 1 or Karnofsky/Lansky >=70. New/unmapped diagnosis codes (including 1616, 1617 and 1620, absent from the supplied format catalog) are reported rather than guessed. Candidates younger than 12 or with an unmapped diagnosis have unavailable LAS, modeled with an indicator, rather than being dropped.
 
@@ -38,9 +38,9 @@ There are 52,613 lung candidates; 50,873 have a computable reconstructed baselin
 
 Run with R from the repository root:
 
-1. `code/archive/pre_lung_rmst/revision_2026/19_inspect_las_inputs.R`
-2. `code/archive/pre_lung_rmst/tests/test_las_2021.R`
-3. `code/archive/pre_lung_rmst/revision_2026/20_lung_las_cas_sensitivity.R`
-4. `code/archive/pre_lung_rmst/revision_2026/21_lung_las_cas_report.R`
+1. `code/revision_2026/19_inspect_las_inputs.R`
+2. `code/tests/test_las_2021.R`
+3. `code/revision_2026/20_lung_las_cas_sensitivity.R`
+4. `code/revision_2026/21_lung_las_cas_report.R`
 
 Private derived data remain in the ignored `output/revision_2026_checklist/cache/` directory. Aggregate reports are in `output/revision_2026_checklist/lung_las_cas_sensitivity/`: publication-oriented HTML, pollutant results, full log-coefficients and standard errors, model formulas/warnings, input Table 1 addendum, categorical distributions, score coverage/update counts, diagnosis audit and validation benchmarks. Interval/CAS caches are reusable only for this version of the reconstruction; delete those specific derived caches before rerunning after changing score logic. Do not delete source SAF data.

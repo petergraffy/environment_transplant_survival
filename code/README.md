@@ -1,34 +1,28 @@
-# Current primary analysis: lung transplant RMST benefit
+# Code Directory
 
-Run all scripts from the repository root. The primary endpoint is the difference
-in expected days alive over 365 days with versus without lung transplantation,
-across PM2.5, NO2 and O3 exposure levels.
+This directory contains the primary manuscript analysis scripts and shared
+helpers. Scripts should be run from the repository root.
 
-```powershell
-Rscript code/run_primary_lung_analysis.R
-```
+For the revised baseline and time-varying analyses, daily PM2.5 and O3 now use
+the published 2005-2024 releases. Run `prepare_daily_pollution_inputs.R` to
+prepare and validate exposures without fitting models. Source details,
+coverage implications, and checksum verification are documented in
+[`docs/daily_pollution_analysis_inputs.md`](../docs/daily_pollution_analysis_inputs.md).
 
-Use `--reuse-fitted` to regenerate RMST curves and confidence intervals from
-existing fitted models and matching bootstrap checkpoints. Without that flag,
-the runner verifies/prepares cohort inputs and refits the six models.
+Primary scripts:
 
-| Script | Role |
-|---|---|
-| `00_prepare_lung_primary_inputs.R` | Prepare/verify established private cohort inputs |
-| `91_lung_pollution_survival_benefit.R` | Pre/posttransplant Cox models and supporting survival probabilities |
-| `93_lung_pollution_rmst.R` | Primary one-year RMST point estimates and figures |
-| `94_lung_pollution_rmst_bootstrap.R` | Joint person bootstrap, RMST confidence intervals and figures |
-| `92_lung_pollution_benefit_bootstrap.R` | Optional secondary survival-probability bootstrap |
-| `lung_survival_benefit_helpers.R` | Shared model, prediction and exact RMST integration functions |
+- `50_primary_waitlist_period_pollution_cox.R`: builds the analysis cohort,
+  computes waitlist-period pollution exposures, and fits primary cause-specific
+  Cox models.
+- `63_primary_waitlist_pollution_subgroup_cox.R`: fits stratified Cox models.
+- `72_primary_waitlist_pollution_cox_sensitivity_models.R`: fits sensitivity
+  models, including multipollutant models.
+- `06_build_community_covariates.R`: builds ACS-derived ZCTA community
+  covariates used for the social vulnerability proxy sensitivity analysis.
+- `saf_paths.R` and `r_runtime.R`: local path and runtime helpers.
 
-`r_runtime.R`, `saf_paths.R`, the daily/rolling pollution readers, exposure
-preparation scripts and `06_build_community_covariates.R` remain shared inputs.
-`pollution_aggregation/` contains upstream release construction.
+Subfolders:
 
-The older analysis code is in [`archive/pre_lung_rmst/`](archive/pre_lung_rmst/README.md).
-Its relative layout is preserved, and executable references have been updated.
-The current cohort adapter reuses its established cohort-building functions;
-the archived adverse-outcome models are not the primary analysis.
-
-See [full methods and validation instructions](../docs/lung_pollution_survival_benefit.md)
-and [primary results](../output/lung_pollution_survival_benefit/README.md).
+- `figures_tables/`: figure and table creation scripts.
+- `pollution_aggregation/`: upstream pollution exposure aggregation scripts.
+- `exploratory/`: exploratory, diagnostic, and legacy analysis scripts.

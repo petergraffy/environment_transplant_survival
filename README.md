@@ -1,94 +1,87 @@
-# Air pollution and lung transplant survival benefit
+# Environment Transplant Survival
 
-The primary analysis estimates how **one-year lung transplant survival benefit,
-expressed as restricted mean survival time (RMST) gained**, varies with PM2.5,
-NO2 and O3 exposure. It uses separate pretransplant and posttransplant
-time-varying Cox mortality models and paired predictions over the same recipients.
+This repository contains the analysis code and generated display assets for a
+study of air pollution exposure and adverse outcomes among heart, kidney, liver,
+and lung transplant waitlist candidates.
 
-The earlier four-organ waitlist death/deterioration analyses are preserved in
-[`code/archive/pre_lung_rmst/`](code/archive/pre_lung_rmst/README.md). Historical
-outputs remain in their original locations for provenance.
+For the manuscript revision, the baseline and time-varying model scripts now
+use daily PM2.5 and O3 releases covering 2005-2024. See
+[daily exposure input preparation](docs/daily_pollution_analysis_inputs.md)
+for sources, verification, and eligibility limits. Current baseline,
+time-varying, subgroup, and sensitivity models and their figures were rerun
+in September 2026. See the [revision comparison report](output/revision_runs/rolling_20260922/results_comparison.md).
+The original workflow below is retained for provenance.
 
-## Primary workflow
+## Study Overview
 
-Run from the repository root with the existing R environment, local Q1 2026
-SRTR SAFs, pollution releases and ACS community covariates:
+The primary analysis estimates associations between waitlist-period air
+pollution exposure and death or delisting due to clinical deterioration using
+organ-specific cause-specific Cox proportional hazards models. Exposures are
+day-weighted mean pollutant concentrations during observed waitlist follow-up:
 
-```powershell
-Rscript code/run_primary_lung_analysis.R
-```
+- PM2.5, scaled per 5 ug/m3
+- NO2, scaled per 10 ppb
+- O3, scaled per 10 ppb
 
-1. `code/00_prepare_lung_primary_inputs.R`: prepare or verify the private,
-   audited LAS-era cohort inputs, retaining the established cohort definitions.
-2. `code/91_lung_pollution_survival_benefit.R`: fit six time-varying Cox models.
-3. `code/93_lung_pollution_rmst.R`: integrate fitted survival over 365 days.
-4. `code/94_lung_pollution_rmst_bootstrap.R`: add pointwise 95% intervals by
-   jointly resampling people, refitting both phases, and reintegrating RMST.
-5. Validate the model outputs and RMST confidence intervals.
+Models are fit separately by organ and pollutant. Heart, liver, and lung models
+adjust for age, sex, race, listing year, organ-specific baseline severity, and
+listing-center strata. Kidney models adjust for age, sex, race, listing year,
+no dialysis time, dialysis duration, diabetes, and listing-center strata.
 
-To regenerate RMST figures and restore confidence intervals from the existing
-fitted models and matching bootstrap checkpoints:
+## Repository Layout
 
-```powershell
-Rscript code/run_primary_lung_analysis.R --reuse-fitted
-```
+- `code/`: primary analysis scripts and shared helpers.
+- `code/figures_tables/`: scripts that create manuscript figures,
+  supplemental figures, and tables from analysis outputs.
+- `code/pollution_aggregation/`: upstream scripts that aggregate, QA, package,
+  and upload ZCTA-level air pollution exposure surfaces.
+- `code/exploratory/`: earlier exploratory, diagnostic, time-varying,
+  competing-risk, gridMET, and data-structure scripts not required for the
+  primary manuscript analysis.
+- `data/release/`: derived exposure release assets used by the analysis.
+- `docs/`: notes describing exposure-surface construction and release assets.
+- `output/`: generated model outputs, figures, and tables.
 
-Bootstrap defaults: 200 attempts, up to 12 local workers, seed 20261102.
-`LUNG_RMST_BOOTSTRAPS` and `LUNG_RMST_WORKERS` override those settings.
-Completed replicates are checkpointed, so interrupted runs can resume. A full
-refit changes the model-cache signature and requires new bootstrap estimates.
+## Primary Analysis Scripts
 
-## Study definition
+Run scripts from the repository root so relative paths resolve correctly.
 
-- Adults listed for lung transplantation from January 1, 2006 through March 8,
-  2023, using the established first-listing/deduplicated cohort and exclusions.
-- All-cause mortality, including ascertainable deaths after delisting and
-  perioperative deaths. Pretransplant follow-up ends at the LAS transition;
-  postoperative follow-up can extend through December 31, 2024.
-- Pollution updates from completed historical months; older NO2 uses a lagged
-  annual fallback. Listing residence and community vulnerability remain fixed.
-- Adjustment: age, sex, race, ZCTA vulnerability, official LAS with its missing
-  indicator when applicable, and listing-center strata. LAS updates before
-  transplantation and is fixed at transplantation afterward.
-- RMST benefit is expected days alive after transplant minus conditional
-  expected days alive without transplant during the same next 365 days.
+1. `code/50_primary_waitlist_period_pollution_cox.R`
+   - Builds the deduplicated waitlist cohort.
+   - Collapses same-person, same-organ registrations to first-listing baseline
+     exposure/covariates and final observed waitlist outcome.
+   - Computes waitlist-period pollutant exposures.
+   - Fits the primary cause-specific Cox models.
 
-These are adjusted observational model estimates. The models do not identify
-causal treatment effects or effects of reducing pollution. Confidence intervals
-are pointwise and conditional on the fixed recipient reference population.
-One-year survival-probability differences are supporting outcomes; script 92
-provides their separate, optional bootstrap workflow.
+2. `code/63_primary_waitlist_pollution_subgroup_cox.R`
+   - Fits stratified cause-specific Cox models by age group, sex, and race.
 
-## Results
+3. `code/72_primary_waitlist_pollution_cox_sensitivity_models.R`
+   - Fits sensitivity models, including models without organ score, without
+     listing-center strata, with an ACS-derived ZCTA social vulnerability proxy,
+     prior-year exposure models, and multipollutant models.
 
-The current primary results are in
-[`output/lung_pollution_survival_benefit/`](output/lung_pollution_survival_benefit/README.md):
+4. `code/figures_tables/`
+   - Generates manuscript and supplemental figures/tables from the outputs of
+     the model scripts.
 
-- [RMST benefit with 95% intervals](output/lung_pollution_survival_benefit/rmst_1yr_benefit.png)
-- [RMST with and without transplant](output/lung_pollution_survival_benefit/rmst_1yr_components.png)
-- [Accumulated benefit through one year](output/lung_pollution_survival_benefit/rmst_1yr_time.png)
-- [Exposure contrasts and confidence limits](output/lung_pollution_survival_benefit/rmst_1yr_exposure_contrasts.csv)
+## Data Requirements
 
-The November 2, 2026 run used 30,186 paired reference recipients. Of 200
-bootstrap attempts, 174 succeeded for each pollutant; 25 lacked complete
-follow-up support and one had an unstable coefficient. The published tables
-and plots contain the corresponding 95% percentile intervals.
+The analysis uses SRTR Standard Analysis Files (SAF), local ZCTA-level pollution
+exposure assets, and ACS-derived ZCTA community covariates. SRTR SAF files are
+not included in this repository. Local SAF paths are configured in
+`code/saf_paths.R`; helper runtime setup is in `code/r_runtime.R`.
 
-Full definitions, assumptions, individual commands, source requirements and
-validation are in the [primary analysis methods](docs/lung_pollution_survival_benefit.md).
+## Reproducibility Notes
 
-## Repository layout and restricted data
+- Most scripts are designed to be run with `Rscript` from the repository root.
+- Output files are written under `output/`.
+- Large external raw data files and restricted SRTR source data are expected to
+  exist locally and are not redistributed here.
+- The committed outputs reflect the analysis state used for manuscript drafting.
 
-- `code/`: current lung analysis, shared runtime/path helpers and input preparation.
-- `code/tests/`: current lung and shared exposure-input checks.
-- `code/pollution_aggregation/`: upstream exposure construction and release tools.
-- `code/archive/pre_lung_rmst/`: historical models, figures, revision scripts,
-  exploratory work and their tests. Cohort preparation still reuses documented
-  functions from this archive.
-- `docs/`: current methods and source documentation; older analysis notes are
-  historical rather than current primary specifications.
-- `output/`: aggregate results, figures and historical output bundles.
+## Separate lung survival-benefit study
 
-SAFs and person-level derived data are not redistributed. Private cohorts,
-model objects and bootstrap working inputs stay in ignored `cache/` folders.
-Exposure-release Parquet files and other large local inputs are also ignored.
+The lung transplant Cox/RMST survival-benefit analysis is maintained in
+[lung_transplant_pollution_survival_benefit](https://github.com/petergraffy/lung_transplant_pollution_survival_benefit).
+This repository retains the original waitlist study and code layout.

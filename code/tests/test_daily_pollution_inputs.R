@@ -1,8 +1,8 @@
 source("code/daily_pollution_inputs.R")
 
 scripts <- c(list.files("code", pattern = "^(78|79|80|81|84|86|88|90).*R$", full.names = TRUE),
-             "code/archive/pre_lung_rmst/figures_tables/60_plot_primary_pollution_study_period_maps.R",
-             "code/archive/pre_lung_rmst/figures_tables/92_plot_pollution_absolute_1yr_survival_maps.R",
+             "code/figures_tables/60_plot_primary_pollution_study_period_maps.R",
+             "code/figures_tables/92_plot_pollution_absolute_1yr_survival_maps.R",
              "code/prepare_daily_pollution_inputs.R")
 invisible(lapply(scripts, parse))
 
