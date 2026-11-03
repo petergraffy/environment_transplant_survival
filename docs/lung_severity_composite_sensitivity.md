@@ -43,7 +43,7 @@ The cutoff corresponds to adoption of CAS on March 9, 2023 (https://srtr.hrsa.go
 
 ## Reproduce
 
-Run `code/tests/test_lung_composite.R`, then `code/revision_2026/22_lung_composite_sensitivity.R`, then `code/revision_2026/23_lung_composite_report.R`, then `code/tests/test_lung_composite_outputs.R`. This uses the existing raw lung cache and unchanged monthly exposure cache from the preceding audit. Person-level derived files stay in ignored `output/revision_2026_checklist/cache/lung_composite/`. Aggregate tables and the report are in `output/revision_2026_checklist/lung_composite_sensitivity/`.
+Run `code/archive/pre_lung_rmst/tests/test_lung_composite.R`, then `code/archive/pre_lung_rmst/revision_2026/22_lung_composite_sensitivity.R`, then `code/archive/pre_lung_rmst/revision_2026/23_lung_composite_report.R`, then `code/archive/pre_lung_rmst/tests/test_lung_composite_outputs.R`. This uses the existing raw lung cache and unchanged monthly exposure cache from the preceding audit. Person-level derived files stay in ignored `output/revision_2026_checklist/cache/lung_composite/`. Aggregate tables and the report are in `output/revision_2026_checklist/lung_composite_sensitivity/`.
 
 ## Run findings and numerical limitations
 

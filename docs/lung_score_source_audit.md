@@ -5,9 +5,9 @@ Audit date: September 23, 2026. Source: Q1 2026 SRTR SAF.
 ## Finding
 
 The current score-adjusted models do **not** use separate official LAS and CAS
-scores. `code/50_primary_waitlist_period_pollution_cox.R` constructs
+scores. `code/archive/pre_lung_rmst/50_primary_waitlist_period_pollution_cox.R` constructs
 `lung_las_cas_component_score`, a weighted clinical-component proxy.
-`code/79_timevarying_pollution_cox_svi.R` retains this baseline lung proxy while
+`code/archive/pre_lung_rmst/79_timevarying_pollution_cox_svi.R` retains this baseline lung proxy while
 updating heart and liver severity inputs. Table 1 correctly calls the lung
 measure a proxy linear predictor; it should not be described as official LAS,
 CAS, or longitudinally updated lung urgency.
@@ -50,7 +50,7 @@ Unlike the earlier header-only PTR inspection, the re-audit read score values:
 
 These are counts of match records/registration-days, not cohort candidate counts.
 Outputs and reproducible code: `output/revision_2026_checklist/lung_score_reaudit/`
-and `code/revision_2026/18_lung_score_reaudit.R`.
+and `code/archive/pre_lung_rmst/revision_2026/18_lung_score_reaudit.R`.
 
 Official documentation confirms that total CAS is individual to each patient
 and organ offer, whereas the SRTR 2023 lung report uses WLAUC to characterize

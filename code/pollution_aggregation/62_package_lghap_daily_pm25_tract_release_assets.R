@@ -162,7 +162,7 @@ readme <- c(
   "",
   "Bai, K., Li, K., Shao, L., Li, X., Liu, C., Li, Z., Ma, M., Han, D., Sun, Y., Zheng, Z., Li, R., Chang, N.-B., and Guo, J.: LGHAP v2: a global gap-free aerosol optical depth and PM2.5 concentration dataset since 2000 derived via big Earth data analytics, Earth Syst. Sci. Data, 16, 2425-2448, https://doi.org/10.5194/essd-16-2425-2024, 2024.",
   "",
-  "Also cite this repository/release for the census tract aggregation workflow. The reproducible aggregation script is `code/61_aggregate_lghap_daily_pm25_to_tract.R` and this packaging script is `code/pollution_aggregation/62_package_lghap_daily_pm25_tract_release_assets.R`."
+  "Also cite this repository/release for the census tract aggregation workflow. The reproducible aggregation script is `code/archive/pre_lung_rmst/61_aggregate_lghap_daily_pm25_to_tract.R` and this packaging script is `code/pollution_aggregation/62_package_lghap_daily_pm25_tract_release_assets.R`."
 )
 writeLines(readme, file.path(release_dir, "README.md"), useBytes = TRUE)
 

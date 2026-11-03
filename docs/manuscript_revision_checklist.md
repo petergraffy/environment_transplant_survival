@@ -58,7 +58,7 @@ new analyses are in `output/revision_2026_checklist`.
 ## 4. AJ numbers at risk
 
 - [x] Existing AJ outputs contain risk-set counts, but primary plots do not show
-  aligned risk tables (code/78 and code/figures_tables/83).
+  aligned risk tables (code/78 and code/archive/pre_lung_rmst/figures_tables/83).
 - [x] Compute exact risk sets at each displayed axis tick, including time zero,
   for each organ, pollutant, quartile, and horizon (1, 3, 5, 10 years).
 - [x] Put each table directly below its curve panel. Include all quartiles and

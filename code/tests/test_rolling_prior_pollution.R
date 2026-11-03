@@ -37,6 +37,6 @@ stopifnot(is.na(rolling_no2_windows(nq, m, annual_fallback = FALSE)$no2_prior_pp
 # A hole within observed monthly coverage must not be filled using an annual value.
 stopifnot(is.na(rolling_no2_windows(nq[1, ], m[-5, ], rbind(a, data.frame(zip="01234",year=2019L,no2_annual=99)))$no2_prior_ppb))
 paths <- c(list.files("code", pattern = "^(78|80|81|86|88|90).*R$", full.names = TRUE),
-           "code/figures_tables/92_plot_pollution_absolute_1yr_survival_maps.R")
+           "code/archive/pre_lung_rmst/figures_tables/92_plot_pollution_absolute_1yr_survival_maps.R")
 invisible(lapply(paths, parse))
 cat("PASS: rolling daily windows, leap days, missing days, duplicate dates, year partitions, 12-month windows, annual fallback, and script parsing.\n")

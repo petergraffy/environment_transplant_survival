@@ -8,7 +8,7 @@ Estimate whether environmental exposures accrued during the waitlist period are 
 
 The primary air-pollution analysis is implemented in:
 
-- `code/50_primary_waitlist_period_pollution_cox.R`
+- `code/archive/pre_lung_rmst/50_primary_waitlist_period_pollution_cox.R`
 
 Outputs are written to:
 
@@ -44,7 +44,7 @@ This is a cause-specific Cox model with model-based standard errors. The adverse
 
 The baseline listing-year air-pollution models are implemented in:
 
-- `code/exploratory/49_baseline_air_pollution_waitlist_cox.R`
+- `code/archive/pre_lung_rmst/exploratory/49_baseline_air_pollution_waitlist_cox.R`
 
 Outputs are written to:
 
@@ -107,7 +107,7 @@ This is a cause-specific Cox model with listing-center stratified baseline hazar
 
 The completed primary static-exposure models are implemented in:
 
-- `code/exploratory/31_formal_waitlist_environment_primary_cox.R`
+- `code/archive/pre_lung_rmst/exploratory/31_formal_waitlist_environment_primary_cox.R`
 
 Outputs are written to:
 
@@ -202,8 +202,8 @@ The next time-varying Cox model should therefore be organ-specific rather than p
 
 The time-varying interval build and model fitters are:
 
-- `code/exploratory/32_timevarying_cox_and_finegray_sensitivity.R`
-- `code/exploratory/33_fit_timevarying_models_from_intervals.R`
+- `code/archive/pre_lung_rmst/exploratory/32_timevarying_cox_and_finegray_sensitivity.R`
+- `code/archive/pre_lung_rmst/exploratory/33_fit_timevarying_models_from_intervals.R`
 
 Outputs are written to:
 
@@ -240,7 +240,7 @@ Center is handled by center-stratified baseline hazards rather than center dummy
 
 The Fine-Gray heat/humidity sensitivity is implemented in:
 
-- `code/exploratory/34_reduced_finegray_heat_humidity_month_weighted.R`
+- `code/archive/pre_lung_rmst/exploratory/34_reduced_finegray_heat_humidity_month_weighted.R`
 
 Output:
 

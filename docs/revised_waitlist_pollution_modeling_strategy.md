@@ -104,7 +104,7 @@ Organ-specific clinical adjustment:
 ## Scripts
 
 - `code/06_build_community_covariates.R`: ACS ZCTA community covariates.
-- `code/exploratory/07_organ_specific_adverse_waitlist_models.R`: revised heart/kidney/liver/lung
+- `code/archive/pre_lung_rmst/exploratory/07_organ_specific_adverse_waitlist_models.R`: revised heart/kidney/liver/lung
   organ-specific models with prior and waitlist-duration pollution exposure.
 
 ## Outputs

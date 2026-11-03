@@ -131,7 +131,7 @@ readme <- c(
   "",
   "Please cite the source ozone estimates using the Science article DOI supplied with these data: https://www.science.org/doi/10.1126/science.aed3197.",
   "",
-  "Also cite this repository/release for the census tract aggregation workflow. The reproducible aggregation script is `code/64_aggregate_daily_o3_to_tract.R` and this packaging script is `code/pollution_aggregation/65_package_daily_o3_tract_release_assets.R`."
+  "Also cite this repository/release for the census tract aggregation workflow. The reproducible aggregation script is `code/archive/pre_lung_rmst/64_aggregate_daily_o3_to_tract.R` and this packaging script is `code/pollution_aggregation/65_package_daily_o3_tract_release_assets.R`."
 )
 writeLines(readme, file.path(release_dir, "README_o3.md"), useBytes = TRUE)
 
