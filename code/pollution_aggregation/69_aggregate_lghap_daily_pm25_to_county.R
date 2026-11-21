@@ -15,6 +15,9 @@ county_out <- "data/processed/lghap_pm25_county_daily"
 county_cache <- "data/cache/lghap_pm25_county_2020_area_weights_v1.rds"
 county_shp <- "data/cache/cb_2020_us_county_500k/cb_2020_us_county_500k.shp"
 county_script <- "code/pollution_aggregation/69_aggregate_lghap_daily_pm25_to_county.R"
+county_prefix <- "lghap_pm25_county"
+county_value <- "pm25_ug_m3"
+county_pollutant <- "pm25_lghap_daily"
 
 county_log <- function(...) {
   message(format(Sys.time(), "%Y-%m-%d %H:%M:%S"), " | ", paste0(..., collapse = ""))
@@ -63,16 +66,20 @@ county_template <- function(grid) {
 
 county_prepare <- function(archives) {
   if (file.exists(county_cache)) return(readRDS(county_cache))
-  counties <- st_read(county_shp, quiet = TRUE)
-  counties <- counties[!counties$STATEFP %in% c("02", "15", "60", "66", "69", "72", "78"), ]
-  counties <- st_transform(st_make_valid(counties[order(counties$GEOID), ]), 4326)
-  stopifnot(nrow(counties) == 3108L, !anyDuplicated(counties$GEOID))
   first_member <- unzip(archives$path[1], list = TRUE)$Name[1]
   extract_dir <- tempfile("county_grid_")
   dir.create(extract_dir)
   unzip(archives$path[1], files = first_member, exdir = extract_dir)
   grid <- county_read_grid(file.path(extract_dir, first_member))
   unlink(file.path(extract_dir, first_member))
+  county_build_weights(grid)
+}
+
+county_build_weights <- function(grid) {
+  counties <- st_read(county_shp, quiet = TRUE)
+  counties <- counties[!counties$STATEFP %in% c("02", "15", "60", "66", "69", "72", "78"), ]
+  counties <- st_transform(st_make_valid(counties[order(counties$GEOID), ]), 4326)
+  stopifnot(nrow(counties) == 3108L, !anyDuplicated(counties$GEOID))
   r <- county_template(grid)
   values(r) <- 1
   county_log("Building exact county/grid overlap areas once")
@@ -87,9 +94,14 @@ county_prepare <- function(archives) {
   areas <- as.numeric(rowSums(w))
   stopifnot(all(areas > 0))
   w <- Diagonal(x = 1 / areas) %*% w
-  # NetCDF is lat-by-lon, ascending latitude; raster cell IDs run from north to south.
-  source_indices <- length(grid$lat) - (cells - 1L) %/% length(grid$lon) +
-    ((cells - 1L) %% length(grid$lon)) * length(grid$lat)
+  # Raster cell IDs run from north to south. PM2.5 is stored latitude-first.
+  row_from_south <- length(grid$lat) - (cells - 1L) %/% length(grid$lon)
+  column <- (cells - 1L) %% length(grid$lon) + 1L
+  source_indices <- if (isTRUE(grid$lon_first)) {
+    column + (row_from_south - 1L) * length(grid$lon)
+  } else {
+    row_from_south + (column - 1L) * length(grid$lat)
+  }
   lookup <- data.table(county_fips = counties$GEOID, state_fips = counties$STATEFP,
     county_name = counties$NAME)
   cache <- list(grid = grid, cells = cells, source_indices = source_indices,
@@ -115,7 +127,7 @@ county_read_values <- function(path, cache) {
 county_month <- function(job) {
   cache <- get("county_weights", envir = .GlobalEnv)
   year <- job$year; month <- job$month
-  dest <- file.path(county_out, sprintf("lghap_pm25_county_daily_%04d_%02d.csv.gz", year, month))
+  dest <- file.path(county_out, sprintf("%s_daily_%04d_%02d.csv.gz", county_prefix, year, month))
   qc_dest <- sub("\\.csv\\.gz$", "_qc.csv", dest)
   first <- as.Date(sprintf("%04d-%02d-01", year, month))
   dates <- seq(first, seq(first, by = "month", length.out = 2)[2] - 1, by = "day")
@@ -132,9 +144,13 @@ county_month <- function(job) {
   county_log("START ", year, "-", sprintf("%02d", month), " (", length(dates), " days)")
   result <- vector("list", length(dates))
   for (i in seq_along(dates)) {
-    member <- paste0("LGHAP.Global_PM25.D001.A", format(dates[i], "%Y%m%d"), ".nc")
-    unzip(job$path, files = member, exdir = extract_dir)
-    path <- file.path(extract_dir, member)
+    member <- if (is.null(job$members)) {
+      paste0("LGHAP.Global_PM25.D001.A", format(dates[i], "%Y%m%d"), ".nc")
+    } else {
+      job$members[i]
+    }
+    path <- unzip(job$path, files = member, exdir = extract_dir, junkpaths = TRUE)
+    stopifnot(length(path) == 1L, file.exists(path))
     vals <- county_read_values(path, cache)
     v <- vals[cache$source_indices]
     valid <- is.finite(v)
@@ -147,8 +163,12 @@ county_month <- function(job) {
     # Independently verify the indexed sparse calculation against raster extraction.
     if (i == 1L || any(!is.finite(means))) {
       r <- county_template(cache$grid)
-      values(r) <- as.vector(t(vals[rev(seq_len(nrow(vals))), , drop = FALSE]))
-      names(r) <- "pm25_ug_m3"
+      values(r) <- if (isTRUE(cache$grid$lon_first)) {
+        as.vector(vals[, rev(seq_len(ncol(vals))), drop = FALSE])
+      } else {
+        as.vector(t(vals[rev(seq_len(nrow(vals))), , drop = FALSE]))
+      }
+      names(r) <- county_value
     }
     if (i == 1L) {
       check <- match(c("06037", "17031", "36061"), cache$lookup$county_fips)
@@ -160,7 +180,7 @@ county_month <- function(job) {
       # Extract all county points to avoid terra's single-point search-radius drop behavior.
       pts <- suppressWarnings(st_point_on_surface(cache$counties))
       nearest <- extract(r, vect(pts), ID = FALSE, search_radius = 500000)
-      means[missing] <- nearest$pm25_ug_m3[missing]
+      means[missing] <- nearest[[county_value]][missing]
       fill_distance_m[missing] <- nearest$distance[missing]
       fill_cell[missing] <- nearest$cell[missing]
       value_source[missing] <- "nearest_raster_cell"
@@ -172,7 +192,7 @@ county_month <- function(job) {
       paste(cache$lookup$county_fips[!is.finite(means)], collapse = ", "))
     stopifnot(all(means >= 0), all(coverage >= 0), all(coverage <= 1 + 1e-8))
     result[[i]] <- cbind(copy(cache$lookup), data.table(date = dates[i], year = year, month = month,
-      pollutant = "pm25_lghap_daily", temporal_resolution = "daily", pm25_ug_m3 = means,
+      pollutant = county_pollutant, temporal_resolution = "daily", pm25_ug_m3 = means,
       valid_area_fraction = pmin(coverage, 1), value_source = value_source,
       fill_distance_m = fill_distance_m, fill_cell = fill_cell))
     unlink(path)
@@ -182,14 +202,19 @@ county_month <- function(job) {
   setorder(dat, county_fips, date)
   stopifnot(nrow(dat) == 3108L * length(dates), !anyDuplicated(dat[, .(county_fips, date)]))
   staging <- sub("\\.csv\\.gz$", ".partial.csv.gz", dest)
+  setnames(dat, "pm25_ug_m3", county_value)
   fwrite(dat, staging)
   if (!file.rename(staging, dest)) stop("Could not finalize ", dest)
+  concentrations <- dat[[county_value]]
   qc <- data.table(year = year, month = month, rows = nrow(dat), counties = uniqueN(dat$county_fips),
-    dates = uniqueN(dat$date), missing_values = sum(!is.finite(dat$pm25_ug_m3)),
+    dates = uniqueN(dat$date), missing_values = sum(!is.finite(concentrations)),
     nearest_fill_values = sum(dat$value_source == "nearest_raster_cell"),
-    min_valid_area_fraction = min(dat$valid_area_fraction), mean_pm25 = mean(dat$pm25_ug_m3),
-    min_pm25 = min(dat$pm25_ug_m3), max_pm25 = max(dat$pm25_ug_m3),
+    min_valid_area_fraction = min(dat$valid_area_fraction), mean_pm25 = mean(concentrations),
+    min_pm25 = min(concentrations), max_pm25 = max(concentrations),
     file = basename(dest), sha256 = unname(tools::sha256sum(dest)))
+  if (county_value != "pm25_ug_m3") {
+    setnames(qc, c("mean_pm25", "min_pm25", "max_pm25"), paste0(c("mean_", "min_", "max_"), county_value))
+  }
   fwrite(qc, qc_dest)
   county_log("DONE ", year, "-", sprintf("%02d", month), " rows=", nrow(dat), " missing=0")
   qc
@@ -199,7 +224,7 @@ county_summarize <- function(years) {
   annual <- list(); qc <- list(); fills <- list()
   for (y in years) {
     pieces <- lapply(1:12, function(m) {
-      path <- file.path(county_out, sprintf("lghap_pm25_county_daily_%04d_%02d.csv.gz", y, m))
+      path <- file.path(county_out, sprintf("%s_daily_%04d_%02d.csv.gz", county_prefix, y, m))
       con <- gzfile(path, "rt")
       on.exit(close(con))
       dat <- fread(text = paste(readLines(con), collapse = "\n"), colClasses = c(county_fips = "character", state_fips = "character"))
@@ -219,23 +244,24 @@ county_summarize <- function(years) {
     d <- rbindlist(pieces, fill = TRUE)
     expected <- seq(as.Date(sprintf("%04d-01-01", y)), as.Date(sprintf("%04d-12-31", y)), by = "day")
     stopifnot(nrow(d) == 3108L * length(expected), !anyDuplicated(d[, .(county_fips, date)]),
-      setequal(d$date, expected), all(is.finite(d$pm25_ug_m3)), all(grepl("^[0-9]{5}$", d$county_fips)))
+      setequal(d$date, expected), all(is.finite(d[[county_value]])), all(grepl("^[0-9]{5}$", d$county_fips)))
     counts <- d[, .N, by = county_fips]
     stopifnot(nrow(counts) == 3108L, all(counts$N == length(expected)))
     fills[[as.character(y)]] <- d[value_source == "nearest_raster_cell"]
-    annual[[as.character(y)]] <- d[, .(pm25_ug_m3 = mean(pm25_ug_m3), days = .N,
+    annual[[as.character(y)]] <- d[, .(pm25_ug_m3 = mean(get(county_value)), days = .N,
       min_valid_area_fraction = min(valid_area_fraction),
       nearest_fill_days = sum(value_source == "nearest_raster_cell")), by = .(county_fips, state_fips, county_name, year)]
     qc[[as.character(y)]] <- rbindlist(lapply(1:12, function(m)
-      fread(file.path(county_out, sprintf("lghap_pm25_county_daily_%04d_%02d_qc.csv", y, m)))) , fill = TRUE)
+      fread(file.path(county_out, sprintf("%s_daily_%04d_%02d_qc.csv", county_prefix, y, m)))) , fill = TRUE)
     county_log("VALIDATED year ", y, ": ", nrow(d), " rows")
   }
   a <- rbindlist(annual); setorder(a, county_fips, year)
   q <- rbindlist(qc, fill = TRUE); setorder(q, year, month)
   q[is.na(nearest_fill_values), nearest_fill_values := 0L]
-  fwrite(a, file.path(county_out, "lghap_pm25_county_annual.csv"))
-  fwrite(q, file.path(county_out, "lghap_pm25_county_daily_manifest.csv"))
-  fwrite(rbindlist(fills), file.path(county_out, "lghap_pm25_county_fill_audit.csv"))
+  setnames(a, "pm25_ug_m3", county_value)
+  fwrite(a, file.path(county_out, paste0(county_prefix, "_annual.csv")))
+  fwrite(q, file.path(county_out, paste0(county_prefix, "_daily_manifest.csv")))
+  fwrite(rbindlist(fills), file.path(county_out, paste0(county_prefix, "_fill_audit.csv")))
   print(q[, .(counties = unique(counties), days = sum(dates), rows = sum(rows), missing_values = sum(missing_values)), by = year])
 }
 
