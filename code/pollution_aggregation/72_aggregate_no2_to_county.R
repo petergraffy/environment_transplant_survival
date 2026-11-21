@@ -88,33 +88,60 @@ no2_counties <- function(r, cache, verify) {
   dt
 }
 
-no2_main <- function() {
-  county_out <<- "data/release/no2_county_parquet"
-  dir.create(county_out, recursive = TRUE, showWarnings = FALSE)
-  inputs <- no2_inputs()
+no2_main_script <- "code/pollution_aggregation/72_aggregate_no2_to_county.R"
+county_out <- "data/release/no2_county_parquet"
+
+no2_process <- function(inputs) {
   caches <- list()
   rows <- vector("list", nrow(inputs))
   for (i in seq_len(nrow(inputs))) {
     input <- inputs[i]
     product <- input$source_product
-    county_log(i, "/", nrow(inputs), " ", input$year,
+    county_log(input$period_id, "/113 ", input$year,
       if (!is.na(input$month)) sprintf("-%02d", input$month), " ", product)
     extracted <- !is.na(input$member)
     path <- if (extracted) unzip(input$path, files = input$member, exdir = tempdir()) else input$path
     stopifnot(length(path) == 1L, file.exists(path))
     r <- no2_raster(path)
     if (extracted) unlink(path)
-    cache <- caches[[product]]
+    grid_id <- if (is.na(input$month)) product else "nawaz_tropomi_v2_monthly"
+    cache <- caches[[grid_id]]
     if (is.null(cache)) {
-      cache <- no2_weights(r, product)
-      caches[[product]] <- cache
+      cache <- no2_weights(r, grid_id)
+      caches[[grid_id]] <- cache
     }
     stopifnot(terra::compareGeom(r, county_template(cache$grid), stopOnError = FALSE))
     rows[[i]] <- no2_counties(r, cache, verify = is.na(input$month) || input$month == 12L)
     rows[[i]][, `:=`(year = input$year, month = input$month, source_product = product,
       source_file = if (extracted) input$member else basename(path))]
   }
-  all <- rbindlist(rows)
+  rbindlist(rows)
+}
+
+no2_main <- function() {
+  dir.create(county_out, recursive = TRUE, showWarnings = FALSE)
+  dir.create("logs", showWarnings = FALSE)
+  inputs <- no2_inputs()[, period_id := .I]
+  workers <- as.integer(Sys.getenv("NO2_COUNTY_WORKERS", "4"))
+  stopifnot(length(workers) == 1L, !is.na(workers), workers >= 1L)
+  first <- inputs[c(1L, 17L, 22L)]
+  initial <- no2_process(first)
+  pending <- inputs[!period_id %in% first$period_id]
+  if (workers == 1L) {
+    remaining <- list(no2_process(pending))
+  } else {
+    cl <- parallel::makeCluster(workers, outfile = "logs/no2_county_workers.log")
+    on.exit(parallel::stopCluster(cl), add = TRUE)
+    parallel::clusterCall(cl, function(root, script) {
+      setwd(root)
+      source(script)
+      NULL
+    }, normalizePath(".", winslash = "/"), no2_main_script)
+    jobs <- split(pending, rep_len(seq_len(workers), nrow(pending)))
+    remaining <- parallel::parLapply(cl, jobs, no2_process)
+  }
+  all <- rbindlist(c(list(initial), remaining))
+  setorder(all, year, month, county_fips)
   lookup <- unique(all[, .(county_fips, state_fips, county_name)])
   stopifnot(nrow(lookup) == 3108L, all(grepl("^[0-9]{5}$", lookup$county_fips)),
     !anyDuplicated(all[, .(county_fips, year, month)]),
