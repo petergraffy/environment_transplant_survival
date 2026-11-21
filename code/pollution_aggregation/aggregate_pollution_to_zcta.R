@@ -11,6 +11,7 @@ if (dir.exists(user_lib)) {
 library(data.table)
 library(sf)
 library(terra)
+source("code/pollution_aggregation/read_annual_no2_raster.R")
 
 terraOptions(progress = 1, memfrac = 0.75)
 sf_use_s2(FALSE)
@@ -279,6 +280,17 @@ process_o3 <- function(zcta) {
   invisible(out)
 }
 
+aggregate_no2_period <- function(path, zcta, year) {
+  grid <- if (grepl("_final_1km\\.nc$", basename(path))) "no2_global_1km" else "no2_conus_001deg"
+  dt <- zonal_mean(read_annual_no2_raster(path), zcta, "no2", grid)
+  value_col <- setdiff(names(dt), c("zip", grep("_(source|fill_distance_m|fill_cell)$", names(dt), value = TRUE)))
+  setnames(dt, paste0(value_col, c("", "_source", "_fill_distance_m", "_fill_cell")),
+    c("no2", "value_source", "fill_distance_m", "fill_cell"))
+  dt[, `:=`(pollutant = "no2", year = as.integer(year), month = NA_integer_, temporal_resolution = "annual")]
+  setcolorder(dt, c("zip", "pollutant", "year", "month", "temporal_resolution"))
+  dt
+}
+
 process_no2 <- function(zcta) {
   files <- no2_files()[order(year)]
   message("NO2 annual files in range: ", nrow(files))
@@ -287,16 +299,8 @@ process_no2 <- function(zcta) {
     f <- files[i]
     dest <- file.path(out_dir, sprintf("no2_%04d.csv.gz", f$year))
     if (skip_existing && file.exists(dest)) next
-    grid <- if (grepl("_final_1km\\.nc$", basename(f$path))) "no2_global_1km" else "no2_conus_001deg"
     message("NO2 ", f$year)
-    dt <- zonal_mean(rast(f$path), zcta, "no2", grid)
-    value_col <- setdiff(names(dt), grep("_(source|fill_distance_m|fill_cell)$", names(dt), value = TRUE))
-    value_col <- setdiff(value_col, "zip")
-    setnames(
-      dt,
-      c(value_col, paste0(value_col, "_source"), paste0(value_col, "_fill_distance_m"), paste0(value_col, "_fill_cell")),
-      c("no2", "value_source", "fill_distance_m", "fill_cell")
-    )
+    dt <- aggregate_no2_period(f$path, zcta, f$year)
     out <- c(out, write_result(dt, "no2", "annual", f$year))
   }
   invisible(out)
@@ -329,10 +333,11 @@ combine_outputs <- function() {
   }
 }
 
-zcta <- read_zctas()
-if ("pm25" %in% target_pollutants) process_pm(zcta)
-if ("o3" %in% target_pollutants) process_o3(zcta)
-if ("no2" %in% target_pollutants) process_no2(zcta)
-combine_outputs()
-
-message("Done. Outputs written to ", normalizePath(out_dir, winslash = "/"))
+if (sys.nframe() == 0L) {
+  zcta <- read_zctas()
+  if ("pm25" %in% target_pollutants) process_pm(zcta)
+  if ("o3" %in% target_pollutants) process_o3(zcta)
+  if ("no2" %in% target_pollutants) process_no2(zcta)
+  combine_outputs()
+  message("Done. Outputs written to ", normalizePath(out_dir, winslash = "/"))
+}

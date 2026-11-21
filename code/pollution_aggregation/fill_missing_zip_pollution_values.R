@@ -75,28 +75,6 @@ fill_one <- function(dt) {
   full[order(zip)]
 }
 
-period_files <- list.files(out_dir, pattern = "^(pm25|o3|no2)_[0-9]{4}(_[0-9]{2})?\\.csv\\.gz$", full.names = TRUE)
-summary_rows <- vector("list", length(period_files))
-
-for (i in seq_along(period_files)) {
-  src <- period_files[[i]]
-  dt <- read_gz(src)
-  filled <- fill_one(dt)
-  dest <- file.path(filled_dir, basename(src))
-  fwrite(filled, dest)
-  summary_rows[[i]] <- filled[, .(
-    file = basename(src),
-    rows = .N,
-    zonal_mean = sum(value_source == "zonal_mean"),
-    nearest_zip = sum(value_source == "nearest_zip"),
-    max_fill_distance_km = suppressWarnings(max(fill_distance_km, na.rm = TRUE))
-  )]
-}
-
-fill_summary <- rbindlist(summary_rows)
-fill_summary[is.infinite(max_fill_distance_km), max_fill_distance_km := NA_real_]
-fwrite(fill_summary, file.path(filled_dir, "fill_summary.csv"))
-
 combine_pollutant <- function(prefix) {
   files <- list.files(filled_dir, pattern = paste0("^", prefix, "_[0-9]{4}(_[0-9]{2})?\\.csv\\.gz$"), full.names = TRUE)
   dt <- rbindlist(lapply(files, read_gz), fill = TRUE)
@@ -104,8 +82,32 @@ combine_pollutant <- function(prefix) {
   fwrite(dt, file.path(filled_dir, paste0("all_", prefix, "_zip_filled.csv.gz")))
 }
 
-combine_pollutant("pm25")
-combine_pollutant("o3")
-combine_pollutant("no2")
+if (sys.nframe() == 0L) {
+  period_files <- list.files(out_dir, pattern = "^(pm25|o3|no2)_[0-9]{4}(_[0-9]{2})?\\.csv\\.gz$", full.names = TRUE)
+  summary_rows <- vector("list", length(period_files))
 
-message("Filled outputs written to ", normalizePath(filled_dir, winslash = "/"))
+  for (i in seq_along(period_files)) {
+    src <- period_files[[i]]
+    dt <- read_gz(src)
+    filled <- fill_one(dt)
+    dest <- file.path(filled_dir, basename(src))
+    fwrite(filled, dest)
+    summary_rows[[i]] <- filled[, .(
+      file = basename(src),
+      rows = .N,
+      zonal_mean = sum(value_source == "zonal_mean"),
+      nearest_zip = sum(value_source == "nearest_zip"),
+      max_fill_distance_km = suppressWarnings(max(fill_distance_km, na.rm = TRUE))
+    )]
+  }
+
+  fill_summary <- rbindlist(summary_rows)
+  fill_summary[is.infinite(max_fill_distance_km), max_fill_distance_km := NA_real_]
+  fwrite(fill_summary, file.path(filled_dir, "fill_summary.csv"))
+
+  combine_pollutant("pm25")
+  combine_pollutant("o3")
+  combine_pollutant("no2")
+
+  message("Filled outputs written to ", normalizePath(filled_dir, winslash = "/"))
+}

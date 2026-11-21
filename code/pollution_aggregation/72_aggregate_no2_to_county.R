@@ -1,5 +1,6 @@
 #!/usr/bin/env Rscript
 source("code/pollution_aggregation/69_aggregate_lghap_daily_pm25_to_county.R")
+source("code/pollution_aggregation/read_annual_no2_raster.R")
 library(arrow)
 
 no2_inputs <- function() {
@@ -23,20 +24,8 @@ no2_inputs <- function() {
 }
 
 no2_raster <- function(path) {
-  r <- rast(path)
+  r <- read_annual_no2_raster(path)
   stopifnot(nlyr(r) == 1L, is.lonlat(r), names(r) %in% c("Band1", "surface_no2", "Surface_NO2"))
-  if (identical(names(r), "surface_no2")) {
-    # Read the annual NetCDF latitude axis explicitly. GDAL reverses some v2 files.
-    nc <- nc_open(path)
-    on.exit(nc_close(nc))
-    variable <- nc$var$surface_no2
-    stopifnot(identical(vapply(variable$dim, function(d) d$name, ""), c("lon", "lat")),
-      all(diff(nc$dim$lon$vals) > 0),
-      max(abs(xFromCol(r, seq_len(ncol(r))) - nc$dim$lon$vals)) < 1e-5)
-    lat_order <- order(nc$dim$lat$vals, decreasing = TRUE)
-    stopifnot(max(abs(yFromRow(r, seq_len(nrow(r))) - nc$dim$lat$vals[lat_order])) < 1e-5)
-    values(r) <- as.vector(ncvar_get(nc, "surface_no2")[, lat_order, drop = FALSE])
-  }
   # Pad both products to the full county envelope so the denominator includes area outside the source grid.
   region <- ext(-125, -66, 24, 50)
   r <- crop(r, region, snap = "out")

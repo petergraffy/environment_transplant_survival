@@ -24,6 +24,12 @@ All three Parquet files include `zip`, `pollutant`, `year`, `month`,
 PM2.5 and ozone currently cover 2005-2023 in the local source files; NO2 covers
 2005-2025.
 
+The 2025 annual NO2 layer was rebuilt using the source NetCDF latitude
+coordinates to orient the grid. The 2005-2024 Parquet rows are identical to
+the previous release. To reproduce the correction, run
+`Rscript code/pollution_aggregation/73_rebuild_2025_no2_zcta_release.R <2025-NetCDF-path>`
+from the repository root with the existing ZCTA outputs and release assets.
+
 ## Citations
 
 Please cite the original pollutant data sources when using these derived ZCTA
