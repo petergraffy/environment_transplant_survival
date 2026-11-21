@@ -1,3 +1,6 @@
+# Keep generated analysis outputs local.
+/output/
+
 # Large reproducible gridMET downloads and yearly daily ZCTA extracts.
 data/raw/gridmet/*.nc
 data/raw/daily_pm25/*.nc
