@@ -50,6 +50,13 @@ output/revision_runs/**/snapshot_complete.txt
 
 # Never publish registration/candidate-level derived analysis datasets.
 output/**/*analysis_dataset.csv.gz
+output/**/*_test_predictions.csv.gz
+output/**/candidate_pollution_linkage_flags.csv.gz
+output/**/waitlist_environment_exposures.csv.gz
+output/**/waitlist_daily_tmax_rmax_exact.csv.gz
+output/**/lagged_waitlist_exposure_intervals_qc_sample.csv
+output/**/pollution_unlinked_zip_year_examples.csv
+output/**/unlinked_zip_diagnostic.csv
 
 # Local scratch downloads and execution logs.
 /tmp_lghap_aod_inspect/
