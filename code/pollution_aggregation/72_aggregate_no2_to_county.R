@@ -25,6 +25,18 @@ no2_inputs <- function() {
 no2_raster <- function(path) {
   r <- rast(path)
   stopifnot(nlyr(r) == 1L, is.lonlat(r), names(r) %in% c("Band1", "surface_no2", "Surface_NO2"))
+  if (identical(names(r), "surface_no2")) {
+    # Read the annual NetCDF latitude axis explicitly. GDAL reverses some v2 files.
+    nc <- nc_open(path)
+    on.exit(nc_close(nc))
+    variable <- nc$var$surface_no2
+    stopifnot(identical(vapply(variable$dim, function(d) d$name, ""), c("lon", "lat")),
+      all(diff(nc$dim$lon$vals) > 0),
+      max(abs(xFromCol(r, seq_len(ncol(r))) - nc$dim$lon$vals)) < 1e-5)
+    lat_order <- order(nc$dim$lat$vals, decreasing = TRUE)
+    stopifnot(max(abs(yFromRow(r, seq_len(nrow(r))) - nc$dim$lat$vals[lat_order])) < 1e-5)
+    values(r) <- as.vector(ncvar_get(nc, "surface_no2")[, lat_order, drop = FALSE])
+  }
   # Pad both products to the full county envelope so the denominator includes area outside the source grid.
   region <- ext(-125, -66, 24, 50)
   r <- crop(r, region, snap = "out")
@@ -64,8 +76,10 @@ no2_counties <- function(r, cache, verify) {
   if (length(missing)) {
     points <- suppressWarnings(st_point_on_surface(cache$counties))
     nearest <- extract(r, vect(points), ID = FALSE, search_radius = 500000)
-    stopifnot(all(is.finite(nearest$no2_ppbv[missing])),
-      all(is.finite(nearest$distance[missing])), all(nearest$distance[missing] <= 500000))
+    found <- is.finite(nearest$no2_ppbv[missing]) & is.finite(nearest$distance[missing]) &
+      nearest$distance[missing] <= 500000
+    if (!all(found)) stop("No valid NO2 grid cell within 500 km for ",
+      paste(dt$county_fips[missing[!found]], collapse = ", "))
     dt[missing, `:=`(no2_ppbv = nearest$no2_ppbv[missing], value_source = "nearest_raster_cell",
       fill_distance_m = nearest$distance[missing], fill_cell = as.integer(nearest$cell[missing]))]
   }

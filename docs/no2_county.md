@@ -3,7 +3,7 @@ Annual and monthly surface NO2 for 3,108 counties and county equivalents in the 
 - `no2_county_annual.parquet` covers 2005-2025. Join on `county_fips` and `year`. The annual source switches from Mohegh and Anenberg after 2020 to Nawaz TROPOMI v2 in 2021.
 - `no2_county_monthly.parquet` covers May 2018 through December 2025 using Nawaz TROPOMI v2. Join on `county_fips`, `year`, and `month`.
 
-`county_fips` is a five-character string. `source_product` and `source_file` identify each input. `valid_area_fraction` reports valid source coverage. The QC and fill audit identify periods and counties that used the nearest valid grid cell.
+`county_fips` is a five-character string. `source_product` and `source_file` identify each input. Annual TROPOMI grid rows are mapped using the NetCDF latitude coordinates. `valid_area_fraction` reports valid source coverage. The QC and fill audit identify any nearest-cell fills.
 
 **Citations**
 
