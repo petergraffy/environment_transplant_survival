@@ -42,7 +42,7 @@ daily_pollution_files <- function(path) {
   files <- file.path(path, paste0(spec$prefix, 2005:2024, ".parquet"))
   if (any(!file.exists(files))) {
     stop("Missing published daily inputs: ", paste(basename(files[!file.exists(files)]), collapse = ", "),
-         ". Obtain from https://github.com/petergraffy/environment_transplant_survival/releases/tag/", spec$tag)
+         ". Run code/run_paper.R inputs --download or obtain from https://github.com/petergraffy/climate-exposure-aggregation/releases/tag/", spec$tag)
   }
   files
 }

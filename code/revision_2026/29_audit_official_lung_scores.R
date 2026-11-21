@@ -2,7 +2,9 @@ source("code/revision_2026/common.R")
 setDTthreads(2)
 dest <- file.path(revision_dir, "official_lung_scores")
 dir.create(dest, showWarnings = FALSE)
-path <- "C:/Users/Peter Graffy/Box/Q1 2026 SAF/Lung_supplement2603"
+source("code/saf_paths.R")
+sp <- get_saf_paths(release = "q1_2026")
+path <- Sys.getenv("SAF_LUNG_SUPPLEMENT_DIR", file.path(sp$saf_dir, "Lung_supplement2603"))
 b <- baseline_data()[WL_ORG == "LU", .(PERS_ID, PX_ID, index_date, observed_end_date, episode_px_ids, event_type)]
 cas <- as.data.table(haven::read_sas(file.path(path, "cas_2603.sas7bdat")))
 setnames(cas, c("pers_id", "px_id"), c("PERS_ID", "PX_ID"))
@@ -35,8 +37,6 @@ yearly <- las[, .(rows = .N, registrations = uniqueN(PX_ID),
   by = .(year = as.integer(format(CANHX_LAS_SCORE_BEGIN_DT, "%Y")))]
 setorder(yearly, year); print(yearly)
 fwrite(yearly, file.path(dest, "las_coverage_by_year.csv"))
-source("code/saf_paths.R")
-sp <- get_saf_paths(release = "q1_2026")
 regs <- as.data.table(haven::read_sas(file.path(sp$pubsaf_dir, "cand_thor.sas7bdat"),
   col_select = tidyselect::all_of(c("PERS_ID", "PX_ID", "WL_ORG", "CAN_LISTING_DT", "CAN_REM_DT", "CAN_REM_CD"))))
 regs <- unique(regs[WL_ORG == "LU"])

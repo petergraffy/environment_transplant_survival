@@ -3,27 +3,28 @@
 The baseline and time-varying analysis scripts (78-81, 84, 86, 88, and 90)
 use the published daily ZCTA releases through December 31, 2024:
 
-- PM2.5: https://github.com/petergraffy/environment_transplant_survival/releases/tag/lghap-pm25-zcta-daily-v1
-- O3: https://github.com/petergraffy/environment_transplant_survival/releases/tag/o3-zcta-daily-v1
+- PM2.5: https://github.com/petergraffy/climate-exposure-aggregation/releases/tag/lghap-pm25-zcta-daily-v1
+- O3: https://github.com/petergraffy/climate-exposure-aggregation/releases/tag/o3-zcta-daily-v1
+- NO2: https://github.com/petergraffy/climate-exposure-aggregation/releases/tag/no2-zcta-monthly-v1
+- Annual NO2: https://github.com/petergraffy/climate-exposure-aggregation/releases/tag/air-pollution-zcta-v1
 
-Each release contains 20 annual Parquet files, 2005-2024, covering 33,300 ZCTAs.
+Each daily release contains 20 annual Parquet files, 2005-2024, covering 33,300 ZCTAs.
 PM2.5 is in ug/m3 and O3 is daily maximum 8-hour average concentration in ppb.
 The local PM2.5 2022-2024 files are LGHAP estimates, not the separate local
-AOD-derived experimental PM2.5 estimates. NO2 inputs are unchanged.
+AOD-derived experimental PM2.5 estimates. The input manifest records the NO2
+annual asset with the corrected 2025 latitude orientation.
 
 ## Preparation and verification
 
 Run from the repository root:
 
-```powershell
-& code/pollution_aggregation/verify_daily_analysis_releases.ps1
-Rscript code/prepare_daily_pollution_inputs.R
-Rscript code/prepare_rolling_prior_pollution.R
+```sh
+Rscript code/run_paper.R inputs cohort --download
 ```
 
-The verification script compares all local annual files with GitHub release
-SHA-256 digests. The preparation script builds annual and monthly caches without
-fitting clinical models, checks coverage and unique keys, and validates daily
+The input stage checks local files against `data/reference/publication_inputs.csv`.
+The cohort stage builds annual and monthly caches without fitting clinical
+models, checks coverage and unique keys, and validates daily
 averaging and leap-day inclusion against a sample ZCTA in 2024. Reports are
 written to `output/exposure_input_validation/`.
 
@@ -68,14 +69,8 @@ cache. Run checksum verification after downloading or replacing release assets.
   December 31, 2024. NO2-only follow-up remains through December 31, 2025.
 - The time-varying primary script now refits model results instead of silently
   reusing result files from the earlier exposure window.
-- Concentration and survival-map input readers use the updated daily PM2.5
-  data; the concentration-map reader also uses updated daily O3. Historical
-  annual-input analyses in scripts 50, 63, and 72 remain unchanged.
-
-This update prepares inputs only. Existing model estimates, figures, and tables
-remain from previous runs until the corresponding analyses are explicitly rerun.
-The survival-map estimand and other reviewer-requested methodological changes
-are separate from this data-source update.
+- Concentration and survival-map readers use the daily PM2.5 and O3 products.
+  The cohort builder writes the deduplicated cohort before pollution is joined.
 
 Rolling caches are keyed to the listing-date/ZCTA query set and source files,
 separately from the annual caches. Window endpoints and valid-day/month counts
@@ -84,4 +79,5 @@ year to `output/exposure_input_validation/rolling_prior_exposure_coverage_by_org
 The test script `code/tests/test_rolling_prior_pollution.R` checks exact window
 boundaries, leap days, missing days, year partitions, duplicates, monthly
 weighting, and annual-only NO2 fallback. National AJ quartiles will be
-recomputed from the eligible candidates' rolling exposures when AJ is rerun.
+recomputed from the eligible reference cohort's rolling exposures when AJ is
+rerun. The lung publication update uses those same thresholds.

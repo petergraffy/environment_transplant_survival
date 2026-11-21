@@ -1,87 +1,45 @@
-# Environment Transplant Survival
+# Air Pollution and Transplant Waitlist Outcomes
 
-This repository contains the analysis code and generated display assets for a
-study of air pollution exposure and adverse outcomes among heart, kidney, liver,
-and lung transplant waitlist candidates.
+Reproduction code for the heart, kidney, liver, and lung waitlist study.
+Primary models estimate cause-specific hazards of death or delisting for
+deterioration, separately by organ and pollutant. The baseline models use
+prelisting exposure. Time-varying models update exposure and organ-specific
+severity at monthly intervals.
 
-For the manuscript revision, the baseline and time-varying model scripts now
-use daily PM2.5 and O3 releases covering 2005-2024. See
-[daily exposure input preparation](docs/daily_pollution_analysis_inputs.md)
-for sources, verification, and eligibility limits. Current baseline,
-time-varying, subgroup, and sensitivity models and their figures were rerun
-in September 2026. See the [revision comparison report](output/revision_runs/rolling_20260922/results_comparison.md).
-The original workflow below is retained for provenance.
+## Reproduce the paper
 
-## Study Overview
+1. Use R 4.5 or later. Install the R packages listed in
+   [the reproduction guide](docs/reproduction.md).
+2. Obtain authorized access to SRTR SAFs. Set `SAF_Q1_2026_DIR` and
+   `SAF_Q2_2025_DIR` as described in the guide.
+3. From the repository root, run:
 
-The primary analysis estimates associations between waitlist-period air
-pollution exposure and death or delisting due to clinical deterioration using
-organ-specific cause-specific Cox proportional hazards models. Exposures are
-day-weighted mean pollutant concentrations during observed waitlist follow-up:
+   ```sh
+   Rscript code/run_paper.R --download
+   ```
 
-- PM2.5, scaled per 5 ug/m3
-- NO2, scaled per 10 ppb
-- O3, scaled per 10 ppb
+Run `Rscript code/run_paper.R --list` to see the exact order, or use
+`Rscript code/run_paper.R displays validate` to regenerate figures and
+tables from existing model outputs. A full run is computationally intensive.
+Use a fresh checkout for a clean rebuild with no prior model checkpoints.
 
-Models are fit separately by organ and pollutant. Heart, liver, and lung models
-adjust for age, sex, race, listing year, organ-specific baseline severity, and
-listing-center strata. Kidney models adjust for age, sex, race, listing year,
-no dialysis time, dialysis duration, diabetes, and listing-center strata.
+The generated [publication index](docs/reproduction.md#outputs) catalogs the
+figures, tables, and supplementary analyses. Generated files, logs, and
+candidate-level intermediates stay in the ignored `output/` directory.
 
-## Repository Layout
+## Repository layout
 
-- `code/`: primary analysis scripts and shared helpers.
-- `code/figures_tables/`: scripts that create manuscript figures,
-  supplemental figures, and tables from analysis outputs.
-- `code/pollution_aggregation/`: upstream scripts that aggregate, QA, package,
-  and upload ZCTA-level air pollution exposure surfaces.
-- `code/exploratory/`: earlier exploratory, diagnostic, time-varying,
-  competing-risk, gridMET, and data-structure scripts not required for the
-  primary manuscript analysis.
-- `data/release/`: derived exposure release assets used by the analysis.
-- `docs/`: notes describing exposure-surface construction and release assets.
-- `output/`: generated model outputs, figures, and tables.
+| Path | Contents |
+| --- | --- |
+| [code/run_paper.R](code/run_paper.R) | Ordered analysis and display workflow |
+| [code/](code/) | Cohort construction, exposure linkage, and model fits |
+| [code/figures_tables/](code/figures_tables/) | Figure and table generators |
+| [code/revision_2026/](code/revision_2026/) | LAS, reviewer sensitivities, and publication postprocessing |
+| [code/tests/](code/tests/) | Exposure-window and cohort logic checks |
+| [data/reference/](data/reference/) | Public reference inputs and pinned asset checksums |
+| [docs/reproduction.md](docs/reproduction.md) | Inputs, stages, and display index |
 
-## Primary Analysis Scripts
-
-Run scripts from the repository root so relative paths resolve correctly.
-
-1. `code/50_primary_waitlist_period_pollution_cox.R`
-   - Builds the deduplicated waitlist cohort.
-   - Collapses same-person, same-organ registrations to first-listing baseline
-     exposure/covariates and final observed waitlist outcome.
-   - Computes waitlist-period pollutant exposures.
-   - Fits the primary cause-specific Cox models.
-
-2. `code/63_primary_waitlist_pollution_subgroup_cox.R`
-   - Fits stratified cause-specific Cox models by age group, sex, and race.
-
-3. `code/72_primary_waitlist_pollution_cox_sensitivity_models.R`
-   - Fits sensitivity models, including models without organ score, without
-     listing-center strata, with an ACS-derived ZCTA social vulnerability proxy,
-     prior-year exposure models, and multipollutant models.
-
-4. `code/figures_tables/`
-   - Generates manuscript and supplemental figures/tables from the outputs of
-     the model scripts.
-
-## Data Requirements
-
-The analysis uses SRTR Standard Analysis Files (SAF), local ZCTA-level pollution
-exposure assets, and ACS-derived ZCTA community covariates. SRTR SAF files are
-not included in this repository. Local SAF paths are configured in
-`code/saf_paths.R`; helper runtime setup is in `code/r_runtime.R`.
-
-## Reproducibility Notes
-
-- Most scripts are designed to be run with `Rscript` from the repository root.
-- Output files are written under `output/`.
-- Large external raw data files and restricted SRTR source data are expected to
-  exist locally and are not redistributed here.
-- The committed outputs reflect the analysis state used for manuscript drafting.
-
-## Separate lung survival-benefit study
-
-The lung transplant Cox/RMST survival-benefit analysis is maintained in
-[lung_transplant_pollution_survival_benefit](https://github.com/petergraffy/lung_transplant_pollution_survival_benefit).
-This repository retains the original waitlist study and code layout.
+Environmental aggregation and release packaging are maintained in
+[Climate Exposure Aggregation](https://github.com/petergraffy/climate-exposure-aggregation).
+The separate [lung transplant survival-benefit study](https://github.com/petergraffy/lung_transplant_pollution_survival_benefit)
+has its own repository.

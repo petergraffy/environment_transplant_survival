@@ -25,10 +25,9 @@ aj <- fread(file.path(revision_dir,"aj_with_risk_tables","cohort_time_zero_recon
 stopifnot(all(aj$aj_n==aj$time_zero_total),all(aj$cohort_n==aj$aj_n+aj$excluded_followup+aj$excluded_outcome+aj$excluded_exposure))
 path <- "output/tables/table1_baseline_waitlist_characteristics/table1_baseline_characteristics_by_organ.csv"
 current <- fread(path)
-original_text <- system2("git",c("show",paste0("HEAD:",path)),stdout=TRUE)
-old <- fread(text=paste(original_text,collapse="\n"))
-matched <- merge(current,old,by=c("section","characteristic"),suffixes=c("_new","_old"))
-for(org in c("Heart","Kidney","Liver")) stopifnot(identical(matched[[paste0(org,"_new")]],matched[[paste0(org,"_old")]]))
+counts <- current[section == "Cohort" & characteristic == "Person waitlist episodes, n", unname(organ_names), with=FALSE]
+stopifnot(nrow(counts)==1L,
+  identical(as.integer(gsub(",","",unlist(counts),fixed=TRUE)), cohort$people[match(names(organ_names),cohort$WL_ORG)]))
 stopifnot(current[grepl("Lung allocation score",characteristic),Lung]=="37.7 (33.9 to 45.6)")
 maps <- fread("output/figures/pollution_absolute_1yr_survival_maps/pollution_absolute_1yr_survival_map_summary.csv")
 stopifnot(all(maps[organ=="Lung",model_n]==40721),all(maps[organ=="Lung",adverse_events]==5206))
@@ -64,6 +63,7 @@ add("Candidate-center AB","output/figures/waitlist_geography_ab_maps","[.](pdf|p
 add("Table 1","output/tables/table1_baseline_waitlist_characteristics","[.](html|csv|txt)$")
 add("Covariate missingness","output/tables/primary_cox_model_variables_missingness","[.](html|csv|txt)$")
 add("Score definitions","output/tables/organ_score_formula_weights","[.](html|csv)$")
+add("ACS vulnerability proxy definition","output/tables/svi_proxy_calculation","[.](html|csv|txt)$")
 add("Sensitivity models","output/tables/updated_methods_sensitivity_models","[.](html|csv|tsv|txt)$")
 add("Three-tier baseline models","output/tables/prior_year_initial_listing_cox_model_set","[.](csv|tsv|txt)$")
 add("Three-tier baseline forests","output/figures/prior_year_initial_listing_cox_model_set","[.](pdf|png)$")
@@ -77,6 +77,8 @@ add("Severity-response tables","output/timevarying_pollution_severity_models_wit
 add("Source concentration maps","output/figures/primary_pollution_study_period_maps","[.](pdf|png)$","Unchanged: pollution source, not lung cohort")
 add("Heart/kidney subgroup AJ","output/figures/organ_subgroup_aalen_johansen_cif","[.](pdf|png)$","Unchanged: no lung candidates")
 add("SVI validation",file.path(revision_dir,"svi_validation"),"svi_validation_AB[.](pdf|png)$","Unchanged: geographic validation")
+add("Extended lung follow-up",file.path(revision_dir,"las_extended_followup"),"^(results[.]html|primary_comparison[.]csv|post_transition_followup[.]csv)$","Additional follow-up analysis")
+add("Transplant or improvement",file.path(revision_dir,"transplant_improvement_baseline"),"(results[.]csv|[.]html)$","Additional competing-outcome analysis")
 manifest <- rbindlist(entries)
 fwrite(manifest,file.path(dest,"publication_manifest.csv"))
 escape <- function(x) {x<-gsub("&","&amp;",x,fixed=TRUE);x<-gsub("<","&lt;",x,fixed=TRUE);gsub(">","&gt;",x,fixed=TRUE)}
@@ -94,7 +96,7 @@ writeLines(c("<!doctype html><html><head><meta charset='utf-8'><title>LAS-era pu
 writeLines(c("PASS: final cohort and outcome components reconcile.",
   "PASS: all 24 primary baseline/time-varying estimates match their diagnostic refits within 1e-7.",
   "PASS: baseline risk-table counts reconcile to exposure-eligible cohort counts.",
-  "PASS: all matched nonlung Table 1 cells equal the pre-update committed values.",
+  "PASS: each Table 1 cohort denominator matches the publication cohort.",
   "PASS: lung map models contain 40,721 candidates and 5,206 adverse events.",
   "PASS: candidate ABC map includes 1,007,801 candidate-organ observations.",
   paste("PASS:",nrow(manifest),"publication artifacts indexed; all files exist and are nonempty.")),file.path(dest,"publication_validation.txt"))

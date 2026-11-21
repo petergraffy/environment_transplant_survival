@@ -27,8 +27,11 @@ export <- function(d,name,caption,note,era_context=NULL) {
 }
 ref <- rd("baseline_diagnostics/baseline_reproduction.csv") %>% mutate(analysis="Primary baseline")
 reg <- rd("registration_models/registration_sensitivity_results.csv")
-recent_folder <- if(file.exists(file.path(revision_dir,"finegray_2015_2019","validation.txt"))) "finegray_2015_2019" else "recent_finegray"
-recent_window <- if(recent_folder=="finegray_2015_2019") "2015-2019" else "2020-2022"
+recent_folder <- "finegray_2015_2019"
+recent_window <- "2015-2019"
+if (!file.exists(file.path(revision_dir,recent_folder,"validation.txt"))) {
+  stop("Run the matched 2015-2019 competing-risk sensitivity before building supplemental tables.")
+}
 fg <- rd(paste0(recent_folder,"/finegray_results.csv"))
 cs <- rd(paste0(recent_folder,"/matched_recent_cause_specific.csv"))
 recent_warnings <- bind_rows(fg,cs)

@@ -1,28 +1,15 @@
-# Code Directory
+# Analysis code
 
-This directory contains the primary manuscript analysis scripts and shared
-helpers. Scripts should be run from the repository root.
+Run from the repository root. [run_paper.R](run_paper.R) is the execution
+order for the cohort, models, sensitivities, figures, tables, and validation.
+The numbered filenames preserve links to the publication-era scripts.
 
-For the revised baseline and time-varying analyses, daily PM2.5 and O3 now use
-the published 2005-2024 releases. Run `prepare_daily_pollution_inputs.R` to
-prepare and validate exposures without fitting models. Source details,
-coverage implications, and checksum verification are documented in
-[`docs/daily_pollution_analysis_inputs.md`](../docs/daily_pollution_analysis_inputs.md).
+- `50_primary_waitlist_period_pollution_cox.R` prepares the deduplicated input
+  cohort. Its historical filename and output path are retained for compatibility.
+- Scripts 78-90 produce the rolling-prelisting and monthly time-varying results.
+- [revision_2026/](revision_2026/) contains LAS preparation, reviewer analyses,
+  publication updates, and report export.
+- [figures_tables/](figures_tables/) contains display generators.
+- [tests/](tests/) contains reproducibility checks.
 
-Primary scripts:
-
-- `50_primary_waitlist_period_pollution_cox.R`: builds the analysis cohort,
-  computes waitlist-period pollution exposures, and fits primary cause-specific
-  Cox models.
-- `63_primary_waitlist_pollution_subgroup_cox.R`: fits stratified Cox models.
-- `72_primary_waitlist_pollution_cox_sensitivity_models.R`: fits sensitivity
-  models, including multipollutant models.
-- `06_build_community_covariates.R`: builds ACS-derived ZCTA community
-  covariates used for the social vulnerability proxy sensitivity analysis.
-- `saf_paths.R` and `r_runtime.R`: local path and runtime helpers.
-
-Subfolders:
-
-- `figures_tables/`: figure and table creation scripts.
-- `pollution_aggregation/`: upstream pollution exposure aggregation scripts.
-- `exploratory/`: exploratory, diagnostic, and legacy analysis scripts.
+See [inputs, stages, and outputs](../docs/reproduction.md).

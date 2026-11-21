@@ -8,14 +8,11 @@ if (file.exists(runtime_source)) {
 }
 
 suppressPackageStartupMessages({
-  library(arrow)
-  library(broom)
   library(data.table)
   library(dplyr)
   library(haven)
   library(readr)
   library(stringr)
-  library(survival)
   library(tibble)
   library(tidyr)
 })
@@ -27,10 +24,8 @@ saf_paths <- get_saf_paths(release = "q1_2026")
 assert_saf_files(saf_paths, include_stathist = TRUE)
 
 pubsaf_dir <- saf_paths$pubsaf_dir
-pollution_dir <- file.path("data", "release", "air_pollution_zcta_parquet")
 out_dir <- file.path("output", "primary_waitlist_period_pollution_cox")
-model_result_dir <- file.path(out_dir, "model_results")
-dir.create(model_result_dir, recursive = TRUE, showWarnings = FALSE)
+dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
 analysis_start_year <- as.integer(Sys.getenv("ENV_ANALYSIS_START_YEAR", "2005"))
 pollution_end_year <- c(pm25 = 2023L, o3 = 2023L, no2 = 2025L)
@@ -89,26 +84,6 @@ calc_egfr_2021 <- function(creatinine, age, sex) {
   alpha <- if_else(female, -0.241, -0.302)
   sex_mult <- if_else(female, 1.012, 1.0)
   142 * pmin(scr / kappa, 1)^alpha * pmax(scr / kappa, 1)^(-1.200) * 0.9938^age * sex_mult
-}
-
-make_year_intervals <- function(cohort_dt, exposure_end_year) {
-  intervals <- cohort_dt[, .(waitlist_row_id, candidate_zip, index_date, observed_end_date)]
-  intervals[, interval_years := lapply(seq_len(.N), function(i) {
-    start_year <- max(as.integer(format(index_date[i], "%Y")), analysis_start_year)
-    stop_year <- min(as.integer(format(observed_end_date[i], "%Y")), exposure_end_year)
-    if (is.na(start_year) || is.na(stop_year) || stop_year < start_year) return(integer())
-    seq.int(start_year, stop_year)
-  })]
-  intervals <- intervals[lengths(interval_years) > 0L]
-  interval_lengths <- lengths(intervals$interval_years)
-  out <- intervals[rep(seq_len(nrow(intervals)), interval_lengths)]
-  out[, interval_year := unlist(intervals$interval_years, use.names = FALSE)]
-  out[, interval_years := NULL]
-  out[, interval_start_date := pmax(index_date, as.Date(paste0(interval_year, "-01-01")))]
-  out[, interval_end_date := pmin(observed_end_date, as.Date(paste0(interval_year, "-12-31")))]
-  out <- out[interval_end_date >= interval_start_date]
-  out[, interval_days := as.integer(interval_end_date - interval_start_date) + 1L]
-  out
 }
 
 assign_overlap_episode <- function(index_date, observed_end_date) {
@@ -517,64 +492,8 @@ cohort <- as_tibble(baseline_dt) %>%
     listing_year = factor(index_year)
   )
 
-cohort_dt <- as.data.table(cohort)
-
-log_msg("Reading pollution release tables")
-pm25 <- read_parquet(file.path(pollution_dir, "air_pollution_zcta_pm25_monthly_2005_2023.parquet")) %>%
-  transmute(zip = clean_zip(zip), year = as.integer(year), pm25_ug_m3) %>%
-  group_by(zip, year) %>%
-  summarise(pm25_n_months = sum(!is.na(pm25_ug_m3)), pm25_ug_m3 = mean(pm25_ug_m3, na.rm = TRUE), .groups = "drop") %>%
-  filter(pm25_n_months == 12L, is.finite(pm25_ug_m3)) %>%
-  as.data.table()
-o3 <- read_parquet(file.path(pollution_dir, "air_pollution_zcta_o3_monthly_2005_2023.parquet")) %>%
-  transmute(zip = clean_zip(zip), year = as.integer(year), o3_ppb) %>%
-  group_by(zip, year) %>%
-  summarise(o3_n_months = sum(!is.na(o3_ppb)), o3_ppb = mean(o3_ppb, na.rm = TRUE), .groups = "drop") %>%
-  filter(o3_n_months == 12L, is.finite(o3_ppb)) %>%
-  as.data.table()
-no2 <- read_parquet(file.path(pollution_dir, "air_pollution_zcta_no2_annual_2005_2025.parquet")) %>%
-  transmute(zip = clean_zip(zip), year, no2) %>%
-  as.data.table()
-
-log_msg("Computing year/day-weighted waitlist-period PM2.5 and ozone means through 2023")
-year_intervals_2023 <- make_year_intervals(cohort_dt, exposure_end_year = 2023L)
-pm25_year <- pm25[year_intervals_2023, on = c("zip" = "candidate_zip", "year" = "interval_year")]
-o3_year <- o3[year_intervals_2023, on = c("zip" = "candidate_zip", "year" = "interval_year")]
-pm25_exp <- pm25_year[!is.na(pm25_ug_m3), .(
-  pm25_days = sum(interval_days),
-  pm25_waitlist_ug_m3 = sum(pm25_ug_m3 * interval_days) / sum(interval_days)
-), by = waitlist_row_id]
-o3_exp <- o3_year[!is.na(o3_ppb), .(
-  o3_days = sum(interval_days),
-  o3_waitlist_ppb = sum(o3_ppb * interval_days) / sum(interval_days)
-), by = waitlist_row_id]
-
-log_msg("Computing waitlist-period NO2 means through 2025")
-year_intervals_2025 <- make_year_intervals(cohort_dt, exposure_end_year = 2025L)
-no2_year <- no2[year_intervals_2025, on = c("zip" = "candidate_zip", "year" = "interval_year")]
-no2_exp <- no2_year[!is.na(no2), .(
-  no2_days = sum(interval_days),
-  no2_waitlist = sum(no2 * interval_days) / sum(interval_days)
-), by = waitlist_row_id]
-
-analysis_dat <- cohort %>%
-  left_join(as_tibble(pm25_exp), by = "waitlist_row_id") %>%
-  left_join(as_tibble(o3_exp), by = "waitlist_row_id") %>%
-  left_join(as_tibble(no2_exp), by = "waitlist_row_id") %>%
-  mutate(
-    followup_days_pm25 = as.numeric(pmin(observed_end_date, as.Date("2023-12-31")) - index_date),
-    followup_days_o3 = followup_days_pm25,
-    followup_days_no2 = as.numeric(pmin(observed_end_date, as.Date("2025-12-31")) - index_date),
-    event_pm25 = as.integer(adverse_event == 1L & observed_end_date <= as.Date("2023-12-31")),
-    event_o3 = event_pm25,
-    event_no2 = adverse_event,
-    pm25_waitlist_5ug = pm25_waitlist_ug_m3 / 5,
-    o3_waitlist_10ppb = o3_waitlist_ppb / 10,
-    no2_waitlist_10unit = no2_waitlist / 10
-  )
-
 write_csv(
-  analysis_dat %>%
+  cohort %>%
     select(
       waitlist_row_id, source_waitlist_row_id, PERS_ID, PX_ID, episode_px_ids,
       WL_ORG, person_organ_episode, episode_listing_count, episode_center_count,
@@ -594,116 +513,9 @@ write_csv(
       lung_fev1_score_input, lung_fvc_score_input, lung_pco2_score_input,
       lung_resting_o2_score_input, lung_six_min_walk_score_input,
       lung_pulm_art_mean_score_input, lung_cardiac_output_score_input,
-      lung_ventilator_score_input, lung_ecmo_score_input, lung_corticosteroid_score_input,
-      followup_days_pm25, event_pm25, pm25_waitlist_ug_m3, pm25_days,
-      followup_days_o3, event_o3, o3_waitlist_ppb, o3_days,
-      followup_days_no2, event_no2, no2_waitlist, no2_days
+      lung_ventilator_score_input, lung_ecmo_score_input, lung_corticosteroid_score_input
     ),
   file.path(out_dir, "primary_waitlist_period_pollution_analysis_dataset.csv.gz")
 )
 
-exposure_specs <- list(
-  pm25 = list(term = "pm25_waitlist_5ug", label = "PM2.5 waitlist-period mean per 5 ug/m3", followup = "followup_days_pm25", event = "event_pm25", end_year = 2023L),
-  o3 = list(term = "o3_waitlist_10ppb", label = "Ozone waitlist-period mean per 10 ppb", followup = "followup_days_o3", event = "event_o3", end_year = 2023L),
-  no2 = list(term = "no2_waitlist_10unit", label = "NO2 waitlist-period mean per 10-unit increment", followup = "followup_days_no2", event = "event_no2", end_year = 2025L)
-)
-
-fit_waitlist_cox <- function(dat, org, exposure_name, spec) {
-  adjustment_terms <- c("age", "sex", "race", "listing_year", "strata(listing_center)")
-  adjustment_vars <- c("age", "sex", "race", "listing_year", "listing_center")
-  if (org == "KI") {
-    adjustment_terms <- c("age", "sex", "race", "listing_year", "kidney_no_dialysis_time", "kidney_dialysis_years", "kidney_diabetes", "strata(listing_center)")
-    adjustment_vars <- c("age", "sex", "race", "listing_year", "kidney_no_dialysis_time", "kidney_dialysis_years", "kidney_diabetes", "listing_center")
-  } else {
-    adjustment_terms <- c("age", "sex", "race", "listing_year", "organ_score", "strata(listing_center)")
-    adjustment_vars <- c("age", "sex", "race", "listing_year", "organ_score", "listing_center")
-  }
-  vars_needed <- c(spec$followup, spec$event, adjustment_vars, spec$term)
-  model_dat <- dat %>%
-    filter(
-      index_year <= spec$end_year,
-      complete.cases(across(all_of(vars_needed))),
-      .data[[spec$followup]] > 0
-    ) %>%
-    mutate(.followup_days = pmax(.data[[spec$followup]], 0.5), .event = .data[[spec$event]]) %>%
-    droplevels()
-
-  if (nrow(model_dat) == 0L || sum(model_dat$.event) < 50L || n_distinct(model_dat$listing_center) < 2L) {
-    return(tibble())
-  }
-
-  log_msg("Waitlist-period pollution Cox ", org, " | ", exposure_name, " n=", nrow(model_dat), " adverse=", sum(model_dat$.event))
-  form <- as.formula(paste(
-    "Surv(.followup_days, .event) ~",
-    paste(c(spec$term, adjustment_terms), collapse = " + ")
-  ))
-  fit <- coxph(form, data = model_dat, ties = "efron", x = FALSE, y = FALSE)
-
-  tidy(fit, exponentiate = TRUE, conf.int = TRUE) %>%
-    filter(term == spec$term) %>%
-    transmute(
-      organ = org,
-      organ_label = recode(org, !!!organ_labels),
-      exposure = exposure_name,
-      exposure_label = spec$label,
-      exposure_window = "observed_waitlist_period_mean",
-      exposure_data_end_year = spec$end_year,
-      endpoint = "death_or_deterioration_delist_cause_specific",
-      n = nrow(model_dat),
-      people = n_distinct(model_dat$PERS_ID),
-      centers = n_distinct(model_dat$listing_center),
-      adverse_events = sum(model_dat$.event),
-      hazard_ratio = estimate,
-      conf_low = conf.low,
-      conf_high = conf.high,
-      p_value = p.value,
-      concordance = unname(summary(fit)$concordance[1]),
-      adjustment_set = if_else(
-        org == "KI",
-        "age + sex + race + listing_year + no_dialysis_time + dialysis_duration_years + diabetes + strata(listing_center)",
-        "age + sex + race + listing_year + baseline_organ_score + strata(listing_center)"
-      ),
-      variance_estimator = "model_based",
-      center_adjustment = "stratified_baseline_hazard_by_listing_center"
-    )
-}
-
-log_msg("Fitting organ-specific primary waitlist-period pollution Cox models")
-result_paths <- character()
-for (org in target_organs) {
-  org_dat <- analysis_dat %>% filter(WL_ORG == org)
-  for (exposure_name in names(exposure_specs)) {
-    result_path <- file.path(model_result_dir, paste0(tolower(org), "_", exposure_name, ".csv"))
-    result_paths <- c(result_paths, result_path)
-    result <- fit_waitlist_cox(org_dat, org, exposure_name, exposure_specs[[exposure_name]])
-    write_csv(result, result_path)
-    rm(result)
-    invisible(gc())
-  }
-}
-
-waitlist_results <- bind_rows(lapply(result_paths[file.exists(result_paths)], read_csv, show_col_types = FALSE))
-write_csv(waitlist_results, file.path(out_dir, "primary_waitlist_period_pollution_cox_results.csv"))
-
-write_csv(
-  bind_rows(lapply(names(exposure_specs), function(exposure_name) {
-    spec <- exposure_specs[[exposure_name]]
-    analysis_dat %>%
-      filter(index_year <= spec$end_year, !is.na(.data[[spec$term]]), .data[[spec$followup]] > 0) %>%
-      group_by(WL_ORG, organ_score_name) %>%
-      summarise(
-        exposure = exposure_name,
-        exposure_data_end_year = spec$end_year,
-        n = n(),
-        people = n_distinct(PERS_ID),
-        centers = n_distinct(listing_center),
-        adverse_events = sum(.data[[spec$event]], na.rm = TRUE),
-        median_followup_days = median(.data[[spec$followup]], na.rm = TRUE),
-        mean_exposure = mean(.data[[spec$term]], na.rm = TRUE),
-        .groups = "drop"
-      )
-  })),
-  file.path(out_dir, "primary_waitlist_period_pollution_cohort_summary.csv")
-)
-
-log_msg("Wrote primary waitlist-period pollution Cox outputs to ", out_dir)
+log_msg("Wrote the deduplicated cohort to ", out_dir)

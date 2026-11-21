@@ -1,73 +1,27 @@
-# Keep generated analysis outputs local.
+# Generated analysis outputs, private caches, and local scratch files.
 /output/
-
-# Large reproducible gridMET downloads and yearly daily ZCTA extracts.
-data/raw/gridmet/*.nc
-data/raw/daily_pm25/*.nc
-data/raw/daily_o3/*.nc
-data/raw/daily_o3/20??/
-data/raw/lghap_pm25/*.nc
-data/raw/lghap_pm25_daily/*.zip
-data/raw/lghap_pm25_daily/*.nc
-data/raw/lghap_aod_daily/*.zip
-data/raw/lghap_aod_daily/*.nc
-data/raw/lghap_aod_daily/LGHAP_Global_AOD/
-data/cache/cb_2020_us_tract_500k.zip
-data/cache/cb_2020_us_tract_500k/
-data/cache/tract_lookup_lghap_pm25_*.csv
-data/cache/tract_points_lghap_pm25_*.csv
-data/cache/tract_zone_raster_lghap_pm25_*.tif
-data/cache/tract_lookup_daily_o3_*.csv
-data/cache/tract_points_daily_o3_*.csv
-data/cache/tract_zone_raster_daily_o3_*.tif
-data/processed/lghap_pm25_tract_daily*/
-data/processed/o3_tract_daily*/
-data/release/lghap_pm25_tract_daily*_csv/
-data/release/o3_tract_daily*_csv/
-data/processed/gridmet_zcta_daily/gridmet_zcta_daily_20??.csv.gz
-data/processed/o3_zcta_daily/o3_zcta_daily_*.csv.gz
-data/processed/no2_zcta_monthly/no2_zcta_monthly_*.csv.gz
-data/processed/lghap_pm25_zcta_daily/lghap_pm25_zcta_daily_*.csv.gz
-data/processed/lghap_aod_zcta_daily/lghap_aod_zcta_daily_*.csv.gz
-data/processed/lghap_pm25_zcta_daily_derived/lghap_pm25_zcta_daily_derived_from_aod_*.csv.gz
-data/processed/lghap_pm25_zcta_daily_derived/*.rds
-data/release/gridmet_zcta_daily_parquet/*.parquet
-data/release/air_pollution_zcta_parquet/*.parquet
-data/release/lghap_pm25_zcta_daily_parquet/*.parquet
-data/release/lghap_pm25_tract_daily*_parquet/*.parquet
-data/release/o3_zcta_daily_parquet/*.parquet
-data/release/no2_zcta_monthly_parquet/*.parquet
-
-# Local candidate-level analysis inputs and reproducible caches.
-data/cache/rolling_prior_pollution/
-output/**/cache/
-output/primary_waitlist_period_pollution_cox/*analysis_dataset.csv.gz
-
-# Local revision snapshots, logs, and visual QA intermediates.
-output/revision_runs/**/before/
-output/revision_runs/**/code_at_start/
-output/revision_runs/**/figure_qa/
-output/revision_runs/**/*.log
-output/revision_runs/**/*.done
-output/revision_runs/**/snapshot_complete.txt
-
-# Never publish registration/candidate-level derived analysis datasets.
-output/**/*analysis_dataset.csv.gz
-output/**/*_test_predictions.csv.gz
-output/**/candidate_pollution_linkage_flags.csv.gz
-output/**/waitlist_environment_exposures.csv.gz
-output/**/waitlist_daily_tmax_rmax_exact.csv.gz
-output/**/lagged_waitlist_exposure_intervals_qc_sample.csv
-output/**/pollution_unlinked_zip_year_examples.csv
-output/**/unlinked_zip_diagnostic.csv
-
-# Local scratch downloads and execution logs.
-/tmp_lghap_aod_inspect/
-/tmp_pm25_tract_inspect/
+/logs/
+/tmp*/
 /Rplots.pdf
-logs/*.log
-output/revision_2026_checklist/**/*.log
+/.env
+.Rhistory
+.RData
+.Rproj.user/
+__pycache__/
 
-# Regenerable vector maps exceed GitHub's 100 MiB file limit.
-output/figures/pollution_absolute_1yr_survival_maps/figure_pollution_absolute_1yr_survival_maps.pdf
-output/figures/pollution_attributable_relative_hazard_maps/figure_pollution_attributable_relative_hazard_maps.pdf
+# External sources and rebuildable exposure assets.
+/data/raw/
+/data/cache/
+/data/release/
+/data/processed/*
+!/data/processed/community/
+/data/processed/community/*
+!/data/processed/community/zcta_acs_community_covariates_2005_2023.csv.gz
+
+# Keep only the publication reference files in Git.
+/data/reference/*
+!/data/reference/publication_inputs.csv
+!/data/reference/uscrs_mapping_table.csv
+!/data/reference/cdc_svi/
+/data/reference/cdc_svi/*
+!/data/reference/cdc_svi/SVI_2022_US_ZCTA.csv

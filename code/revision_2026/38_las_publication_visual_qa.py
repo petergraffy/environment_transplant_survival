@@ -62,6 +62,9 @@ for folder in folders:
         doc.close()
         print(path.name, flush=True)
 
+if not records:
+    raise SystemExit("No publication PDFs found. Run the displays stage before figure QA.")
+
 for offset in range(0, len(thumbs), 12):
     batch = thumbs[offset:offset+12]
     sheet = Image.new("RGB", (1800, ((len(batch)+3)//4)*660), "white")
